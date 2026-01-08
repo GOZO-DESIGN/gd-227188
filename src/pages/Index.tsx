@@ -12,14 +12,6 @@ import Footer from '@/components/Footer';
 // Import images
 import heroImage from '@/assets/hero-thermomix.jpg';
 import aboutImage from '@/assets/about-portrait.jpg';
-import insta1 from '@/assets/insta-1.jpg';
-import insta2 from '@/assets/insta-2.jpg';
-import insta3 from '@/assets/insta-3.jpg';
-import insta4 from '@/assets/insta-4.jpg';
-import insta5 from '@/assets/insta-5.jpg';
-import insta6 from '@/assets/insta-6.jpg';
-import insta7 from '@/assets/insta-7.jpg';
-import insta8 from '@/assets/insta-8.jpg';
 
 const CACHE_KEY = 'thermomix_access_granted';
 
@@ -32,8 +24,6 @@ const Index = () => {
       setIsUnlocked(true);
     }
   }, []);
-
-  const instagramImages = [insta1, insta2, insta3, insta4, insta5, insta6, insta7, insta8];
 
   if (!isUnlocked) {
     return (
@@ -72,7 +62,7 @@ const Index = () => {
           <HeroSection heroImage={heroImage} />
           <BenefitsSection />
           <AboutSection aboutImage={aboutImage} />
-          <InstagramSection images={instagramImages} />
+          <InstagramSection />
           <ContactSection />
         </main>
         <Footer />
