@@ -14,7 +14,7 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
             <div className="relative aspect-square rounded-2xl overflow-hidden shadow-elevated">
               <img
                 src={aboutImage}
-                alt="Ihre Thermomix Beraterin"
+                alt="Ihr Thermomix Berater"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -24,7 +24,7 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
               <div className="text-center">
                 <Award className="w-6 h-6 mx-auto mb-1" />
                 <p className="font-bold text-lg">Zertifiziert</p>
-                <p className="text-xs opacity-90">Thermomix® Beraterin</p>
+                <p className="text-xs opacity-90">Thermomix® Berater</p>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
             
             <div className="space-y-4 text-muted-foreground mb-8 animate-fade-up delay-200">
               <p>
-                Als zertifizierte Thermomix® Beraterin begleite ich Sie auf Ihrer kulinarischen Reise. 
+                Als zertifizierter Thermomix® Berater begleite ich Sie auf Ihrer kulinarischen Reise. 
                 Meine Leidenschaft ist es, Menschen für das einfache und kreative Kochen zu begeistern.
               </p>
               <p>
