@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import BenefitsSection from '@/components/BenefitsSection';
 import AboutSection from '@/components/AboutSection';
+import GoogleReviewsSection from '@/components/GoogleReviewsSection';
 import InstagramSection from '@/components/InstagramSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -61,6 +62,7 @@ const Index = () => {
           <HeroSection />
           <BenefitsSection />
           <AboutSection aboutImage={aboutImage} />
+          <GoogleReviewsSection />
           <InstagramSection />
           <ContactSection />
         </main>
