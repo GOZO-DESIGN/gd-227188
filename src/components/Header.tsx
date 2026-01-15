@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import logo from '@/assets/logo.avif';
+
+const WHATSAPP_URL = 'https://api.whatsapp.com/send/?phone=%2B436763979250&text&type=phone_number&app_absent=0';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,15 +52,28 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <a
-            href="#"
-            onClick={(e) => e.preventDefault()}
-            className="hidden md:inline-flex bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-medium
-              transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5"
-          >
-            Beratung buchen
-          </a>
+          {/* WhatsApp & CTA Button */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-[#25D366] text-white
+                transition-all duration-300 hover:scale-110 hover:shadow-lg"
+              aria-label="WhatsApp Kontakt"
+            >
+              <MessageCircle className="w-5 h-5" />
+            </a>
+            
+            <a
+              href="#"
+              onClick={(e) => e.preventDefault()}
+              className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-medium
+                transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Beratung buchen
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -85,10 +100,20 @@ const Header = () => {
                 </a>
               ))}
               <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-[#25D366] text-white px-5 py-3 rounded-lg font-medium
+                  transition-all duration-300 hover:bg-[#128C7E] mt-2"
+              >
+                <MessageCircle className="w-5 h-5" />
+                WhatsApp
+              </a>
+              <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
                 className="bg-primary text-primary-foreground px-5 py-3 rounded-lg font-medium text-center
-                  transition-all duration-300 hover:bg-primary/90 mt-2"
+                  transition-all duration-300 hover:bg-primary/90"
               >
                 Beratung buchen
               </a>
