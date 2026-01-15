@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/logo.avif';
 
 const WHATSAPP_URL = 'https://api.whatsapp.com/send/?phone=%2B436763979250&text&type=phone_number&app_absent=0';
@@ -18,6 +19,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,11 +31,11 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Start', href: '#' },
-    { label: 'Vorteile', href: '#' },
-    { label: 'Über mich', href: '#' },
-    { label: 'Rezepte', href: '#' },
-    { label: 'Kontakt', href: '#' },
+    { label: 'Start', href: '/' },
+    { label: 'Was ist der TM7', href: '/tm7' },
+    { label: 'Showkochen', href: '/showkochen' },
+    { label: 'Beratung', href: '/beratung' },
+    { label: 'Galerie', href: '/galerie' },
   ];
 
   return (
@@ -41,30 +43,33 @@ const Header = () => {
       <div className="container-narrow">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="hover:opacity-80 transition-all duration-300">
+          <Link to="/" className="hover:opacity-80 transition-all duration-300">
             <img 
               src={logo} 
               alt="kochmitthermo21 Logo" 
               className={`w-auto transition-all duration-300 ${isScrolled ? 'h-10 md:h-12' : 'h-16 md:h-24'}`} 
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
-                onClick={(e) => e.preventDefault()}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline py-1"
+                to={link.href}
+                className={`transition-colors duration-300 link-underline py-1 ${
+                  location.pathname === link.href 
+                    ? 'text-primary font-medium' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* WhatsApp & CTA Button */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -76,20 +81,19 @@ const Header = () => {
               <WhatsAppIcon className="w-5 h-5" />
             </a>
             
-            <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+            <Link
+              to="/beratung"
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-medium
                 transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5"
             >
               Beratung buchen
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
             aria-label="Menü öffnen"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -98,17 +102,21 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border/50 animate-fade-in">
+          <nav className="lg:hidden py-4 border-t border-border/50 animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
-                  onClick={(e) => e.preventDefault()}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300 py-2"
+                  to={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`transition-colors duration-300 py-2 ${
+                    location.pathname === link.href 
+                      ? 'text-primary font-medium' 
+                      : 'text-muted-foreground hover:text-foreground'
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <a
                 href={WHATSAPP_URL}
@@ -120,14 +128,14 @@ const Header = () => {
                 <WhatsAppIcon className="w-5 h-5" />
                 WhatsApp
               </a>
-              <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
+              <Link
+                to="/beratung"
+                onClick={() => setIsMenuOpen(false)}
                 className="bg-primary text-primary-foreground px-5 py-3 rounded-lg font-medium text-center
                   transition-all duration-300 hover:bg-primary/90"
               >
                 Beratung buchen
-              </a>
+              </Link>
             </div>
           </nav>
         )}
