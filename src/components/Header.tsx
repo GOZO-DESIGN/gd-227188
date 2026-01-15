@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.avif';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,8 +18,8 @@ const Header = () => {
       <div className="container-narrow">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" className="font-serif text-2xl md:text-3xl text-foreground hover:text-primary transition-colors duration-300">
-            kochmitthermo21
+          <a href="#" className="hover:opacity-80 transition-opacity duration-300">
+            <img src={logo} alt="kochmitthermo21 Logo" className="h-10 md:h-14 w-auto" />
           </a>
 
           {/* Desktop Navigation */}
