@@ -10,7 +10,6 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 // Import images
-import heroImage from '@/assets/hero-thermomix.jpg';
 import aboutImage from '@/assets/about-portrait.jpg';
 
 const CACHE_KEY = 'thermomix_access_granted';
@@ -59,7 +58,7 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Header />
         <main>
-          <HeroSection heroImage={heroImage} />
+          <HeroSection />
           <BenefitsSection />
           <AboutSection aboutImage={aboutImage} />
           <InstagramSection />

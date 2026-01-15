@@ -1,31 +1,69 @@
 import { ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import heroImage from '@/assets/hero.webp';
 
-interface HeroSectionProps {
-  heroImage: string;
-}
+const HeroSection = () => {
+  const [scrollY, setScrollY] = useState(0);
 
-const HeroSection = ({ heroImage }: HeroSectionProps) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const parallaxOffset = scrollY * 0.4;
+  const barProgress = Math.min(scrollY / 400, 1);
+
   return (
-    <section className="relative min-h-screen flex items-center gradient-hero pt-20">
-      <div className="container-narrow w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text Content */}
-          <div className="text-center lg:text-left">
-            <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4 animate-fade-up">
-              Thermomix® Beraterin
+    <section className="relative min-h-screen pt-32 md:pt-40 overflow-hidden">
+      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-8rem)]">
+        {/* Left Side - Image with Parallax */}
+        <div className="relative lg:w-1/2 h-[50vh] lg:h-auto overflow-hidden">
+          <div 
+            className="absolute inset-0 w-full h-[120%]"
+            style={{ transform: `translateY(-${parallaxOffset}px)` }}
+          >
+            <img
+              src={heroImage}
+              alt="Thermomix Berater in moderner Küche"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          
+          {/* Animated Bar Overlay */}
+          <div 
+            className="absolute top-0 left-0 w-full bg-primary/90 z-10 transition-all duration-100"
+            style={{ 
+              height: `${barProgress * 100}%`,
+              opacity: barProgress > 0 ? 1 : 0
+            }}
+          />
+          
+          {/* Gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/30 lg:to-white/60"></div>
+        </div>
+
+        {/* Right Side - Content with white background overlapping into image */}
+        <div className="relative lg:w-1/2 bg-white lg:-ml-24 z-20 flex items-center">
+          <div className="w-full px-6 py-12 lg:py-0 lg:pl-16 lg:pr-12 xl:pl-24 xl:pr-20">
+            <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-4 animate-fade-up">
+              Thermomix® Berater
             </span>
             
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-foreground leading-tight mb-6 animate-fade-up delay-100">
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl xl:text-6xl text-foreground leading-tight mb-6 animate-fade-up delay-100">
               Kochen mit <br />
               <span className="text-primary">Leidenschaft</span>
             </h1>
             
-            <p className="text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0 mb-8 animate-fade-up delay-200">
+            <p className="text-lg text-muted-foreground max-w-lg mb-8 animate-fade-up delay-200">
               Entdecken Sie die Welt des einfachen, gesunden und kreativen Kochens 
               mit dem Thermomix®. Persönliche Beratung, die zu Ihnen passt.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up delay-300">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
               <a
                 href="#"
                 onClick={(e) => e.preventDefault()}
@@ -45,37 +83,22 @@ const HeroSection = ({ heroImage }: HeroSectionProps) => {
                 Mehr erfahren
               </a>
             </div>
-          </div>
 
-          {/* Hero Image */}
-          <div className="relative animate-fade-up delay-400">
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-elevated">
-              <img
-                src={heroImage}
-                alt="Thermomix in einer modernen Küche"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 gradient-overlay opacity-20"></div>
-            </div>
-            
-            {/* Floating Card */}
-            <div className="absolute -bottom-6 -left-6 bg-card p-5 rounded-xl shadow-card animate-fade-up delay-600 hidden sm:block">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">👨‍🍳</span>
+            {/* Stats Card */}
+            <div className="mt-12 flex items-center gap-6 animate-fade-up delay-400">
+              <div className="flex items-center gap-3 bg-muted/50 px-5 py-3 rounded-xl">
+                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-xl">👨‍🍳</span>
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">500+</p>
-                  <p className="text-sm text-muted-foreground">Zufriedene Kunden</p>
+                  <p className="text-xs text-muted-foreground">Zufriedene Kunden</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none"></div>
     </section>
   );
 };
