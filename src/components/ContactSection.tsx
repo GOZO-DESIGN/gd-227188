@@ -23,8 +23,7 @@ const ContactSection = () => {
             {/* Contact Details */}
             <div className="space-y-6 mb-10">
               <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
+                href="tel:+436763979250"
                 className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors duration-300 group animate-fade-up delay-300"
               >
                 <div className="w-12 h-12 bg-card rounded-xl flex items-center justify-center shadow-soft group-hover:shadow-card transition-shadow duration-300">
@@ -32,13 +31,12 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Telefon</p>
-                  <p className="font-medium text-foreground">+49 123 456 7890</p>
+                  <p className="font-medium text-foreground">+43 676 397 9250</p>
                 </div>
               </a>
 
               <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
+                href="mailto:office@mixmitprager.at"
                 className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors duration-300 group animate-fade-up delay-400"
               >
                 <div className="w-12 h-12 bg-card rounded-xl flex items-center justify-center shadow-soft group-hover:shadow-card transition-shadow duration-300">
@@ -46,7 +44,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">E-Mail</p>
-                  <p className="font-medium text-foreground">hallo@kochmitthermo21.de</p>
+                  <p className="font-medium text-foreground">office@mixmitprager.at</p>
                 </div>
               </a>
 
@@ -55,8 +53,9 @@ const ContactSection = () => {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Region</p>
-                  <p className="font-medium text-foreground">Deutschland</p>
+                  <p className="text-sm text-muted-foreground">Adresse</p>
+                  <p className="font-medium text-foreground">Bernhard Prager</p>
+                  <p className="text-sm text-muted-foreground">Viehtriftgasse 3, A-1210 Wien</p>
                 </div>
               </div>
             </div>
