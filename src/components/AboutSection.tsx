@@ -1,4 +1,4 @@
-import { Instagram, ChefHat, Award } from 'lucide-react';
+import { ChefHat, Award } from 'lucide-react';
 
 interface AboutSectionProps {
   aboutImage: string;
@@ -65,25 +65,6 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
                 <p className="text-xs text-muted-foreground">Hingabe</p>
               </div>
             </div>
-
-            {/* Instagram CTA */}
-            <a
-              href="https://www.instagram.com/kochmitthermo21"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-card border border-border px-6 py-4 rounded-xl
-                transition-all duration-300 hover:border-accent hover:shadow-card hover:-translate-y-1 group animate-fade-up delay-400"
-            >
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 rounded-lg flex items-center justify-center">
-                <Instagram className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="font-medium text-foreground group-hover:text-accent transition-colors">
-                  @kochmitthermo21
-                </p>
-                <p className="text-sm text-muted-foreground">Folgen Sie mir auf Instagram</p>
-              </div>
-            </a>
           </div>
         </div>
       </div>
