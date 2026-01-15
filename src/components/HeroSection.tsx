@@ -15,7 +15,9 @@ const HeroSection = () => {
   }, []);
 
   const parallaxOffset = scrollY * 0.4;
-  const barProgress = Math.min(scrollY / 400, 1);
+  // Delayed bar progress - starts after 150px scroll, completes at 600px
+  const delayedScroll = Math.max(0, scrollY - 150);
+  const barProgress = Math.min(delayedScroll / 450, 1);
 
   return (
     <section className="relative min-h-screen pt-32 md:pt-40 overflow-hidden">
@@ -33,12 +35,12 @@ const HeroSection = () => {
             />
           </div>
           
-          {/* Animated Bar Overlay */}
+          {/* Animated Bar Overlay - White, from right to left */}
           <div 
-            className="absolute top-0 left-0 w-full bg-primary/90 z-10 transition-all duration-100"
+            className="absolute top-0 right-0 h-full bg-white z-10 transition-all duration-300 ease-out"
             style={{ 
-              height: `${barProgress * 100}%`,
-              opacity: barProgress > 0 ? 1 : 0
+              width: `${barProgress * 100}%`,
+              opacity: barProgress > 0 ? 0.95 : 0
             }}
           />
           
