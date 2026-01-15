@@ -15,8 +15,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Tagline */}
           <div className="text-center md:text-left">
-            <p className="font-serif text-2xl mb-2">kochmitthermo21</p>
-            <p className="text-sm opacity-70">Ihre Thermomix® Beraterin</p>
+            <p className="font-serif text-2xl mb-2">Bernhard Prager</p>
+            <p className="text-sm opacity-70">Ihr Thermomix® Berater</p>
+            <p className="text-xs opacity-50 mt-1">Viehtriftgasse 3, A-1210 Wien</p>
           </div>
 
           {/* Links */}
