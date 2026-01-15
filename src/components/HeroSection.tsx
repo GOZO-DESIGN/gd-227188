@@ -20,8 +20,8 @@ const HeroSection = () => {
   const barProgress = Math.min(delayedScroll / 450, 1);
 
   return (
-    <section className="relative min-h-screen pt-32 md:pt-40 overflow-hidden">
-      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-8rem)]">
+    <section className="relative min-h-screen pt-20 md:pt-24 overflow-hidden bg-white">
+      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-5rem)]">
         {/* Left Side - Image with Parallax */}
         <div className="relative lg:w-1/2 h-[50vh] lg:h-auto overflow-hidden">
           <div 
