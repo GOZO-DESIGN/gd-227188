@@ -1,9 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '@/assets/logo.avif';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { label: 'Start', href: '#' },
@@ -14,12 +24,16 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-white border-b border-border/50">
+    <header className={`fixed top-0 left-0 right-0 z-40 bg-white border-b border-border/50 transition-all duration-300 ${isScrolled ? 'py-1' : 'py-3'}`}>
       <div className="container-narrow">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="hover:opacity-80 transition-opacity duration-300">
-            <img src={logo} alt="kochmitthermo21 Logo" className="h-10 md:h-14 w-auto" />
+          <a href="#" className="hover:opacity-80 transition-all duration-300">
+            <img 
+              src={logo} 
+              alt="kochmitthermo21 Logo" 
+              className={`w-auto transition-all duration-300 ${isScrolled ? 'h-10 md:h-12' : 'h-16 md:h-24'}`} 
+            />
           </a>
 
           {/* Desktop Navigation */}
