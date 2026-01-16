@@ -74,15 +74,15 @@ const HeroSection = () => {
 
             {/* Animated Benefits */}
             <div className="space-y-3 mb-8">
-              <div className="flex items-center gap-3 opacity-0 animate-[fade-in_0.5s_ease-out_0.4s_forwards]">
+              <div className="flex items-center gap-3 opacity-0 animate-fade-in-delay-1">
                 <span className="text-primary text-xl">✓</span>
                 <span className="text-foreground font-medium">Mehr Zeit für dich und deine Familie.</span>
               </div>
-              <div className="flex items-center gap-3 opacity-0 animate-[fade-in_0.5s_ease-out_0.6s_forwards]">
+              <div className="flex items-center gap-3 opacity-0 animate-fade-in-delay-2">
                 <span className="text-primary text-xl">✓</span>
                 <span className="text-foreground font-medium">Weniger Stress beim Kochen.</span>
               </div>
-              <div className="flex items-center gap-3 opacity-0 animate-[fade-in_0.5s_ease-out_0.8s_forwards]">
+              <div className="flex items-center gap-3 opacity-0 animate-fade-in-delay-3">
                 <span className="text-primary text-xl">✓</span>
                 <span className="text-foreground font-medium">Mehr Genuss auf dem Teller.</span>
               </div>
