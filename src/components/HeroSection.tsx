@@ -55,15 +55,38 @@ const HeroSection = () => {
               Thermomix® Berater
             </span>
             
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl xl:text-6xl text-foreground leading-tight mb-6 animate-fade-up delay-100">
-              Kochen mit <br />
-              <span className="text-primary">Leidenschaft</span>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-4xl xl:text-5xl text-foreground leading-tight mb-6 animate-fade-up delay-100">
+              Endlich wieder entspannt kochen – <br />
+              <span className="text-primary">auch wenn im Alltag wenig Zeit bleibt</span>
             </h1>
             
-            <p className="text-lg text-muted-foreground max-w-lg mb-8 animate-fade-up delay-200">
-              Entdecken Sie die Welt des einfachen, gesunden und kreativen Kochens 
-              mit dem Thermomix®. Persönliche Beratung, die zu Ihnen passt.
+            <p className="text-lg text-muted-foreground max-w-lg mb-4 animate-fade-up delay-200">
+              Der Thermomix® TM7 hilft dir, schnell, gesund und abwechslungsreich zu kochen.
             </p>
+
+            <p className="text-lg text-muted-foreground max-w-lg mb-4 animate-fade-up delay-200">
+              Ich bin <strong className="text-foreground">Bernhard Prager</strong>, dein persönlicher Thermomix® Berater, und begleite dich vom ersten Kennenlernen bis zum Einzug in deine eigene Küche.
+            </p>
+
+            <p className="text-muted-foreground max-w-lg mb-6 animate-fade-up delay-200">
+              Schon viele Kundinnen und Kunden durfte ich auf ihrem Weg zum eigenen Thermomix begleiten.
+            </p>
+
+            {/* Animated Benefits */}
+            <div className="space-y-3 mb-8">
+              <div className="flex items-center gap-3 opacity-0 animate-[fade-in_0.5s_ease-out_0.4s_forwards]">
+                <span className="text-primary text-xl">✓</span>
+                <span className="text-foreground font-medium">Mehr Zeit für dich und deine Familie.</span>
+              </div>
+              <div className="flex items-center gap-3 opacity-0 animate-[fade-in_0.5s_ease-out_0.6s_forwards]">
+                <span className="text-primary text-xl">✓</span>
+                <span className="text-foreground font-medium">Weniger Stress beim Kochen.</span>
+              </div>
+              <div className="flex items-center gap-3 opacity-0 animate-[fade-in_0.5s_ease-out_0.8s_forwards]">
+                <span className="text-primary text-xl">✓</span>
+                <span className="text-foreground font-medium">Mehr Genuss auf dem Teller.</span>
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
               <a
@@ -84,19 +107,6 @@ const HeroSection = () => {
               >
                 Mehr erfahren
               </a>
-            </div>
-
-            {/* Stats Card */}
-            <div className="mt-12 flex items-center gap-6 animate-fade-up delay-400">
-              <div className="flex items-center gap-3 bg-muted/50 px-5 py-3 rounded-xl">
-                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-xl">👨‍🍳</span>
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">500+</p>
-                  <p className="text-xs text-muted-foreground">Zufriedene Kunden</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
