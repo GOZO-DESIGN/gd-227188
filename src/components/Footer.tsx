@@ -46,12 +46,6 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-10 pt-8 border-t border-white/10 text-center">
-          <p className="text-sm opacity-60 flex items-center justify-center gap-1">
-            © {currentYear} kochmitthermo21. Mit <Heart className="w-4 h-4 text-accent" /> erstellt.
-          </p>
-        </div>
       </div>
     </footer>
   );
