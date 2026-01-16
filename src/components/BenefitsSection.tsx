@@ -28,7 +28,7 @@ const BenefitsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="section-padding bg-background">
+    <section id="vorteile" className="section-padding bg-background">
       <div className="container-narrow" ref={ref}>
         {/* Section Header */}
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

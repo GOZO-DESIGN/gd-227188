@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero.webp';
 
 const HeroSection = () => {
@@ -89,19 +90,17 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-300">
-              <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
+              <Link
+                to="/beratung"
                 className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-medium
                   transition-all duration-300 hover:bg-primary/90 hover:shadow-elevated hover:-translate-y-1 group"
               >
                 Jetzt beraten lassen
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </a>
+              </Link>
               
               <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
+                href="#vorteile"
                 className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-primary text-primary px-8 py-4 rounded-lg font-medium
                   transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
               >
