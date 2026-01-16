@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Phone, Mail, MapPin, Send, ChevronRight, ChevronLeft, Calendar, Check } from 'lucide-react';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 const serviceOptions = [
   { id: 'showkochen', label: 'Showkochen in Wien/NÖ/BGLD' },
@@ -9,6 +10,7 @@ const serviceOptions = [
 ];
 
 const ContactSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     service: '',
@@ -85,19 +87,19 @@ const ContactSection = () => {
 
   return (
     <section className="section-padding gradient-warm" id="kontakt">
-      <div className="container-narrow">
+      <div className="container-narrow" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Contact Info */}
-          <div>
-            <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-4 animate-fade-up">
+          <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
+            <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-4">
               Kontakt
             </span>
             
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6 animate-fade-up delay-100">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
               Lassen Sie uns <br />ins Gespräch kommen
             </h2>
             
-            <p className="text-muted-foreground mb-10 animate-fade-up delay-200">
+            <p className="text-muted-foreground mb-10">
               Haben Sie Fragen zum Thermomix® oder möchten Sie eine persönliche 
               Vorführung erleben? Ich freue mich auf Ihre Nachricht!
             </p>
@@ -106,7 +108,8 @@ const ContactSection = () => {
             <div className="space-y-6 mb-10">
               <a
                 href="tel:+436763979250"
-                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors duration-300 group animate-fade-up delay-300"
+                className={`flex items-center gap-4 text-muted-foreground hover:text-foreground transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                style={{ transitionDelay: isVisible ? '200ms' : '0ms' }}
               >
                 <div className="w-12 h-12 bg-card rounded-xl flex items-center justify-center shadow-soft group-hover:shadow-card transition-shadow duration-300">
                   <Phone className="w-5 h-5 text-primary" />
@@ -119,7 +122,8 @@ const ContactSection = () => {
 
               <a
                 href="mailto:office@mixmitprager.at"
-                className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors duration-300 group animate-fade-up delay-400"
+                className={`flex items-center gap-4 text-muted-foreground hover:text-foreground transition-all duration-500 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                style={{ transitionDelay: isVisible ? '300ms' : '0ms' }}
               >
                 <div className="w-12 h-12 bg-card rounded-xl flex items-center justify-center shadow-soft group-hover:shadow-card transition-shadow duration-300">
                   <Mail className="w-5 h-5 text-primary" />
@@ -130,7 +134,10 @@ const ContactSection = () => {
                 </div>
               </a>
 
-              <div className="flex items-center gap-4 animate-fade-up delay-500">
+              <div 
+                className={`flex items-center gap-4 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                style={{ transitionDelay: isVisible ? '400ms' : '0ms' }}
+              >
                 <div className="w-12 h-12 bg-card rounded-xl flex items-center justify-center shadow-soft">
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
@@ -144,7 +151,7 @@ const ContactSection = () => {
           </div>
 
           {/* Dynamic Contact Form */}
-          <div className="animate-slide-in-right delay-200">
+          <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <form 
               className="bg-card p-8 lg:p-10 rounded-2xl shadow-card"
               onSubmit={handleSubmit}

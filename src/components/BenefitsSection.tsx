@@ -1,4 +1,5 @@
 import { Clock, Heart, Sparkles, Users } from 'lucide-react';
+import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 const benefits = [
   {
@@ -24,18 +25,20 @@ const benefits = [
 ];
 
 const BenefitsSection = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
     <section className="section-padding bg-background">
-      <div className="container-narrow">
+      <div className="container-narrow" ref={ref}>
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4 animate-fade-up">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
             Ihre Vorteile
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6 animate-fade-up delay-100">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
             Warum Thermomix®?
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto animate-fade-up delay-200">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Der Thermomix® vereint über 20 Küchengeräte in einem. Entdecken Sie, 
             wie er Ihren Alltag bereichert.
           </p>
@@ -46,8 +49,10 @@ const BenefitsSection = () => {
           {benefits.map((benefit, index) => (
             <div
               key={benefit.title}
-              className={`group bg-card p-6 lg:p-8 rounded-2xl shadow-soft hover-lift animate-fade-up`}
-              style={{ animationDelay: `${(index + 3) * 100}ms` }}
+              className={`group bg-card p-6 lg:p-8 rounded-2xl shadow-soft hover-lift transition-all duration-700 ${
+                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: isVisible ? `${(index + 1) * 150}ms` : '0ms' }}
             >
               <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center mb-5 
                 transition-all duration-300 group-hover:bg-primary group-hover:scale-110">
