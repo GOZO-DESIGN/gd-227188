@@ -47,7 +47,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="kochmitthermo21 Logo" 
-              className={`w-auto transition-all duration-300 ${isScrolled ? 'h-10 md:h-12' : 'h-16 md:h-24'}`} 
+              className={`w-auto transition-all duration-300 ${isScrolled ? 'h-14 md:h-16' : 'h-20 md:h-32'}`} 
             />
           </Link>
 
