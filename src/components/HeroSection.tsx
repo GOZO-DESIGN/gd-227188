@@ -101,6 +101,10 @@ const HeroSection = () => {
               
               <a
                 href="#vorteile"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('vorteile')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-primary text-primary px-8 py-4 rounded-lg font-medium
                   transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
               >
