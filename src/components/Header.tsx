@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo.svg';
 
 const WHATSAPP_URL = 'https://api.whatsapp.com/send/?phone=%2B436763979250&text&type=phone_number&app_absent=0';
 
