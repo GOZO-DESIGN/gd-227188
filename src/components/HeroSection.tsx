@@ -21,10 +21,10 @@ const HeroSection = () => {
   const barProgress = Math.min(delayedScroll / 450, 1);
 
   return (
-    <section className="relative min-h-screen pt-20 md:pt-24 overflow-hidden bg-white">
-      <div className="flex flex-col lg:flex-row lg:min-h-[calc(100vh-5rem)]">
+    <section className="relative pt-20 md:pt-24 overflow-hidden bg-white">
+      <div className="flex flex-col lg:flex-row">
         {/* Left Side - Image with Parallax */}
-        <div className="relative lg:w-1/2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-0 lg:h-auto overflow-hidden flex-shrink-0">
+        <div className="relative lg:w-1/2 min-h-[35vh] sm:min-h-[40vh] lg:min-h-[calc(100vh-6rem)] overflow-hidden flex-shrink-0">
           <div 
             className="absolute inset-0 w-full h-[120%]"
             style={{ transform: `translateY(-${parallaxOffset}px)` }}
@@ -50,8 +50,8 @@ const HeroSection = () => {
         </div>
 
         {/* Right Side - Content with white background overlapping into image */}
-        <div className="relative lg:w-1/2 bg-white lg:-ml-24 z-20 flex items-center">
-          <div className="w-full px-6 py-12 lg:py-0 lg:pl-16 lg:pr-12 xl:pl-24 xl:pr-20">
+        <div className="relative lg:w-1/2 bg-white lg:-ml-24 z-20 flex items-start lg:items-center">
+          <div className="w-full px-6 py-8 lg:py-8 lg:pl-16 lg:pr-12 xl:pl-24 xl:pr-20">
             <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-4 animate-fade-up">
               Thermomix® Berater
             </span>
