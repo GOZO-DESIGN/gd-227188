@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 // Images
-import heroThermomix from '@/assets/hero-thermomix.jpg';
+import heroThermomix from '@/assets/thermomix-hero.jpg';
 import familie1 from '@/assets/familie-1.jpg';
 import familie2 from '@/assets/familie-2.jpg';
 import gesund1 from '@/assets/gesund-1.jpg';
@@ -80,39 +80,63 @@ const BenefitsSection = () => {
     <section id="vorteile" className="bg-background">
       {/* INTRO */}
       <div className="section-padding" ref={introRef}>
-        <div className={`container-narrow text-center transition-all duration-700 ${introVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-            Dein Küchenhelfer
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
-            Warum der Thermomix® dein Leben leichter macht
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-8">
-            Ein Gerät, das mitdenkt, Zeit spart und Kochen wieder entspannt macht.
-          </p>
-          <p className="text-muted-foreground max-w-3xl mx-auto mb-12">
-            Der Alltag ist oft hektisch – trotzdem wollen wir gut und frisch essen.
-          </p>
-
-          {/* Hero TM Image with effect */}
-          <div className="relative max-w-2xl mx-auto mb-12">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-3xl blur-3xl transform scale-95"></div>
-            <img
-              src={heroThermomix}
-              alt="Thermomix TM7"
-              className="relative rounded-3xl shadow-2xl w-full hover:scale-[1.02] transition-transform duration-500"
-            />
+        <div className={`container-narrow transition-all duration-700 ${introVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {/* Header */}
+          <div className="text-center mb-16">
+            <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
+              Dein Küchenhelfer
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
+              Warum der Thermomix® dein Leben leichter macht
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Ein Gerät, das mitdenkt, Zeit spart und Kochen wieder entspannt macht.
+            </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-4 text-muted-foreground">
-            <p>
-              Der Thermomix® TM7 hilft dir dabei, schnell, gesund und abwechslungsreich zu kochen, 
-              ohne stundenlang in der Küche zu stehen.
-            </p>
-            <p>
-              Er vereint viele Küchengeräte in einem und führt dich Schritt für Schritt durch jedes 
-              Rezept – ideal für Anfänger und erfahrene Köche.
-            </p>
+          {/* Two-column layout */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: Text content */}
+            <div className="order-2 lg:order-1">
+              <p className="text-muted-foreground text-lg mb-6">
+                Der Alltag ist oft hektisch – trotzdem wollen wir gut und frisch essen.
+              </p>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  Der Thermomix® TM7 hilft dir dabei, schnell, gesund und abwechslungsreich zu kochen, 
+                  ohne stundenlang in der Küche zu stehen.
+                </p>
+                <p>
+                  Er vereint viele Küchengeräte in einem und führt dich Schritt für Schritt durch jedes 
+                  Rezept – ideal für Anfänger und erfahrene Köche.
+                </p>
+              </div>
+              
+              {/* Feature highlights */}
+              <div className="mt-8 grid grid-cols-2 gap-4">
+                {[
+                  { number: '20+', label: 'Funktionen in einem Gerät' },
+                  { number: '100.000+', label: 'Rezepte auf Cookidoo®' },
+                ].map((item) => (
+                  <div key={item.label} className="bg-secondary/50 rounded-xl p-4 text-center">
+                    <p className="text-2xl font-serif text-primary font-bold">{item.number}</p>
+                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: Image */}
+            <div className="order-1 lg:order-2 relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-full blur-3xl"></div>
+              <div className="relative">
+                <img
+                  src={heroThermomix}
+                  alt="Thermomix TM7"
+                  className="relative w-full max-w-md mx-auto drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
