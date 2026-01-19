@@ -171,7 +171,7 @@ const BenefitsSection = () => {
                 <ul className="space-y-2">
                   {['Familien', 'Berufstätige', 'Alle mit wenig Zeit'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-muted-foreground">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-primary font-bold">✓</span>
                       {item}
                     </li>
                   ))}
@@ -242,7 +242,7 @@ const BenefitsSection = () => {
                     'Gemeinsames Kochen macht sogar Spaß'
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-muted-foreground">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-primary font-bold">✓</span>
                       {item}
                     </li>
                   ))}
@@ -286,7 +286,7 @@ const BenefitsSection = () => {
                 <ul className="space-y-2">
                   {['Zutaten', 'Portionsgrößen', 'Ernährungsform'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-muted-foreground">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-primary font-bold">✓</span>
                       {item}
                     </li>
                   ))}
@@ -342,7 +342,7 @@ const BenefitsSection = () => {
                 <ul className="space-y-2">
                   {['Gelinggarantie', 'Wochenplanung', 'Einkaufslisten'].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-muted-foreground">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-primary font-bold">✓</span>
                       {item}
                     </li>
                   ))}
@@ -441,7 +441,7 @@ const BenefitsSection = () => {
                   'Tipps & Rezepte für den Alltag'
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-muted-foreground">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                    <span className="text-primary font-bold">✓</span>
                     {item}
                   </li>
                 ))}
