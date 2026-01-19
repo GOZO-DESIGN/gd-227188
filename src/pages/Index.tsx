@@ -4,6 +4,7 @@ import PasswordProtection from '@/components/PasswordProtection';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import BenefitsSection from '@/components/BenefitsSection';
+import OffersSection from '@/components/OffersSection';
 import AboutSection from '@/components/AboutSection';
 import GoogleReviewsSection from '@/components/GoogleReviewsSection';
 import InstagramSection from '@/components/InstagramSection';
@@ -61,6 +62,7 @@ const Index = () => {
         <main>
           <HeroSection />
           <BenefitsSection />
+          <OffersSection />
           <AboutSection aboutImage={aboutImage} />
           <GoogleReviewsSection />
           <InstagramSection />
