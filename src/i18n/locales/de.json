@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "start": "Start",
+    "tm7": "Was ist der TM7",
+    "showkochen": "Showkochen",
+    "beratung": "Beratung",
+    "galerie": "Galerie",
+    "bookConsultation": "Beratung buchen"
+  },
+  "hero": {
+    "tagline": "Dein Thermomix® Berater",
+    "title": "Kochen neu erleben",
+    "titleHighlight": "mit dem Thermomix®",
+    "subtitle": "Ich begleite dich auf deinem Weg zum Thermomix® – persönlich, ehrlich und mit Leidenschaft für gutes Essen.",
+    "cta": "Jetzt Beratung anfragen",
+    "ctaSecondary": "Mehr erfahren"
+  },
+  "beratung": {
+    "tagline": "Beratung bei mir",
+    "title": "Dein persönlicher Weg zum",
+    "titleHighlight": "Thermomix",
+    "intro": "Ich begleite dich Schritt für Schritt auf deinem Thermomix-Weg:",
+    "promise": "Persönlich, ehrlich und auch nach dem Kauf weiterhin für dich da.",
+    "together": "Gemeinsam finden wir heraus, ob der Thermomix zu dir passt.",
+    "startButton": "Beratung starten",
+    "quickLinks": {
+      "tm7": "Was ist der TM7?",
+      "showkochen": "Showkochen",
+      "galerie": "Galerie"
+    },
+    "steps": {
+      "step1": {
+        "title": "Kontakt & Kennenlernen",
+        "description": "Du meldest dich bei mir unkompliziert: per Website-Formular, WhatsApp oder Instagram.",
+        "details": "Wir lernen uns kurz telefonisch kennen und ich höre mir an, was dir im Küchenalltag wirklich fehlt. So kann ich dich genau dort abholen, wo du gerade stehst.",
+        "button": "Jetzt Kontakt aufnehmen"
+      },
+      "step2": {
+        "title": "Persönliche Beratung",
+        "description": "In einem persönlichen Gespräch, online oder vor Ort, sprechen wir über deine Wünsche, deinen Alltag und deine Kochgewohnheiten."
+      },
+      "step3": {
+        "title": "Thermomix live erleben beim Showkochen",
+        "description": "Beim Showkochen kannst du den Thermomix mit deiner Familie sowie deinen Freundinnen und Freunden live erleben. Ganz entspannt bei dir zu Hause!",
+        "details": "Du siehst, wie vielseitig und einfach das Kochen damit ist und bekommst ein echtes Gefühl für das Gerät in deiner Küche.",
+        "button": "Showkochen buchen"
+      },
+      "step4": {
+        "title": "Im Alltag testen",
+        "optional": "(optional)",
+        "description": "Wenn du möchtest, kannst du den Thermomix auch ein paar Tage zu Hause testen. Ich leihe dir dafür einfach mein Gerät.",
+        "details": "So erlebst du ganz real, wie er dich im Alltag begleiten wird. Familienküche, schnelles Abendessen oder gesunde Gerichte: Du entscheidest, was du ausprobieren möchtest."
+      },
+      "step5": {
+        "title": "Bestellung und Lieferung",
+        "description": "Hast du dich für den Thermomix entschieden, begleite ich dich bei der Bestellung und kümmere mich um alle Details.",
+        "details": "Gemeinsam klären wir Bezahlung, Finanzierungsmöglichkeiten und Liefertermine.",
+        "highlights": ["Einfach", "Transparent", "Unkompliziert"]
+      },
+      "step6": {
+        "title": "Start & Persönliche Einschulung",
+        "description": "Kurz vor einer Thermomixlieferung kontaktiere ich dich. Wenn der Thermomix bei dir angekommen ist, unterstütze ich dich beim Einstieg.",
+        "details": "Ich zeige dir die wichtigsten Funktionen, gebe dir Tipps für die ersten Rezepte und helfe dir, dich schnell sicher mit dem Gerät zu fühlen. So macht Kochen von Anfang an Spaß."
+      }
+    },
+    "afterPurchase": {
+      "tagline": "Nach dem Kauf",
+      "title": "Mehr als Beratung – persönliche Begleitung",
+      "subtitle": "Mein Ziel ist es, dass du dich mit deinem Gerät langfristig wohlfühlst und ihn mit Freude in deinem Alltag integrierst.",
+      "outro": "Vom ersten Gespräch bis lange nach dem Kauf bin ich gerne für dich da.",
+      "services": {
+        "news": {
+          "title": "Infos & Neuigkeiten",
+          "description": "Updates zu Aktionen, Zubehör und neuen Funktionen von Vorwerk."
+        },
+        "recipes": {
+          "title": "Rezepte & Inspiration",
+          "description": "Ideen für den Alltag, saisonale Rezepte und Tipps zum Kochen."
+        },
+        "service": {
+          "title": "Service & Reparatur",
+          "description": "Ich unterstütze dich bei Reparaturen und Garantiefällen mit Vorwerk."
+        },
+        "handling": {
+          "title": "Abwicklung & Einsendung",
+          "description": "Hilfe bei Versand, Austauschgeräten und allen organisatorischen Themen."
+        },
+        "contact": {
+          "title": "Persönlicher Kontakt",
+          "description": "Du kannst dich jederzeit bei Fragen direkt an mich wenden."
+        }
+      }
+    },
+    "cta": {
+      "title": "Bereit für deine persönliche Beratung?",
+      "subtitle": "Kontaktiere mich jetzt und wir finden gemeinsam heraus, ob der Thermomix zu dir passt.",
+      "contact": "Kontakt aufnehmen"
+    }
+  },
+  "showkochen": {
+    "tagline": "Live-Erlebnis",
+    "title": "Erlebe den Thermomix® TM7 live – bei einem",
+    "titleHighlight": "Showkochen",
+    "titleEnd": "bei dir zu Hause",
+    "subtitle": "In ca. 2-3 Stunden zeige ich dir, wie der TM7 im Alltag wirklich arbeitet: schnelle Schritte, klare Anleitung, geniale Funktionen – und am Ende wird natürlich fein gegessen.",
+    "badges": {
+      "free": "Unverbindlich",
+      "noCost": "Kostenlos",
+      "noObligation": "Ohne Verpflichtung"
+    },
+    "requestButton": "Showkochen anfragen",
+    "menuButton": "Zum Showkochmenü",
+    "whatIs": {
+      "tagline": "Das Erlebnis",
+      "title": "Was ist ein Showkochen?",
+      "intro": "Showkochen bedeutet: du siehst den TM7 im Einsatz, nicht nur auf Bildern.",
+      "description": "Wir kochen gemeinsam ein komplettes Menü. Du bekommst ein Gefühl dafür, wie schnell, sauber und entspannt Kochen mit dem Thermomix sein kann.",
+      "expectTitle": "Das erwartet dich:",
+      "expectations": [
+        "Live-Zubereitung Schritt für Schritt",
+        "Tipps für Alltag, Familie & Meal-Prep",
+        "Verkostung der Gerichte",
+        "Alle Fragen sind willkommen"
+      ]
+    },
+    "important": {
+      "tagline": "Wichtig",
+      "title": "Kein Druck, nur Inspiration",
+      "description": "Das Showkochen ist unverbindlich. Du musst nichts kaufen, nichts unterschreiben! Du nimmst einfach Ideen, Infos und Eindrücke mit."
+    },
+    "forWhom": {
+      "tagline": "Zielgruppe",
+      "title": "Für wen ist das ideal?",
+      "families": {
+        "title": "Familien",
+        "desc": "… die Zeit sparen wollen"
+      },
+      "professionals": {
+        "title": "Berufstätige",
+        "desc": "… die trotzdem frisch kochen möchten"
+      },
+      "curious": {
+        "title": "Thermomix-Neugierige",
+        "desc": "… die vor dem Kauf sicher sein wollen"
+      },
+      "switchers": {
+        "title": "TM-Umsteiger",
+        "desc": "… die bereits einen Thermomix haben aber den TM7 kennenlernen möchten"
+      }
+    },
+    "process": {
+      "tagline": "Der Ablauf",
+      "title": "Wie läuft ein Showkochen ab?",
+      "step1": {
+        "title": "Anfrage schicken",
+        "desc": "Du benutzt mein Kontaktformular oder kontaktierst mich über WhatsApp."
+      },
+      "step2": {
+        "title": "Termin & Ort",
+        "desc": "Wir machen einen Termin aus – bei dir zu Hause oder nach Vereinbarung."
+      },
+      "step3": {
+        "title": "Live kochen & genießen",
+        "desc": "Ich bringe den Thermomix mit, wir kochen gemeinsam mit dir und deinen Freunden, du probierst alles und bekommst praktische Tipps."
+      },
+      "step4": {
+        "title": "Danach",
+        "desc": "Wenn du willst, helfe ich dir beim nächsten Schritt (z.B. Kauf, Finanzierung, Zubehör)."
+      }
+    },
+    "menu": {
+      "tagline": "Das Menü",
+      "title": "Showkochmenü",
+      "subtitle": "Es handelt sich hierbei um ein Standardmenü. Gerne stelle ich mit dir auch ein individuelles Menü zusammen.",
+      "starter": "Vorspeise",
+      "main": "Hauptspeise",
+      "dessert": "Nachspeise",
+      "recipeLink": "Rezept auf Cookidoo®"
+    },
+    "cta": {
+      "title": "Bereit für dein Showkochen?",
+      "subtitle": "Kontaktiere mich jetzt und erlebe den Thermomix® TM7 live in Aktion.",
+      "whatsapp": "WhatsApp schreiben"
+    }
+  },
+  "common": {
+    "step": "Schritt",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "learnMore": "Mehr erfahren"
+  }
+}

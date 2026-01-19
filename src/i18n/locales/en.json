@@ -1,0 +1,192 @@
+{
+  "nav": {
+    "start": "Home",
+    "tm7": "What is the TM7",
+    "showkochen": "Cooking Show",
+    "beratung": "Consultation",
+    "galerie": "Gallery",
+    "bookConsultation": "Book Consultation"
+  },
+  "hero": {
+    "tagline": "Your Thermomix® Consultant",
+    "title": "Experience cooking",
+    "titleHighlight": "with the Thermomix®",
+    "subtitle": "I accompany you on your journey to the Thermomix® – personal, honest and with passion for good food.",
+    "cta": "Request Consultation",
+    "ctaSecondary": "Learn More"
+  },
+  "beratung": {
+    "tagline": "Consultation with me",
+    "title": "Your personal path to the",
+    "titleHighlight": "Thermomix",
+    "intro": "I accompany you step by step on your Thermomix journey:",
+    "promise": "Personal, honest and there for you even after the purchase.",
+    "together": "Together we find out if the Thermomix is right for you.",
+    "startButton": "Start Consultation",
+    "quickLinks": {
+      "tm7": "What is the TM7?",
+      "showkochen": "Cooking Show",
+      "galerie": "Gallery"
+    },
+    "steps": {
+      "step1": {
+        "title": "Contact & Introduction",
+        "description": "Contact me easily: via website form, WhatsApp or Instagram.",
+        "details": "We briefly get to know each other by phone and I listen to what you really miss in your daily kitchen routine. This way I can pick you up exactly where you are.",
+        "button": "Contact Now"
+      },
+      "step2": {
+        "title": "Personal Consultation",
+        "description": "In a personal conversation, online or on-site, we discuss your wishes, your daily routine and your cooking habits."
+      },
+      "step3": {
+        "title": "Experience Thermomix live at a Cooking Show",
+        "description": "At a cooking show, you can experience the Thermomix live with your family and friends. Relaxed at your home!",
+        "details": "You'll see how versatile and easy cooking can be and get a real feel for the device in your kitchen.",
+        "button": "Book Cooking Show"
+      },
+      "step4": {
+        "title": "Test in Everyday Life",
+        "optional": "(optional)",
+        "description": "If you want, you can also test the Thermomix at home for a few days. I'll simply lend you my device.",
+        "details": "This way you experience how it will accompany you in everyday life. Family cooking, quick dinner or healthy dishes: You decide what you want to try."
+      },
+      "step5": {
+        "title": "Order and Delivery",
+        "description": "If you've decided on the Thermomix, I'll accompany you through the order and take care of all the details.",
+        "details": "Together we clarify payment, financing options and delivery dates.",
+        "highlights": ["Simple", "Transparent", "Uncomplicated"]
+      },
+      "step6": {
+        "title": "Start & Personal Training",
+        "description": "Shortly before a Thermomix delivery, I'll contact you. When the Thermomix has arrived, I support you in getting started.",
+        "details": "I show you the most important functions, give you tips for the first recipes and help you feel confident with the device quickly. This way cooking is fun from the start."
+      }
+    },
+    "afterPurchase": {
+      "tagline": "After Purchase",
+      "title": "More than consultation – personal support",
+      "subtitle": "My goal is for you to feel comfortable with your device long-term and integrate it into your daily life with joy.",
+      "outro": "From the first conversation until long after the purchase, I'm happy to be there for you.",
+      "services": {
+        "news": {
+          "title": "Info & News",
+          "description": "Updates on promotions, accessories and new features from Vorwerk."
+        },
+        "recipes": {
+          "title": "Recipes & Inspiration",
+          "description": "Ideas for everyday life, seasonal recipes and cooking tips."
+        },
+        "service": {
+          "title": "Service & Repair",
+          "description": "I support you with repairs and warranty cases with Vorwerk."
+        },
+        "handling": {
+          "title": "Processing & Shipping",
+          "description": "Help with shipping, replacement devices and all organizational matters."
+        },
+        "contact": {
+          "title": "Personal Contact",
+          "description": "You can always contact me directly with questions."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready for your personal consultation?",
+      "subtitle": "Contact me now and together we'll find out if the Thermomix is right for you.",
+      "contact": "Get in Touch"
+    }
+  },
+  "showkochen": {
+    "tagline": "Live Experience",
+    "title": "Experience the Thermomix® TM7 live – at a",
+    "titleHighlight": "Cooking Show",
+    "titleEnd": "at your home",
+    "subtitle": "In about 2-3 hours, I'll show you how the TM7 really works in everyday life: quick steps, clear instructions, genius features – and of course, we eat well at the end.",
+    "badges": {
+      "free": "Non-binding",
+      "noCost": "Free",
+      "noObligation": "No Obligation"
+    },
+    "requestButton": "Request Cooking Show",
+    "menuButton": "View Menu",
+    "whatIs": {
+      "tagline": "The Experience",
+      "title": "What is a Cooking Show?",
+      "intro": "A cooking show means: you see the TM7 in action, not just in pictures.",
+      "description": "We cook a complete menu together. You'll get a feel for how fast, clean and relaxed cooking with the Thermomix can be.",
+      "expectTitle": "What to expect:",
+      "expectations": [
+        "Live preparation step by step",
+        "Tips for everyday life, family & meal prep",
+        "Tasting of the dishes",
+        "All questions are welcome"
+      ]
+    },
+    "important": {
+      "tagline": "Important",
+      "title": "No pressure, just inspiration",
+      "description": "The cooking show is non-binding. You don't have to buy anything, sign anything! You simply take ideas, information and impressions with you."
+    },
+    "forWhom": {
+      "tagline": "Target Group",
+      "title": "Who is this ideal for?",
+      "families": {
+        "title": "Families",
+        "desc": "… who want to save time"
+      },
+      "professionals": {
+        "title": "Working People",
+        "desc": "… who still want to cook fresh"
+      },
+      "curious": {
+        "title": "Thermomix Curious",
+        "desc": "… who want to be sure before buying"
+      },
+      "switchers": {
+        "title": "TM Switchers",
+        "desc": "… who already have a Thermomix but want to get to know the TM7"
+      }
+    },
+    "process": {
+      "tagline": "The Process",
+      "title": "How does a Cooking Show work?",
+      "step1": {
+        "title": "Send Inquiry",
+        "desc": "Use my contact form or contact me via WhatsApp."
+      },
+      "step2": {
+        "title": "Date & Location",
+        "desc": "We schedule an appointment – at your home or by arrangement."
+      },
+      "step3": {
+        "title": "Cook & Enjoy Live",
+        "desc": "I bring the Thermomix, we cook together with you and your friends, you try everything and get practical tips."
+      },
+      "step4": {
+        "title": "Afterwards",
+        "desc": "If you want, I'll help you with the next step (e.g. purchase, financing, accessories)."
+      }
+    },
+    "menu": {
+      "tagline": "The Menu",
+      "title": "Cooking Show Menu",
+      "subtitle": "This is a standard menu. I'm happy to put together an individual menu with you.",
+      "starter": "Starter",
+      "main": "Main Course",
+      "dessert": "Dessert",
+      "recipeLink": "Recipe on Cookidoo®"
+    },
+    "cta": {
+      "title": "Ready for your Cooking Show?",
+      "subtitle": "Contact me now and experience the Thermomix® TM7 live in action.",
+      "whatsapp": "Message on WhatsApp"
+    }
+  },
+  "common": {
+    "step": "Step",
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "learnMore": "Learn More"
+  }
+}
