@@ -534,5 +534,40 @@
     "whatsapp": "WhatsApp",
     "instagram": "Instagram",
     "learnMore": "Learn More"
+  },
+  "imprint": {
+    "title": "Imprint",
+    "infoTitle": "Information according to § 5 ECG",
+    "contactTitle": "Contact",
+    "businessTitle": "Business Information",
+    "businessInfo": "Independent sales representative for Vorwerk Austria GmbH & Co KG. The trade license was issued by the competent authority.",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimerText": "The contents of this website were created with the greatest possible care. However, no guarantee can be given for the correctness, completeness and topicality of the contents. Use of the content is at the user's own risk."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "generalTitle": "General Information",
+    "generalText": "The protection of your personal data is important to us. We process your data in accordance with applicable data protection laws, in particular the GDPR.",
+    "dataCollectionTitle": "Data Collection on this Website",
+    "dataCollectionText": "Data processing on this website is carried out by the website operator. Contact details can be found in the imprint. Your data is collected when you provide it to us (e.g. via the contact form).",
+    "cookiesTitle": "Cookies",
+    "cookiesText": "This website uses technically necessary cookies to ensure functionality. These cookies are automatically deleted when you close your browser.",
+    "rightsTitle": "Your Rights",
+    "rightsText": "You have the right to information, correction, deletion and restriction of processing of your personal data. You also have a right to object to processing and a right to data portability.",
+    "contactTitle": "Data Protection Contact",
+    "contactText": "If you have any questions about the collection, processing or use of your personal data, please contact:"
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "scopeTitle": "1. Scope",
+    "scopeText": "These terms and conditions apply to all consulting services and sales initiated via this website or through personal consultation.",
+    "servicesTitle": "2. Services",
+    "servicesText": "The consulting services offered include the presentation and demonstration of Thermomix® products. Sales are made exclusively through Vorwerk Austria GmbH & Co KG.",
+    "liabilityTitle": "3. Liability",
+    "liabilityText": "Liability for slightly negligent breaches of duty is excluded, unless essential contractual obligations or damages resulting from injury to life, body or health are affected.",
+    "copyrightTitle": "4. Copyright",
+    "copyrightText": "The content and works created by the site operator on these pages are subject to Austrian copyright law. Reproduction, processing, distribution and any kind of exploitation outside the limits of copyright require written consent.",
+    "finalTitle": "5. Final Provisions",
+    "finalText": "Austrian law applies. The place of jurisdiction is Vienna, where legally permissible."
   }
 }
