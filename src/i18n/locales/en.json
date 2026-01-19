@@ -8,12 +8,141 @@
     "bookConsultation": "Book Consultation"
   },
   "hero": {
+    "tagline": "Thermomix® Consultant",
+    "title": "Finally cook relaxed again –",
+    "titleHighlight": "even when there's little time in everyday life",
+    "subtitle": "The Thermomix® TM7 helps you cook quickly, healthily and varied.",
+    "intro": "I am <strong>Bernhard Prager</strong>, your personal Thermomix® consultant, and I accompany you from the first introduction to moving into your own kitchen.",
+    "customers": "I have already accompanied many customers on their way to their own Thermomix.",
+    "benefits": {
+      "time": "More time for you and your family.",
+      "stress": "Less stress while cooking.",
+      "taste": "More enjoyment on the plate."
+    },
+    "cta": "Get consultation now",
+    "ctaSecondary": "Learn more"
+  },
+  "benefits": {
+    "tagline": "Your kitchen helper",
+    "title": "Why the Thermomix® makes your life easier",
+    "subtitle": "A device that thinks ahead, saves time and makes cooking relaxed again.",
+    "intro": {
+      "text1": "Everyday life is often hectic – yet we want to eat well and fresh.",
+      "text2": "The Thermomix® TM7 helps you cook quickly, healthily and varied without spending hours in the kitchen.",
+      "text3": "It combines many kitchen appliances in one and guides you step by step through every recipe – ideal for beginners and experienced cooks."
+    },
+    "stats": {
+      "functions": "Functions in one device",
+      "recipes": "Recipes on Cookidoo®"
+    },
+    "time": {
+      "tagline": "Time saving",
+      "title": "More time in everyday life",
+      "subtitle": "Less effort – more time for you",
+      "text1": "The Thermomix® takes over many work steps simultaneously.",
+      "text2": "While the food cooks, you can take care of other things.",
+      "idealFor": "Ideal for:",
+      "list": ["Families", "Working people", "Everyone with little time"]
+    },
+    "family": {
+      "tagline": "Families",
+      "title": "Perfect for families",
+      "subtitle": "Less stress, more time together",
+      "text1": "The Thermomix® cooks while you can take care of your children.",
+      "text2": "Many dishes are quickly prepared and succeed almost on the side.",
+      "practicalFor": "Especially practical for families:",
+      "list": [
+        "Make baby food and purees yourself",
+        "Prepare child-friendly dishes quickly",
+        "Snacks without additives",
+        "Cooking together is even fun"
+      ],
+      "outro": "This leaves more time for what really counts: eating together, laughing and spending time."
+    },
+    "health": {
+      "tagline": "Health",
+      "title": "Healthy cooking becomes easy",
+      "subtitle": "Fresh, without ready-made products",
+      "text1": "You cook with fresh ingredients and decide for yourself what goes into your food.",
+      "text2": "From quick dishes to healthy snacks for children! Everything succeeds uncomplicated.",
+      "youDecide": "You decide:",
+      "list": ["Ingredients", "Portion sizes", "Diet type"]
+    },
+    "cookidoo": {
+      "tagline": "Recipes",
+      "title": "Thousands of recipes with instructions",
+      "subtitle": "Cooking with Cookidoo®",
+      "text1": "Recipes directly on the display, guided step by step.",
+      "text2": "The Thermomix® automatically sets time and temperature.",
+      "advantages": "Advantages:",
+      "list": ["Success guarantee", "Weekly planning", "Shopping lists"]
+    },
+    "functions": {
+      "tagline": "Versatility",
+      "title": "One device with many functions",
+      "subtitle": "The Thermomix® replaces many devices:",
+      "outro": "Fewer devices, less washing up, more space."
+    },
+    "profi": {
+      "tagline": "For everyone",
+      "title": "For beginners & cooking pros",
+      "subtitle": "Whether you're a beginner or love cooking:",
+      "text": "The Thermomix® adapts to you – with guided recipes or free cooking.",
+      "beginners": "For beginners:",
+      "beginnersList": ["Step by step recipes", "Success guarantee", "No prior knowledge needed"],
+      "pros": "For cooking pros:",
+      "prosList": ["Full manual control", "Create your own recipes", "Precise settings"]
+    },
+    "support": {
+      "tagline": "Personal",
+      "title": "Personal support",
+      "subtitle": "I accompany you from the first conversation until after the purchase",
+      "text1": "You don't just get a device, but also personal support.",
+      "text2": "I'm here for questions, tips and training.",
+      "services": "My services:",
+      "list": ["Consultation & demonstration", "Personal training", "Long-term support"]
+    },
+    "cta": {
+      "title": "Ready for more ease in the kitchen?",
+      "subtitle": "Let's find out together if the Thermomix® is right for you.",
+      "button": "Request consultation now"
+    }
+  },
+  "offers": {
+    "tagline": "Promotions & Offers",
+    "title": "Current Offers",
+    "subtitle": "Secure exclusive benefits and promotions around the Thermomix® TM7 now.",
+    "moreInfo": "More info & request offer",
+    "financing": {
+      "title": "Financing through Denzel Bank available",
+      "text1": "Would you like to pay for your Thermomix® flexibly?",
+      "text2": "Financing is possible through Denzel Bank AG. I'll be happy to inform you about the current conditions and support you with the processing.",
+      "benefits": ["Flexible terms", "Transparent installments", "Processing directly through me"],
+      "button": "Request financing & promotions"
+    }
+  },
+  "about": {
+    "tagline": "About me",
+    "title": "With heart and passion",
+    "text1": "Hello, I'm Bernhard – teacher, father of three children and Thermomix® consultant from Vienna.",
+    "text2": "I came to the Thermomix® when I was on parental leave with my first son. I wanted to cook healthy for my family, but often had little time and energy in everyday life. The Thermomix® relieved me enormously – less stress, more time for the family and still good, fresh food.",
+    "text3": "Over time, I realized how much you can develop with the Thermomix®: new recipes, more variety and joy in cooking again. I want to pass on exactly this experience and accompany you personally in integrating the Thermomix® into your everyday life and becoming more confident with it step by step.",
+    "text4": "It's important to me that cooking doesn't burden you, but makes your everyday life easier and brings joy again.",
+    "stats": {
+      "customers": "Customers",
+      "experience": "Years experience",
+      "dedication": "Dedication"
+    },
+    "badge": {
+      "certified": "Certified",
+      "consultant": "Thermomix® Consultant"
+    }
+  },
+  "footer": {
     "tagline": "Your Thermomix® Consultant",
-    "title": "Experience cooking",
-    "titleHighlight": "with the Thermomix®",
-    "subtitle": "I accompany you on your journey to the Thermomix® – personal, honest and with passion for good food.",
-    "cta": "Request Consultation",
-    "ctaSecondary": "Learn More"
+    "imprint": "Imprint",
+    "privacy": "Privacy",
+    "terms": "Terms"
   },
   "beratung": {
     "tagline": "Consultation with me",
@@ -126,7 +255,7 @@
     "important": {
       "tagline": "Important",
       "title": "No pressure, just inspiration",
-      "description": "The cooking show is non-binding. You don't have to buy anything, sign anything! You simply take ideas, information and impressions with you."
+      "description": "The cooking show is <highlight>non-binding</highlight>. You don't have to buy anything, sign anything! You simply take ideas, information and impressions with you."
     },
     "forWhom": {
       "tagline": "Target Group",
@@ -175,7 +304,12 @@
       "starter": "Starter",
       "main": "Main Course",
       "dessert": "Dessert",
-      "recipeLink": "Recipe on Cookidoo®"
+      "recipeLink": "Recipe on Cookidoo®",
+      "dishes": {
+        "focaccia": "Whole-grain Focaccia with Tomato-Feta Dip",
+        "risotto": "Basil Risotto",
+        "dessert": "Strawberry Dream"
+      }
     },
     "cta": {
       "title": "Ready for your Cooking Show?",

@@ -1,5 +1,6 @@
 import { ArrowRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // Import promo images
 import promoGarantie from '@/assets/promo-garantie.jpeg';
@@ -31,10 +32,13 @@ const offers: Offer[] = [
 ];
 
 const OffersSection = () => {
-  // Dynamically determine grid columns based on number of offers
+  const { t } = useTranslation();
+  
   const gridCols = offers.length === 2 
     ? 'md:grid-cols-2' 
     : 'md:grid-cols-2 lg:grid-cols-3';
+
+  const financingBenefits = t('offers.financing.benefits', { returnObjects: true }) as string[];
 
   return (
     <section className="py-16 md:py-24 bg-muted/30">
@@ -42,13 +46,13 @@ const OffersSection = () => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-4">
-            Aktionen & Angebote
+            {t('offers.tagline')}
           </span>
           <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-4">
-            Derzeitige Angebote
+            {t('offers.title')}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Sichere dir jetzt exklusive Vorteile und Aktionen rund um den Thermomix® TM7.
+            {t('offers.subtitle')}
           </p>
         </div>
 
@@ -59,7 +63,6 @@ const OffersSection = () => {
               key={offer.id}
               className="group bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col"
             >
-              {/* Promo Image - maintains aspect ratio */}
               <div className="w-full overflow-hidden">
                 <img
                   src={offer.image}
@@ -68,14 +71,13 @@ const OffersSection = () => {
                 />
               </div>
               
-              {/* Button - pushed to bottom via flex-grow */}
               <div className="p-4 md:p-6 mt-auto">
                 <Link
                   to="/beratung"
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium
                     transition-all duration-300 hover:bg-primary/90 hover:shadow-lg group/btn"
                 >
-                  Mehr Infos & Angebot anfragen
+                  {t('offers.moreInfo')}
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
                 </Link>
               </div>
@@ -89,37 +91,26 @@ const OffersSection = () => {
             {/* Left: Content */}
             <div className="flex-1">
               <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
-                Finanzierung über die Denzel Bank möglich
+                {t('offers.financing.title')}
               </h3>
               
               <p className="text-muted-foreground mb-2">
-                Du möchtest deinen Thermomix® flexibel bezahlen?
+                {t('offers.financing.text1')}
               </p>
               <p className="text-muted-foreground mb-6">
-                Über die Denzel Bank AG ist eine Finanzierung möglich.
-                Ich informiere dich gerne über die aktuellen Konditionen und unterstütze dich bei der Abwicklung.
+                {t('offers.financing.text2')}
               </p>
 
               {/* Benefits */}
               <div className="space-y-3 mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-primary" />
+                {financingBenefits.map((benefit) => (
+                  <div key={benefit} className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-4 h-4 text-primary" />
+                    </div>
+                    <span className="text-foreground font-medium">{benefit}</span>
                   </div>
-                  <span className="text-foreground font-medium">Flexible Laufzeiten</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-foreground font-medium">Transparente Raten</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="w-4 h-4 text-primary" />
-                  </div>
-                  <span className="text-foreground font-medium">Abwicklung direkt über mich</span>
-                </div>
+                ))}
               </div>
 
               {/* CTA Button */}
@@ -128,7 +119,7 @@ const OffersSection = () => {
                 className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-medium
                   transition-all duration-300 hover:bg-primary/90 hover:shadow-elevated hover:-translate-y-1 group"
               >
-                Finanzierung & Aktionen anfragen
+                {t('offers.financing.button')}
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
