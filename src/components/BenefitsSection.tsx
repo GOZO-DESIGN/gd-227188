@@ -16,6 +16,14 @@ import cookidoo3 from '@/assets/cookidoo-3.jpg';
 import aboutPortrait from '@/assets/about-portrait.jpg';
 import thermomixVideo from '@/assets/thermomix-video.mp4';
 
+// Modi Images
+import modi1 from '@/assets/modi-1.png';
+import modi2 from '@/assets/modi-2.png';
+import modi3 from '@/assets/modi-3.png';
+import modi4 from '@/assets/modi-4.png';
+import modi5 from '@/assets/modi-5.png';
+import modi6 from '@/assets/modi-6.png';
+
 const CookidooSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [cookidoo1, cookidoo2, cookidoo3];
@@ -336,18 +344,17 @@ const BenefitsSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-            {[
-              { icon: Flame, label: 'Kochen & Dampfgaren' },
-              { icon: Blend, label: 'Mixen & Pürieren' },
-              { icon: HandMetal, label: 'Kneten & Zerkleinern' },
-              { icon: Thermometer, label: 'Sous-vide & Fermentieren' }
-            ].map((item) => (
-              <div key={item.label} className="bg-card p-6 rounded-2xl text-center shadow-soft hover:shadow-lg transition-shadow">
-                <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <item.icon className="w-7 h-7 text-primary" />
-                </div>
-                <p className="text-sm font-medium text-foreground">{item.label}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mb-8">
+            {[modi1, modi2, modi3, modi4, modi5, modi6].map((img, index) => (
+              <div 
+                key={index} 
+                className="bg-card rounded-2xl shadow-soft hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden"
+              >
+                <img 
+                  src={img} 
+                  alt={`Thermomix Modus ${index + 1}`}
+                  className="w-full h-auto"
+                />
               </div>
             ))}
           </div>
