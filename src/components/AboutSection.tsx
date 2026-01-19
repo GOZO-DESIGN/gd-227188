@@ -44,12 +44,16 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
             
             <div className="space-y-4 text-muted-foreground mb-8">
               <p>
-                Als zertifizierter Thermomix® Berater begleite ich Sie auf Ihrer kulinarischen Reise. 
-                Meine Leidenschaft ist es, Menschen für das einfache und kreative Kochen zu begeistern.
+                Hallo, ich bin Bernhard – Lehrer, Familienvater von drei Kindern und Thermomix®-Berater aus Wien.
               </p>
               <p>
-                Ob Familien mit wenig Zeit, gesundheitsbewusste Genießer oder experimentierfreudige 
-                Hobbyköche – ich finde die passende Lösung für Ihre Bedürfnisse.
+                Zum Thermomix® bin ich gekommen, als ich mit meinem ersten Sohn in Karenz war. Ich wollte für meine Familie gesund kochen, hatte aber im Alltag oft wenig Zeit und Energie. Der Thermomix® hat mich dabei enorm entlastet – weniger Stress, mehr Zeit für die Familie und trotzdem gutes, frisches Essen.
+              </p>
+              <p>
+                Mit der Zeit habe ich gemerkt, wie sehr man sich mit dem Thermomix® auch weiterentwickeln kann: neue Rezepte, mehr Abwechslung und wieder mehr Freude am Kochen. Genau diese Erfahrung möchte ich weitergeben und begleite dich persönlich dabei, den Thermomix® in deinen Alltag zu integrieren und Schritt für Schritt sicherer damit zu werden.
+              </p>
+              <p>
+                Mir ist wichtig, dass Kochen dich nicht belastet, sondern dir den Alltag erleichtert und wieder Freude macht.
               </p>
             </div>
 
