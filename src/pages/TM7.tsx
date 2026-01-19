@@ -457,7 +457,7 @@ const TM7 = () => {
           </section>
 
           {/* ZUBEHÖR */}
-          <section className="section-padding bg-secondary/30" ref={accessoriesRef}>
+          <section className="section-padding bg-white" ref={accessoriesRef}>
             <div className={`container-narrow transition-all duration-700 ${accessoriesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="text-center mb-12">
                 <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
@@ -472,9 +472,9 @@ const TM7 = () => {
                 {accessories.map((accessory) => (
                   <div
                     key={accessory.title}
-                    className="group bg-card rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 overflow-hidden"
+                    className="group bg-white rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 overflow-hidden border border-border/30"
                   >
-                    <div className="aspect-[4/3] overflow-hidden bg-secondary/20">
+                    <div className="aspect-[4/3] overflow-hidden bg-white">
                       <img 
                         src={accessory.img} 
                         alt={accessory.title}
