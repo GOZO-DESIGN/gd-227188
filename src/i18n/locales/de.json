@@ -86,26 +86,23 @@
     "profi": {
       "tagline": "Für alle",
       "title": "Für Anfänger & Kochprofis",
-      "subtitle": "Egal ob du Anfänger bist oder gerne kochst:",
-      "text": "Der Thermomix® passt sich dir an – mit geführten Rezepten oder freiem Kochen.",
-      "beginners": "Für Anfänger:",
-      "beginnersList": ["Rezepte Schritt für Schritt", "Gelinggarantie", "Keine Vorkenntnisse nötig"],
-      "pros": "Für Kochprofis:",
-      "prosList": ["Volle manuelle Kontrolle", "Eigene Rezepte erstellen", "Präzise Einstellungen"]
+      "subtitle": "Einfach starten – kreativ werden – und Neues entdecken",
+      "text": "Du kannst dich führen lassen oder eigene Ideen umsetzen.",
+      "quote": "„Ich koche jetzt öfter und viel entspannter."",
+      "quoteAuthor": "– Viele Kundinnen und Kunden sagen das"
     },
     "support": {
-      "tagline": "Persönlich",
-      "title": "Persönliche Betreuung",
-      "subtitle": "Ich begleite dich vom ersten Gespräch bis nach dem Kauf",
-      "text1": "Du bekommst nicht nur ein Gerät, sondern auch persönliche Unterstützung.",
-      "text2": "Ich bin für Fragen, Tipps und Einschulung da.",
-      "services": "Meine Leistungen:",
-      "list": ["Beratung & Vorführung", "Persönliche Einschulung", "Langfristige Unterstützung"]
+      "tagline": "Mit mir an deiner Seite",
+      "title": "Persönliche Begleitung",
+      "subtitle": "Bei mir bekommst du nicht nur ein Gerät, sondern auch Unterstützung:",
+      "list": ["Beratung vor dem Kauf", "Einschulung beim Start", "Tipps & Rezepte für den Alltag"],
+      "outro": "Ich bin auch nach dem Kauf für dich da."
     },
     "cta": {
-      "title": "Bereit für mehr Leichtigkeit in der Küche?",
-      "subtitle": "Lass uns gemeinsam herausfinden, ob der Thermomix® zu dir passt.",
-      "button": "Jetzt Beratung anfragen"
+      "title": "Willst du den Thermomix® TM7 genauer kennenlernen?",
+      "subtitle": "Erfahre mehr über Funktionen, Technik und Vorteile des TM7 – oder melde dich direkt bei mir für ein persönliches Kennenlernen.",
+      "buttonPrimary": "Persönliche Beratung anfragen",
+      "buttonSecondary": "Zum Thermomix® TM7"
     }
   },
   "offers": {
@@ -315,6 +312,187 @@
       "title": "Bereit für dein Showkochen?",
       "subtitle": "Kontaktiere mich jetzt und erlebe den Thermomix® TM7 live in Aktion.",
       "whatsapp": "WhatsApp schreiben"
+    }
+  },
+  "tm7": {
+    "tagline": "Thermomix® TM7",
+    "title": "Technik, Funktionen & Möglichkeiten",
+    "subtitle": "Der smarte All-in-One-Küchenhelfer für moderne Küchen",
+    "intro": "Auf dieser Seite zeige ich dir die wichtigsten technischen Merkmale und Funktionen des Thermomix® TM7, damit du dir ein klareres Bild davon machen kannst, was dieses Gerät im Alltag wirklich leisten kann.",
+    "devices": {
+      "tagline": "Vielseitigkeit",
+      "title": "Ein Gerät – viele Küchengeräte ersetzt",
+      "subtitle": "Der TM7 vereint viele Geräte in einem einzigen System. In der Praxis bedeutet das weniger Platzbedarf, weniger Abwasch und deutlich einfachere Abläufe in der Küche.",
+      "highlight": "Alles, was du brauchst – in einem einzigen Gerät",
+      "outro": "Viele meiner Kundinnen und Kunden waren überrascht, wie viele Geräte sie nach kurzer Zeit gar nicht mehr benötigen.",
+      "labels": {
+        "eierkocher": "Eierkocher",
+        "mixer": "Mixer",
+        "kochtopf": "Kochtopf",
+        "wasserkocher": "Wasserkocher",
+        "ruehrgeraet": "Rührgerät",
+        "waage": "Küchenwaage",
+        "fleischwolf": "Fleischwolf",
+        "kuechenmaschine": "Küchenmaschine"
+      }
+    },
+    "modi": {
+      "tagline": "Koch-Modi",
+      "title": "Funktionen und Geräte",
+      "subtitle": "Der TM7 bietet eine Vielzahl an integrierten Koch- und Arbeitsmodi:",
+      "outro": "Diese Modi können manuell verwendet oder automatisch über geführte Rezepte gesteuert werden. Gerade diese Kombination aus Technik und Anleitung macht den Thermomix® für so viele attraktiv."
+    },
+    "cookidoo": {
+      "tagline": "Rezeptplattform",
+      "title": "Geführtes Kochen mit Cookidoo®",
+      "subtitle": "Der TM7 ist mit der offiziellen Thermomix®-Plattform Cookidoo® verbunden.",
+      "featuresTitle": "Damit erhältst du:",
+      "features": [
+        "Tausende Rezepte aus internationaler Küche direkt am Gerät",
+        "Schritt-für-Schritt-Anleitungen mit Gelinggarantie",
+        "Direkte Benachrichtigungen über den Kocherfolg am Handy",
+        "Automatische Einstellungen für Zeit, Temperatur und Geschwindigkeit",
+        "Wochenplanung leicht gemacht",
+        "Digitale Einkaufslisten"
+      ],
+      "outro": "Viele Nutzerinnen und Nutzer schätzen besonders, dass sie nicht mehr überlegen müssen, wie ein Gericht funktioniert. Der Thermomix® führt sie sicher durch den gesamten Kochprozess."
+    },
+    "display": {
+      "tagline": "Bedienung",
+      "title": "Display & Bedienung",
+      "subtitle": "Der Thermomix® TM7 wird über ein großes Touch-Display bedient.",
+      "featuresTitle": "Merkmale:",
+      "features": [
+        "Intuitive Menüführung",
+        "Schnelle Reaktion",
+        "Manuelle Einstellungen jederzeit möglich (Schriftgröße, …)",
+        "Direkter Zugriff auf Rezepte – auch ohne Handy",
+        "Laufende Software-Updates über WLAN"
+      ],
+      "outro": "Auch Personen, die technisch nicht besonders affin sind, finden sich meist sehr schnell zurecht und schätzen den Mehrwert dieser Displayrevolution."
+    },
+    "accessories": {
+      "tagline": "Zubehör",
+      "title": "Das TM-Paket enthält vielseitige Helfer",
+      "spatel": {
+        "title": "Der Thermomix® Spatel",
+        "features": ["Passgenau für den TM7", "Hitzebeständig & stabil", "Flexibel zum Auskratzen", "Spülmaschinengeeignet"]
+      },
+      "schmetterling": {
+        "title": "Der Schmetterlingsaufsatz",
+        "features": ["Ideal für Schlagobers, Eischnee und luftige Cremes", "Schonend und gleichmäßig"]
+      },
+      "varoma": {
+        "title": "Der Varoma® Dampfgaraufsatz",
+        "features": ["Schonendes Dampfgaren auf mehreren Ebenen", "Ideal für Gemüse, Fisch und ganze Menüs", "Gesund garen ohne Geschmacksverlust"]
+      },
+      "garkorb": {
+        "title": "Das Garkörbchen",
+        "features": ["Perfekt zum Abseihen und Dampfgaren kleiner Zutaten", "Für Reis, Erdäpfel, Nudeln und mehr"]
+      }
+    },
+    "comparison": {
+      "tagline": "Der Unterschied",
+      "title": "Unterschied zu klassischen Küchenmaschinen",
+      "subtitle": "Im Vergleich zu herkömmlichen Küchenmaschinen bietet der TM7:",
+      "features": [
+        "Aktives Kochen in einem Gerät",
+        "Präzise Temperaturführung",
+        "Geführte Rezepte statt manueller Abläufe",
+        "Viele Kochtechniken in einem System",
+        "Digitale Rezeptverwaltung"
+      ],
+      "outro": "Der Thermomix® ist dadurch deutlich mehr als eine klassische Küchenmaschine – er ist ein vollständiges Kochsystem.",
+      "imageCaption": "Klassische Küchenmaschinen können nur rühren und kneten – der TM7 kann kochen, dampfgaren, wiegen und vieles mehr."
+    },
+    "specs": {
+      "tagline": "Spezifikationen",
+      "title": "Technische Merkmale",
+      "categories": {
+        "motor": "Motor & Antrieb",
+        "heating": "Heizsystem",
+        "scale": "Integrierte Waage",
+        "bowl": "Mixtopf",
+        "blade": "Mixmesser",
+        "power": "Strom & Leistung",
+        "system": "System & Software",
+        "display": "Display & Bedienung",
+        "dimensions": "Maße & Gewicht"
+      }
+    },
+    "cta": {
+      "title": "Interesse geweckt?",
+      "subtitle": "Ich zeige dir gerne persönlich, was der Thermomix® TM7 alles kann – unverbindlich und bei dir zu Hause.",
+      "buttonPrimary": "Persönliche Beratung anfragen",
+      "buttonSecondary": "Showkochen erleben"
+    }
+  },
+  "galerie": {
+    "title": "Galerie",
+    "subtitle": "Inhalt folgt in Kürze..."
+  },
+  "instagram": {
+    "tagline": "Inspiration",
+    "title": "Folgen Sie mir auf",
+    "titleHighlight": "Instagram",
+    "subtitle": "Entdecken Sie leckere Rezepte, Tipps und Einblicke in meinen Kochalltag mit dem Thermomix®."
+  },
+  "reviews": {
+    "tagline": "Kundenbewertungen",
+    "title": "Das sagen meine",
+    "titleHighlight": "Kunden",
+    "subtitle": "Echte Erfahrungen von zufriedenen Thermomix® Nutzern"
+  },
+  "contact": {
+    "tagline": "Kontakt",
+    "title": "Lassen Sie uns",
+    "titleHighlight": "ins Gespräch kommen",
+    "subtitle": "Haben Sie Fragen zum Thermomix® oder möchten Sie eine persönliche Vorführung erleben? Ich freue mich auf Ihre Nachricht!",
+    "phone": "Telefon",
+    "email": "E-Mail",
+    "address": "Adresse",
+    "form": {
+      "step1Title": "Für welches unserer Produkte oder Dienstleistungen möchten Sie Informationen anfordern? *",
+      "step2Title": "Wunschtermin und mögliches Zeitfenster für ein Telefonat",
+      "step3Title": "Ihre Kontaktdaten",
+      "step4Title": "Ihre Nachricht",
+      "services": {
+        "showkochen": "Showkochen in Wien/NÖ/BGLD",
+        "beratung": "Beratungstermin",
+        "bestellung": "Bestellung eines TM7!",
+        "info": "Weitere Informationen"
+      },
+      "preferredDate": "Wunschtermin",
+      "preferredTime": "Bevorzugtes Zeitfenster",
+      "timeOptions": {
+        "placeholder": "Bitte wählen...",
+        "morning": "Vormittag (9:00 - 12:00)",
+        "noon": "Mittag (12:00 - 14:00)",
+        "afternoon": "Nachmittag (14:00 - 17:00)",
+        "evening": "Abend (17:00 - 19:00)",
+        "flexible": "Flexibel"
+      },
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "phonePlaceholder": "+43 ...",
+      "emailPlaceholder": "ihre.email@beispiel.at",
+      "message": "Nachricht (optional)",
+      "messagePlaceholder": "Wie kann ich Ihnen helfen?",
+      "consent": "Durch Klicken des „Abschicken"-Buttons stimme ich zu, dass die im Formular eingegebenen personenbezogenen Daten zur Bearbeitung der Anfrage und der personalisierten Beratung verarbeitet werden. Meine Einwilligungen kann ich jederzeit mit Wirkung für die Zukunft postalisch oder per E-Mail widerrufen.",
+      "privacyLink": "Datenschutzerklärung",
+      "privacyText": "Es gilt unsere",
+      "back": "Zurück",
+      "next": "Weiter",
+      "submit": "Abschicken",
+      "successMessage": "Vielen Dank für Ihre Anfrage! Wir melden uns in Kürze bei Ihnen.",
+      "errors": {
+        "serviceRequired": "Bitte wählen Sie eine Option aus.",
+        "nameRequired": "Name ist erforderlich.",
+        "phoneRequired": "Telefonnummer ist erforderlich.",
+        "emailRequired": "E-Mail ist erforderlich.",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "consentRequired": "Bitte stimmen Sie der Datenschutzerklärung zu."
+      }
     }
   },
   "common": {

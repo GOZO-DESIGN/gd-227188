@@ -86,26 +86,23 @@
     "profi": {
       "tagline": "For everyone",
       "title": "For beginners & cooking pros",
-      "subtitle": "Whether you're a beginner or love cooking:",
-      "text": "The Thermomix® adapts to you – with guided recipes or free cooking.",
-      "beginners": "For beginners:",
-      "beginnersList": ["Step by step recipes", "Success guarantee", "No prior knowledge needed"],
-      "pros": "For cooking pros:",
-      "prosList": ["Full manual control", "Create your own recipes", "Precise settings"]
+      "subtitle": "Simply start – get creative – and discover new things",
+      "text": "You can let yourself be guided or implement your own ideas.",
+      "quote": "\"I cook more often now and much more relaxed.\"",
+      "quoteAuthor": "– Many customers say this"
     },
     "support": {
-      "tagline": "Personal",
+      "tagline": "With me by your side",
       "title": "Personal support",
-      "subtitle": "I accompany you from the first conversation until after the purchase",
-      "text1": "You don't just get a device, but also personal support.",
-      "text2": "I'm here for questions, tips and training.",
-      "services": "My services:",
-      "list": ["Consultation & demonstration", "Personal training", "Long-term support"]
+      "subtitle": "With me you don't just get a device, but also support:",
+      "list": ["Consultation before purchase", "Training at the start", "Tips & recipes for everyday life"],
+      "outro": "I'm here for you even after the purchase."
     },
     "cta": {
-      "title": "Ready for more ease in the kitchen?",
-      "subtitle": "Let's find out together if the Thermomix® is right for you.",
-      "button": "Request consultation now"
+      "title": "Want to get to know the Thermomix® TM7 better?",
+      "subtitle": "Learn more about functions, technology and benefits of the TM7 – or contact me directly for a personal introduction.",
+      "buttonPrimary": "Request personal consultation",
+      "buttonSecondary": "To the Thermomix® TM7"
     }
   },
   "offers": {
@@ -315,6 +312,188 @@
       "title": "Ready for your Cooking Show?",
       "subtitle": "Contact me now and experience the Thermomix® TM7 live in action.",
       "whatsapp": "Message on WhatsApp"
+    }
+  },
+  "tm7": {
+    "tagline": "Thermomix® TM7",
+    "title": "Technology, Functions & Possibilities",
+    "subtitle": "The smart all-in-one kitchen helper for modern kitchens",
+    "intro": "On this page, I show you the most important technical features and functions of the Thermomix® TM7, so you can get a clearer picture of what this device can really do in everyday life.",
+    "devices": {
+      "tagline": "Versatility",
+      "title": "One device – replaces many kitchen appliances",
+      "subtitle": "The TM7 combines many devices in one single system. In practice, this means less space needed, less washing up and much simpler processes in the kitchen.",
+      "highlight": "Everything you need – in one single device",
+      "outro": "Many of my customers were surprised how many devices they no longer need after a short time.",
+      "labels": {
+        "eierkocher": "Egg cooker",
+        "mixer": "Mixer",
+        "kochtopf": "Cooking pot",
+        "wasserkocher": "Kettle",
+        "ruehrgeraet": "Mixer",
+        "waage": "Kitchen scale",
+        "fleischwolf": "Meat grinder",
+        "kuechenmaschine": "Food processor"
+      }
+    },
+    "modi": {
+      "tagline": "Cooking Modes",
+      "title": "Functions and Devices",
+      "subtitle": "The TM7 offers a variety of integrated cooking and working modes:",
+      "outro": "These modes can be used manually or controlled automatically via guided recipes. It's precisely this combination of technology and guidance that makes the Thermomix® attractive to so many."
+    },
+    "cookidoo": {
+      "tagline": "Recipe Platform",
+      "title": "Guided Cooking with Cookidoo®",
+      "subtitle": "The TM7 is connected to the official Thermomix® platform Cookidoo®.",
+      "featuresTitle": "This gives you:",
+      "features": [
+        "Thousands of recipes from international cuisine directly on the device",
+        "Step-by-step instructions with success guarantee",
+        "Direct notifications about cooking success on your phone",
+        "Automatic settings for time, temperature and speed",
+        "Easy weekly planning",
+        "Digital shopping lists"
+      ],
+      "outro": "Many users especially appreciate that they no longer have to think about how a dish works. The Thermomix® guides them safely through the entire cooking process."
+    },
+    "display": {
+      "tagline": "Operation",
+      "title": "Display & Operation",
+      "subtitle": "The Thermomix® TM7 is operated via a large touch display.",
+      "featuresTitle": "Features:",
+      "features": [
+        "Intuitive menu navigation",
+        "Quick response",
+        "Manual settings possible at any time (font size, …)",
+        "Direct access to recipes – even without phone",
+        "Ongoing software updates via WiFi"
+      ],
+      "outro": "Even people who are not particularly tech-savvy usually find their way around very quickly and appreciate the added value of this display revolution."
+    },
+    "accessories": {
+      "tagline": "Accessories",
+      "title": "The TM package contains versatile helpers",
+      "spatel": {
+        "title": "The Thermomix® Spatula",
+        "features": ["Fits perfectly for the TM7", "Heat-resistant & stable", "Flexible for scraping", "Dishwasher safe"]
+      },
+      "schmetterling": {
+        "title": "The Butterfly Whisk",
+        "features": ["Ideal for whipped cream, egg whites and airy creams", "Gentle and even"]
+      },
+      "varoma": {
+        "title": "The Varoma® Steam Attachment",
+        "features": ["Gentle steaming on multiple levels", "Ideal for vegetables, fish and complete menus", "Healthy cooking without loss of taste"]
+      },
+      "garkorb": {
+        "title": "The Steaming Basket",
+        "features": ["Perfect for draining and steaming small ingredients", "For rice, potatoes, pasta and more"]
+      }
+    },
+    "comparison": {
+      "tagline": "The Difference",
+      "title": "Difference to Classic Food Processors",
+      "subtitle": "Compared to conventional food processors, the TM7 offers:",
+      "features": [
+        "Active cooking in one device",
+        "Precise temperature control",
+        "Guided recipes instead of manual processes",
+        "Many cooking techniques in one system",
+        "Digital recipe management"
+      ],
+      "outro": "The Thermomix® is therefore much more than a classic food processor – it's a complete cooking system.",
+      "imageCaption": "Classic food processors can only stir and knead – the TM7 can cook, steam, weigh and much more."
+    },
+    "specs": {
+      "tagline": "Specifications",
+      "title": "Technical Features",
+      "categories": {
+        "motor": "Motor & Drive",
+        "heating": "Heating System",
+        "scale": "Integrated Scale",
+        "bowl": "Mixing Bowl",
+        "blade": "Mixing Blade",
+        "power": "Power & Performance",
+        "system": "System & Software",
+        "display": "Display & Operation",
+        "dimensions": "Dimensions & Weight"
+      }
+    },
+    "cta": {
+      "title": "Interested?",
+      "subtitle": "I'd love to personally show you what the Thermomix® TM7 can do – no obligation and at your home.",
+      "buttonPrimary": "Request personal consultation",
+      "buttonSecondary": "Experience cooking show"
+    }
+  },
+  "galerie": {
+    "title": "Gallery",
+    "subtitle": "Content coming soon..."
+  },
+  "instagram": {
+    "tagline": "Inspiration",
+    "title": "Follow me on",
+    "titleHighlight": "Instagram",
+    "subtitle": "Discover delicious recipes, tips and insights into my everyday cooking with the Thermomix®."
+  },
+  "reviews": {
+    "tagline": "Customer Reviews",
+    "title": "What my",
+    "titleHighlight": "Customers",
+    "titleEnd": "say",
+    "subtitle": "Real experiences from satisfied Thermomix® users"
+  },
+  "contact": {
+    "tagline": "Contact",
+    "title": "Let's get",
+    "titleHighlight": "in touch",
+    "subtitle": "Do you have questions about the Thermomix® or would you like to experience a personal demonstration? I look forward to your message!",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "form": {
+      "step1Title": "Which of our products or services would you like information about? *",
+      "step2Title": "Preferred date and possible time slot for a call",
+      "step3Title": "Your contact details",
+      "step4Title": "Your message",
+      "services": {
+        "showkochen": "Cooking show in Vienna/Lower Austria/Burgenland",
+        "beratung": "Consultation appointment",
+        "bestellung": "Order a TM7!",
+        "info": "More information"
+      },
+      "preferredDate": "Preferred date",
+      "preferredTime": "Preferred time slot",
+      "timeOptions": {
+        "placeholder": "Please select...",
+        "morning": "Morning (9:00 - 12:00)",
+        "noon": "Noon (12:00 - 14:00)",
+        "afternoon": "Afternoon (14:00 - 17:00)",
+        "evening": "Evening (17:00 - 19:00)",
+        "flexible": "Flexible"
+      },
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "phonePlaceholder": "+43 ...",
+      "emailPlaceholder": "your.email@example.at",
+      "message": "Message (optional)",
+      "messagePlaceholder": "How can I help you?",
+      "consent": "By clicking the \"Submit\" button, I agree that the personal data entered in the form will be processed for handling the inquiry and personalized consultation. I can revoke my consent at any time with effect for the future by post or email.",
+      "privacyLink": "Privacy Policy",
+      "privacyText": "Our",
+      "back": "Back",
+      "next": "Next",
+      "submit": "Submit",
+      "successMessage": "Thank you for your inquiry! We will get back to you shortly.",
+      "errors": {
+        "serviceRequired": "Please select an option.",
+        "nameRequired": "Name is required.",
+        "phoneRequired": "Phone number is required.",
+        "emailRequired": "Email is required.",
+        "emailInvalid": "Please enter a valid email address.",
+        "consentRequired": "Please agree to the privacy policy."
+      }
     }
   },
   "common": {
