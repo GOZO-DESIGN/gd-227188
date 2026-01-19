@@ -31,6 +31,12 @@ import cookidoo1 from '@/assets/cookidoo-1.jpg';
 import cookidoo2 from '@/assets/cookidoo-2.jpg';
 import cookidoo3 from '@/assets/cookidoo-3.jpg';
 
+// Accessory images
+import accessorySpatel from '@/assets/accessory-spatel.jpg';
+import accessorySchmetterling from '@/assets/accessory-schmetterling.jpg';
+import accessoryVaroma from '@/assets/accessory-varoma.jpg';
+import accessoryGarkorb from '@/assets/accessory-garkorb.jpg';
+
 const devices = [
   { img: deviceEierkocher, label: 'Eierkocher' },
   { img: deviceMixer, label: 'Mixer' },
@@ -45,18 +51,22 @@ const devices = [
 const accessories = [
   {
     title: 'Der Thermomix® Spatel',
+    img: accessorySpatel,
     features: ['Passgenau für den TM7', 'Hitzebeständig & stabil', 'Flexibel zum Auskratzen', 'Spülmaschinengeeignet'],
   },
   {
     title: 'Der Schmetterlingsaufsatz',
+    img: accessorySchmetterling,
     features: ['Ideal für Schlagobers, Eischnee und luftige Cremes', 'Schonend und gleichmäßig'],
   },
   {
     title: 'Der Varoma® Dampfgaraufsatz',
+    img: accessoryVaroma,
     features: ['Schonendes Dampfgaren auf mehreren Ebenen', 'Ideal für Gemüse, Fisch und ganze Menüs', 'Gesund garen ohne Geschmacksverlust'],
   },
   {
     title: 'Das Garkörbchen',
+    img: accessoryGarkorb,
     features: ['Perfekt zum Abseihen und Dampfgaren kleiner Zutaten', 'Für Reis, Erdäpfel, Nudeln und mehr'],
   },
 ];
@@ -462,19 +472,28 @@ const TM7 = () => {
                 {accessories.map((accessory) => (
                   <div
                     key={accessory.title}
-                    className="group bg-card p-6 rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300"
+                    className="group bg-card rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 overflow-hidden"
                   >
-                    <h3 className="font-serif text-lg text-foreground mb-4 group-hover:text-primary transition-colors">
-                      {accessory.title}
-                    </h3>
-                    <ul className="space-y-2">
-                      {accessory.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className="text-primary font-bold">✓</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="aspect-[4/3] overflow-hidden bg-secondary/20">
+                      <img 
+                        src={accessory.img} 
+                        alt={accessory.title}
+                        className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-serif text-lg text-foreground mb-4 group-hover:text-primary transition-colors">
+                        {accessory.title}
+                      </h3>
+                      <ul className="space-y-2">
+                        {accessory.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <span className="text-primary font-bold">✓</span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 ))}
               </div>
