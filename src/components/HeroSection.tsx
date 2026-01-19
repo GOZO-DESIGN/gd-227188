@@ -25,14 +25,23 @@ const HeroSection = () => {
       <div className="flex flex-col lg:flex-row">
         {/* Left Side - Image with Parallax */}
         <div className="relative lg:w-1/2 min-h-[35vh] sm:min-h-[40vh] lg:min-h-[calc(100vh-6rem)] overflow-hidden flex-shrink-0">
-          <div 
-            className="absolute inset-0 w-full h-[120%]"
-            style={{ transform: `translateY(-${parallaxOffset}px)` }}
-          >
+          {/*
+            Unterhalb von "lg" zeigen wir das Bild komplett (object-contain),
+            damit es nicht abgeschnitten wird. Parallax nur auf großen Screens.
+          */}
+          <div className="absolute inset-0 hidden lg:block w-full h-[120%]" style={{ transform: `translateY(-${parallaxOffset}px)` }}>
             <img
               src={heroImage}
               alt="Thermomix Berater in moderner Küche"
-              className="w-full h-full object-cover object-top sm:object-center"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+
+          <div className="absolute inset-0 lg:hidden flex items-center justify-center">
+            <img
+              src={heroImage}
+              alt="Thermomix Berater in moderner Küche"
+              className="w-full h-full object-contain"
             />
           </div>
           
