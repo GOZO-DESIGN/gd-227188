@@ -1,9 +1,9 @@
+import { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { 
   Phone, 
   MessageCircle, 
-  Users, 
   ChefHat, 
   Home, 
   Package, 
@@ -20,13 +20,13 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
-// Reuse existing images
+// Step images
+import beratungStep1 from '@/assets/beratung-step-1.webp';
+import beratungStep2 from '@/assets/beratung-step-2.webp';
 import showkochen1 from '@/assets/showkochen-1.jpg';
-import showkochen2 from '@/assets/showkochen-2.jpg';
-import showkochen3 from '@/assets/showkochen-3.jpg';
-import tm7Hero from '@/assets/tm7-hero.jpg';
-import display1 from '@/assets/display-1.webp';
-import display2 from '@/assets/display-2.webp';
+import beratungStep4 from '@/assets/beratung-step-4.webp';
+import beratungStep5 from '@/assets/beratung-step-5.webp';
+import beratungStep6 from '@/assets/beratung-step-6.webp';
 
 const steps = [
   {
@@ -35,7 +35,7 @@ const steps = [
     title: 'Kontakt & Kennenlernen',
     description: 'Du meldest dich bei mir unkompliziert: per Website-Formular, WhatsApp oder Instagram.',
     details: 'Wir lernen uns kurz telefonisch kennen und ich höre mir an, was dir im Küchenalltag wirklich fehlt. So kann ich dich genau dort abholen, wo du gerade stehst.',
-    image: display1,
+    image: beratungStep1,
     buttonText: 'Jetzt Kontakt aufnehmen',
     buttonLink: '#kontakt',
   },
@@ -45,7 +45,7 @@ const steps = [
     title: 'Persönliche Beratung',
     description: 'In einem persönlichen Gespräch, online oder vor Ort, sprechen wir über deine Wünsche, deinen Alltag und deine Kochgewohnheiten.',
     details: null,
-    image: display2,
+    image: beratungStep2,
     buttonText: null,
     buttonLink: null,
   },
@@ -66,7 +66,7 @@ const steps = [
     optional: true,
     description: 'Wenn du möchtest, kannst du den Thermomix auch ein paar Tage zu Hause testen. Ich leihe dir dafür einfach mein Gerät.',
     details: 'So erlebst du ganz real, wie er dich im Alltag begleiten wird. Familienküche, schnelles Abendessen oder gesunde Gerichte: Du entscheidest, was du ausprobieren möchtest.',
-    image: showkochen2,
+    image: beratungStep4,
     buttonText: null,
     buttonLink: null,
   },
@@ -76,7 +76,7 @@ const steps = [
     title: 'Bestellung und Lieferung',
     description: 'Hast du dich für den Thermomix entschieden, begleite ich dich bei der Bestellung und kümmere mich um alle Details.',
     details: 'Gemeinsam klären wir Bezahlung, Finanzierungsmöglichkeiten und Liefertermine.',
-    image: tm7Hero,
+    image: beratungStep5,
     highlights: ['Einfach', 'Transparent', 'Unkompliziert'],
     buttonText: null,
     buttonLink: null,
@@ -87,7 +87,7 @@ const steps = [
     title: 'Start & Persönliche Einschulung',
     description: 'Kurz vor einer Thermomixlieferung kontaktiere ich dich. Wenn der Thermomix bei dir angekommen ist, unterstütze ich dich beim Einstieg.',
     details: 'Ich zeige dir die wichtigsten Funktionen, gebe dir Tipps für die ersten Rezepte und helfe dir, dich schnell sicher mit dem Gerät zu fühlen. So macht Kochen von Anfang an Spaß.',
-    image: showkochen3,
+    image: beratungStep6,
     buttonText: null,
     buttonLink: null,
   },
@@ -121,11 +121,56 @@ const afterPurchaseServices = [
   },
 ];
 
+// Timeline Progress Component
+const TimelineProgress = ({ containerRef }: { containerRef: React.RefObject<HTMLDivElement> }) => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+      
+      const container = containerRef.current;
+      const rect = container.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Calculate how much of the timeline is visible
+      const containerTop = rect.top;
+      const containerHeight = rect.height;
+      
+      // Start filling when container enters viewport
+      const startOffset = windowHeight * 0.5;
+      const scrollProgress = (startOffset - containerTop) / (containerHeight);
+      
+      // Clamp between 0 and 1
+      const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+      setProgress(clampedProgress);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial calculation
+    
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [containerRef]);
+
+  return (
+    <>
+      {/* Background Line */}
+      <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 -translate-x-1/2 bg-border rounded-full"></div>
+      {/* Progress Line */}
+      <div 
+        className="hidden lg:block absolute left-1/2 top-0 w-1 -translate-x-1/2 bg-gradient-to-b from-primary via-primary to-primary rounded-full transition-all duration-150 ease-out"
+        style={{ height: `${progress * 100}%` }}
+      ></div>
+    </>
+  );
+};
+
 const Beratung = () => {
   const heroAnimation = useScrollAnimation();
   const stepsAnimation = useScrollAnimation();
   const afterPurchaseAnimation = useScrollAnimation();
   const ctaAnimation = useScrollAnimation();
+  const timelineRef = useRef<HTMLDivElement>(null);
 
   const scrollToContact = () => {
     document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' });
@@ -196,18 +241,18 @@ const Beratung = () => {
             <div className={`container-narrow transition-all duration-700 ${stepsAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               
               {/* Timeline */}
-              <div className="relative">
-                {/* Vertical Line */}
-                <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20"></div>
+              <div className="relative" ref={timelineRef}>
+                {/* Animated Timeline */}
+                <TimelineProgress containerRef={timelineRef} />
 
                 {steps.map((step, index) => {
                   const isEven = index % 2 === 0;
                   
                   return (
-                    <div key={step.number} className="relative mb-16 last:mb-0">
+                    <div key={step.number} className="relative mb-20 last:mb-0">
                       {/* Step Number Circle - Center */}
                       <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 top-8 z-10">
-                        <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                        <div className="w-14 h-14 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-xl shadow-lg ring-4 ring-background">
                           {step.number}
                         </div>
                       </div>
@@ -215,10 +260,10 @@ const Beratung = () => {
                       {/* Content */}
                       <div className={`grid lg:grid-cols-2 gap-8 items-center ${isEven ? '' : 'lg:flex-row-reverse'}`}>
                         {/* Text Content */}
-                        <div className={`${isEven ? 'lg:pr-16 lg:text-right' : 'lg:pl-16 lg:order-2'}`}>
+                        <div className={`${isEven ? 'lg:pr-20 lg:text-right' : 'lg:pl-20 lg:order-2'}`}>
                           {/* Mobile Step Number */}
                           <div className="lg:hidden flex items-center gap-3 mb-4">
-                            <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+                            <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg">
                               {step.number}
                             </div>
                             <span className="text-sm text-muted-foreground">Schritt {step.number}</span>
@@ -249,11 +294,11 @@ const Beratung = () => {
                           )}
 
                           {step.highlights && (
-                            <div className={`flex gap-3 mb-4 ${isEven ? 'lg:justify-end' : ''}`}>
+                            <div className={`flex gap-3 mb-4 flex-wrap ${isEven ? 'lg:justify-end' : ''}`}>
                               {step.highlights.map((highlight) => (
                                 <span 
                                   key={highlight}
-                                  className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                                  className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium"
                                 >
                                   {highlight}
                                 </span>
@@ -267,7 +312,7 @@ const Beratung = () => {
                                 <Button 
                                   variant="outline" 
                                   size="sm"
-                                  onClick={() => document.getElementById(step.buttonLink.slice(1))?.scrollIntoView({ behavior: 'smooth' })}
+                                  onClick={() => document.getElementById(step.buttonLink!.slice(1))?.scrollIntoView({ behavior: 'smooth' })}
                                 >
                                   {step.buttonText}
                                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -285,24 +330,17 @@ const Beratung = () => {
                         </div>
 
                         {/* Image */}
-                        <div className={`${isEven ? 'lg:order-2 lg:pl-16' : 'lg:pr-16'}`}>
+                        <div className={`${isEven ? 'lg:order-2 lg:pl-20' : 'lg:pr-20'}`}>
                           <div className="relative group">
                             <div className="absolute -inset-2 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             <img
                               src={step.image}
                               alt={step.title}
-                              className="relative w-full rounded-2xl shadow-elegant group-hover:shadow-lg transition-shadow duration-300"
+                              className="relative w-full rounded-2xl shadow-elegant group-hover:shadow-lg transition-shadow duration-300 aspect-[4/3] object-cover"
                             />
                           </div>
                         </div>
                       </div>
-
-                      {/* Connector Arrow */}
-                      {index < steps.length - 1 && (
-                        <div className="hidden lg:flex justify-center mt-8">
-                          <div className="w-8 h-8 border-2 border-primary/30 border-t-0 border-l-0 rotate-45 -translate-y-2"></div>
-                        </div>
-                      )}
                     </div>
                   );
                 })}
