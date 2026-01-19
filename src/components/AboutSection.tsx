@@ -1,4 +1,5 @@
 import { ChefHat, Award } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 interface AboutSectionProps {
@@ -6,6 +7,7 @@ interface AboutSectionProps {
 }
 
 const AboutSection = ({ aboutImage }: AboutSectionProps) => {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -26,8 +28,8 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
             <div className={`absolute -top-4 -right-4 bg-primary text-primary-foreground p-4 rounded-xl shadow-card transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
               <div className="text-center">
                 <Award className="w-6 h-6 mx-auto mb-1" />
-                <p className="font-bold text-lg">Zertifiziert</p>
-                <p className="text-xs opacity-90">Thermomix® Berater</p>
+                <p className="font-bold text-lg">{t('about.badge.certified')}</p>
+                <p className="text-xs opacity-90">{t('about.badge.consultant')}</p>
               </div>
             </div>
           </div>
@@ -35,34 +37,26 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
           {/* Content */}
           <div className={`order-1 lg:order-2 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-              Über mich
+              {t('about.tagline')}
             </span>
             
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
-              Mit Herz und <br />Leidenschaft dabei
+              {t('about.title').split(' ').slice(0, 2).join(' ')} <br />{t('about.title').split(' ').slice(2).join(' ')}
             </h2>
             
             <div className="space-y-4 text-muted-foreground mb-8">
-              <p>
-                Hallo, ich bin Bernhard – Lehrer, Familienvater von drei Kindern und Thermomix®-Berater aus Wien.
-              </p>
-              <p>
-                Zum Thermomix® bin ich gekommen, als ich mit meinem ersten Sohn in Karenz war. Ich wollte für meine Familie gesund kochen, hatte aber im Alltag oft wenig Zeit und Energie. Der Thermomix® hat mich dabei enorm entlastet – weniger Stress, mehr Zeit für die Familie und trotzdem gutes, frisches Essen.
-              </p>
-              <p>
-                Mit der Zeit habe ich gemerkt, wie sehr man sich mit dem Thermomix® auch weiterentwickeln kann: neue Rezepte, mehr Abwechslung und wieder mehr Freude am Kochen. Genau diese Erfahrung möchte ich weitergeben und begleite dich persönlich dabei, den Thermomix® in deinen Alltag zu integrieren und Schritt für Schritt sicherer damit zu werden.
-              </p>
-              <p>
-                Mir ist wichtig, dass Kochen dich nicht belastet, sondern dir den Alltag erleichtert und wieder Freude macht.
-              </p>
+              <p>{t('about.text1')}</p>
+              <p>{t('about.text2')}</p>
+              <p>{t('about.text3')}</p>
+              <p>{t('about.text4')}</p>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mb-8">
               {[
-                { value: '500+', label: 'Kunden' },
-                { value: '5+', label: 'Jahre Erfahrung' },
-                { value: '100%', label: 'Hingabe' },
+                { value: '500+', label: t('about.stats.customers') },
+                { value: '5+', label: t('about.stats.experience') },
+                { value: '100%', label: t('about.stats.dedication') },
               ].map((stat, index) => (
                 <div 
                   key={stat.label}

@@ -8,12 +8,141 @@
     "bookConsultation": "Beratung buchen"
   },
   "hero": {
-    "tagline": "Dein Thermomix® Berater",
-    "title": "Kochen neu erleben",
-    "titleHighlight": "mit dem Thermomix®",
-    "subtitle": "Ich begleite dich auf deinem Weg zum Thermomix® – persönlich, ehrlich und mit Leidenschaft für gutes Essen.",
-    "cta": "Jetzt Beratung anfragen",
+    "tagline": "Thermomix® Berater",
+    "title": "Endlich wieder entspannt kochen –",
+    "titleHighlight": "auch wenn im Alltag wenig Zeit bleibt",
+    "subtitle": "Der Thermomix® TM7 hilft dir, schnell, gesund und abwechslungsreich zu kochen.",
+    "intro": "Ich bin <strong>Bernhard Prager</strong>, dein persönlicher Thermomix® Berater, und begleite dich vom ersten Kennenlernen bis zum Einzug in deine eigene Küche.",
+    "customers": "Schon viele Kundinnen und Kunden durfte ich auf ihrem Weg zum eigenen Thermomix begleiten.",
+    "benefits": {
+      "time": "Mehr Zeit für dich und deine Familie.",
+      "stress": "Weniger Stress beim Kochen.",
+      "taste": "Mehr Genuss auf dem Teller."
+    },
+    "cta": "Jetzt beraten lassen",
     "ctaSecondary": "Mehr erfahren"
+  },
+  "benefits": {
+    "tagline": "Dein Küchenhelfer",
+    "title": "Warum der Thermomix® dein Leben leichter macht",
+    "subtitle": "Ein Gerät, das mitdenkt, Zeit spart und Kochen wieder entspannt macht.",
+    "intro": {
+      "text1": "Der Alltag ist oft hektisch – trotzdem wollen wir gut und frisch essen.",
+      "text2": "Der Thermomix® TM7 hilft dir dabei, schnell, gesund und abwechslungsreich zu kochen, ohne stundenlang in der Küche zu stehen.",
+      "text3": "Er vereint viele Küchengeräte in einem und führt dich Schritt für Schritt durch jedes Rezept – ideal für Anfänger und erfahrene Köche."
+    },
+    "stats": {
+      "functions": "Funktionen in einem Gerät",
+      "recipes": "Rezepte auf Cookidoo®"
+    },
+    "time": {
+      "tagline": "Zeitersparnis",
+      "title": "Mehr Zeit im Alltag",
+      "subtitle": "Weniger Aufwand – mehr Zeit für dich",
+      "text1": "Der Thermomix® übernimmt viele Arbeitsschritte gleichzeitig.",
+      "text2": "Während das Essen kocht, kannst du dich um anderes kümmern.",
+      "idealFor": "Ideal für:",
+      "list": ["Familien", "Berufstätige", "Alle mit wenig Zeit"]
+    },
+    "family": {
+      "tagline": "Familien",
+      "title": "Perfekt für Familien",
+      "subtitle": "Weniger Stress, mehr gemeinsame Zeit",
+      "text1": "Der Thermomix® kocht, während du dich um deine Kinder kümmern kannst.",
+      "text2": "Viele Gerichte sind schnell vorbereitet und gelingen fast nebenbei.",
+      "practicalFor": "Besonders praktisch für Familien:",
+      "list": [
+        "Babynahrung und Breie selbst machen",
+        "Kinderfreundliche Gerichte schnell zubereiten",
+        "Snacks und Jause ohne Zusatzstoffe",
+        "Gemeinsames Kochen macht sogar Spaß"
+      ],
+      "outro": "So bleibt mehr Zeit für das, was wirklich zählt: gemeinsam essen, lachen und Zeit verbringen."
+    },
+    "health": {
+      "tagline": "Gesundheit",
+      "title": "Gesund kochen wird einfach",
+      "subtitle": "Frisch, ohne Fertigprodukte",
+      "text1": "Du kochst mit frischen Zutaten und bestimmst selbst, was in dein Essen kommt.",
+      "text2": "Von schnellen Gerichten bis zu gesunden Snacks für Kinder! Alles gelingt unkompliziert.",
+      "youDecide": "Du bestimmst:",
+      "list": ["Zutaten", "Portionsgrößen", "Ernährungsform"]
+    },
+    "cookidoo": {
+      "tagline": "Rezepte",
+      "title": "Tausende Rezepte mit Anleitung",
+      "subtitle": "Kochen mit Cookidoo®",
+      "text1": "Rezepte direkt am Display, Schritt für Schritt geführt.",
+      "text2": "Der Thermomix® stellt Zeit und Temperatur automatisch ein.",
+      "advantages": "Vorteile:",
+      "list": ["Gelinggarantie", "Wochenplanung", "Einkaufslisten"]
+    },
+    "functions": {
+      "tagline": "Vielseitigkeit",
+      "title": "Ein Gerät mit vielen Funktionen",
+      "subtitle": "Der Thermomix® ersetzt viele Geräte:",
+      "outro": "Weniger Geräte, weniger Abwasch, mehr Platz."
+    },
+    "profi": {
+      "tagline": "Für alle",
+      "title": "Für Anfänger & Kochprofis",
+      "subtitle": "Egal ob du Anfänger bist oder gerne kochst:",
+      "text": "Der Thermomix® passt sich dir an – mit geführten Rezepten oder freiem Kochen.",
+      "beginners": "Für Anfänger:",
+      "beginnersList": ["Rezepte Schritt für Schritt", "Gelinggarantie", "Keine Vorkenntnisse nötig"],
+      "pros": "Für Kochprofis:",
+      "prosList": ["Volle manuelle Kontrolle", "Eigene Rezepte erstellen", "Präzise Einstellungen"]
+    },
+    "support": {
+      "tagline": "Persönlich",
+      "title": "Persönliche Betreuung",
+      "subtitle": "Ich begleite dich vom ersten Gespräch bis nach dem Kauf",
+      "text1": "Du bekommst nicht nur ein Gerät, sondern auch persönliche Unterstützung.",
+      "text2": "Ich bin für Fragen, Tipps und Einschulung da.",
+      "services": "Meine Leistungen:",
+      "list": ["Beratung & Vorführung", "Persönliche Einschulung", "Langfristige Unterstützung"]
+    },
+    "cta": {
+      "title": "Bereit für mehr Leichtigkeit in der Küche?",
+      "subtitle": "Lass uns gemeinsam herausfinden, ob der Thermomix® zu dir passt.",
+      "button": "Jetzt Beratung anfragen"
+    }
+  },
+  "offers": {
+    "tagline": "Aktionen & Angebote",
+    "title": "Derzeitige Angebote",
+    "subtitle": "Sichere dir jetzt exklusive Vorteile und Aktionen rund um den Thermomix® TM7.",
+    "moreInfo": "Mehr Infos & Angebot anfragen",
+    "financing": {
+      "title": "Finanzierung über die Denzel Bank möglich",
+      "text1": "Du möchtest deinen Thermomix® flexibel bezahlen?",
+      "text2": "Über die Denzel Bank AG ist eine Finanzierung möglich. Ich informiere dich gerne über die aktuellen Konditionen und unterstütze dich bei der Abwicklung.",
+      "benefits": ["Flexible Laufzeiten", "Transparente Raten", "Abwicklung direkt über mich"],
+      "button": "Finanzierung & Aktionen anfragen"
+    }
+  },
+  "about": {
+    "tagline": "Über mich",
+    "title": "Mit Herz und Leidenschaft dabei",
+    "text1": "Hallo, ich bin Bernhard – Lehrer, Familienvater von drei Kindern und Thermomix®-Berater aus Wien.",
+    "text2": "Zum Thermomix® bin ich gekommen, als ich mit meinem ersten Sohn in Karenz war. Ich wollte für meine Familie gesund kochen, hatte aber im Alltag oft wenig Zeit und Energie. Der Thermomix® hat mich dabei enorm entlastet – weniger Stress, mehr Zeit für die Familie und trotzdem gutes, frisches Essen.",
+    "text3": "Mit der Zeit habe ich gemerkt, wie sehr man sich mit dem Thermomix® auch weiterentwickeln kann: neue Rezepte, mehr Abwechslung und wieder mehr Freude am Kochen. Genau diese Erfahrung möchte ich weitergeben und begleite dich persönlich dabei, den Thermomix® in deinen Alltag zu integrieren und Schritt für Schritt sicherer damit zu werden.",
+    "text4": "Mir ist wichtig, dass Kochen dich nicht belastet, sondern dir den Alltag erleichtert und wieder Freude macht.",
+    "stats": {
+      "customers": "Kunden",
+      "experience": "Jahre Erfahrung",
+      "dedication": "Hingabe"
+    },
+    "badge": {
+      "certified": "Zertifiziert",
+      "consultant": "Thermomix® Berater"
+    }
+  },
+  "footer": {
+    "tagline": "Ihr Thermomix® Berater",
+    "imprint": "Impressum",
+    "privacy": "Datenschutz",
+    "terms": "AGB"
   },
   "beratung": {
     "tagline": "Beratung bei mir",
@@ -126,7 +255,7 @@
     "important": {
       "tagline": "Wichtig",
       "title": "Kein Druck, nur Inspiration",
-      "description": "Das Showkochen ist unverbindlich. Du musst nichts kaufen, nichts unterschreiben! Du nimmst einfach Ideen, Infos und Eindrücke mit."
+      "description": "Das Showkochen ist <highlight>unverbindlich</highlight>. Du musst nichts kaufen, nichts unterschreiben! Du nimmst einfach Ideen, Infos und Eindrücke mit."
     },
     "forWhom": {
       "tagline": "Zielgruppe",
@@ -175,7 +304,12 @@
       "starter": "Vorspeise",
       "main": "Hauptspeise",
       "dessert": "Nachspeise",
-      "recipeLink": "Rezept auf Cookidoo®"
+      "recipeLink": "Rezept auf Cookidoo®",
+      "dishes": {
+        "focaccia": "Vollwert-Focaccia mit Paradeiser-Feta-Dip",
+        "risotto": "Basilikumrisotto",
+        "dessert": "Erdbeertraum"
+      }
     },
     "cta": {
       "title": "Bereit für dein Showkochen?",

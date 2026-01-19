@@ -1,12 +1,14 @@
-import { Instagram, Heart } from 'lucide-react';
+import { Instagram } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { label: 'Impressum', href: '#' },
-    { label: 'Datenschutz', href: '#' },
-    { label: 'AGB', href: '#' },
+    { label: t('footer.imprint'), href: '#' },
+    { label: t('footer.privacy'), href: '#' },
+    { label: t('footer.terms'), href: '#' },
   ];
 
   return (
@@ -16,7 +18,7 @@ const Footer = () => {
           {/* Logo & Tagline */}
           <div className="text-center md:text-left">
             <p className="font-serif text-2xl mb-2">Bernhard Prager</p>
-            <p className="text-sm opacity-70">Ihr Thermomix® Berater</p>
+            <p className="text-sm opacity-70">{t('footer.tagline')}</p>
             <p className="text-xs opacity-50 mt-1">Viehtriftgasse 3, A-1210 Wien</p>
           </div>
 
