@@ -168,14 +168,14 @@ const BenefitsSection = () => {
               </div>
               <div className="mb-6">
                 <p className="font-medium text-foreground mb-3">Ideal für:</p>
-                <div className="flex flex-col gap-2">
+                <ul className="space-y-2">
                   {['Familien', 'Berufstätige', 'Alle mit wenig Zeit'].map((item) => (
-                    <span key={item} className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full text-sm w-fit">
-                      <Check className="w-4 h-4 text-primary" />
+                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
                       {item}
-                    </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
             <div className="relative">
@@ -234,15 +234,15 @@ const BenefitsSection = () => {
               </div>
               <div className="mb-6">
                 <p className="font-medium text-foreground mb-3">Besonders praktisch für Familien:</p>
-                <ul className="space-y-2 text-muted-foreground">
+                <ul className="space-y-2">
                   {[
                     'Babynahrung und Breie selbst machen',
                     'Kinderfreundliche Gerichte schnell zubereiten',
                     'Snacks und Jause ohne Zusatzstoffe',
                     'Gemeinsames Kochen macht sogar Spaß'
                   ].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -283,14 +283,14 @@ const BenefitsSection = () => {
               </div>
               <div>
                 <p className="font-medium text-foreground mb-3">Du bestimmst:</p>
-                <div className="flex flex-col gap-2">
+                <ul className="space-y-2">
                   {['Zutaten', 'Portionsgrößen', 'Ernährungsform'].map((item) => (
-                    <span key={item} className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full text-sm w-fit">
-                      <Check className="w-4 h-4 text-primary" />
+                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
                       {item}
-                    </span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -339,10 +339,10 @@ const BenefitsSection = () => {
               </div>
               <div>
                 <p className="font-medium text-foreground mb-3">Vorteile:</p>
-                <ul className="space-y-2 text-muted-foreground">
+                <ul className="space-y-2">
                   {['Gelinggarantie', 'Wochenplanung', 'Einkaufslisten'].map((item) => (
-                    <li key={item} className="flex items-center gap-2">
-                      <Check className="w-5 h-5 text-primary" />
+                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -434,14 +434,14 @@ const BenefitsSection = () => {
               <p className="text-muted-foreground mb-6">
                 Bei mir bekommst du nicht nur ein Gerät, sondern auch Unterstützung:
               </p>
-              <ul className="space-y-3 text-muted-foreground mb-8">
+              <ul className="space-y-2 mb-8">
                 {[
                   'Beratung vor dem Kauf',
                   'Einschulung beim Start',
                   'Tipps & Rezepte für den Alltag'
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <Check className="w-5 h-5 text-primary" />
+                  <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0" />
                     {item}
                   </li>
                 ))}
