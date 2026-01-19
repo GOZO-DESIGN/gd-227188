@@ -22,9 +22,9 @@ const HeroSection = () => {
 
   return (
     <section className="relative min-h-screen pt-20 md:pt-24 overflow-hidden bg-white">
-      <div className="flex flex-col lg:flex-row min-h-[calc(100vh-5rem)]">
+      <div className="flex flex-col lg:flex-row lg:min-h-[calc(100vh-5rem)]">
         {/* Left Side - Image with Parallax */}
-        <div className="relative lg:w-1/2 h-[50vh] lg:h-auto overflow-hidden">
+        <div className="relative lg:w-1/2 min-h-[40vh] sm:min-h-[50vh] lg:min-h-0 lg:h-auto overflow-hidden flex-shrink-0">
           <div 
             className="absolute inset-0 w-full h-[120%]"
             style={{ transform: `translateY(-${parallaxOffset}px)` }}
@@ -32,7 +32,7 @@ const HeroSection = () => {
             <img
               src={heroImage}
               alt="Thermomix Berater in moderner Küche"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-top sm:object-center"
             />
           </div>
           
