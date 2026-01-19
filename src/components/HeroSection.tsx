@@ -22,32 +22,34 @@ const HeroSection = () => {
 
   return (
     <section className="relative pt-20 md:pt-24 overflow-hidden bg-white">
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col md:flex-row">
         {/* Left Side - Image with Parallax */}
-        <div className="relative lg:w-1/2 min-h-[35vh] sm:min-h-[40vh] lg:min-h-[calc(100vh-6rem)] overflow-hidden flex-shrink-0">
-          {/*
-            Unterhalb von "lg" zeigen wir das Bild komplett (object-contain),
-            damit es nicht abgeschnitten wird. Parallax nur auf großen Screens.
-          */}
-          <div className="absolute inset-0 hidden lg:block w-full h-[120%]" style={{ transform: `translateY(-${parallaxOffset}px)` }}>
+        {/* Ab md (768px): Bild neben Content, darunter: Bild 100% width, auto height */}
+        <div className="relative md:w-1/2 md:min-h-[calc(100vh-6rem)] overflow-hidden flex-shrink-0">
+          {/* Mobile: Bild 100% breit, auto Höhe */}
+          <div className="md:hidden w-full">
+            <img
+              src={heroImage}
+              alt="Thermomix Berater in moderner Küche"
+              className="w-full h-auto"
+            />
+          </div>
+
+          {/* Ab md: Parallax-Bild */}
+          <div 
+            className="absolute inset-0 hidden md:block w-full h-[120%]"
+            style={{ transform: `translateY(-${parallaxOffset}px)` }}
+          >
             <img
               src={heroImage}
               alt="Thermomix Berater in moderner Küche"
               className="w-full h-full object-cover object-center"
             />
           </div>
-
-          <div className="absolute inset-0 lg:hidden flex items-center justify-center">
-            <img
-              src={heroImage}
-              alt="Thermomix Berater in moderner Küche"
-              className="w-full h-full object-contain"
-            />
-          </div>
           
           {/* Animated Bar Overlay - White, from right to left */}
           <div 
-            className="absolute top-0 right-0 h-full bg-white z-10 transition-all duration-300 ease-out"
+            className="absolute top-0 right-0 h-full bg-white z-10 transition-all duration-300 ease-out hidden md:block"
             style={{ 
               width: `${barProgress * 100}%`,
               opacity: barProgress > 0 ? 0.95 : 0
@@ -55,12 +57,12 @@ const HeroSection = () => {
           />
           
           {/* Gradient overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/30 lg:to-white/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/30 md:to-white/60 hidden md:block"></div>
         </div>
 
         {/* Right Side - Content with white background overlapping into image */}
-        <div className="relative lg:w-1/2 bg-white lg:-ml-24 z-20 flex items-start lg:items-center">
-          <div className="w-full px-6 py-8 lg:py-8 lg:pl-16 lg:pr-12 xl:pl-24 xl:pr-20">
+        <div className="relative md:w-1/2 bg-white md:-ml-24 z-20 flex items-start md:items-center">
+          <div className="w-full px-6 py-8 md:py-8 md:pl-16 md:pr-12 xl:pl-24 xl:pr-20">
             <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-4 animate-fade-up">
               Thermomix® Berater
             </span>
