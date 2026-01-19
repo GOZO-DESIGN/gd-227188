@@ -39,7 +39,7 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 bg-white border-b border-border/50 transition-all duration-300 ${isScrolled ? 'py-1' : 'py-3'}`}>
+    <header className={`fixed top-0 left-0 right-0 z-40 bg-white border-b border-border/50 transition-all duration-300 ${isScrolled ? 'py-0.5' : 'py-1'}`}>
       <div className="container-narrow">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -47,7 +47,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="kochmitthermo21 Logo" 
-              className={`w-auto transition-all duration-300 ${isScrolled ? 'h-14 md:h-16' : 'h-20 md:h-32'}`} 
+              className={`w-auto transition-all duration-300 ${isScrolled ? 'h-12 md:h-14' : 'h-16 md:h-20'}`} 
             />
           </Link>
 
