@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -41,124 +42,20 @@ import accessoryGarkorb from '@/assets/accessory-garkorb.jpg';
 import display1 from '@/assets/display-1.webp';
 import display2 from '@/assets/display-2.webp';
 
-const devices = [
-  { img: deviceEierkocher, label: 'Eierkocher' },
-  { img: deviceMixer, label: 'Mixer' },
-  { img: deviceKochtopf, label: 'Kochtopf' },
-  { img: deviceWasserkocher, label: 'Wasserkocher' },
-  { img: deviceRuehrgeraet, label: 'Rührgerät' },
-  { img: deviceWaage, label: 'Küchenwaage' },
-  { img: deviceFleischwolf, label: 'Fleischwolf' },
-  { img: deviceKuechenmaschine, label: 'Küchenmaschine' },
-];
-
-const accessories = [
-  {
-    title: 'Der Thermomix® Spatel',
-    img: accessorySpatel,
-    features: ['Passgenau für den TM7', 'Hitzebeständig & stabil', 'Flexibel zum Auskratzen', 'Spülmaschinengeeignet'],
-  },
-  {
-    title: 'Der Schmetterlingsaufsatz',
-    img: accessorySchmetterling,
-    features: ['Ideal für Schlagobers, Eischnee und luftige Cremes', 'Schonend und gleichmäßig'],
-  },
-  {
-    title: 'Der Varoma® Dampfgaraufsatz',
-    img: accessoryVaroma,
-    features: ['Schonendes Dampfgaren auf mehreren Ebenen', 'Ideal für Gemüse, Fisch und ganze Menüs', 'Gesund garen ohne Geschmacksverlust'],
-  },
-  {
-    title: 'Das Garkörbchen',
-    img: accessoryGarkorb,
-    features: ['Perfekt zum Abseihen und Dampfgaren kleiner Zutaten', 'Für Reis, Erdäpfel, Nudeln und mehr'],
-  },
-];
-
-const specs = [
-  {
-    category: 'Motor & Antrieb',
-    items: [
-      { label: 'Motortyp', value: 'Wartungsfreier Vorwerk-Synchronmotor' },
-      { label: 'Antriebsleistung', value: '500 W' },
-      { label: 'Drehzahlbereich', value: 'ca. 40 – 10.700 U/min' },
-      { label: 'Teigmodus', value: 'Intervallbetrieb speziell fürs Kneten' },
-      { label: 'Motorschutz', value: 'Elektronischer Überlastungsschutz' },
-      { label: 'Lautstärke', value: 'Ca. 30 dB(A) Stufe 1 / ca. 50 dB(A) mittlere Stufen' },
-    ],
-  },
-  {
-    category: 'Heizsystem',
-    items: [
-      { label: 'Heizleistung', value: '1.000 W' },
-      { label: 'Temperaturregelung', value: 'Elektronisch gesteuert' },
-      { label: 'Sicherheit', value: 'Automatische Abschaltung bei Überhitzung' },
-    ],
-  },
-  {
-    category: 'Integrierte Waage',
-    items: [
-      { label: 'Messbereich', value: '1 g – 3.000 g' },
-      { label: 'Negativwiegen', value: 'Bis -3.000 g möglich' },
-      { label: 'Tara-Funktion', value: 'Ja' },
-      { label: 'Wiegen während Betrieb', value: 'Ja' },
-    ],
-  },
-  {
-    category: 'Mixtopf',
-    items: [
-      { label: 'Material', value: 'Rostfreier Edelstahl' },
-      { label: 'Isolierung', value: 'Außen isoliert, auch bei Hitze berührbar' },
-      { label: 'Sensoren', value: 'Integrierte Temperaturmessung' },
-      { label: 'Maximale Füllmenge', value: '2,2 Liter' },
-    ],
-  },
-  {
-    category: 'Mixmesser',
-    items: [
-      { label: 'Klingen', value: '4 Stück' },
-      { label: 'Material', value: 'Rostfreier Edelstahl' },
-      { label: 'Wartung', value: 'Wartungsfrei geschliffen' },
-    ],
-  },
-  {
-    category: 'Strom & Leistung',
-    items: [
-      { label: 'Netzspannung', value: '220 – 240 V / 50-60 Hz' },
-      { label: 'Max. Leistungsaufnahme', value: 'bis zu 2.000 W' },
-      { label: 'Netzkabel', value: 'ca. 1m, ausziehbar' },
-    ],
-  },
-  {
-    category: 'System & Software',
-    items: [
-      { label: 'Prozessor', value: 'Mehrkern-Prozessor' },
-      { label: 'Updates', value: 'Automatisch über WLAN' },
-      { label: 'Erweiterbarkeit', value: 'Neue Funktionen per Software-Update' },
-    ],
-  },
-  {
-    category: 'Display & Bedienung',
-    items: [
-      { label: 'Displaygröße', value: '10 Zoll' },
-      { label: 'Displaytyp', value: 'Multi-Touch, hochauflösend' },
-      { label: 'Bedienung', value: 'Auch mit nassen / öligen Fingern möglich' },
-      { label: 'Rezeptzugriff', value: 'Direkt über integriertes Cookidoo®' },
-    ],
-  },
-  {
-    category: 'Maße & Gewicht',
-    items: [
-      { label: 'Höhe', value: 'ca. 33,6 cm' },
-      { label: 'Breite', value: 'ca. 25,3 cm' },
-      { label: 'Tiefe', value: 'ca. 40,5 cm' },
-      { label: 'Gewicht', value: 'ca. 6,5 kg (ohne Varoma®)' },
-    ],
-  },
-];
-
 const DeviceSlider = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const devices = [
+    { img: deviceEierkocher, labelKey: 'eierkocher' },
+    { img: deviceMixer, labelKey: 'mixer' },
+    { img: deviceKochtopf, labelKey: 'kochtopf' },
+    { img: deviceWasserkocher, labelKey: 'wasserkocher' },
+    { img: deviceRuehrgeraet, labelKey: 'ruehrgeraet' },
+    { img: deviceWaage, labelKey: 'waage' },
+    { img: deviceFleischwolf, labelKey: 'fleischwolf' },
+    { img: deviceKuechenmaschine, labelKey: 'kuechenmaschine' },
+  ];
 
   const next = () => {
     setCurrentIndex((prev) => (prev + 1) % devices.length);
@@ -185,18 +82,18 @@ const DeviceSlider = () => {
           >
             {[...devices, ...devices].map((device, index) => (
               <div 
-                key={`${device.label}-${index}`} 
+                key={`${device.labelKey}-${index}`} 
                 className="text-center flex-shrink-0"
                 style={{ width: 'calc(25% - 12px)' }}
               >
                 <div className="bg-card rounded-2xl p-4 shadow-soft mb-2 aspect-square flex items-center justify-center overflow-hidden">
                   <img
                     src={device.img}
-                    alt={device.label}
+                    alt={t(`tm7.devices.labels.${device.labelKey}`)}
                     className="w-full h-full object-cover rounded-xl"
                   />
                 </div>
-                <p className="text-sm text-muted-foreground font-medium">{device.label}</p>
+                <p className="text-sm text-muted-foreground font-medium">{t(`tm7.devices.labels.${device.labelKey}`)}</p>
               </div>
             ))}
           </div>
@@ -254,6 +151,7 @@ const CookidooSlideshow = () => {
 };
 
 const TM7 = () => {
+  const { t } = useTranslation();
   const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
   const { ref: devicesRef, isVisible: devicesVisible } = useScrollAnimation();
   const { ref: modiRef, isVisible: modiVisible } = useScrollAnimation();
@@ -264,11 +162,116 @@ const TM7 = () => {
   const { ref: specsRef, isVisible: specsVisible } = useScrollAnimation();
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
 
+  const accessories = [
+    {
+      titleKey: 'spatel',
+      img: accessorySpatel,
+    },
+    {
+      titleKey: 'schmetterling',
+      img: accessorySchmetterling,
+    },
+    {
+      titleKey: 'varoma',
+      img: accessoryVaroma,
+    },
+    {
+      titleKey: 'garkorb',
+      img: accessoryGarkorb,
+    },
+  ];
+
+  const specs = [
+    {
+      categoryKey: 'motor',
+      items: [
+        { label: 'Motortyp', value: 'Wartungsfreier Vorwerk-Synchronmotor' },
+        { label: 'Antriebsleistung', value: '500 W' },
+        { label: 'Drehzahlbereich', value: 'ca. 40 – 10.700 U/min' },
+        { label: 'Teigmodus', value: 'Intervallbetrieb speziell fürs Kneten' },
+        { label: 'Motorschutz', value: 'Elektronischer Überlastungsschutz' },
+        { label: 'Lautstärke', value: 'Ca. 30 dB(A) Stufe 1 / ca. 50 dB(A) mittlere Stufen' },
+      ],
+    },
+    {
+      categoryKey: 'heating',
+      items: [
+        { label: 'Heizleistung', value: '1.000 W' },
+        { label: 'Temperaturregelung', value: 'Elektronisch gesteuert' },
+        { label: 'Sicherheit', value: 'Automatische Abschaltung bei Überhitzung' },
+      ],
+    },
+    {
+      categoryKey: 'scale',
+      items: [
+        { label: 'Messbereich', value: '1 g – 3.000 g' },
+        { label: 'Negativwiegen', value: 'Bis -3.000 g möglich' },
+        { label: 'Tara-Funktion', value: 'Ja' },
+        { label: 'Wiegen während Betrieb', value: 'Ja' },
+      ],
+    },
+    {
+      categoryKey: 'bowl',
+      items: [
+        { label: 'Material', value: 'Rostfreier Edelstahl' },
+        { label: 'Isolierung', value: 'Außen isoliert, auch bei Hitze berührbar' },
+        { label: 'Sensoren', value: 'Integrierte Temperaturmessung' },
+        { label: 'Maximale Füllmenge', value: '2,2 Liter' },
+      ],
+    },
+    {
+      categoryKey: 'blade',
+      items: [
+        { label: 'Klingen', value: '4 Stück' },
+        { label: 'Material', value: 'Rostfreier Edelstahl' },
+        { label: 'Wartung', value: 'Wartungsfrei geschliffen' },
+      ],
+    },
+    {
+      categoryKey: 'power',
+      items: [
+        { label: 'Netzspannung', value: '220 – 240 V / 50-60 Hz' },
+        { label: 'Max. Leistungsaufnahme', value: 'bis zu 2.000 W' },
+        { label: 'Netzkabel', value: 'ca. 1m, ausziehbar' },
+      ],
+    },
+    {
+      categoryKey: 'system',
+      items: [
+        { label: 'Prozessor', value: 'Mehrkern-Prozessor' },
+        { label: 'Updates', value: 'Automatisch über WLAN' },
+        { label: 'Erweiterbarkeit', value: 'Neue Funktionen per Software-Update' },
+      ],
+    },
+    {
+      categoryKey: 'display',
+      items: [
+        { label: 'Displaygröße', value: '10 Zoll' },
+        { label: 'Displaytyp', value: 'Multi-Touch, hochauflösend' },
+        { label: 'Bedienung', value: 'Auch mit nassen / öligen Fingern möglich' },
+        { label: 'Rezeptzugriff', value: 'Direkt über integriertes Cookidoo®' },
+      ],
+    },
+    {
+      categoryKey: 'dimensions',
+      items: [
+        { label: 'Höhe', value: 'ca. 33,6 cm' },
+        { label: 'Breite', value: 'ca. 25,3 cm' },
+        { label: 'Tiefe', value: 'ca. 40,5 cm' },
+        { label: 'Gewicht', value: 'ca. 6,5 kg (ohne Varoma®)' },
+      ],
+    },
+  ];
+
+  const cookidooFeatures = t('tm7.cookidoo.features', { returnObjects: true }) as string[];
+  const displayFeatures = t('tm7.display.features', { returnObjects: true }) as string[];
+  const comparisonFeatures = t('tm7.comparison.features', { returnObjects: true }) as string[];
+
   return (
     <>
       <Helmet>
-        <title>Thermomix® TM7 – Technik, Funktionen & Möglichkeiten | Bernhard Prager</title>
-        <meta name="description" content="Der smarte All-in-One-Küchenhelfer für moderne Küchen. Erfahren Sie alles über den Thermomix TM7 - Funktionen, Technik und Vorteile." />
+        <title>{t('seo.tm7.title')}</title>
+        <meta name="description" content={t('seo.tm7.description')} />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -281,17 +284,16 @@ const TM7 = () => {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                    Thermomix® TM7
+                    {t('tm7.tagline')}
                   </span>
                   <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
-                    Technik, Funktionen & Möglichkeiten
+                    {t('tm7.title')}
                   </h1>
                   <p className="text-xl text-primary font-medium mb-6">
-                    Der smarte All-in-One-Küchenhelfer für moderne Küchen
+                    {t('tm7.subtitle')}
                   </p>
                   <p className="text-muted-foreground">
-                    Auf dieser Seite zeige ich dir die wichtigsten technischen Merkmale und Funktionen des Thermomix® TM7, 
-                    damit du dir ein klareres Bild davon machen kannst, was dieses Gerät im Alltag wirklich leisten kann.
+                    {t('tm7.intro')}
                   </p>
                 </div>
                 <div className="relative">
@@ -311,24 +313,23 @@ const TM7 = () => {
             <div className={`container-narrow transition-all duration-700 ${devicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="text-center mb-12">
                 <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                  Vielseitigkeit
+                  {t('tm7.devices.tagline')}
                 </span>
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                  Ein Gerät – viele Küchengeräte ersetzt
+                  {t('tm7.devices.title')}
                 </h2>
                 <p className="text-muted-foreground max-w-3xl mx-auto mb-4">
-                  Der TM7 vereint viele Geräte in einem einzigen System. In der Praxis bedeutet das weniger Platzbedarf, 
-                  weniger Abwasch und deutlich einfachere Abläufe in der Küche.
+                  {t('tm7.devices.subtitle')}
                 </p>
                 <p className="text-primary font-medium">
-                  Alles, was du brauchst – in einem einzigen Gerät
+                  {t('tm7.devices.highlight')}
                 </p>
               </div>
 
               <DeviceSlider />
 
               <p className="text-center text-muted-foreground mt-8 italic">
-                Viele meiner Kundinnen und Kunden waren überrascht, wie viele Geräte sie nach kurzer Zeit gar nicht mehr benötigen.
+                {t('tm7.devices.outro')}
               </p>
             </div>
           </section>
@@ -338,13 +339,13 @@ const TM7 = () => {
             <div className={`container-narrow transition-all duration-700 ${modiVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="text-center mb-12">
                 <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                  Koch-Modi
+                  {t('tm7.modi.tagline')}
                 </span>
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                  Funktionen und Geräte
+                  {t('tm7.modi.title')}
                 </h2>
                 <p className="text-muted-foreground max-w-3xl mx-auto">
-                  Der TM7 bietet eine Vielzahl an integrierten Koch- und Arbeitsmodi:
+                  {t('tm7.modi.subtitle')}
                 </p>
               </div>
 
@@ -364,8 +365,7 @@ const TM7 = () => {
               </div>
 
               <p className="text-center text-muted-foreground">
-                Diese Modi können manuell verwendet oder automatisch über geführte Rezepte gesteuert werden. 
-                Gerade diese Kombination aus Technik und Anleitung macht den Thermomix® für so viele attraktiv.
+                {t('tm7.modi.outro')}
               </p>
             </div>
           </section>
@@ -376,33 +376,25 @@ const TM7 = () => {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                    Rezeptplattform
+                    {t('tm7.cookidoo.tagline')}
                   </span>
                   <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                    Geführtes Kochen mit Cookidoo®
+                    {t('tm7.cookidoo.title')}
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    Der TM7 ist mit der offiziellen Thermomix®-Plattform Cookidoo® verbunden.
+                    {t('tm7.cookidoo.subtitle')}
                   </p>
-                  <p className="font-medium text-foreground mb-3">Damit erhältst du:</p>
+                  <p className="font-medium text-foreground mb-3">{t('tm7.cookidoo.featuresTitle')}</p>
                   <ul className="space-y-2 mb-6">
-                    {[
-                      'Tausende Rezepte aus internationaler Küche direkt am Gerät',
-                      'Schritt-für-Schritt-Anleitungen mit Gelinggarantie',
-                      'Direkte Benachrichtigungen über den Kocherfolg am Handy',
-                      'Automatische Einstellungen für Zeit, Temperatur und Geschwindigkeit',
-                      'Wochenplanung leicht gemacht',
-                      'Digitale Einkaufslisten'
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                    {cookidooFeatures.map((item, index) => (
+                      <li key={index} className="flex items-start gap-2 text-muted-foreground">
                         <span className="text-primary font-bold">✓</span>
                         {item}
                       </li>
                     ))}
                   </ul>
                   <p className="text-muted-foreground italic">
-                    Viele Nutzerinnen und Nutzer schätzen besonders, dass sie nicht mehr überlegen müssen, 
-                    wie ein Gericht funktioniert. Der Thermomix® führt sie sicher durch den gesamten Kochprozess.
+                    {t('tm7.cookidoo.outro')}
                   </p>
                 </div>
                 <div>
@@ -438,32 +430,25 @@ const TM7 = () => {
                 </div>
                 <div className="order-1 lg:order-2">
                   <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                    Bedienung
+                    {t('tm7.display.tagline')}
                   </span>
                   <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                    Display & Bedienung
+                    {t('tm7.display.title')}
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    Der Thermomix® TM7 wird über ein großes Touch-Display bedient.
+                    {t('tm7.display.subtitle')}
                   </p>
-                  <p className="font-medium text-foreground mb-3">Merkmale:</p>
+                  <p className="font-medium text-foreground mb-3">{t('tm7.display.featuresTitle')}</p>
                   <ul className="space-y-2 mb-6">
-                    {[
-                      'Intuitive Menüführung',
-                      'Schnelle Reaktion',
-                      'Manuelle Einstellungen jederzeit möglich (Schriftgröße, …)',
-                      'Direkter Zugriff auf Rezepte – auch ohne Handy',
-                      'Laufende Software-Updates über WLAN'
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-muted-foreground">
+                    {displayFeatures.map((item, index) => (
+                      <li key={index} className="flex items-start gap-2 text-muted-foreground">
                         <span className="text-primary font-bold">✓</span>
                         {item}
                       </li>
                     ))}
                   </ul>
                   <p className="text-muted-foreground italic">
-                    Auch Personen, die technisch nicht besonders affin sind, finden sich meist sehr schnell zurecht 
-                    und schätzen den Mehrwert dieser Displayrevolution.
+                    {t('tm7.display.outro')}
                   </p>
                 </div>
               </div>
@@ -475,41 +460,44 @@ const TM7 = () => {
             <div className={`container-narrow transition-all duration-700 ${accessoriesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="text-center mb-12">
                 <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                  Zubehör
+                  {t('tm7.accessories.tagline')}
                 </span>
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                  Das TM-Paket enthält vielseitige Helfer
+                  {t('tm7.accessories.title')}
                 </h2>
               </div>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {accessories.map((accessory) => (
-                  <div
-                    key={accessory.title}
-                    className="group bg-white rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 overflow-hidden border border-border/30"
-                  >
-                    <div className="aspect-[4/3] overflow-hidden bg-white">
-                      <img 
-                        src={accessory.img} 
-                        alt={accessory.title}
-                        className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                      />
+                {accessories.map((accessory) => {
+                  const features = t(`tm7.accessories.${accessory.titleKey}.features`, { returnObjects: true }) as string[];
+                  return (
+                    <div
+                      key={accessory.titleKey}
+                      className="group bg-white rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 overflow-hidden border border-border/30"
+                    >
+                      <div className="aspect-[4/3] overflow-hidden bg-white">
+                        <img 
+                          src={accessory.img} 
+                          alt={t(`tm7.accessories.${accessory.titleKey}.title`)}
+                          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="p-6">
+                        <h3 className="font-serif text-lg text-foreground mb-4 group-hover:text-primary transition-colors">
+                          {t(`tm7.accessories.${accessory.titleKey}.title`)}
+                        </h3>
+                        <ul className="space-y-2">
+                          {features.map((feature, index) => (
+                            <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                              <span className="text-primary font-bold">✓</span>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div className="p-6">
-                      <h3 className="font-serif text-lg text-foreground mb-4 group-hover:text-primary transition-colors">
-                        {accessory.title}
-                      </h3>
-                      <ul className="space-y-2">
-                        {accessory.features.map((feature) => (
-                          <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <span className="text-primary font-bold">✓</span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </section>
@@ -520,41 +508,34 @@ const TM7 = () => {
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                    Der Unterschied
+                    {t('tm7.comparison.tagline')}
                   </span>
                   <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                    Unterschied zu klassischen Küchenmaschinen
+                    {t('tm7.comparison.title')}
                   </h2>
                   <p className="text-muted-foreground mb-6">
-                    Im Vergleich zu herkömmlichen Küchenmaschinen bietet der TM7:
+                    {t('tm7.comparison.subtitle')}
                   </p>
                   <ul className="space-y-3 mb-6">
-                    {[
-                      'Aktives Kochen in einem Gerät',
-                      'Präzise Temperaturführung',
-                      'Geführte Rezepte statt manueller Abläufe',
-                      'Viele Kochtechniken in einem System',
-                      'Digitale Rezeptverwaltung'
-                    ].map((item) => (
-                      <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                    {comparisonFeatures.map((item, index) => (
+                      <li key={index} className="flex items-center gap-2 text-muted-foreground">
                         <span className="text-primary font-bold">✓</span>
                         {item}
                       </li>
                     ))}
                   </ul>
                   <p className="text-foreground font-medium">
-                    Der Thermomix® ist dadurch deutlich mehr als eine klassische Küchenmaschine – 
-                    er ist ein vollständiges Kochsystem.
+                    {t('tm7.comparison.outro')}
                   </p>
                 </div>
                 <div className="bg-card p-8 rounded-2xl shadow-soft">
                   <img
                     src={deviceKuechenmaschine}
-                    alt="Klassische Küchenmaschine"
+                    alt={t('tm7.comparison.imageCaption')}
                     className="w-full rounded-xl mb-4"
                   />
                   <p className="text-center text-muted-foreground text-sm">
-                    Klassische Küchenmaschinen können nur rühren und kneten – der TM7 kann kochen, dampfgaren, wiegen und vieles mehr.
+                    {t('tm7.comparison.imageCaption')}
                   </p>
                 </div>
               </div>
@@ -566,18 +547,18 @@ const TM7 = () => {
             <div className={`container-narrow transition-all duration-700 ${specsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="text-center mb-12">
                 <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                  Spezifikationen
+                  {t('tm7.specs.tagline')}
                 </span>
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                  Technische Merkmale
+                  {t('tm7.specs.title')}
                 </h2>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {specs.map((specGroup) => (
-                  <div key={specGroup.category} className="bg-card p-6 rounded-2xl shadow-soft">
+                  <div key={specGroup.categoryKey} className="bg-card p-6 rounded-2xl shadow-soft">
                     <h3 className="font-serif text-lg text-primary mb-4 border-b border-border pb-2">
-                      {specGroup.category}
+                      {t(`tm7.specs.categories.${specGroup.categoryKey}`)}
                     </h3>
                     <dl className="space-y-2">
                       {specGroup.items.map((item) => (
@@ -598,18 +579,17 @@ const TM7 = () => {
             <div className={`container-narrow transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 lg:p-12 text-center">
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-                  Interesse geweckt?
+                  {t('tm7.cta.title')}
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                  Ich zeige dir gerne persönlich, was der Thermomix® TM7 alles kann – 
-                  unverbindlich und bei dir zu Hause.
+                  {t('tm7.cta.subtitle')}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button asChild size="lg" className="text-base">
-                    <Link to="/beratung">Persönliche Beratung anfragen</Link>
+                    <Link to="/beratung">{t('tm7.cta.buttonPrimary')}</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline" className="text-base">
-                    <Link to="/showkochen">Showkochen erleben</Link>
+                    <Link to="/showkochen">{t('tm7.cta.buttonSecondary')}</Link>
                   </Button>
                 </div>
               </div>
