@@ -37,6 +37,10 @@ import accessorySchmetterling from '@/assets/accessory-schmetterling.jpg';
 import accessoryVaroma from '@/assets/accessory-varoma.jpg';
 import accessoryGarkorb from '@/assets/accessory-garkorb.jpg';
 
+// Display images
+import display1 from '@/assets/display-1.webp';
+import display2 from '@/assets/display-2.webp';
+
 const devices = [
   { img: deviceEierkocher, label: 'Eierkocher' },
   { img: deviceMixer, label: 'Mixer' },
@@ -413,13 +417,23 @@ const TM7 = () => {
             <div className={`container-narrow transition-all duration-700 ${displayVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <div className="order-2 lg:order-1">
-                  <div className="relative">
-                    <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-full blur-3xl"></div>
-                    <img
-                      src={tm7Hero}
-                      alt="Thermomix TM7 Display"
-                      className="relative w-full max-w-md mx-auto drop-shadow-2xl"
-                    />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="relative">
+                      <div className="absolute -inset-2 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-2xl blur-2xl"></div>
+                      <img
+                        src={display1}
+                        alt="Thermomix TM7 Display Rezept"
+                        className="relative w-full rounded-xl shadow-lg"
+                      />
+                    </div>
+                    <div className="relative">
+                      <div className="absolute -inset-2 bg-gradient-to-br from-accent/10 via-transparent to-primary/10 rounded-2xl blur-2xl"></div>
+                      <img
+                        src={display2}
+                        alt="Thermomix TM7 Display Waage"
+                        className="relative w-full rounded-xl shadow-lg"
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
