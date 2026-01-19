@@ -57,7 +57,7 @@ const OffersSection = () => {
           {offers.map((offer) => (
             <div
               key={offer.id}
-              className="group bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300"
+              className="group bg-white rounded-xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 flex flex-col"
             >
               {/* Promo Image - maintains aspect ratio */}
               <div className="w-full overflow-hidden">
@@ -68,8 +68,8 @@ const OffersSection = () => {
                 />
               </div>
               
-              {/* Button */}
-              <div className="p-4 md:p-6">
+              {/* Button - pushed to bottom via flex-grow */}
+              <div className="p-4 md:p-6 mt-auto">
                 <Link
                   to="/beratung"
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium
