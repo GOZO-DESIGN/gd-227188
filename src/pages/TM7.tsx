@@ -145,7 +145,6 @@ const specs = [
 
 const DeviceSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const visibleCount = 4;
 
   const next = () => {
     setCurrentIndex((prev) => (prev + 1) % devices.length);
@@ -155,42 +154,43 @@ const DeviceSlider = () => {
     setCurrentIndex((prev) => (prev - 1 + devices.length) % devices.length);
   };
 
-  const getVisibleDevices = () => {
-    const result = [];
-    for (let i = 0; i < visibleCount; i++) {
-      result.push(devices[(currentIndex + i) % devices.length]);
-    }
-    return result;
-  };
-
   return (
     <div className="relative">
       <div className="flex items-center gap-4">
         <button
           onClick={prev}
-          className="p-2 rounded-full bg-card shadow-md hover:bg-secondary transition-colors"
+          className="p-2 rounded-full bg-card shadow-md hover:bg-secondary transition-colors z-10 flex-shrink-0"
         >
           <ChevronLeft className="w-6 h-6 text-primary" />
         </button>
         
-        <div className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {getVisibleDevices().map((device, index) => (
-            <div key={`${device.label}-${index}`} className="text-center">
-              <div className="bg-card rounded-2xl p-4 shadow-soft mb-2 aspect-square flex items-center justify-center overflow-hidden">
-                <img
-                  src={device.img}
-                  alt={device.label}
-                  className="w-full h-full object-cover rounded-xl"
-                />
+        <div className="flex-1 overflow-hidden">
+          <div 
+            className="flex transition-transform duration-500 ease-out gap-4"
+            style={{ transform: `translateX(-${currentIndex * (100 / 4 + 1)}%)` }}
+          >
+            {[...devices, ...devices].map((device, index) => (
+              <div 
+                key={`${device.label}-${index}`} 
+                className="text-center flex-shrink-0"
+                style={{ width: 'calc(25% - 12px)' }}
+              >
+                <div className="bg-card rounded-2xl p-4 shadow-soft mb-2 aspect-square flex items-center justify-center overflow-hidden">
+                  <img
+                    src={device.img}
+                    alt={device.label}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                </div>
+                <p className="text-sm text-muted-foreground font-medium">{device.label}</p>
               </div>
-              <p className="text-sm text-muted-foreground font-medium">{device.label}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <button
           onClick={next}
-          className="p-2 rounded-full bg-card shadow-md hover:bg-secondary transition-colors"
+          className="p-2 rounded-full bg-card shadow-md hover:bg-secondary transition-colors z-10 flex-shrink-0"
         >
           <ChevronRight className="w-6 h-6 text-primary" />
         </button>
