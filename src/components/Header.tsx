@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import logo from '@/assets/logo.svg';
 
 const WHATSAPP_URL = 'https://api.whatsapp.com/send/?phone=%2B436763979250&text&type=phone_number&app_absent=0';
@@ -16,10 +17,64 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+const LanguageSelector = () => {
+  const { i18n } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const languages = [
+    { code: 'de', label: 'Deutsch', flag: '🇩🇪' },
+    { code: 'en', label: 'English', flag: '🇬🇧' },
+  ];
+
+  const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
+
+  const changeLanguage = (code: string) => {
+    i18n.changeLanguage(code);
+    localStorage.setItem('language', code);
+    setIsOpen(false);
+  };
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-secondary transition-colors text-sm font-medium"
+      >
+        <Globe className="w-4 h-4" />
+        <span className="hidden sm:inline">{currentLang.flag}</span>
+      </button>
+      
+      {isOpen && (
+        <>
+          <div 
+            className="fixed inset-0 z-40" 
+            onClick={() => setIsOpen(false)}
+          />
+          <div className="absolute right-0 top-full mt-2 bg-card border border-border rounded-xl shadow-lg z-50 overflow-hidden min-w-[140px]">
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => changeLanguage(lang.code)}
+                className={`w-full flex items-center gap-3 px-4 py-3 text-sm hover:bg-secondary transition-colors ${
+                  lang.code === i18n.language ? 'bg-primary/10 text-primary' : 'text-foreground'
+                }`}
+              >
+                <span>{lang.flag}</span>
+                <span>{lang.label}</span>
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,11 +86,11 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { label: 'Start', href: '/' },
-    { label: 'Was ist der TM7', href: '/tm7' },
-    { label: 'Showkochen', href: '/showkochen' },
-    { label: 'Beratung', href: '/beratung' },
-    { label: 'Galerie', href: '/galerie' },
+    { label: t('nav.start'), href: '/' },
+    { label: t('nav.tm7'), href: '/tm7' },
+    { label: t('nav.showkochen'), href: '/showkochen' },
+    { label: t('nav.beratung'), href: '/beratung' },
+    { label: t('nav.galerie'), href: '/galerie' },
   ];
 
   return (
@@ -55,7 +110,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
-                key={link.label}
+                key={link.href}
                 to={link.href}
                 className={`transition-colors duration-300 link-underline py-1 ${
                   location.pathname === link.href 
@@ -68,8 +123,10 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* WhatsApp & CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
+          {/* Language, WhatsApp & CTA Button */}
+          <div className="hidden lg:flex items-center gap-3">
+            <LanguageSelector />
+            
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -86,18 +143,21 @@ const Header = () => {
               className="bg-primary text-primary-foreground px-5 py-2.5 rounded-lg font-medium
                 transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5"
             >
-              Beratung buchen
+              {t('nav.bookConsultation')}
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
-            aria-label="Menü öffnen"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageSelector />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-foreground hover:text-primary transition-colors"
+              aria-label="Menü öffnen"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -106,7 +166,7 @@ const Header = () => {
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
-                  key={link.label}
+                  key={link.href}
                   to={link.href}
                   onClick={() => setIsMenuOpen(false)}
                   className={`transition-colors duration-300 py-2 ${
@@ -134,7 +194,7 @@ const Header = () => {
                 className="bg-primary text-primary-foreground px-5 py-3 rounded-lg font-medium text-center
                   transition-all duration-300 hover:bg-primary/90"
               >
-                Beratung buchen
+                {t('nav.bookConsultation')}
               </Link>
             </div>
           </nav>
