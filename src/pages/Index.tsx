@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import PasswordProtection from '@/components/PasswordProtection';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -18,6 +19,7 @@ const CACHE_KEY = 'thermomix_access_granted';
 
 const Index = () => {
   const [isUnlocked, setIsUnlocked] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const cached = localStorage.getItem(CACHE_KEY);
@@ -30,10 +32,10 @@ const Index = () => {
     return (
       <>
         <Helmet>
-          <title>kochmitthermo21 | Ihre Thermomix® Beraterin</title>
+          <title>{t('seo.index.title')}</title>
           <meta 
             name="description" 
-            content="Entdecken Sie die Welt des einfachen und kreativen Kochens mit dem Thermomix®. Persönliche Beratung und Vorführungen in Ihrer Region."
+            content={t('seo.index.description')}
           />
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
@@ -45,14 +47,14 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>kochmitthermo21 | Ihre Thermomix® Beraterin – Kochen mit Leidenschaft</title>
+        <title>{t('seo.index.titleFull')}</title>
         <meta 
           name="description" 
-          content="Entdecken Sie die Welt des einfachen, gesunden und kreativen Kochens mit dem Thermomix®. Persönliche Beratung, Vorführungen und Rezeptideen von Ihrer zertifizierten Thermomix® Beraterin."
+          content={t('seo.index.descriptionFull')}
         />
-        <meta name="keywords" content="Thermomix, Beratung, Kochen, Rezepte, Vorführung, Küchenmaschine, gesund kochen" />
-        <meta property="og:title" content="kochmitthermo21 | Ihre Thermomix® Beraterin" />
-        <meta property="og:description" content="Entdecken Sie die Welt des einfachen und kreativen Kochens mit dem Thermomix®." />
+        <meta name="keywords" content={t('seo.index.keywords')} />
+        <meta property="og:title" content={t('seo.index.title')} />
+        <meta property="og:description" content={t('seo.index.description')} />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://kochmitthermo21.de" />
       </Helmet>

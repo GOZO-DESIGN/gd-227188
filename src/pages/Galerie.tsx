@@ -1,13 +1,16 @@
 import { Helmet } from 'react-helmet';
+import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const Galerie = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Helmet>
-        <title>Galerie | kochmitthermo21</title>
-        <meta name="description" content="Impressionen aus meinen Showkochen-Events und Thermomix Beratungen - lassen Sie sich inspirieren!" />
+        <title>{t('seo.gallery.title')}</title>
+        <meta name="description" content={t('seo.gallery.description')} />
       </Helmet>
 
       <div className="min-h-screen bg-background">
@@ -16,10 +19,10 @@ const Galerie = () => {
           <div className="section-padding">
             <div className="container-narrow">
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 animate-fade-up">
-                <span className="text-primary">Galerie</span>
+                <span className="text-primary">{t('gallery.title')}</span>
               </h1>
               <p className="text-muted-foreground text-lg animate-fade-up delay-100">
-                Inhalt folgt in Kürze...
+                {t('gallery.comingSoon')}
               </p>
             </div>
           </div>
