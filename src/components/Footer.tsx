@@ -1,14 +1,15 @@
 import { Instagram } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { label: t('footer.imprint'), href: '#' },
-    { label: t('footer.privacy'), href: '#' },
-    { label: t('footer.terms'), href: '#' },
+    { label: t('footer.imprint'), href: '/impressum' },
+    { label: t('footer.privacy'), href: '/datenschutz' },
+    { label: t('footer.terms'), href: '/agb' },
   ];
 
   return (
@@ -25,14 +26,13 @@ const Footer = () => {
           {/* Links */}
           <nav className="flex flex-wrap justify-center gap-6">
             {footerLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
-                onClick={(e) => e.preventDefault()}
+                to={link.href}
                 className="text-sm opacity-70 hover:opacity-100 transition-opacity duration-300 link-underline"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
