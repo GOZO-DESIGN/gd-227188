@@ -168,9 +168,9 @@ const BenefitsSection = () => {
               </div>
               <div className="mb-6">
                 <p className="font-medium text-foreground mb-3">Ideal für:</p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-col gap-2">
                   {['Familien', 'Berufstätige', 'Alle mit wenig Zeit'].map((item) => (
-                    <span key={item} className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full text-sm">
+                    <span key={item} className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full text-sm w-fit">
                       <Check className="w-4 h-4 text-primary" />
                       {item}
                     </span>
@@ -283,9 +283,9 @@ const BenefitsSection = () => {
               </div>
               <div>
                 <p className="font-medium text-foreground mb-3">Du bestimmst:</p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-col gap-2">
                   {['Zutaten', 'Portionsgrößen', 'Ernährungsform'].map((item) => (
-                    <span key={item} className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full text-sm">
+                    <span key={item} className="inline-flex items-center gap-2 bg-card px-4 py-2 rounded-full text-sm w-fit">
                       <Check className="w-4 h-4 text-primary" />
                       {item}
                     </span>
