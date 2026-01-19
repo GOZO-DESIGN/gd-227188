@@ -1,15 +1,10 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Phone, Mail, MapPin, Send, ChevronRight, ChevronLeft, Calendar, Check } from 'lucide-react';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
-const serviceOptions = [
-  { id: 'showkochen', label: 'Showkochen in Wien/NÖ/BGLD' },
-  { id: 'beratung', label: 'Beratungstermin' },
-  { id: 'bestellung', label: 'Bestellung eines TM7!' },
-  { id: 'info', label: 'Weitere Informationen' },
-];
-
 const ContactSection = () => {
+  const { t } = useTranslation();
   const { ref, isVisible } = useScrollAnimation();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -24,29 +19,36 @@ const ContactSection = () => {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  const serviceOptions = [
+    { id: 'showkochen', label: t('contact.form.services.showkochen') },
+    { id: 'beratung', label: t('contact.form.services.beratung') },
+    { id: 'bestellung', label: t('contact.form.services.bestellung') },
+    { id: 'info', label: t('contact.form.services.info') },
+  ];
+
   const validateStep = (currentStep: number): boolean => {
     const newErrors: Record<string, string> = {};
 
     if (currentStep === 1 && !formData.service) {
-      newErrors.service = 'Bitte wählen Sie eine Option aus.';
+      newErrors.service = t('contact.form.errors.serviceRequired');
     }
 
     if (currentStep === 3) {
       if (!formData.name.trim()) {
-        newErrors.name = 'Name ist erforderlich.';
+        newErrors.name = t('contact.form.errors.nameRequired');
       }
       if (!formData.phone.trim()) {
-        newErrors.phone = 'Telefonnummer ist erforderlich.';
+        newErrors.phone = t('contact.form.errors.phoneRequired');
       }
       if (!formData.email.trim()) {
-        newErrors.email = 'E-Mail ist erforderlich.';
+        newErrors.email = t('contact.form.errors.emailRequired');
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-        newErrors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.';
+        newErrors.email = t('contact.form.errors.emailInvalid');
       }
     }
 
     if (currentStep === 4 && !formData.consent) {
-      newErrors.consent = 'Bitte stimmen Sie der Datenschutzerklärung zu.';
+      newErrors.consent = t('contact.form.errors.consentRequired');
     }
 
     setErrors(newErrors);
@@ -66,9 +68,7 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (validateStep(4)) {
-      console.log('Form submitted:', formData);
-      // Here you would send the data to your backend
-      alert('Vielen Dank für Ihre Anfrage! Wir melden uns in Kürze bei Ihnen.');
+      alert(t('contact.form.successMessage'));
       setStep(1);
       setFormData({
         service: '',
@@ -92,16 +92,15 @@ const ContactSection = () => {
           {/* Contact Info */}
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-4">
-              Kontakt
+              {t('contact.tagline')}
             </span>
             
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
-              Lassen Sie uns <br />ins Gespräch kommen
+              {t('contact.title')} <br />{t('contact.titleHighlight')}
             </h2>
             
             <p className="text-muted-foreground mb-10">
-              Haben Sie Fragen zum Thermomix® oder möchten Sie eine persönliche 
-              Vorführung erleben? Ich freue mich auf Ihre Nachricht!
+              {t('contact.subtitle')}
             </p>
 
             {/* Contact Details */}
@@ -115,7 +114,7 @@ const ContactSection = () => {
                   <Phone className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Telefon</p>
+                  <p className="text-sm text-muted-foreground">{t('contact.phone')}</p>
                   <p className="font-medium text-foreground">+43 676 397 9250</p>
                 </div>
               </a>
@@ -129,7 +128,7 @@ const ContactSection = () => {
                   <Mail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">E-Mail</p>
+                  <p className="text-sm text-muted-foreground">{t('contact.email')}</p>
                   <p className="font-medium text-foreground">office@mixmitprager.at</p>
                 </div>
               </a>
@@ -142,7 +141,7 @@ const ContactSection = () => {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Adresse</p>
+                  <p className="text-sm text-muted-foreground">{t('contact.address')}</p>
                   <p className="font-medium text-foreground">Bernhard Prager</p>
                   <p className="text-sm text-muted-foreground">Viehtriftgasse 3, A-1210 Wien</p>
                 </div>
@@ -180,7 +179,7 @@ const ContactSection = () => {
               {step === 1 && (
                 <div className="space-y-5 animate-fade-in">
                   <h3 className="font-serif text-xl text-foreground mb-4">
-                    Für welches unserer Produkte oder Dienstleistungen möchten Sie Informationen anfordern? *
+                    {t('contact.form.step1Title')}
                   </h3>
                   
                   <div className="space-y-3">
@@ -213,13 +212,13 @@ const ContactSection = () => {
               {step === 2 && (
                 <div className="space-y-5 animate-fade-in">
                   <h3 className="font-serif text-xl text-foreground mb-4">
-                    Wunschtermin und mögliches Zeitfenster für ein Telefonat
+                    {t('contact.form.step2Title')}
                   </h3>
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
                       <Calendar className="w-4 h-4 inline mr-2" />
-                      Wunschtermin
+                      {t('contact.form.preferredDate')}
                     </label>
                     <input
                       type="date"
@@ -232,19 +231,19 @@ const ContactSection = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Bevorzugtes Zeitfenster
+                      {t('contact.form.preferredTime')}
                     </label>
                     <select
                       value={formData.preferredTime}
                       onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
                       className={inputClass}
                     >
-                      <option value="">Bitte wählen...</option>
-                      <option value="vormittag">Vormittag (9:00 - 12:00)</option>
-                      <option value="mittag">Mittag (12:00 - 14:00)</option>
-                      <option value="nachmittag">Nachmittag (14:00 - 17:00)</option>
-                      <option value="abend">Abend (17:00 - 19:00)</option>
-                      <option value="flexibel">Flexibel</option>
+                      <option value="">{t('contact.form.timeOptions.placeholder')}</option>
+                      <option value="vormittag">{t('contact.form.timeOptions.morning')}</option>
+                      <option value="mittag">{t('contact.form.timeOptions.noon')}</option>
+                      <option value="nachmittag">{t('contact.form.timeOptions.afternoon')}</option>
+                      <option value="abend">{t('contact.form.timeOptions.evening')}</option>
+                      <option value="flexibel">{t('contact.form.timeOptions.flexible')}</option>
                     </select>
                   </div>
                 </div>
@@ -254,18 +253,18 @@ const ContactSection = () => {
               {step === 3 && (
                 <div className="space-y-5 animate-fade-in">
                   <h3 className="font-serif text-xl text-foreground mb-4">
-                    Ihre Kontaktdaten
+                    {t('contact.form.step3Title')}
                   </h3>
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Name *
+                      {t('contact.form.name')} *
                     </label>
                     <input
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Ihr Name"
+                      placeholder={t('contact.form.namePlaceholder')}
                       className={inputClass}
                       maxLength={100}
                     />
@@ -274,13 +273,13 @@ const ContactSection = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Telefonnummer *
+                      {t('contact.phone')} *
                     </label>
                     <input
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+43 ..."
+                      placeholder={t('contact.form.phonePlaceholder')}
                       className={inputClass}
                       maxLength={20}
                     />
@@ -289,13 +288,13 @@ const ContactSection = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      E-Mail *
+                      {t('contact.email')} *
                     </label>
                     <input
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="ihre.email@beispiel.at"
+                      placeholder={t('contact.form.emailPlaceholder')}
                       className={inputClass}
                       maxLength={255}
                     />
@@ -308,18 +307,18 @@ const ContactSection = () => {
               {step === 4 && (
                 <div className="space-y-5 animate-fade-in">
                   <h3 className="font-serif text-xl text-foreground mb-4">
-                    Ihre Nachricht
+                    {t('contact.form.step4Title')}
                   </h3>
                   
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Nachricht (optional)
+                      {t('contact.form.message')}
                     </label>
                     <textarea
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={4}
-                      placeholder="Wie kann ich Ihnen helfen?"
+                      placeholder={t('contact.form.messagePlaceholder')}
                       className={`${inputClass} resize-none`}
                       maxLength={1000}
                     />
@@ -334,18 +333,15 @@ const ContactSection = () => {
                         className="w-5 h-5 mt-0.5 text-primary accent-primary rounded"
                       />
                       <span className="text-sm text-muted-foreground leading-relaxed">
-                        Durch Klicken des „Abschicken"-Buttons stimme ich zu, dass die im Formular 
-                        eingegebenen personenbezogenen Daten zur Bearbeitung der Anfrage und der 
-                        personalisierten Beratung verarbeitet werden. Meine Einwilligungen kann ich 
-                        jederzeit mit Wirkung für die Zukunft postalisch oder per E-Mail widerrufen.
+                        {t('contact.form.consent')}
                       </span>
                     </label>
                     {errors.consent && <p className="text-red-500 text-sm">{errors.consent}</p>}
                     
                     <p className="text-sm text-muted-foreground">
-                      Es gilt unsere{' '}
+                      {t('contact.form.privacyText')}{' '}
                       <a href="#" onClick={(e) => e.preventDefault()} className="text-primary hover:underline">
-                        Datenschutzerklärung
+                        {t('contact.form.privacyLink')}
                       </a>.
                     </p>
                   </div>
@@ -362,7 +358,7 @@ const ContactSection = () => {
                       transition-all duration-300 hover:bg-muted/80"
                   >
                     <ChevronLeft className="w-4 h-4" />
-                    Zurück
+                    {t('contact.form.back')}
                   </button>
                 )}
                 
@@ -373,7 +369,7 @@ const ContactSection = () => {
                     className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-4 px-6 rounded-lg font-medium
                       transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group"
                   >
-                    Weiter
+                    {t('contact.form.next')}
                     <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 ) : (
@@ -382,7 +378,7 @@ const ContactSection = () => {
                     className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-4 px-6 rounded-lg font-medium
                       transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group"
                   >
-                    Abschicken
+                    {t('contact.form.submit')}
                     <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 )}

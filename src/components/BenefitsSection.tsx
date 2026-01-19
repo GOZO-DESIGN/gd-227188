@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Clock, Users, Heart, Sparkles, ChefHat, Check, Baby, Utensils, Apple, Calendar, ShoppingCart, Flame, Blend, HandMetal, Thermometer, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -66,6 +67,7 @@ const CookidooSlideshow = () => {
 };
 
 const BenefitsSection = () => {
+  const { t } = useTranslation();
   const { ref: introRef, isVisible: introVisible } = useScrollAnimation();
   const { ref: timeRef, isVisible: timeVisible } = useScrollAnimation();
   const { ref: familyRef, isVisible: familyVisible } = useScrollAnimation();
@@ -76,6 +78,12 @@ const BenefitsSection = () => {
   const { ref: supportRef, isVisible: supportVisible } = useScrollAnimation();
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
 
+  const timeList = t('benefits.time.list', { returnObjects: true }) as string[];
+  const familyList = t('benefits.family.list', { returnObjects: true }) as string[];
+  const healthList = t('benefits.health.list', { returnObjects: true }) as string[];
+  const cookidooList = t('benefits.cookidoo.list', { returnObjects: true }) as string[];
+  const supportList = t('benefits.support.list', { returnObjects: true }) as string[];
+
   return (
     <section id="vorteile" className="bg-background">
       {/* INTRO */}
@@ -84,13 +92,13 @@ const BenefitsSection = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-              Dein Küchenhelfer
+              {t('benefits.tagline')}
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
-              Warum der Thermomix® dein Leben leichter macht
+              {t('benefits.title')}
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Ein Gerät, das mitdenkt, Zeit spart und Kochen wieder entspannt macht.
+              {t('benefits.subtitle')}
             </p>
           </div>
 
@@ -99,30 +107,23 @@ const BenefitsSection = () => {
             {/* Left: Text content */}
             <div className="order-2 lg:order-1">
               <p className="text-muted-foreground text-lg mb-6">
-                Der Alltag ist oft hektisch – trotzdem wollen wir gut und frisch essen.
+                {t('benefits.intro.text1')}
               </p>
               <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Der Thermomix® TM7 hilft dir dabei, schnell, gesund und abwechslungsreich zu kochen, 
-                  ohne stundenlang in der Küche zu stehen.
-                </p>
-                <p>
-                  Er vereint viele Küchengeräte in einem und führt dich Schritt für Schritt durch jedes 
-                  Rezept – ideal für Anfänger und erfahrene Köche.
-                </p>
+                <p>{t('benefits.intro.text2')}</p>
+                <p>{t('benefits.intro.text3')}</p>
               </div>
               
               {/* Feature highlights */}
               <div className="mt-8 grid grid-cols-2 gap-4">
-                {[
-                  { number: '20+', label: 'Funktionen in einem Gerät' },
-                  { number: '100.000+', label: 'Rezepte auf Cookidoo®' },
-                ].map((item) => (
-                  <div key={item.label} className="bg-secondary/50 rounded-xl p-4 text-center">
-                    <p className="text-2xl font-serif text-primary font-bold">{item.number}</p>
-                    <p className="text-sm text-muted-foreground">{item.label}</p>
-                  </div>
-                ))}
+                <div className="bg-secondary/50 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-serif text-primary font-bold">20+</p>
+                  <p className="text-sm text-muted-foreground">{t('benefits.stats.functions')}</p>
+                </div>
+                <div className="bg-secondary/50 rounded-xl p-4 text-center">
+                  <p className="text-2xl font-serif text-primary font-bold">100.000+</p>
+                  <p className="text-sm text-muted-foreground">{t('benefits.stats.recipes')}</p>
+                </div>
               </div>
             </div>
 
@@ -150,26 +151,22 @@ const BenefitsSection = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                   <Clock className="w-6 h-6 text-primary" />
                 </div>
-                <span className="text-accent font-medium tracking-wide uppercase text-sm">Zeitersparnis</span>
+                <span className="text-accent font-medium tracking-wide uppercase text-sm">{t('benefits.time.tagline')}</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-                Mehr Zeit im Alltag
+                {t('benefits.time.title')}
               </h3>
               <p className="text-xl text-primary font-medium mb-6">
-                Weniger Aufwand – mehr Zeit für dich
+                {t('benefits.time.subtitle')}
               </p>
               <div className="space-y-4 text-muted-foreground mb-8">
-                <p>
-                  Der Thermomix® übernimmt viele Arbeitsschritte gleichzeitig.
-                </p>
-                <p>
-                  Während das Essen kocht, kannst du dich um anderes kümmern.
-                </p>
+                <p>{t('benefits.time.text1')}</p>
+                <p>{t('benefits.time.text2')}</p>
               </div>
               <div className="mb-6">
-                <p className="font-medium text-foreground mb-3">Ideal für:</p>
+                <p className="font-medium text-foreground mb-3">{t('benefits.time.idealFor')}</p>
                 <ul className="space-y-2">
-                  {['Familien', 'Berufstätige', 'Alle mit wenig Zeit'].map((item) => (
+                  {timeList.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary font-bold">✓</span>
                       {item}
@@ -216,31 +213,22 @@ const BenefitsSection = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                   <Users className="w-6 h-6 text-primary" />
                 </div>
-                <span className="text-accent font-medium tracking-wide uppercase text-sm">Familien</span>
+                <span className="text-accent font-medium tracking-wide uppercase text-sm">{t('benefits.family.tagline')}</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-                Perfekt für Familien
+                {t('benefits.family.title')}
               </h3>
               <p className="text-xl text-primary font-medium mb-6">
-                Weniger Stress, mehr gemeinsame Zeit
+                {t('benefits.family.subtitle')}
               </p>
               <div className="space-y-4 text-muted-foreground mb-6">
-                <p>
-                  Der Thermomix® kocht, während du dich um deine Kinder kümmern kannst.
-                </p>
-                <p>
-                  Viele Gerichte sind schnell vorbereitet und gelingen fast nebenbei.
-                </p>
+                <p>{t('benefits.family.text1')}</p>
+                <p>{t('benefits.family.text2')}</p>
               </div>
               <div className="mb-6">
-                <p className="font-medium text-foreground mb-3">Besonders praktisch für Familien:</p>
+                <p className="font-medium text-foreground mb-3">{t('benefits.family.practicalFor')}</p>
                 <ul className="space-y-2">
-                  {[
-                    'Babynahrung und Breie selbst machen',
-                    'Kinderfreundliche Gerichte schnell zubereiten',
-                    'Snacks und Jause ohne Zusatzstoffe',
-                    'Gemeinsames Kochen macht sogar Spaß'
-                  ].map((item) => (
+                  {familyList.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary font-bold">✓</span>
                       {item}
@@ -249,7 +237,7 @@ const BenefitsSection = () => {
                 </ul>
               </div>
               <p className="text-foreground font-medium italic">
-                So bleibt mehr Zeit für das, was wirklich zählt: gemeinsam essen, lachen und Zeit verbringen.
+                {t('benefits.family.outro')}
               </p>
             </div>
           </div>
@@ -265,26 +253,22 @@ const BenefitsSection = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                   <Heart className="w-6 h-6 text-primary" />
                 </div>
-                <span className="text-accent font-medium tracking-wide uppercase text-sm">Gesundheit</span>
+                <span className="text-accent font-medium tracking-wide uppercase text-sm">{t('benefits.health.tagline')}</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-                Gesund kochen wird einfach
+                {t('benefits.health.title')}
               </h3>
               <p className="text-xl text-primary font-medium mb-6">
-                Frisch, ohne Fertigprodukte
+                {t('benefits.health.subtitle')}
               </p>
               <div className="space-y-4 text-muted-foreground mb-6">
-                <p>
-                  Du kochst mit frischen Zutaten und bestimmst selbst, was in dein Essen kommt.
-                </p>
-                <p>
-                  Von schnellen Gerichten bis zu gesunden Snacks für Kinder! Alles gelingt unkompliziert.
-                </p>
+                <p>{t('benefits.health.text1')}</p>
+                <p>{t('benefits.health.text2')}</p>
               </div>
               <div>
-                <p className="font-medium text-foreground mb-3">Du bestimmst:</p>
+                <p className="font-medium text-foreground mb-3">{t('benefits.health.youDecide')}</p>
                 <ul className="space-y-2">
-                  {['Zutaten', 'Portionsgrößen', 'Ernährungsform'].map((item) => (
+                  {healthList.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary font-bold">✓</span>
                       {item}
@@ -321,26 +305,22 @@ const BenefitsSection = () => {
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-primary" />
                 </div>
-                <span className="text-accent font-medium tracking-wide uppercase text-sm">Rezepte</span>
+                <span className="text-accent font-medium tracking-wide uppercase text-sm">{t('benefits.cookidoo.tagline')}</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-                Tausende Rezepte mit Anleitung
+                {t('benefits.cookidoo.title')}
               </h3>
               <p className="text-xl text-primary font-medium mb-6">
-                Kochen mit Cookidoo®
+                {t('benefits.cookidoo.subtitle')}
               </p>
               <div className="space-y-4 text-muted-foreground mb-6">
-                <p>
-                  Rezepte direkt am Display, Schritt für Schritt geführt.
-                </p>
-                <p>
-                  Der Thermomix® stellt Zeit und Temperatur automatisch ein.
-                </p>
+                <p>{t('benefits.cookidoo.text1')}</p>
+                <p>{t('benefits.cookidoo.text2')}</p>
               </div>
               <div>
-                <p className="font-medium text-foreground mb-3">Vorteile:</p>
+                <p className="font-medium text-foreground mb-3">{t('benefits.cookidoo.advantages')}</p>
                 <ul className="space-y-2">
-                  {['Gelinggarantie', 'Wochenplanung', 'Einkaufslisten'].map((item) => (
+                  {cookidooList.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary font-bold">✓</span>
                       {item}
@@ -358,13 +338,13 @@ const BenefitsSection = () => {
         <div className={`container-narrow transition-all duration-700 ${functionsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="text-center mb-12">
             <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-              Vielseitigkeit
+              {t('benefits.functions.tagline')}
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-              Ein Gerät mit vielen Funktionen
+              {t('benefits.functions.title')}
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Der Thermomix® ersetzt viele Geräte:
+              {t('benefits.functions.subtitle')}
             </p>
           </div>
           
@@ -384,7 +364,7 @@ const BenefitsSection = () => {
           </div>
           
           <p className="text-center text-muted-foreground font-medium">
-            Weniger Geräte, weniger Abwasch, mehr Platz.
+            {t('benefits.functions.outro')}
           </p>
         </div>
       </div>
@@ -399,21 +379,21 @@ const BenefitsSection = () => {
               </div>
             </div>
             <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-              Für Anfänger & Kochprofis
+              {t('benefits.profi.title')}
             </h3>
             <p className="text-xl text-primary font-medium mb-6">
-              Einfach starten – kreativ werden – und Neues entdecken
+              {t('benefits.profi.subtitle')}
             </p>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Du kannst dich führen lassen oder eigene Ideen umsetzen.
+              {t('benefits.profi.text')}
             </p>
             
             <div className="bg-card p-8 rounded-2xl shadow-soft max-w-xl mx-auto">
               <p className="text-lg text-foreground italic mb-4">
-                „Ich koche jetzt öfter und viel entspannter."
+                "{t('benefits.profi.quote')}"
               </p>
               <p className="text-muted-foreground text-sm">
-                – Viele Kundinnen und Kunden sagen das
+                {t('benefits.profi.quoteAuthor')}
               </p>
             </div>
           </div>
@@ -426,20 +406,16 @@ const BenefitsSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                Mit mir an deiner Seite
+                {t('benefits.support.tagline')}
               </span>
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                Persönliche Begleitung
+                {t('benefits.support.title')}
               </h3>
               <p className="text-muted-foreground mb-6">
-                Bei mir bekommst du nicht nur ein Gerät, sondern auch Unterstützung:
+                {t('benefits.support.subtitle')}
               </p>
               <ul className="space-y-2 mb-8">
-                {[
-                  'Beratung vor dem Kauf',
-                  'Einschulung beim Start',
-                  'Tipps & Rezepte für den Alltag'
-                ].map((item) => (
+                {supportList.map((item) => (
                   <li key={item} className="flex items-center gap-2 text-muted-foreground">
                     <span className="text-primary font-bold">✓</span>
                     {item}
@@ -447,7 +423,7 @@ const BenefitsSection = () => {
                 ))}
               </ul>
               <p className="text-foreground font-medium">
-                Ich bin auch nach dem Kauf für dich da.
+                {t('benefits.support.outro')}
               </p>
             </div>
             <div className="relative">
@@ -467,18 +443,17 @@ const BenefitsSection = () => {
         <div className={`container-narrow transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 lg:p-12 text-center">
             <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-              Willst du den Thermomix® TM7 genauer kennenlernen?
+              {t('benefits.cta.title')}
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Erfahre mehr über Funktionen, Technik und Vorteile des TM7 – 
-              oder melde dich direkt bei mir für ein persönliches Kennenlernen.
+              {t('benefits.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" variant="outline" className="text-base">
-                <Link to="/tm7">Zum Thermomix® TM7</Link>
+                <Link to="/tm7">{t('benefits.cta.buttonSecondary')}</Link>
               </Button>
               <Button asChild size="lg" className="text-base">
-                <Link to="/beratung">Persönliche Beratung anfragen</Link>
+                <Link to="/beratung">{t('benefits.cta.buttonPrimary')}</Link>
               </Button>
             </div>
           </div>

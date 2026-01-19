@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
 const GoogleReviewsSection = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Load Elfsight script
@@ -25,13 +27,13 @@ const GoogleReviewsSection = () => {
       <div className="container-narrow" ref={ref}>
         <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-4">
-            Kundenbewertungen
+            {t('reviews.tagline')}
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
-            Das sagen meine <span className="text-primary">Kunden</span>
+            {t('reviews.title')} <span className="text-primary">{t('reviews.titleHighlight')}</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Echte Erfahrungen von zufriedenen Thermomix® Nutzern
+            {t('reviews.subtitle')}
           </p>
         </div>
         

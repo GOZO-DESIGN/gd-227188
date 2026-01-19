@@ -427,9 +427,42 @@
       "buttonSecondary": "Showkochen erleben"
     }
   },
-  "galerie": {
+  "gallery": {
     "title": "Galerie",
-    "subtitle": "Inhalt folgt in Kürze..."
+    "comingSoon": "Inhalt folgt in Kürze..."
+  },
+  "passwordProtection": {
+    "title": "Willkommen",
+    "subtitle": "Bitte geben Sie das Passwort ein, um fortzufahren.",
+    "placeholder": "Passwort eingeben",
+    "button": "Eintreten",
+    "error": "Falsches Passwort. Bitte versuchen Sie es erneut.",
+    "footer": "Exklusiver Kundenbereich"
+  },
+  "seo": {
+    "index": {
+      "title": "kochmitthermo21 | Ihre Thermomix Beraterin",
+      "titleFull": "kochmitthermo21 | Ihre Thermomix Beraterin - Kochen mit Leidenschaft",
+      "description": "Entdecken Sie die Welt des einfachen und kreativen Kochens mit dem Thermomix. Persönliche Beratung und Vorfuehrungen in Ihrer Region.",
+      "descriptionFull": "Entdecken Sie die Welt des einfachen, gesunden und kreativen Kochens mit dem Thermomix. Persönliche Beratung, Vorfuehrungen und Rezeptideen von Ihrer zertifizierten Thermomix Beraterin.",
+      "keywords": "Thermomix, Beratung, Kochen, Rezepte, Vorfuehrung, Kuechenmaschine, gesund kochen"
+    },
+    "tm7": {
+      "title": "Thermomix TM7 - Technik, Funktionen & Moeglichkeiten | Bernhard Prager",
+      "description": "Der smarte All-in-One-Kuechenhelfer fuer moderne Kuechen. Erfahren Sie alles ueber den Thermomix TM7 - Funktionen, Technik und Vorteile."
+    },
+    "showkochen": {
+      "title": "Showkochen | kochmitthermo21",
+      "description": "Erlebe den Thermomix TM7 live bei einem Showkochen bei dir zu Hause. Unverbindlich, kostenlos und ohne Verpflichtung."
+    },
+    "gallery": {
+      "title": "Galerie | kochmitthermo21",
+      "description": "Impressionen aus meinen Showkochen-Events und Thermomix Beratungen - lassen Sie sich inspirieren!"
+    },
+    "beratung": {
+      "title": "Beratung | kochmitthermo21",
+      "description": "Persoenliche Thermomix Beratung - Ich begleite Sie Schritt fuer Schritt auf Ihrem Weg zum Thermomix."
+    }
   },
   "instagram": {
     "tagline": "Inspiration",

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Lock } from 'lucide-react';
 
 interface PasswordProtectionProps {
@@ -12,6 +13,7 @@ const PasswordProtection = ({ onUnlock }: PasswordProtectionProps) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const [isShaking, setIsShaking] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const cached = localStorage.getItem(CACHE_KEY);
@@ -48,10 +50,10 @@ const PasswordProtection = ({ onUnlock }: PasswordProtectionProps) => {
             <Lock className="w-7 h-7 text-primary" />
           </div>
           <h1 className="font-serif text-3xl md:text-4xl text-foreground mb-3">
-            Willkommen
+            {t('passwordProtection.title')}
           </h1>
           <p className="text-muted-foreground">
-            Bitte geben Sie das Passwort ein, um fortzufahren.
+            {t('passwordProtection.subtitle')}
           </p>
         </div>
 
@@ -64,7 +66,7 @@ const PasswordProtection = ({ onUnlock }: PasswordProtectionProps) => {
                 setPassword(e.target.value);
                 setError(false);
               }}
-              placeholder="Passwort eingeben"
+              placeholder={t('passwordProtection.placeholder')}
               className={`w-full px-4 py-3 rounded-lg border transition-all duration-300 outline-none
                 ${error 
                   ? 'border-destructive bg-destructive/5' 
@@ -74,7 +76,7 @@ const PasswordProtection = ({ onUnlock }: PasswordProtectionProps) => {
             />
             {error && (
               <p className="text-destructive text-sm mt-2 animate-fade-in">
-                Falsches Passwort. Bitte versuchen Sie es erneut.
+                {t('passwordProtection.error')}
               </p>
             )}
           </div>
@@ -85,12 +87,12 @@ const PasswordProtection = ({ onUnlock }: PasswordProtectionProps) => {
               transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5
               focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
-            Eintreten
+            {t('passwordProtection.button')}
           </button>
         </form>
 
         <p className="text-center text-muted-foreground text-sm mt-6">
-          Exklusiver Kundenbereich
+          {t('passwordProtection.footer')}
         </p>
       </div>
 
