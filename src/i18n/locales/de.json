@@ -1,4 +1,9 @@
 {
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Entdecken Sie unsere kulinarischen Kreationen und lassen Sie sich inspirieren.",
+    "comingSoon": "Inhalt folgt in Kürze..."
+  },
   "nav": {
     "start": "Start",
     "tm7": "Was ist der TM7",
