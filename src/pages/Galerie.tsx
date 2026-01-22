@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
@@ -5,6 +6,17 @@ import Footer from '@/components/Footer';
 
 const Galerie = () => {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    // Check if script already exists
+    const existingScript = document.querySelector('script[src="https://elfsightcdn.com/platform.js"]');
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = 'https://elfsightcdn.com/platform.js';
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
 
   return (
     <>
@@ -21,9 +33,17 @@ const Galerie = () => {
               <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-foreground mb-6 animate-fade-up">
                 <span className="text-primary">{t('gallery.title')}</span>
               </h1>
-              <p className="text-muted-foreground text-lg animate-fade-up delay-100">
-                {t('gallery.comingSoon')}
+              <p className="text-muted-foreground text-lg mb-12 animate-fade-up delay-100">
+                {t('gallery.subtitle')}
               </p>
+              
+              {/* Instagram Feed Embed */}
+              <div className="animate-fade-up delay-200">
+                <div 
+                  className="elfsight-app-7b2f6942-994b-426c-b558-37261b349130" 
+                  data-elfsight-app-lazy
+                />
+              </div>
             </div>
           </div>
         </main>
