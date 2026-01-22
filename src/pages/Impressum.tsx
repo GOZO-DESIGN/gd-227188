@@ -22,30 +22,23 @@ const Impressum = () => {
               </h2>
               <p>Bernhard Prager</p>
               <p>Viehtriftgasse 3</p>
-              <p>A-1210 Wien</p>
-              <p>Österreich</p>
+              <p>1210 Wien</p>
+              <p className="mt-2">Bernhard Prager - Selbstständiger Thermomixberater</p>
             </section>
 
             <section className="mb-8">
               <h2 className="font-serif text-2xl text-deep-brown mb-4">
                 {t('imprint.contactTitle')}
               </h2>
-              <p>E-Mail: bernhard.prager@thermomix.at</p>
-              <p>Telefon: +43 660 7671321</p>
+              <p>Telefon: +43 676 397 92 50</p>
+              <p>E-Mail: prager.bernhard@gmx.at</p>
             </section>
 
             <section className="mb-8">
               <h2 className="font-serif text-2xl text-deep-brown mb-4">
-                {t('imprint.businessTitle')}
+                {t('imprint.editorialTitle')}
               </h2>
-              <p>{t('imprint.businessInfo')}</p>
-            </section>
-
-            <section className="mb-8">
-              <h2 className="font-serif text-2xl text-deep-brown mb-4">
-                {t('imprint.disclaimerTitle')}
-              </h2>
-              <p>{t('imprint.disclaimerText')}</p>
+              <p>Bernhard Prager</p>
             </section>
           </div>
         </div>
