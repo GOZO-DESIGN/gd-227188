@@ -537,12 +537,9 @@
   },
   "imprint": {
     "title": "Impressum",
-    "infoTitle": "Angaben gemäß § 5 ECG",
+    "infoTitle": "Bernhard Prager",
     "contactTitle": "Kontakt",
-    "businessTitle": "Gewerberechtliche Informationen",
-    "businessInfo": "Selbstständiger Handelsvertreter für Vorwerk Austria GmbH & Co KG. Die Gewerbeberechtigung wurde von der zuständigen Behörde erteilt.",
-    "disclaimerTitle": "Haftungsausschluss",
-    "disclaimerText": "Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Die Nutzung der Inhalte erfolgt auf eigene Verantwortung des Nutzers."
+    "editorialTitle": "Redaktionell verantwortlich"
   },
   "privacy": {
     "title": "Datenschutzerklärung",

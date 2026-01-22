@@ -538,12 +538,9 @@
   },
   "imprint": {
     "title": "Imprint",
-    "infoTitle": "Information according to § 5 ECG",
+    "infoTitle": "Bernhard Prager",
     "contactTitle": "Contact",
-    "businessTitle": "Business Information",
-    "businessInfo": "Independent sales representative for Vorwerk Austria GmbH & Co KG. The trade license was issued by the competent authority.",
-    "disclaimerTitle": "Disclaimer",
-    "disclaimerText": "The contents of this website were created with the greatest possible care. However, no guarantee can be given for the correctness, completeness and topicality of the contents. Use of the content is at the user's own risk."
+    "editorialTitle": "Editorially responsible"
   },
   "privacy": {
     "title": "Privacy Policy",
