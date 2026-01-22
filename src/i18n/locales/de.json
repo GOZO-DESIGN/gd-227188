@@ -535,6 +535,13 @@
     "instagram": "Instagram",
     "learnMore": "Mehr erfahren"
   },
+  "cookies": {
+    "title": "Diese Website verwendet Cookies",
+    "text": "Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Technisch notwendige Cookies gewährleisten die Funktionalität der Website.",
+    "accept": "Akzeptieren",
+    "decline": "Nur notwendige",
+    "learnMore": "Mehr erfahren"
+  },
   "imprint": {
     "title": "Impressum",
     "infoTitle": "Bernhard Prager",
