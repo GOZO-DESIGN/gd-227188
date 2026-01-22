@@ -5,6 +5,7 @@
     "showkochen": "Cooking Show",
     "beratung": "Consultation",
     "galerie": "Gallery",
+    "team": "Team",
     "bookConsultation": "Book Consultation"
   },
   "hero": {
@@ -569,5 +570,50 @@
     "copyrightText": "The content and works created by the site operator on these pages are subject to Austrian copyright law. Reproduction, processing, distribution and any kind of exploitation outside the limits of copyright require written consent.",
     "finalTitle": "5. Final Provisions",
     "finalText": "Austrian law applies. The place of jurisdiction is Vienna, where legally permissible."
+  },
+  "team": {
+    "meta": {
+      "title": "Team König | Join Our Thermomix® Team",
+      "description": "Become part of Team König. Work flexibly, earn on the side and share your passion for cooking."
+    },
+    "hero": {
+      "title": "Join Our Team",
+      "teamName": "Team König",
+      "imageAlt": "Team König Group Photo"
+    },
+    "story": {
+      "intro": "I was originally a teacher and a regular Thermomix owner – until I realized how much cooking with it made my everyday life easier and how much I enjoy sharing my enthusiasm.",
+      "teamKoenig": "Today I'm part of Team König, a strong team where we support each other, try new things and often get to test accessories and additional materials early.",
+      "sideIncome": "And as a bonus, you can flexibly earn some extra income on the side.",
+      "cta": "If you enjoy working with people, love cooking and are open to new things, feel free to contact me – I'll tell you everything without any obligation."
+    },
+    "special": {
+      "tagline": "Why This Job Is Special",
+      "title": "What I Love About Working in This Team",
+      "subtitle": "For me, it's the perfect combination of joy, flexibility and personal growth.",
+      "outro": "Maybe this fits you too?"
+    },
+    "benefits": {
+      "people": "Working with people and genuine connections",
+      "passion": "Sharing enthusiasm for cooking",
+      "support": "Strong team that supports each other",
+      "earlyAccess": "Often test new accessories and materials early",
+      "flexible": "Flexible opportunity to earn extra income",
+      "freeSchedule": "Free time management, easy to combine with everyday life and family"
+    },
+    "requirements": {
+      "title": "Does This Fit You?",
+      "noExperience": "You don't need sales experience or prior knowledge.",
+      "important": "What matters most is:",
+      "people": "Enjoying working with people",
+      "cooking": "Interest in cooking and good food",
+      "openness": "Openness to learning new things",
+      "opportunities": "Whether you want to build a side income or envision more in the long run – we'll calmly discuss what's possible for you."
+    },
+    "cta": {
+      "title": "Interested? Feel Free to Contact Me",
+      "subtitle": "If you're curious and want to learn more, just send me a message – no obligation! I'm happy to tell you what getting started with us looks like and how Team König works.",
+      "contact": "Get Info – No Obligation"
+    }
   }
 }

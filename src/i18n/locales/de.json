@@ -5,6 +5,7 @@
     "showkochen": "Showkochen",
     "beratung": "Beratung",
     "galerie": "Galerie",
+    "team": "Team",
     "bookConsultation": "Beratung buchen"
   },
   "hero": {
@@ -568,5 +569,50 @@
     "copyrightText": "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem österreichischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung.",
     "finalTitle": "5. Schlussbestimmungen",
     "finalText": "Es gilt österreichisches Recht. Gerichtsstand ist Wien, sofern gesetzlich zulässig."
+  },
+  "team": {
+    "meta": {
+      "title": "Team König | Werde Teil unseres Thermomix® Teams",
+      "description": "Werde Teil von Team König. Arbeite flexibel, verdiene nebenbei und teile deine Leidenschaft fürs Kochen."
+    },
+    "hero": {
+      "title": "Komm zu uns ins Team",
+      "teamName": "Team König",
+      "imageAlt": "Team König Gruppenfoto"
+    },
+    "story": {
+      "intro": "Ich war ursprünglich Lehrer und ganz normaler Thermomix-Besitzer – bis ich gemerkt habe, wie sehr mir das Kochen damit den Alltag erleichtert und wie gern ich meine Begeisterung weitergebe.",
+      "teamKoenig": "Heute bin ich Teil von Team König, einem starken Team, in dem wir uns gegenseitig unterstützen, Neues ausprobieren und oft auch Zubehör und Zusatzmaterial frühzeitig testen dürfen.",
+      "sideIncome": "Und ganz nebenbei kann man sich dabei flexibel etwas dazuverdienen.",
+      "cta": "Wenn du Lust hast, mit Menschen zu arbeiten, gerne kochst und offen für Neues bist, melde dich gerne bei mir – ich erzähle dir alles ganz unverbindlich."
+    },
+    "special": {
+      "tagline": "Warum dieser Job besonders ist",
+      "title": "Was mir an der Arbeit im Team besonders gefällt",
+      "subtitle": "Für mich ist es die perfekte Kombination aus Freude, Flexibilität und Entwicklung.",
+      "outro": "Vielleicht passt das auch zu dir?"
+    },
+    "benefits": {
+      "people": "Arbeiten mit Menschen und echte Begegnungen",
+      "passion": "Begeisterung fürs Kochen weitergeben",
+      "support": "Starkes Team, das sich gegenseitig unterstützt",
+      "earlyAccess": "Oft neues Zubehör und Zusatzmaterial frühzeitig testen",
+      "flexible": "Flexible Möglichkeit, sich etwas dazuzuverdienen",
+      "freeSchedule": "Freie Zeiteinteilung, gut mit Alltag und Familie kombinierbar"
+    },
+    "requirements": {
+      "title": "Passt das zu dir?",
+      "noExperience": "Du brauchst keine Verkaufserfahrung und kein Vorwissen.",
+      "important": "Wichtig ist vor allem:",
+      "people": "Freude am Umgang mit Menschen",
+      "cooking": "Interesse an Kochen und Genuss",
+      "openness": "Offenheit, Neues zu lernen",
+      "opportunities": "Egal ob du dir ein Nebeneinkommen aufbauen möchtest oder dir langfristig mehr vorstellen kannst – wir sprechen ganz in Ruhe darüber, was für dich möglich ist."
+    },
+    "cta": {
+      "title": "Interesse? Dann melde dich gerne bei mir",
+      "subtitle": "Wenn du neugierig geworden bist und mehr erfahren möchtest, schreib mir einfach ganz unverbindlich! Ich erzähle dir gerne, wie der Einstieg bei uns aussieht und wie Team König arbeitet.",
+      "contact": "Jetzt unverbindlich informieren"
+    }
   }
 }
