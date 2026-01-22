@@ -91,6 +91,7 @@ const Header = () => {
     { label: t('nav.showkochen'), href: '/showkochen' },
     { label: t('nav.beratung'), href: '/beratung' },
     { label: t('nav.galerie'), href: '/galerie' },
+    { label: t('nav.team'), href: '/team' },
   ];
 
   return (

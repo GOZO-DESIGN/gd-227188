@@ -9,6 +9,7 @@ import TM7 from "./pages/TM7";
 import Showkochen from "./pages/Showkochen";
 import Beratung from "./pages/Beratung";
 import Galerie from "./pages/Galerie";
+import Team from "./pages/Team";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
@@ -31,6 +32,7 @@ const App = () => (
           <Route path="/showkochen" element={<Showkochen />} />
           <Route path="/beratung" element={<Beratung />} />
           <Route path="/galerie" element={<Galerie />} />
+          <Route path="/team" element={<Team />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/agb" element={<AGB />} />
