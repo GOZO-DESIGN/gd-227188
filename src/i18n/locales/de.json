@@ -121,7 +121,8 @@
       "text1": "Du möchtest deinen Thermomix® flexibel bezahlen?",
       "text2": "Über die Denzel Bank AG ist eine Finanzierung möglich. Ich informiere dich gerne über die aktuellen Konditionen und unterstütze dich bei der Abwicklung.",
       "benefits": ["Flexible Laufzeiten", "Transparente Raten", "Abwicklung direkt über mich"],
-      "button": "Finanzierung & Aktionen anfragen"
+      "button": "Finanzierung & Aktionen anfragen",
+      "badge": "%"
     }
   },
   "about": {
