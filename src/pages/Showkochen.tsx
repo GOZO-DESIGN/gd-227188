@@ -132,11 +132,11 @@ const Showkochen = () => {
                   
                   {/* Highlight Badge */}
                   <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 border border-primary/20 rounded-2xl p-6 mb-8">
-                    <div className="flex flex-wrap justify-center gap-4 text-center">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
                       <span className="text-primary font-bold uppercase tracking-wide">{t('showkochen.badges.free')}</span>
-                      <span className="text-muted-foreground">•</span>
+                      <span className="hidden sm:inline text-muted-foreground">•</span>
                       <span className="text-primary font-bold uppercase tracking-wide">{t('showkochen.badges.noCost')}</span>
-                      <span className="text-muted-foreground">•</span>
+                      <span className="hidden sm:inline text-muted-foreground">•</span>
                       <span className="text-primary font-bold uppercase tracking-wide">{t('showkochen.badges.noObligation')}</span>
                     </div>
                   </div>
