@@ -24,68 +24,81 @@ import modi3 from '@/assets/modi-3.png';
 import modi4 from '@/assets/modi-4.png';
 import modi5 from '@/assets/modi-5.png';
 import modi6 from '@/assets/modi-6.png';
-
 const CookidooSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [cookidoo1, cookidoo2, cookidoo3];
-
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide(prev => (prev + 1) % slides.length);
     }, 4000);
     return () => clearInterval(timer);
   }, []);
-
-  return (
-    <div className="relative w-full max-w-xs mx-auto">
+  return <div className="relative w-full max-w-xs mx-auto">
       <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-        {slides.map((slide, index) => (
-          <img
-            key={index}
-            src={slide}
-            alt={`Cookidoo App ${index + 1}`}
-            className={`w-full transition-all duration-700 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0 absolute inset-0'
-            }`}
-          />
-        ))}
+        {slides.map((slide, index) => <img key={index} src={slide} alt={`Cookidoo App ${index + 1}`} className={`w-full transition-all duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0 absolute inset-0'}`} />)}
       </div>
       {/* Dots */}
       <div className="flex justify-center gap-2 mt-4">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentSlide ? 'bg-primary w-6' : 'bg-muted-foreground/30'
-            }`}
-          />
-        ))}
+        {slides.map((_, index) => <button key={index} onClick={() => setCurrentSlide(index)} className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-primary w-6' : 'bg-muted-foreground/30'}`} />)}
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const BenefitsSection = () => {
-  const { t } = useTranslation();
-  const { ref: introRef, isVisible: introVisible } = useScrollAnimation();
-  const { ref: timeRef, isVisible: timeVisible } = useScrollAnimation();
-  const { ref: familyRef, isVisible: familyVisible } = useScrollAnimation();
-  const { ref: healthRef, isVisible: healthVisible } = useScrollAnimation();
-  const { ref: cookidooRef, isVisible: cookidooVisible } = useScrollAnimation();
-  const { ref: functionsRef, isVisible: functionsVisible } = useScrollAnimation();
-  const { ref: profiRef, isVisible: profiVisible } = useScrollAnimation();
-  const { ref: supportRef, isVisible: supportVisible } = useScrollAnimation();
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
-
-  const timeList = t('benefits.time.list', { returnObjects: true }) as string[];
-  const familyList = t('benefits.family.list', { returnObjects: true }) as string[];
-  const healthList = t('benefits.health.list', { returnObjects: true }) as string[];
-  const cookidooList = t('benefits.cookidoo.list', { returnObjects: true }) as string[];
-  const supportList = t('benefits.support.list', { returnObjects: true }) as string[];
-
-  return (
-    <section id="vorteile" className="bg-background">
+  const {
+    t
+  } = useTranslation();
+  const {
+    ref: introRef,
+    isVisible: introVisible
+  } = useScrollAnimation();
+  const {
+    ref: timeRef,
+    isVisible: timeVisible
+  } = useScrollAnimation();
+  const {
+    ref: familyRef,
+    isVisible: familyVisible
+  } = useScrollAnimation();
+  const {
+    ref: healthRef,
+    isVisible: healthVisible
+  } = useScrollAnimation();
+  const {
+    ref: cookidooRef,
+    isVisible: cookidooVisible
+  } = useScrollAnimation();
+  const {
+    ref: functionsRef,
+    isVisible: functionsVisible
+  } = useScrollAnimation();
+  const {
+    ref: profiRef,
+    isVisible: profiVisible
+  } = useScrollAnimation();
+  const {
+    ref: supportRef,
+    isVisible: supportVisible
+  } = useScrollAnimation();
+  const {
+    ref: ctaRef,
+    isVisible: ctaVisible
+  } = useScrollAnimation();
+  const timeList = t('benefits.time.list', {
+    returnObjects: true
+  }) as string[];
+  const familyList = t('benefits.family.list', {
+    returnObjects: true
+  }) as string[];
+  const healthList = t('benefits.health.list', {
+    returnObjects: true
+  }) as string[];
+  const cookidooList = t('benefits.cookidoo.list', {
+    returnObjects: true
+  }) as string[];
+  const supportList = t('benefits.support.list', {
+    returnObjects: true
+  }) as string[];
+  return <section id="vorteile" className="bg-background">
       {/* INTRO */}
       <div className="section-padding" ref={introRef}>
         <div className={`container-narrow transition-all duration-700 ${introVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -131,11 +144,7 @@ const BenefitsSection = () => {
             <div className="order-1 lg:order-2 relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-full blur-3xl"></div>
               <div className="relative">
-                <img
-                  src={heroThermomix}
-                  alt="Thermomix TM7"
-                  className="relative w-full max-w-md mx-auto drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500"
-                />
+                <img alt="Thermomix TM7" className="relative w-full max-w-md mx-auto drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500" src="/lovable-uploads/1f6a4d8e-9b60-4740-933f-341d90e7f7e5.webp" />
               </div>
             </div>
           </div>
@@ -166,25 +175,16 @@ const BenefitsSection = () => {
               <div className="mb-6">
                 <p className="font-medium text-foreground mb-3">{t('benefits.time.idealFor')}</p>
                 <ul className="space-y-2">
-                  {timeList.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                  {timeList.map(item => <li key={item} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary font-bold">✓</span>
                       {item}
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-2xl"></div>
-              <video
-                src={thermomixVideo}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="relative rounded-3xl shadow-xl w-full"
-              />
+              <video src={thermomixVideo} autoPlay loop muted playsInline className="relative rounded-3xl shadow-xl w-full" />
             </div>
           </div>
         </div>
@@ -196,16 +196,8 @@ const BenefitsSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="grid grid-cols-2 gap-4">
-                <img
-                  src={familie1}
-                  alt="Kind am Thermomix"
-                  className="rounded-2xl shadow-xl w-full h-64 object-cover hover:scale-105 transition-transform duration-500"
-                />
-                <img
-                  src={familie2}
-                  alt="Familie zusammen"
-                  className="rounded-2xl shadow-xl w-full h-64 object-cover mt-8 hover:scale-105 transition-transform duration-500"
-                />
+                <img src={familie1} alt="Kind am Thermomix" className="rounded-2xl shadow-xl w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
+                <img src={familie2} alt="Familie zusammen" className="rounded-2xl shadow-xl w-full h-64 object-cover mt-8 hover:scale-105 transition-transform duration-500" />
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -228,12 +220,10 @@ const BenefitsSection = () => {
               <div className="mb-6">
                 <p className="font-medium text-foreground mb-3">{t('benefits.family.practicalFor')}</p>
                 <ul className="space-y-2">
-                  {familyList.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                  {familyList.map(item => <li key={item} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary font-bold">✓</span>
                       {item}
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
               <p className="text-foreground font-medium italic">
@@ -268,26 +258,16 @@ const BenefitsSection = () => {
               <div>
                 <p className="font-medium text-foreground mb-3">{t('benefits.health.youDecide')}</p>
                 <ul className="space-y-2">
-                  {healthList.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                  {healthList.map(item => <li key={item} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary font-bold">✓</span>
                       {item}
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img
-                src={gesund1}
-                alt="Gesundes Kochen mit Thermomix"
-                className="rounded-2xl shadow-xl w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
-              />
-              <img
-                src={gesund2}
-                alt="Frische Zutaten"
-                className="rounded-2xl shadow-xl w-full h-72 object-cover mt-8 hover:scale-105 transition-transform duration-500"
-              />
+              <img src={gesund1} alt="Gesundes Kochen mit Thermomix" className="rounded-2xl shadow-xl w-full h-72 object-cover hover:scale-105 transition-transform duration-500" />
+              <img src={gesund2} alt="Frische Zutaten" className="rounded-2xl shadow-xl w-full h-72 object-cover mt-8 hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
         </div>
@@ -320,12 +300,10 @@ const BenefitsSection = () => {
               <div>
                 <p className="font-medium text-foreground mb-3">{t('benefits.cookidoo.advantages')}</p>
                 <ul className="space-y-2">
-                  {cookidooList.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                  {cookidooList.map(item => <li key={item} className="flex items-center gap-2 text-muted-foreground">
                       <span className="text-primary font-bold">✓</span>
                       {item}
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
               </div>
             </div>
@@ -349,18 +327,9 @@ const BenefitsSection = () => {
           </div>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mb-8">
-            {[modi1, modi2, modi3, modi4, modi5, modi6].map((img, index) => (
-              <div 
-                key={index} 
-                className="bg-card rounded-2xl shadow-soft hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden"
-              >
-                <img 
-                  src={img} 
-                  alt={`Thermomix Modus ${index + 1}`}
-                  className="w-full h-auto"
-                />
-              </div>
-            ))}
+            {[modi1, modi2, modi3, modi4, modi5, modi6].map((img, index) => <div key={index} className="bg-card rounded-2xl shadow-soft hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden">
+                <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto" />
+              </div>)}
           </div>
           
           <p className="text-center text-muted-foreground font-medium">
@@ -415,12 +384,10 @@ const BenefitsSection = () => {
                 {t('benefits.support.subtitle')}
               </p>
               <ul className="space-y-2 mb-8">
-                {supportList.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-muted-foreground">
+                {supportList.map(item => <li key={item} className="flex items-center gap-2 text-muted-foreground">
                     <span className="text-primary font-bold">✓</span>
                     {item}
-                  </li>
-                ))}
+                  </li>)}
               </ul>
               <p className="text-foreground font-medium">
                 {t('benefits.support.outro')}
@@ -428,11 +395,7 @@ const BenefitsSection = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-2xl"></div>
-              <img
-                src={aboutPortrait}
-                alt="Bernhard Prager - Thermomix Berater"
-                className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto hover:scale-[1.02] transition-transform duration-500"
-              />
+              <img src={aboutPortrait} alt="Bernhard Prager - Thermomix Berater" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto hover:scale-[1.02] transition-transform duration-500" />
             </div>
           </div>
         </div>
@@ -459,8 +422,6 @@ const BenefitsSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default BenefitsSection;
