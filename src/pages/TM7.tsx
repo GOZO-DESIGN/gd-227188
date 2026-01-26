@@ -385,9 +385,9 @@ const TM7 = () => {
           <section className="section-padding bg-secondary/30" ref={devicesRef}>
             <div className={`container-narrow transition-all duration-700 ${devicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               {/* Video + Text Grid */}
-              <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
+              <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr] gap-8 lg:gap-12 items-center mb-12">
                 {/* Video - Left */}
-                <div className="rounded-2xl overflow-hidden shadow-lg">
+                <div className="rounded-2xl overflow-hidden shadow-lg max-w-[280px] md:max-w-none mx-auto">
                   <video 
                     src={geraeteVideo} 
                     autoPlay 
