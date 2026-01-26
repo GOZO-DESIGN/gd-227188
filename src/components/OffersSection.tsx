@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 // Import promo images
-import promoGarantie from '@/assets/promo-garantie.jpeg';
+import promo1549 from '@/assets/promo-1549.jpg';
+import promo1698 from '@/assets/promo-1698.jpg';
 import promoShowkochen from '@/assets/promo-showkochen.jpeg';
-import promoExklusiv from '@/assets/promo-exklusiv.jpeg';
 
 interface Offer {
   id: string;
@@ -15,19 +15,19 @@ interface Offer {
 
 const offers: Offer[] = [
   {
-    id: 'garantie',
-    image: promoGarantie,
-    alt: 'Thermomix TM7 mit 5 Jahren Garantieverlängerung und Gemüse Styler',
+    id: 'tm7-1549',
+    image: promo1549,
+    alt: 'Der neue Thermomix® TM7 um nur € 1.549,-',
+  },
+  {
+    id: 'tm7-1698',
+    image: promo1698,
+    alt: 'Der neue Thermomix® TM7 inkl. Garantieverlängerung auf 5 Jahre um nur € 1.698,-',
   },
   {
     id: 'showkochen',
     image: promoShowkochen,
     alt: 'Mehr Punkte im Vorwerk Bonus Club für dein Show Kochen',
-  },
-  {
-    id: 'exklusiv',
-    image: promoExklusiv,
-    alt: 'Exklusives Angebot: Thermomix TM7 inkl. Gemüse Styler',
   },
 ];
 
