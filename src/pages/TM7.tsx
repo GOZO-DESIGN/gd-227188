@@ -384,31 +384,35 @@ const TM7 = () => {
           {/* EIN GERÄT – VIELE GERÄTE ERSETZT */}
           <section className="section-padding bg-secondary/30" ref={devicesRef}>
             <div className={`container-narrow transition-all duration-700 ${devicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="text-center mb-12">
-                <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                  {t('tm7.devices.tagline')}
-                </span>
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                  {t('tm7.devices.title')}
-                </h2>
-                <p className="text-muted-foreground max-w-3xl mx-auto mb-4">
-                  {t('tm7.devices.subtitle')}
-                </p>
-                <p className="text-primary font-medium">
-                  {t('tm7.devices.highlight')}
-                </p>
-              </div>
+              {/* Video + Text Grid */}
+              <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
+                {/* Video - Left */}
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <video 
+                    src={geraeteVideo} 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-full"
+                  />
+                </div>
 
-              {/* Video */}
-              <div className="mb-10 rounded-2xl overflow-hidden shadow-lg max-w-2xl mx-auto">
-                <video 
-                  src={geraeteVideo} 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                  className="w-full"
-                />
+                {/* Text - Right */}
+                <div className="text-center md:text-left">
+                  <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
+                    {t('tm7.devices.tagline')}
+                  </span>
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
+                    {t('tm7.devices.title')}
+                  </h2>
+                  <p className="text-muted-foreground mb-4">
+                    {t('tm7.devices.subtitle')}
+                  </p>
+                  <p className="text-primary font-medium">
+                    {t('tm7.devices.highlight')}
+                  </p>
+                </div>
               </div>
 
               <DeviceSlider />
