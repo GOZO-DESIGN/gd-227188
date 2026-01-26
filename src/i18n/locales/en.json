@@ -481,6 +481,37 @@
           "Ideal for healthy, low-fat cooking"
         ],
         "price": "€ 89.00"
+      },
+      "garkorb": {
+        "title": "The Simmering Basket",
+        "checkmarks": [
+          "Perfect for straining and steaming small ingredients",
+          "For rice, potatoes, pasta and more"
+        ]
+      },
+      "compactSpatel": {
+        "title": "The Thermomix® Spatula",
+        "checkmarks": [
+          "Perfectly fits the TM7",
+          "Heat-resistant & sturdy",
+          "Flexible for scraping",
+          "Dishwasher safe"
+        ]
+      },
+      "compactSchmetterling": {
+        "title": "The Butterfly Whisk",
+        "checkmarks": [
+          "Ideal for whipped cream, egg whites and fluffy creams",
+          "Gentle and even"
+        ]
+      },
+      "compactVaroma": {
+        "title": "The Varoma® Steaming Attachment",
+        "checkmarks": [
+          "Gentle steam cooking on multiple levels",
+          "Ideal for vegetables, fish and full menus",
+          "Healthy cooking without losing flavor"
+        ]
       }
     },
     "comparison": {
