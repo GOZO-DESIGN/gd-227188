@@ -442,6 +442,45 @@
         ],
         "outro": "Create fresh, varied dishes in no time and save yourself the space full of cutting boards.",
         "price": "€ 169.00"
+      },
+      "spatel": {
+        "title": "The Thermomix® Spatula",
+        "tagline": "ESSENTIAL IN EVERYDAY LIFE",
+        "description": "The ergonomically designed spatula is perfectly matched to the mixing bowl. It helps you get every last bit of dough and mixtures out and stir while cooking.",
+        "benefitsTitle": "Your benefits:",
+        "benefits": [
+          "Perfectly matched to the mixing bowl",
+          "Heat-resistant and dishwasher safe",
+          "Complete emptying of the mixing bowl",
+          "Practical for stirring and portioning"
+        ],
+        "price": "€ 19.90"
+      },
+      "schmetterling": {
+        "title": "The Butterfly Whisk",
+        "tagline": "BEATING, STIRRING, FOAMING",
+        "description": "The butterfly whisk transforms your TM7 into a whisk attachment. Perfect for cream, egg whites, custards and fluffy batters – everything becomes wonderfully airy.",
+        "benefitsTitle": "Your benefits:",
+        "benefits": [
+          "Whip cream stiff in seconds",
+          "Perfect egg whites effortlessly",
+          "Ideal for creams, mousse and desserts",
+          "Fluffy sponge and cake batters"
+        ],
+        "price": "€ 29.90"
+      },
+      "varoma": {
+        "title": "The Varoma® Steamer",
+        "tagline": "STEAM COOKING ON TWO LEVELS",
+        "description": "With the Varoma® you gently steam vegetables, fish, meat and much more – while a sauce or side dish is prepared in the mixing bowl at the same time. This saves time and preserves vitamins.",
+        "benefitsTitle": "Your benefits:",
+        "benefits": [
+          "Gentle steaming preserves vitamins",
+          "Two levels for multiple ingredients",
+          "Simultaneous cooking in the mixing bowl",
+          "Ideal for healthy, low-fat cooking"
+        ],
+        "price": "€ 89.00"
       }
     },
     "comparison": {
