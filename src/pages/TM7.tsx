@@ -758,117 +758,78 @@ const TM7 = () => {
                 </div>
               </div>
 
-              {/* Spatel */}
-              <div className="bg-card rounded-2xl shadow-card overflow-hidden mb-8">
-                <div className="grid lg:grid-cols-2 gap-8">
-                  <div className="bg-white flex items-center justify-center p-8 order-2 lg:order-1">
-                    <img 
-                      src={accessorySpatel} 
-                      alt={t('tm7.accessories.spatel.title')} 
-                      className="max-h-80 object-contain"
-                    />
-                  </div>
-                  <div className="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2">
-                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
-                      {t('tm7.accessories.spatel.tagline')}
-                    </span>
-                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
-                      {t('tm7.accessories.spatel.title')}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      {t('tm7.accessories.spatel.description')}
-                    </p>
-                    <h4 className="font-semibold text-foreground mb-3">
-                      {t('tm7.accessories.spatel.benefitsTitle')}
-                    </h4>
-                    <ul className="space-y-2 mb-6">
-                      {(t('tm7.accessories.spatel.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
-                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                          <span className="text-primary font-bold">✓</span>
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-2xl font-bold text-primary">
-                      {t('tm7.accessories.spatel.price')}
-                    </p>
-                  </div>
+              {/* Weitere Zubehörteile - Kompakte Liste */}
+              <div className="grid md:grid-cols-2 gap-6 mt-8">
+                {/* Spatel */}
+                <div className="bg-card rounded-xl p-6 shadow-card">
+                  <h4 className="font-serif text-xl text-foreground mb-3">Der Thermomix® Spatel</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Passgenau für den TM7
+                    </li>
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Hitzebeständig & stabil
+                    </li>
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Flexibel zum Auskratzen
+                    </li>
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Spülmaschinengeeignet
+                    </li>
+                  </ul>
                 </div>
-              </div>
 
-              {/* Schmetterlingseinsatz */}
-              <div className="bg-card rounded-2xl shadow-card overflow-hidden mb-8">
-                <div className="grid lg:grid-cols-2 gap-8">
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
-                      {t('tm7.accessories.schmetterling.tagline')}
-                    </span>
-                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
-                      {t('tm7.accessories.schmetterling.title')}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      {t('tm7.accessories.schmetterling.description')}
-                    </p>
-                    <h4 className="font-semibold text-foreground mb-3">
-                      {t('tm7.accessories.schmetterling.benefitsTitle')}
-                    </h4>
-                    <ul className="space-y-2 mb-6">
-                      {(t('tm7.accessories.schmetterling.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
-                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                          <span className="text-primary font-bold">✓</span>
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-2xl font-bold text-primary">
-                      {t('tm7.accessories.schmetterling.price')}
-                    </p>
-                  </div>
-                  <div className="bg-white flex items-center justify-center p-8">
-                    <img 
-                      src={accessorySchmetterling} 
-                      alt={t('tm7.accessories.schmetterling.title')} 
-                      className="max-h-80 object-contain"
-                    />
-                  </div>
+                {/* Schmetterlingsaufsatz */}
+                <div className="bg-card rounded-xl p-6 shadow-card">
+                  <h4 className="font-serif text-xl text-foreground mb-3">Der Schmetterlingsaufsatz</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Ideal für Schlagobers, Eischnee und luftige Cremes
+                    </li>
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Schonend und gleichmäßig
+                    </li>
+                  </ul>
                 </div>
-              </div>
 
-              {/* Varoma */}
-              <div className="bg-card rounded-2xl shadow-card overflow-hidden">
-                <div className="grid lg:grid-cols-2 gap-8">
-                  <div className="bg-white flex items-center justify-center p-8 order-2 lg:order-1">
-                    <img 
-                      src={accessoryVaroma} 
-                      alt={t('tm7.accessories.varoma.title')} 
-                      className="max-h-80 object-contain"
-                    />
-                  </div>
-                  <div className="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2">
-                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
-                      {t('tm7.accessories.varoma.tagline')}
-                    </span>
-                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
-                      {t('tm7.accessories.varoma.title')}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      {t('tm7.accessories.varoma.description')}
-                    </p>
-                    <h4 className="font-semibold text-foreground mb-3">
-                      {t('tm7.accessories.varoma.benefitsTitle')}
-                    </h4>
-                    <ul className="space-y-2 mb-6">
-                      {(t('tm7.accessories.varoma.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
-                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                          <span className="text-primary font-bold">✓</span>
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-2xl font-bold text-primary">
-                      {t('tm7.accessories.varoma.price')}
-                    </p>
-                  </div>
+                {/* Varoma */}
+                <div className="bg-card rounded-xl p-6 shadow-card">
+                  <h4 className="font-serif text-xl text-foreground mb-3">Der Varoma® Dampfgaraufsatz</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Schonendes Dampfgaren auf mehreren Ebenen
+                    </li>
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Ideal für Gemüse, Fisch und ganze Menüs
+                    </li>
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Gesund garen ohne Geschmacksverlust
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Garkörbchen */}
+                <div className="bg-card rounded-xl p-6 shadow-card">
+                  <h4 className="font-serif text-xl text-foreground mb-3">Das Garkörbchen</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Perfekt zum Abseihen und Dampfgaren kleiner Zutaten
+                    </li>
+                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                      <span className="text-primary font-bold">✓</span>
+                      Für Reis, Erdäpfel, Nudeln und mehr
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
