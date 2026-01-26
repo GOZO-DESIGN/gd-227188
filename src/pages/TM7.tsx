@@ -49,233 +49,276 @@ import accessoryGarkorb from '@/assets/accessory-garkorb.jpg';
 // Display images
 import display1 from '@/assets/display-1.webp';
 import display2 from '@/assets/display-2.webp';
-
 const DeviceSlider = () => {
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const devices = [
-    { img: deviceEierkocher, labelKey: 'eierkocher' },
-    { img: deviceMixer, labelKey: 'mixer' },
-    { img: deviceKochtopf, labelKey: 'kochtopf' },
-    { img: deviceWasserkocher, labelKey: 'wasserkocher' },
-    { img: deviceRuehrgeraet, labelKey: 'ruehrgeraet' },
-    { img: deviceWaage, labelKey: 'waage' },
-    { img: deviceFleischwolf, labelKey: 'fleischwolf' },
-    { img: deviceKuechenmaschine, labelKey: 'kuechenmaschine' },
-  ];
-
+  const devices = [{
+    img: deviceEierkocher,
+    labelKey: 'eierkocher'
+  }, {
+    img: deviceMixer,
+    labelKey: 'mixer'
+  }, {
+    img: deviceKochtopf,
+    labelKey: 'kochtopf'
+  }, {
+    img: deviceWasserkocher,
+    labelKey: 'wasserkocher'
+  }, {
+    img: deviceRuehrgeraet,
+    labelKey: 'ruehrgeraet'
+  }, {
+    img: deviceWaage,
+    labelKey: 'waage'
+  }, {
+    img: deviceFleischwolf,
+    labelKey: 'fleischwolf'
+  }, {
+    img: deviceKuechenmaschine,
+    labelKey: 'kuechenmaschine'
+  }];
   const next = () => {
-    setCurrentIndex((prev) => (prev + 1) % devices.length);
+    setCurrentIndex(prev => (prev + 1) % devices.length);
   };
-
   const prev = () => {
-    setCurrentIndex((prev) => (prev - 1 + devices.length) % devices.length);
+    setCurrentIndex(prev => (prev - 1 + devices.length) % devices.length);
   };
-
-  return (
-    <div className="relative">
+  return <div className="relative">
       <div className="flex items-center gap-4">
-        <button
-          onClick={prev}
-          className="p-2 rounded-full bg-card shadow-md hover:bg-secondary transition-colors z-10 flex-shrink-0"
-        >
+        <button onClick={prev} className="p-2 rounded-full bg-card shadow-md hover:bg-secondary transition-colors z-10 flex-shrink-0">
           <ChevronLeft className="w-6 h-6 text-primary" />
         </button>
         
         <div className="flex-1 overflow-hidden">
-          <div 
-            className="flex transition-transform duration-500 ease-out gap-4"
-            style={{ transform: `translateX(-${currentIndex * (100 / 4 + 1)}%)` }}
-          >
-            {[...devices, ...devices].map((device, index) => (
-              <div 
-                key={`${device.labelKey}-${index}`} 
-                className="text-center flex-shrink-0"
-                style={{ width: 'calc(25% - 12px)' }}
-              >
+          <div className="flex transition-transform duration-500 ease-out gap-4" style={{
+          transform: `translateX(-${currentIndex * (100 / 4 + 1)}%)`
+        }}>
+            {[...devices, ...devices].map((device, index) => <div key={`${device.labelKey}-${index}`} className="text-center flex-shrink-0" style={{
+            width: 'calc(25% - 12px)'
+          }}>
                 <div className="bg-card rounded-2xl p-4 shadow-soft mb-2 aspect-square flex items-center justify-center overflow-hidden">
-                  <img
-                    src={device.img}
-                    alt={t(`tm7.devices.labels.${device.labelKey}`)}
-                    className="w-full h-full object-cover rounded-xl"
-                  />
+                  <img src={device.img} alt={t(`tm7.devices.labels.${device.labelKey}`)} className="w-full h-full object-cover rounded-xl" />
                 </div>
                 <p className="text-sm text-muted-foreground font-medium">{t(`tm7.devices.labels.${device.labelKey}`)}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
 
-        <button
-          onClick={next}
-          className="p-2 rounded-full bg-card shadow-md hover:bg-secondary transition-colors z-10 flex-shrink-0"
-        >
+        <button onClick={next} className="p-2 rounded-full bg-card shadow-md hover:bg-secondary transition-colors z-10 flex-shrink-0">
           <ChevronRight className="w-6 h-6 text-primary" />
         </button>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const CookidooSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [cookidoo1, cookidoo2, cookidoo3];
-
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide(prev => (prev + 1) % slides.length);
     }, 4000);
     return () => clearInterval(timer);
   }, []);
-
-  return (
-    <div className="relative w-full max-w-xs mx-auto">
+  return <div className="relative w-full max-w-xs mx-auto">
       <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-        {slides.map((slide, index) => (
-          <img
-            key={index}
-            src={slide}
-            alt={`Cookidoo App ${index + 1}`}
-            className={`w-full transition-all duration-700 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0 absolute inset-0'
-            }`}
-          />
-        ))}
+        {slides.map((slide, index) => <img key={index} src={slide} alt={`Cookidoo App ${index + 1}`} className={`w-full transition-all duration-700 ${index === currentSlide ? 'opacity-100' : 'opacity-0 absolute inset-0'}`} />)}
       </div>
       <div className="flex justify-center gap-2 mt-4">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentSlide ? 'bg-primary w-6' : 'bg-muted-foreground/30'
-            }`}
-          />
-        ))}
+        {slides.map((_, index) => <button key={index} onClick={() => setCurrentSlide(index)} className={`w-2 h-2 rounded-full transition-all ${index === currentSlide ? 'bg-primary w-6' : 'bg-muted-foreground/30'}`} />)}
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const TM7 = () => {
-  const { t } = useTranslation();
-  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
-  const { ref: devicesRef, isVisible: devicesVisible } = useScrollAnimation();
-  const { ref: modiRef, isVisible: modiVisible } = useScrollAnimation();
-  const { ref: cookidooRef, isVisible: cookidooVisible } = useScrollAnimation();
-  const { ref: displayRef, isVisible: displayVisible } = useScrollAnimation();
-  const { ref: accessoriesRef, isVisible: accessoriesVisible } = useScrollAnimation();
-  const { ref: comparisonRef, isVisible: comparisonVisible } = useScrollAnimation();
-  const { ref: specsRef, isVisible: specsVisible } = useScrollAnimation();
-
-  const accessories = [
-    {
-      titleKey: 'spatel',
-      img: accessorySpatel,
-    },
-    {
-      titleKey: 'schmetterling',
-      img: accessorySchmetterling,
-    },
-    {
-      titleKey: 'varoma',
-      img: accessoryVaroma,
-    },
-    {
-      titleKey: 'garkorb',
-      img: accessoryGarkorb,
-    },
-  ];
-
-  const specs = [
-    {
-      categoryKey: 'motor',
-      items: [
-        { label: 'Motortyp', value: 'Wartungsfreier Vorwerk-Synchronmotor' },
-        { label: 'Antriebsleistung', value: '500 W' },
-        { label: 'Drehzahlbereich', value: 'ca. 40 – 10.700 U/min' },
-        { label: 'Teigmodus', value: 'Intervallbetrieb speziell fürs Kneten' },
-        { label: 'Motorschutz', value: 'Elektronischer Überlastungsschutz' },
-        { label: 'Lautstärke', value: 'Ca. 30 dB(A) Stufe 1 / ca. 50 dB(A) mittlere Stufen' },
-      ],
-    },
-    {
-      categoryKey: 'heating',
-      items: [
-        { label: 'Heizleistung', value: '1.000 W' },
-        { label: 'Temperaturregelung', value: 'Elektronisch gesteuert' },
-        { label: 'Sicherheit', value: 'Automatische Abschaltung bei Überhitzung' },
-      ],
-    },
-    {
-      categoryKey: 'scale',
-      items: [
-        { label: 'Messbereich', value: '1 g – 3.000 g' },
-        { label: 'Negativwiegen', value: 'Bis -3.000 g möglich' },
-        { label: 'Tara-Funktion', value: 'Ja' },
-        { label: 'Wiegen während Betrieb', value: 'Ja' },
-      ],
-    },
-    {
-      categoryKey: 'bowl',
-      items: [
-        { label: 'Material', value: 'Rostfreier Edelstahl' },
-        { label: 'Isolierung', value: 'Außen isoliert, auch bei Hitze berührbar' },
-        { label: 'Sensoren', value: 'Integrierte Temperaturmessung' },
-        { label: 'Maximale Füllmenge', value: '2,2 Liter' },
-      ],
-    },
-    {
-      categoryKey: 'blade',
-      items: [
-        { label: 'Klingen', value: '4 Stück' },
-        { label: 'Material', value: 'Rostfreier Edelstahl' },
-        { label: 'Wartung', value: 'Wartungsfrei geschliffen' },
-      ],
-    },
-    {
-      categoryKey: 'power',
-      items: [
-        { label: 'Netzspannung', value: '220 – 240 V / 50-60 Hz' },
-        { label: 'Max. Leistungsaufnahme', value: 'bis zu 2.000 W' },
-        { label: 'Netzkabel', value: 'ca. 1m, ausziehbar' },
-      ],
-    },
-    {
-      categoryKey: 'system',
-      items: [
-        { label: 'Prozessor', value: 'Mehrkern-Prozessor' },
-        { label: 'Updates', value: 'Automatisch über WLAN' },
-        { label: 'Erweiterbarkeit', value: 'Neue Funktionen per Software-Update' },
-      ],
-    },
-    {
-      categoryKey: 'display',
-      items: [
-        { label: 'Displaygröße', value: '10 Zoll' },
-        { label: 'Displaytyp', value: 'Multi-Touch, hochauflösend' },
-        { label: 'Bedienung', value: 'Auch mit nassen / öligen Fingern möglich' },
-        { label: 'Rezeptzugriff', value: 'Direkt über integriertes Cookidoo®' },
-      ],
-    },
-    {
-      categoryKey: 'dimensions',
-      items: [
-        { label: 'Höhe', value: 'ca. 33,6 cm' },
-        { label: 'Breite', value: 'ca. 25,3 cm' },
-        { label: 'Tiefe', value: 'ca. 40,5 cm' },
-        { label: 'Gewicht', value: 'ca. 6,5 kg (ohne Varoma®)' },
-      ],
-    },
-  ];
-
-  const cookidooFeatures = t('tm7.cookidoo.features', { returnObjects: true }) as string[];
-  const displayFeatures = t('tm7.display.features', { returnObjects: true }) as string[];
-  const comparisonFeatures = t('tm7.comparison.features', { returnObjects: true }) as string[];
-
-  return (
-    <>
+  const {
+    t
+  } = useTranslation();
+  const {
+    ref: heroRef,
+    isVisible: heroVisible
+  } = useScrollAnimation();
+  const {
+    ref: devicesRef,
+    isVisible: devicesVisible
+  } = useScrollAnimation();
+  const {
+    ref: modiRef,
+    isVisible: modiVisible
+  } = useScrollAnimation();
+  const {
+    ref: cookidooRef,
+    isVisible: cookidooVisible
+  } = useScrollAnimation();
+  const {
+    ref: displayRef,
+    isVisible: displayVisible
+  } = useScrollAnimation();
+  const {
+    ref: accessoriesRef,
+    isVisible: accessoriesVisible
+  } = useScrollAnimation();
+  const {
+    ref: comparisonRef,
+    isVisible: comparisonVisible
+  } = useScrollAnimation();
+  const {
+    ref: specsRef,
+    isVisible: specsVisible
+  } = useScrollAnimation();
+  const accessories = [{
+    titleKey: 'spatel',
+    img: accessorySpatel
+  }, {
+    titleKey: 'schmetterling',
+    img: accessorySchmetterling
+  }, {
+    titleKey: 'varoma',
+    img: accessoryVaroma
+  }, {
+    titleKey: 'garkorb',
+    img: accessoryGarkorb
+  }];
+  const specs = [{
+    categoryKey: 'motor',
+    items: [{
+      label: 'Motortyp',
+      value: 'Wartungsfreier Vorwerk-Synchronmotor'
+    }, {
+      label: 'Antriebsleistung',
+      value: '500 W'
+    }, {
+      label: 'Drehzahlbereich',
+      value: 'ca. 40 – 10.700 U/min'
+    }, {
+      label: 'Teigmodus',
+      value: 'Intervallbetrieb speziell fürs Kneten'
+    }, {
+      label: 'Motorschutz',
+      value: 'Elektronischer Überlastungsschutz'
+    }, {
+      label: 'Lautstärke',
+      value: 'Ca. 30 dB(A) Stufe 1 / ca. 50 dB(A) mittlere Stufen'
+    }]
+  }, {
+    categoryKey: 'heating',
+    items: [{
+      label: 'Heizleistung',
+      value: '1.000 W'
+    }, {
+      label: 'Temperaturregelung',
+      value: 'Elektronisch gesteuert'
+    }, {
+      label: 'Sicherheit',
+      value: 'Automatische Abschaltung bei Überhitzung'
+    }]
+  }, {
+    categoryKey: 'scale',
+    items: [{
+      label: 'Messbereich',
+      value: '1 g – 3.000 g'
+    }, {
+      label: 'Negativwiegen',
+      value: 'Bis -3.000 g möglich'
+    }, {
+      label: 'Tara-Funktion',
+      value: 'Ja'
+    }, {
+      label: 'Wiegen während Betrieb',
+      value: 'Ja'
+    }]
+  }, {
+    categoryKey: 'bowl',
+    items: [{
+      label: 'Material',
+      value: 'Rostfreier Edelstahl'
+    }, {
+      label: 'Isolierung',
+      value: 'Außen isoliert, auch bei Hitze berührbar'
+    }, {
+      label: 'Sensoren',
+      value: 'Integrierte Temperaturmessung'
+    }, {
+      label: 'Maximale Füllmenge',
+      value: '2,2 Liter'
+    }]
+  }, {
+    categoryKey: 'blade',
+    items: [{
+      label: 'Klingen',
+      value: '4 Stück'
+    }, {
+      label: 'Material',
+      value: 'Rostfreier Edelstahl'
+    }, {
+      label: 'Wartung',
+      value: 'Wartungsfrei geschliffen'
+    }]
+  }, {
+    categoryKey: 'power',
+    items: [{
+      label: 'Netzspannung',
+      value: '220 – 240 V / 50-60 Hz'
+    }, {
+      label: 'Max. Leistungsaufnahme',
+      value: 'bis zu 2.000 W'
+    }, {
+      label: 'Netzkabel',
+      value: 'ca. 1m, ausziehbar'
+    }]
+  }, {
+    categoryKey: 'system',
+    items: [{
+      label: 'Prozessor',
+      value: 'Mehrkern-Prozessor'
+    }, {
+      label: 'Updates',
+      value: 'Automatisch über WLAN'
+    }, {
+      label: 'Erweiterbarkeit',
+      value: 'Neue Funktionen per Software-Update'
+    }]
+  }, {
+    categoryKey: 'display',
+    items: [{
+      label: 'Displaygröße',
+      value: '10 Zoll'
+    }, {
+      label: 'Displaytyp',
+      value: 'Multi-Touch, hochauflösend'
+    }, {
+      label: 'Bedienung',
+      value: 'Auch mit nassen / öligen Fingern möglich'
+    }, {
+      label: 'Rezeptzugriff',
+      value: 'Direkt über integriertes Cookidoo®'
+    }]
+  }, {
+    categoryKey: 'dimensions',
+    items: [{
+      label: 'Höhe',
+      value: 'ca. 33,6 cm'
+    }, {
+      label: 'Breite',
+      value: 'ca. 25,3 cm'
+    }, {
+      label: 'Tiefe',
+      value: 'ca. 40,5 cm'
+    }, {
+      label: 'Gewicht',
+      value: 'ca. 6,5 kg (ohne Varoma®)'
+    }]
+  }];
+  const cookidooFeatures = t('tm7.cookidoo.features', {
+    returnObjects: true
+  }) as string[];
+  const displayFeatures = t('tm7.display.features', {
+    returnObjects: true
+  }) as string[];
+  const comparisonFeatures = t('tm7.comparison.features', {
+    returnObjects: true
+  }) as string[];
+  return <>
       <Helmet>
         <title>{t('seo.tm7.title')}</title>
         <meta name="description" content={t('seo.tm7.description')} />
@@ -305,11 +348,7 @@ const TM7 = () => {
                 </div>
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-full blur-3xl"></div>
-                  <img
-                    src={tm7Hero}
-                    alt="Thermomix TM7"
-                    className="relative w-full max-w-md mx-auto drop-shadow-2xl"
-                  />
+                  <img alt="Thermomix TM7" className="relative w-full max-w-md mx-auto drop-shadow-2xl" src="/lovable-uploads/7bc23ccd-7a82-45ae-a34f-ea8c30899c61.webp" />
                 </div>
               </div>
             </div>
@@ -357,22 +396,9 @@ const TM7 = () => {
               </div>
 
               <div className="flex flex-wrap justify-center gap-3 mb-8">
-                {[
-                  modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, modiFermentieren,
-                  modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden,
-                  modiSlowcooking, modiSousvide, modiTeigkneten
-                ].map((img, index) => (
-                  <div 
-                    key={index} 
-                    className="bg-white rounded-xl shadow-md border border-border/50 hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden p-2 w-[calc(33.333%-0.5rem)] sm:w-[calc(25%-0.5rem)] md:w-[calc(16.666%-0.5rem)]"
-                  >
-                    <img 
-                      src={img} 
-                      alt={`Thermomix Modus ${index + 1}`}
-                      className="w-full h-auto max-w-[100px] mx-auto"
-                    />
-                  </div>
-                ))}
+                {[modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, modiFermentieren, modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden, modiSlowcooking, modiSousvide, modiTeigkneten].map((img, index) => <div key={index} className="bg-white rounded-xl shadow-md border border-border/50 hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden p-2 w-[calc(33.333%-0.5rem)] sm:w-[calc(25%-0.5rem)] md:w-[calc(16.666%-0.5rem)]">
+                    <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto max-w-[100px] mx-auto" />
+                  </div>)}
               </div>
 
               <p className="text-center text-muted-foreground">
@@ -397,12 +423,10 @@ const TM7 = () => {
                   </p>
                   <p className="font-medium text-foreground mb-3">{t('tm7.cookidoo.featuresTitle')}</p>
                   <ul className="space-y-2 mb-6">
-                    {cookidooFeatures.map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                    {cookidooFeatures.map((item, index) => <li key={index} className="flex items-start gap-2 text-muted-foreground">
                         <span className="text-primary font-bold">✓</span>
                         {item}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                   <p className="text-muted-foreground italic">
                     {t('tm7.cookidoo.outro')}
@@ -423,19 +447,11 @@ const TM7 = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="relative">
                       <div className="absolute -inset-2 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-2xl blur-2xl"></div>
-                      <img
-                        src={display1}
-                        alt="Thermomix TM7 Display Rezept"
-                        className="relative w-full rounded-xl shadow-lg"
-                      />
+                      <img src={display1} alt="Thermomix TM7 Display Rezept" className="relative w-full rounded-xl shadow-lg" />
                     </div>
                     <div className="relative">
                       <div className="absolute -inset-2 bg-gradient-to-br from-accent/10 via-transparent to-primary/10 rounded-2xl blur-2xl"></div>
-                      <img
-                        src={display2}
-                        alt="Thermomix TM7 Display Waage"
-                        className="relative w-full rounded-xl shadow-lg"
-                      />
+                      <img src={display2} alt="Thermomix TM7 Display Waage" className="relative w-full rounded-xl shadow-lg" />
                     </div>
                   </div>
                 </div>
@@ -450,12 +466,10 @@ const TM7 = () => {
                     {t('tm7.display.subtitle')}
                   </p>
                   <ul className="space-y-2 mb-6">
-                    {displayFeatures.map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                    {displayFeatures.map((item, index) => <li key={index} className="flex items-start gap-2 text-muted-foreground">
                         <span className="text-primary font-bold">✓</span>
                         {item}
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
               </div>
@@ -478,23 +492,14 @@ const TM7 = () => {
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {accessories.map((accessory) => (
-                  <div 
-                    key={accessory.titleKey}
-                    className="bg-card rounded-2xl shadow-soft overflow-hidden group hover:shadow-lg transition-all duration-300"
-                  >
+                {accessories.map(accessory => <div key={accessory.titleKey} className="bg-card rounded-2xl shadow-soft overflow-hidden group hover:shadow-lg transition-all duration-300">
                     <div className="aspect-square overflow-hidden">
-                      <img
-                        src={accessory.img}
-                        alt={t(`tm7.accessories.items.${accessory.titleKey}`)}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
+                      <img src={accessory.img} alt={t(`tm7.accessories.items.${accessory.titleKey}`)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
                     <div className="p-4 text-center">
                       <h3 className="font-medium text-foreground">{t(`tm7.accessories.items.${accessory.titleKey}`)}</h3>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </section>
@@ -517,12 +522,10 @@ const TM7 = () => {
 
                 <div className="bg-card rounded-2xl shadow-card p-8 mb-8">
                   <ul className="space-y-4">
-                    {comparisonFeatures.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                    {comparisonFeatures.map((feature, index) => <li key={index} className="flex items-start gap-3 text-muted-foreground">
                         <span className="text-primary font-bold text-lg">✓</span>
                         <span>{feature}</span>
-                      </li>
-                    ))}
+                      </li>)}
                   </ul>
                 </div>
 
@@ -546,21 +549,17 @@ const TM7 = () => {
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {specs.map((category) => (
-                  <div key={category.categoryKey} className="bg-card rounded-2xl shadow-soft p-6">
+                {specs.map(category => <div key={category.categoryKey} className="bg-card rounded-2xl shadow-soft p-6">
                     <h3 className="font-serif text-lg text-foreground mb-4 pb-2 border-b border-border">
                       {t(`tm7.specs.categories.${category.categoryKey}`)}
                     </h3>
                     <ul className="space-y-2">
-                      {category.items.map((item, index) => (
-                        <li key={index} className="text-sm">
+                      {category.items.map((item, index) => <li key={index} className="text-sm">
                           <span className="text-muted-foreground">{item.label}:</span>
                           <span className="text-foreground ml-1">{item.value}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </section>
@@ -571,8 +570,6 @@ const TM7 = () => {
         </main>
         <Footer />
       </div>
-    </>
-  );
+    </>;
 };
-
 export default TM7;
