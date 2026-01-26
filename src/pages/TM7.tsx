@@ -56,7 +56,7 @@ const DeviceSlider = () => {
 
   useEffect(() => {
     const checkWidth = () => {
-      setItemsPerView(window.innerWidth < 768 ? 2 : 4);
+      setItemsPerView(window.innerWidth < 768 ? 1 : 4);
     };
     checkWidth();
     window.addEventListener('resize', checkWidth);
@@ -97,7 +97,7 @@ const DeviceSlider = () => {
   };
 
   // Calculate transform based on items per view
-  const gapSize = itemsPerView === 2 ? 12 : 16; // gap-3 = 12px, gap-4 = 16px
+  const gapSize = itemsPerView === 1 ? 0 : 16; // no gap for single item, gap-4 = 16px
   const itemWidth = 100 / itemsPerView;
   const gapPercentage = (gapSize / (typeof window !== 'undefined' ? window.innerWidth : 1000)) * 100;
 
@@ -118,7 +118,7 @@ const DeviceSlider = () => {
             {[...devices, ...devices].map((device, index) => (
               <div 
                 key={`${device.labelKey}-${index}`} 
-                className="text-center flex-shrink-0 w-[calc(50%-6px)] md:w-[calc(25%-12px)]"
+                className="text-center flex-shrink-0 w-full md:w-[calc(25%-12px)]"
               >
                 <div className="bg-card rounded-2xl p-3 md:p-4 shadow-soft mb-2 aspect-square flex items-center justify-center overflow-hidden">
                   <img src={device.img} alt={t(`tm7.devices.labels.${device.labelKey}`)} className="w-full h-full object-cover rounded-xl" />
