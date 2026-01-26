@@ -54,8 +54,8 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 mb-8">
               {[
-                { value: '500+', label: t('about.stats.customers') },
-                { value: '5+', label: t('about.stats.experience') },
+                { value: '50+', label: t('about.stats.customers') },
+                { value: '1+', label: t('about.stats.experience') },
                 { value: '100%', label: t('about.stats.dedication') },
               ].map((stat, index) => (
                 <div 
