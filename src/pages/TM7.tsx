@@ -21,12 +21,19 @@ import deviceFleischwolf from '@/assets/device-fleischwolf.jpg';
 import deviceKuechenmaschine from '@/assets/device-kuechenmaschine.jpg';
 
 // Modi images
-import modi1 from '@/assets/modi-1.png';
-import modi2 from '@/assets/modi-2.png';
-import modi3 from '@/assets/modi-3.png';
-import modi4 from '@/assets/modi-4.png';
-import modi5 from '@/assets/modi-5.png';
-import modi6 from '@/assets/modi-6.png';
+import modiAnbraten from '@/assets/modi-anbraten.png';
+import modiAndicken from '@/assets/modi-andicken.png';
+import modiDampfgaren from '@/assets/modi-dampfgaren.png';
+import modiEierkochen from '@/assets/modi-eierkochen.png';
+import modiFermentieren from '@/assets/modi-fermentieren.png';
+import modiOffeneskochen from '@/assets/modi-offeneskochen.png';
+import modiPeelen from '@/assets/modi-peelen.png';
+import modiPuerieren from '@/assets/modi-puerieren.png';
+import modiReiskochen from '@/assets/modi-reiskochen.png';
+import modiSchneiden from '@/assets/modi-schneiden.png';
+import modiSlowcooking from '@/assets/modi-slowcooking.png';
+import modiSousvide from '@/assets/modi-sousvide.png';
+import modiTeigkneten from '@/assets/modi-teigkneten.png';
 
 // Cookidoo images
 import cookidoo1 from '@/assets/cookidoo-1.jpg';
@@ -349,16 +356,20 @@ const TM7 = () => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mb-8">
-                {[modi1, modi2, modi3, modi4, modi5, modi6].map((img, index) => (
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                {[
+                  modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, modiFermentieren,
+                  modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden,
+                  modiSlowcooking, modiSousvide, modiTeigkneten
+                ].map((img, index) => (
                   <div 
                     key={index} 
-                    className="bg-card rounded-2xl shadow-soft hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden"
+                    className="bg-white rounded-xl shadow-md border border-border/50 hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden p-2 w-[calc(33.333%-0.5rem)] sm:w-[calc(25%-0.5rem)] md:w-[calc(16.666%-0.5rem)]"
                   >
                     <img 
                       src={img} 
                       alt={`Thermomix Modus ${index + 1}`}
-                      className="w-full h-auto"
+                      className="w-full h-auto max-w-[100px] mx-auto"
                     />
                   </div>
                 ))}
