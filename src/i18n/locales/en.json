@@ -379,22 +379,69 @@
     },
     "accessories": {
       "tagline": "Accessories",
-      "title": "The TM package contains versatile helpers",
-      "spatel": {
-        "title": "The Thermomix® Spatula",
-        "features": ["Fits perfectly for the TM7", "Heat-resistant & stable", "Flexible for scraping", "Dishwasher safe"]
+      "title": "Expand your TM7 with the right accessories",
+      "subtitle": "With the right accessories, your TM7 becomes even more versatile.",
+      "intro": "Whether precise cooking, faster preparation or clever steaming – these compatible extensions get even more out of your cooking experience.",
+      "sensor": {
+        "title": "The Thermomix® Sensor (TM7 / TM6)",
+        "tagline": "PRECISE COOKING – COMPLETELY RELAXED",
+        "intro": "Never too dry, never too raw again:",
+        "description": "The sensor measures the core temperature of your food and ensures that meat, fish or bread reach exactly the perfect doneness.",
+        "benefitsTitle": "Your benefits:",
+        "benefits": [
+          "Perfectly cooked dishes without guesswork",
+          "Ideal for roasts, bread & sous-vide",
+          "More safety & consistent quality"
+        ],
+        "outro": "You decide how you want your dish – the TM7 takes care of the rest.",
+        "price": "€ 149.00"
       },
-      "schmetterling": {
-        "title": "The Butterfly Whisk",
-        "features": ["Ideal for whipped cream, egg whites and airy creams", "Gentle and even"]
+      "peeler": {
+        "title": "Blade Cover with Peeler",
+        "tagline": "PEELING & GENTLE COOKING",
+        "description": "The blade cover with peeler is a real multitasker for your TM7.",
+        "intro": "It protects the mixing blade and gives you two major advantages:",
+        "feature1Title": "👉 peeling in the mixing bowl",
+        "feature2Title": "👉 gentle cooking without chopping.",
+        "peelTitle": "Peeling made easy:",
+        "peelText": "Potatoes, carrots or beetroot are evenly peeled in the mixing bowl, completely hands-free.",
+        "cookTitle": "Gentle cooking with covered blade:",
+        "cookText": "The cover protects the mixing blade, so delicate ingredients like sausages, dumplings, gnocchi or vegetables are cooked, not chopped.",
+        "idealTitle": "Ideal for you if you:",
+        "idealList": [
+          "Want to save time",
+          "Often work with whole ingredients",
+          "Want more options in the mixing bowl"
+        ],
+        "benefitsTitle": "Your benefits at a glance:",
+        "benefits": [
+          "2-in-1: Peeling & cooking",
+          "No contact of ingredients with the blade",
+          "More flexibility for stews, sides & meal prep"
+        ],
+        "price": "€ 39.90"
       },
-      "varoma": {
-        "title": "The Varoma® Steam Attachment",
-        "features": ["Gentle steaming on multiple levels", "Ideal for vegetables, fish and complete menus", "Healthy cooking without loss of taste"]
-      },
-      "garkorb": {
-        "title": "The Steaming Basket",
-        "features": ["Perfect for draining and steaming small ingredients", "For rice, potatoes, pasta and more"]
+      "gemuesestyler": {
+        "title": "The TM7 Vegetable Styler",
+        "description": "With the Vegetable Styler, your TM7 becomes a real prep helper in the kitchen.",
+        "intro": "Whether slices, strips or grated – your vegetables are evenly cut in seconds and ready for further processing.",
+        "text": "Perfect for anyone who wants to cook fresh but has no time (or desire) for lengthy chopping.",
+        "idealTitle": "Ideal for:",
+        "idealList": [
+          "Salads & bowls",
+          "Casseroles & gratins",
+          "Stir-fries & oven vegetables",
+          "Raw food & meal prep"
+        ],
+        "benefitsTitle": "Your benefits at a glance:",
+        "benefits": [
+          "Professional-quality even results",
+          "Significantly less prep time",
+          "More joy with fresh ingredients",
+          "Direct further processing in the TM7"
+        ],
+        "outro": "Create fresh, varied dishes in no time and save yourself the space full of cutting boards.",
+        "price": "€ 169.00"
       }
     },
     "comparison": {

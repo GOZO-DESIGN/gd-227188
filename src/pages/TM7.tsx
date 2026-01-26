@@ -41,10 +41,9 @@ import cookidoo2 from '@/assets/cookidoo-2.jpg';
 import cookidoo3 from '@/assets/cookidoo-3.jpg';
 
 // Accessory images
-import accessorySpatel from '@/assets/accessory-spatel.jpg';
-import accessorySchmetterling from '@/assets/accessory-schmetterling.jpg';
-import accessoryVaroma from '@/assets/accessory-varoma.jpg';
-import accessoryGarkorb from '@/assets/accessory-garkorb.jpg';
+import accessorySensor from '@/assets/accessory-sensor.png';
+import accessoryPeeler from '@/assets/accessory-peeler.png';
+import accessoryGemuesestyler from '@/assets/accessory-gemuesestyler.jpg';
 
 // Display images
 import display1 from '@/assets/display-1.webp';
@@ -294,19 +293,6 @@ const TM7 = () => {
     ref: specsRef,
     isVisible: specsVisible
   } = useScrollAnimation();
-  const accessories = [{
-    titleKey: 'spatel',
-    img: accessorySpatel
-  }, {
-    titleKey: 'schmetterling',
-    img: accessorySchmetterling
-  }, {
-    titleKey: 'varoma',
-    img: accessoryVaroma
-  }, {
-    titleKey: 'garkorb',
-    img: accessoryGarkorb
-  }];
   const specs = [{
     categoryKey: 'motor',
     itemKeys: ['motorType', 'drivePower', 'speedRange', 'doughMode', 'motorProtection', 'noiseLevel']
@@ -575,20 +561,166 @@ const TM7 = () => {
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
                   {t('tm7.accessories.title')}
                 </h2>
-                <p className="text-muted-foreground max-w-3xl mx-auto">
+                <p className="text-muted-foreground max-w-2xl mx-auto mb-2">
                   {t('tm7.accessories.subtitle')}
+                </p>
+                <p className="text-muted-foreground max-w-3xl mx-auto">
+                  {t('tm7.accessories.intro')}
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {accessories.map(accessory => <div key={accessory.titleKey} className="bg-card rounded-2xl shadow-soft overflow-hidden group hover:shadow-lg transition-all duration-300">
-                    <div className="aspect-square overflow-hidden">
-                      <img src={accessory.img} alt={t(`tm7.accessories.items.${accessory.titleKey}`)} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              {/* Sensor */}
+              <div className="bg-card rounded-2xl shadow-card overflow-hidden mb-8">
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
+                      {t('tm7.accessories.sensor.tagline')}
+                    </span>
+                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
+                      {t('tm7.accessories.sensor.title')}
+                    </h3>
+                    <p className="text-muted-foreground italic mb-2">
+                      {t('tm7.accessories.sensor.intro')}
+                    </p>
+                    <p className="text-muted-foreground mb-6">
+                      {t('tm7.accessories.sensor.description')}
+                    </p>
+                    <h4 className="font-semibold text-foreground mb-3">
+                      {t('tm7.accessories.sensor.benefitsTitle')}
+                    </h4>
+                    <ul className="space-y-2 mb-6">
+                      {(t('tm7.accessories.sensor.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary font-bold">✓</span>
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-foreground font-medium mb-4">
+                      {t('tm7.accessories.sensor.outro')}
+                    </p>
+                    <p className="text-2xl font-bold text-primary">
+                      {t('tm7.accessories.sensor.price')}
+                    </p>
+                  </div>
+                  <div className="bg-white flex items-center justify-center p-8">
+                    <img 
+                      src={accessorySensor} 
+                      alt={t('tm7.accessories.sensor.title')} 
+                      className="max-h-80 object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Peeler */}
+              <div className="bg-card rounded-2xl shadow-card overflow-hidden mb-8">
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="bg-white flex items-center justify-center p-8 order-2 lg:order-1">
+                    <img 
+                      src={accessoryPeeler} 
+                      alt={t('tm7.accessories.peeler.title')} 
+                      className="max-h-80 object-contain"
+                    />
+                  </div>
+                  <div className="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2">
+                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
+                      {t('tm7.accessories.peeler.tagline')}
+                    </span>
+                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
+                      {t('tm7.accessories.peeler.title')}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {t('tm7.accessories.peeler.description')}
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      {t('tm7.accessories.peeler.intro')}
+                    </p>
+                    <div className="mb-4 space-y-1">
+                      <p className="text-foreground font-medium">{t('tm7.accessories.peeler.feature1Title')}</p>
+                      <p className="text-foreground font-medium">{t('tm7.accessories.peeler.feature2Title')}</p>
                     </div>
-                    <div className="p-4 text-center">
-                      <h3 className="font-medium text-foreground">{t(`tm7.accessories.items.${accessory.titleKey}`)}</h3>
+                    <div className="grid md:grid-cols-2 gap-6 mb-6">
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">{t('tm7.accessories.peeler.peelTitle')}</h4>
+                        <p className="text-muted-foreground text-sm">{t('tm7.accessories.peeler.peelText')}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-2">{t('tm7.accessories.peeler.cookTitle')}</h4>
+                        <p className="text-muted-foreground text-sm">{t('tm7.accessories.peeler.cookText')}</p>
+                      </div>
                     </div>
-                  </div>)}
+                    <h4 className="font-semibold text-foreground mb-3">
+                      {t('tm7.accessories.peeler.benefitsTitle')}
+                    </h4>
+                    <ul className="space-y-2 mb-6">
+                      {(t('tm7.accessories.peeler.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary font-bold">✓</span>
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-2xl font-bold text-primary">
+                      {t('tm7.accessories.peeler.price')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Gemüsestyler */}
+              <div className="bg-card rounded-2xl shadow-card overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
+                      {t('tm7.accessories.gemuesestyler.title')}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {t('tm7.accessories.gemuesestyler.description')}
+                    </p>
+                    <p className="text-muted-foreground mb-4">
+                      {t('tm7.accessories.gemuesestyler.intro')}
+                    </p>
+                    <p className="text-muted-foreground mb-6">
+                      {t('tm7.accessories.gemuesestyler.text')}
+                    </p>
+                    <h4 className="font-semibold text-foreground mb-3">
+                      {t('tm7.accessories.gemuesestyler.idealTitle')}
+                    </h4>
+                    <ul className="space-y-2 mb-6">
+                      {(t('tm7.accessories.gemuesestyler.idealList', { returnObjects: true }) as string[]).map((item, index) => (
+                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary font-bold">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <h4 className="font-semibold text-foreground mb-3">
+                      {t('tm7.accessories.gemuesestyler.benefitsTitle')}
+                    </h4>
+                    <ul className="space-y-2 mb-6">
+                      {(t('tm7.accessories.gemuesestyler.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary font-bold">✓</span>
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-muted-foreground italic mb-4">
+                      {t('tm7.accessories.gemuesestyler.outro')}
+                    </p>
+                    <p className="text-2xl font-bold text-primary">
+                      {t('tm7.accessories.gemuesestyler.price')}
+                    </p>
+                  </div>
+                  <div className="bg-white flex items-center justify-center p-8">
+                    <img 
+                      src={accessoryGemuesestyler} 
+                      alt={t('tm7.accessories.gemuesestyler.title')} 
+                      className="max-h-96 object-contain"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </section>
