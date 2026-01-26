@@ -128,7 +128,7 @@ const OffersSection = () => {
             <div className="hidden lg:flex items-center justify-center">
               <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-serif text-4xl font-bold">0%</span>
+                  <span className="text-primary font-serif text-5xl font-bold">{t('offers.financing.badge')}</span>
                 </div>
               </div>
             </div>
