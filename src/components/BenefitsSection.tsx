@@ -31,6 +31,100 @@ import modiSchneiden from '@/assets/modi-schneiden.png';
 import modiSlowcooking from '@/assets/modi-slowcooking.png';
 import modiSousvide from '@/assets/modi-sousvide.png';
 import modiTeigkneten from '@/assets/modi-teigkneten.png';
+const ModiSlider = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(4);
+  
+  const modiItems = [
+    modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, 
+    modiFermentieren, modiOffeneskochen, modiPeelen, modiPuerieren, 
+    modiReiskochen, modiSchneiden, modiSlowcooking, modiSousvide, modiTeigkneten
+  ];
+
+  useEffect(() => {
+    const checkWidth = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerView(2);
+      } else if (window.innerWidth < 768) {
+        setItemsPerView(3);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(4);
+      } else {
+        setItemsPerView(5);
+      }
+    };
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
+  // Group slides into pages for dot navigation (fewer dots)
+  const totalPages = Math.ceil(modiItems.length / itemsPerView);
+  const maxIndex = Math.max(0, modiItems.length - itemsPerView);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [maxIndex]);
+
+  const itemWidthPercent = 100 / itemsPerView;
+  const gapPx = 4; // smaller gap
+
+  // Calculate which "page" we're on for dot highlighting
+  const currentPage = Math.min(Math.floor(currentIndex / itemsPerView * totalPages / (maxIndex + 1) * totalPages), totalPages - 1);
+
+  const goToPage = (pageIndex: number) => {
+    const newIndex = Math.floor((pageIndex / (totalPages - 1)) * maxIndex);
+    setCurrentIndex(Math.min(newIndex, maxIndex));
+  };
+
+  return (
+    <div className="relative">
+      {/* Slider Container - extra padding for shadow visibility */}
+      <div className="overflow-hidden px-3 py-3 -mx-3">
+        <div 
+          className="flex transition-transform duration-500 ease-out gap-1"
+          style={{ transform: `translateX(calc(-${currentIndex * itemWidthPercent}% - ${currentIndex * gapPx / itemsPerView}px))` }}
+        >
+          {modiItems.map((img, index) => (
+            <div 
+              key={index} 
+              className="flex-shrink-0 flex items-center justify-center p-1"
+              style={{ width: `calc(${itemWidthPercent}% - ${gapPx * (itemsPerView - 1) / itemsPerView}px)` }}
+            >
+              <div className="bg-white rounded-xl shadow-lg border border-border/50 p-4 hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <img 
+                  src={img} 
+                  alt={`Thermomix Modus ${index + 1}`} 
+                  className="w-full h-auto max-w-[120px] mx-auto"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dot Navigation - only 3 dots */}
+      <div className="flex justify-center gap-2 mt-2">
+        {Array.from({ length: totalPages }).map((_, index) => (
+          <button 
+            key={index} 
+            onClick={() => goToPage(index)} 
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentPage 
+                ? 'bg-primary w-6' 
+                : 'bg-muted-foreground/30 w-2 hover:bg-muted-foreground/50'
+            }`}
+            aria-label={`Seite ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const CookidooSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [cookidoo1, cookidoo2, cookidoo3];
@@ -333,15 +427,7 @@ const BenefitsSection = () => {
             </p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {[
-              modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, modiFermentieren,
-              modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden,
-              modiSlowcooking, modiSousvide, modiTeigkneten
-            ].map((img, index) => <div key={index} className="bg-white rounded-xl shadow-md border border-border/50 hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden p-2 w-[calc(33.333%-0.5rem)] sm:w-[calc(25%-0.5rem)] md:w-[calc(16.666%-0.5rem)]">
-                <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto max-w-[100px] mx-auto" />
-              </div>)}
-          </div>
+          <ModiSlider />
           
           <p className="text-center text-muted-foreground font-medium">
             {t('benefits.functions.outro')}
