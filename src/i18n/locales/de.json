@@ -462,6 +462,45 @@
         ],
         "outro": "So zauberst du im Handumdrehen frische, abwechslungsreiche Gerichte und sparst dir den Platz voller Schneidebretter.",
         "price": "€ 169,00"
+      },
+      "spatel": {
+        "title": "Der Thermomix® Spatel",
+        "tagline": "UNVERZICHTBAR IM ALLTAG",
+        "description": "Der ergonomisch geformte Spatel ist perfekt auf den Mixtopf abgestimmt. Er hilft dir, Teige und Massen restlos herauszuholen und beim Kochen umzurühren.",
+        "benefitsTitle": "Deine Vorteile:",
+        "benefits": [
+          "Perfekt auf den Mixtopf abgestimmt",
+          "Hitzebeständig und spülmaschinenfest",
+          "Restloses Entleeren des Mixtopfs",
+          "Praktisch beim Umrühren und Portionieren"
+        ],
+        "price": "€ 19,90"
+      },
+      "schmetterling": {
+        "title": "Der Schmetterlingseinsatz",
+        "tagline": "SCHLAGEN, RÜHREN, AUFSCHÄUMEN",
+        "description": "Der Schmetterlingseinsatz verwandelt deinen TM7 in einen Rühraufsatz. Perfekt für Sahne, Eischnee, Cremes und luftige Teige – alles wird wunderbar locker.",
+        "benefitsTitle": "Deine Vorteile:",
+        "benefits": [
+          "Sahne in Sekunden steif schlagen",
+          "Perfekter Eischnee ohne Kraftaufwand",
+          "Ideal für Cremes, Mousse und Desserts",
+          "Luftige Biskuit- und Rührteige"
+        ],
+        "price": "€ 29,90"
+      },
+      "varoma": {
+        "title": "Der Varoma® Dampfgarer",
+        "tagline": "DAMPFGAREN AUF ZWEI EBENEN",
+        "description": "Mit dem Varoma® garst du schonend Gemüse, Fisch, Fleisch und vieles mehr – während im Mixtopf gleichzeitig eine Sauce oder Beilage zubereitet wird. Das spart Zeit und erhält Vitamine.",
+        "benefitsTitle": "Deine Vorteile:",
+        "benefits": [
+          "Schonendes Garen erhält Vitamine",
+          "Zwei Ebenen für mehrere Zutaten",
+          "Gleichzeitiges Kochen im Mixtopf möglich",
+          "Ideal für gesunde, fettarme Küche"
+        ],
+        "price": "€ 89,00"
       }
     },
     "comparison": {

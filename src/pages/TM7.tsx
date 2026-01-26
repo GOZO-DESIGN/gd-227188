@@ -45,6 +45,9 @@ import cookidoo3 from '@/assets/cookidoo-3.jpg';
 import accessorySensor from '@/assets/accessory-sensor.png';
 import accessoryPeeler from '@/assets/accessory-peeler.png';
 import accessoryGemuesestyler from '@/assets/accessory-gemuesestyler.jpg';
+import accessorySpatel from '@/assets/accessory-spatel.jpg';
+import accessorySchmetterling from '@/assets/accessory-schmetterling.jpg';
+import accessoryVaroma from '@/assets/accessory-varoma.jpg';
 
 // Display images
 import display1 from '@/assets/display-1.webp';
@@ -751,6 +754,120 @@ const TM7 = () => {
                       alt={t('tm7.accessories.gemuesestyler.title')} 
                       className="max-h-96 object-contain"
                     />
+                  </div>
+                </div>
+              </div>
+
+              {/* Spatel */}
+              <div className="bg-card rounded-2xl shadow-card overflow-hidden mb-8">
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="bg-white flex items-center justify-center p-8 order-2 lg:order-1">
+                    <img 
+                      src={accessorySpatel} 
+                      alt={t('tm7.accessories.spatel.title')} 
+                      className="max-h-80 object-contain"
+                    />
+                  </div>
+                  <div className="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2">
+                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
+                      {t('tm7.accessories.spatel.tagline')}
+                    </span>
+                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
+                      {t('tm7.accessories.spatel.title')}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {t('tm7.accessories.spatel.description')}
+                    </p>
+                    <h4 className="font-semibold text-foreground mb-3">
+                      {t('tm7.accessories.spatel.benefitsTitle')}
+                    </h4>
+                    <ul className="space-y-2 mb-6">
+                      {(t('tm7.accessories.spatel.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary font-bold">✓</span>
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-2xl font-bold text-primary">
+                      {t('tm7.accessories.spatel.price')}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Schmetterlingseinsatz */}
+              <div className="bg-card rounded-2xl shadow-card overflow-hidden mb-8">
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
+                      {t('tm7.accessories.schmetterling.tagline')}
+                    </span>
+                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
+                      {t('tm7.accessories.schmetterling.title')}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {t('tm7.accessories.schmetterling.description')}
+                    </p>
+                    <h4 className="font-semibold text-foreground mb-3">
+                      {t('tm7.accessories.schmetterling.benefitsTitle')}
+                    </h4>
+                    <ul className="space-y-2 mb-6">
+                      {(t('tm7.accessories.schmetterling.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary font-bold">✓</span>
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-2xl font-bold text-primary">
+                      {t('tm7.accessories.schmetterling.price')}
+                    </p>
+                  </div>
+                  <div className="bg-white flex items-center justify-center p-8">
+                    <img 
+                      src={accessorySchmetterling} 
+                      alt={t('tm7.accessories.schmetterling.title')} 
+                      className="max-h-80 object-contain"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Varoma */}
+              <div className="bg-card rounded-2xl shadow-card overflow-hidden">
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="bg-white flex items-center justify-center p-8 order-2 lg:order-1">
+                    <img 
+                      src={accessoryVaroma} 
+                      alt={t('tm7.accessories.varoma.title')} 
+                      className="max-h-80 object-contain"
+                    />
+                  </div>
+                  <div className="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2">
+                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
+                      {t('tm7.accessories.varoma.tagline')}
+                    </span>
+                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
+                      {t('tm7.accessories.varoma.title')}
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      {t('tm7.accessories.varoma.description')}
+                    </p>
+                    <h4 className="font-semibold text-foreground mb-3">
+                      {t('tm7.accessories.varoma.benefitsTitle')}
+                    </h4>
+                    <ul className="space-y-2 mb-6">
+                      {(t('tm7.accessories.varoma.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary font-bold">✓</span>
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-2xl font-bold text-primary">
+                      {t('tm7.accessories.varoma.price')}
+                    </p>
                   </div>
                 </div>
               </div>
