@@ -92,13 +92,11 @@ const DeviceSlider = () => {
         </button>
         
         <div className="flex-1 overflow-hidden">
-          <div className="flex transition-transform duration-500 ease-out gap-4" style={{
-          transform: `translateX(-${currentIndex * (100 / 4 + 1)}%)`
+          <div className="flex transition-transform duration-500 ease-out gap-3 md:gap-4" style={{
+          transform: `translateX(-${currentIndex * (100 / 2 + 1.5)}%)` 
         }}>
-            {[...devices, ...devices].map((device, index) => <div key={`${device.labelKey}-${index}`} className="text-center flex-shrink-0" style={{
-            width: 'calc(25% - 12px)'
-          }}>
-                <div className="bg-card rounded-2xl p-4 shadow-soft mb-2 aspect-square flex items-center justify-center overflow-hidden">
+            {[...devices, ...devices].map((device, index) => <div key={`${device.labelKey}-${index}`} className="text-center flex-shrink-0 w-[calc(50%-6px)] md:w-[calc(25%-12px)]">
+                <div className="bg-card rounded-2xl p-3 md:p-4 shadow-soft mb-2 aspect-square flex items-center justify-center overflow-hidden">
                   <img src={device.img} alt={t(`tm7.devices.labels.${device.labelKey}`)} className="w-full h-full object-cover rounded-xl" />
                 </div>
                 <p className="text-sm text-muted-foreground font-medium">{t(`tm7.devices.labels.${device.labelKey}`)}</p>
