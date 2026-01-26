@@ -444,6 +444,60 @@
         "system": "System & Software",
         "display": "Display & Bedienung",
         "dimensions": "Maße & Gewicht"
+      },
+      "items": {
+        "motor": {
+          "motorType": { "label": "Motortyp", "value": "Wartungsfreier Vorwerk-Synchronmotor" },
+          "drivePower": { "label": "Antriebsleistung", "value": "500 W" },
+          "speedRange": { "label": "Drehzahlbereich", "value": "ca. 40 – 10.700 U/min" },
+          "doughMode": { "label": "Teigmodus", "value": "Intervallbetrieb speziell fürs Kneten" },
+          "motorProtection": { "label": "Motorschutz", "value": "Elektronischer Überlastungsschutz" },
+          "noiseLevel": { "label": "Lautstärke", "value": "Ca. 30 dB(A) Stufe 1 / ca. 50 dB(A) mittlere Stufen" }
+        },
+        "heating": {
+          "heatingPower": { "label": "Heizleistung", "value": "1.000 W" },
+          "tempControl": { "label": "Temperaturregelung", "value": "Elektronisch gesteuert" },
+          "safety": { "label": "Sicherheit", "value": "Automatische Abschaltung bei Überhitzung" }
+        },
+        "scale": {
+          "range": { "label": "Messbereich", "value": "1 g – 3.000 g" },
+          "negativeWeighing": { "label": "Negativwiegen", "value": "Bis -3.000 g möglich" },
+          "tare": { "label": "Tara-Funktion", "value": "Ja" },
+          "weighDuringOp": { "label": "Wiegen während Betrieb", "value": "Ja" }
+        },
+        "bowl": {
+          "material": { "label": "Material", "value": "Rostfreier Edelstahl" },
+          "insulation": { "label": "Isolierung", "value": "Außen isoliert, auch bei Hitze berührbar" },
+          "sensors": { "label": "Sensoren", "value": "Integrierte Temperaturmessung" },
+          "maxCapacity": { "label": "Maximale Füllmenge", "value": "2,2 Liter" }
+        },
+        "blade": {
+          "blades": { "label": "Klingen", "value": "4 Stück" },
+          "material": { "label": "Material", "value": "Rostfreier Edelstahl" },
+          "maintenance": { "label": "Wartung", "value": "Wartungsfrei geschliffen" }
+        },
+        "power": {
+          "voltage": { "label": "Netzspannung", "value": "220 – 240 V / 50-60 Hz" },
+          "maxPower": { "label": "Max. Leistungsaufnahme", "value": "bis zu 2.000 W" },
+          "cable": { "label": "Netzkabel", "value": "ca. 1m, ausziehbar" }
+        },
+        "system": {
+          "processor": { "label": "Prozessor", "value": "Mehrkern-Prozessor" },
+          "updates": { "label": "Updates", "value": "Automatisch über WLAN" },
+          "expandability": { "label": "Erweiterbarkeit", "value": "Neue Funktionen per Software-Update" }
+        },
+        "display": {
+          "size": { "label": "Displaygröße", "value": "10 Zoll" },
+          "type": { "label": "Displaytyp", "value": "Multi-Touch, hochauflösend" },
+          "operation": { "label": "Bedienung", "value": "Auch mit nassen / öligen Fingern möglich" },
+          "recipeAccess": { "label": "Rezeptzugriff", "value": "Direkt über integriertes Cookidoo®" }
+        },
+        "dimensions": {
+          "height": { "label": "Höhe", "value": "ca. 33,6 cm" },
+          "width": { "label": "Breite", "value": "ca. 25,3 cm" },
+          "depth": { "label": "Tiefe", "value": "ca. 40,5 cm" },
+          "weight": { "label": "Gewicht", "value": "ca. 6,5 kg (ohne Varoma®)" }
+        }
       }
     },
     "cta": {
