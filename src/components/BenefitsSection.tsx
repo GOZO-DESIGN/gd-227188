@@ -333,13 +333,13 @@ const BenefitsSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 mb-8">
             {[
               modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, modiFermentieren,
               modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden,
               modiSlowcooking, modiSousvide, modiTeigkneten
-            ].map((img, index) => <div key={index} className="bg-card rounded-2xl shadow-soft hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden">
-                <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto" />
+            ].map((img, index) => <div key={index} className="bg-white rounded-xl shadow-md border border-border/50 hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden p-2">
+                <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto max-w-[100px] mx-auto" />
               </div>)}
           </div>
           
