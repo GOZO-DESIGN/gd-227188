@@ -139,6 +139,65 @@ const DeviceSlider = () => {
     </div>
   );
 };
+
+const ModiSlider = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const modiItems = [
+    modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, 
+    modiFermentieren, modiOffeneskochen, modiPeelen, modiPuerieren, 
+    modiReiskochen, modiSchneiden, modiSlowcooking, modiSousvide, modiTeigkneten
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % modiItems.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative">
+      {/* Slider Container */}
+      <div className="overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {modiItems.map((img, index) => (
+            <div 
+              key={index} 
+              className="flex-shrink-0 w-full flex items-center justify-center p-4"
+            >
+              <div className="bg-white rounded-2xl shadow-lg border border-border/50 p-6 max-w-[200px]">
+                <img 
+                  src={img} 
+                  alt={`Thermomix Modus ${index + 1}`} 
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Dot Navigation */}
+      <div className="flex justify-center gap-2 mt-6">
+        {modiItems.map((_, index) => (
+          <button 
+            key={index} 
+            onClick={() => setCurrentIndex(index)} 
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex 
+                ? 'bg-primary w-8' 
+                : 'bg-muted-foreground/30 w-2 hover:bg-muted-foreground/50'
+            }`}
+            aria-label={`Modus ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 const CookidooSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [cookidoo1, cookidoo2, cookidoo3];
@@ -438,11 +497,7 @@ const TM7 = () => {
                 </p>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-3 mb-8">
-                {[modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, modiFermentieren, modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden, modiSlowcooking, modiSousvide, modiTeigkneten].map((img, index) => <div key={index} className="bg-white rounded-xl shadow-md border border-border/50 hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden p-2 w-[calc(33.333%-0.5rem)] sm:w-[calc(25%-0.5rem)] md:w-[calc(16.666%-0.5rem)]">
-                    <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto max-w-[100px] mx-auto" />
-                  </div>)}
-              </div>
+              <ModiSlider />
 
               <p className="text-center text-muted-foreground">
                 {t('tm7.modi.outro')}
