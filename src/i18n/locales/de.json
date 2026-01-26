@@ -1,7 +1,7 @@
 {
   "gallery": {
     "title": "Galerie",
-    "subtitle": "Entdecken Sie unsere kulinarischen Kreationen und lassen Sie sich inspirieren.",
+    "subtitle": "Entdecke unsere kulinarischen Kreationen und lass dich inspirieren.",
     "comingSoon": "Inhalt folgt in Kürze..."
   },
   "nav": {
@@ -143,7 +143,7 @@
     }
   },
   "footer": {
-    "tagline": "Ihr Thermomix® Berater",
+    "tagline": "Dein Thermomix® Berater",
     "imprint": "Impressum",
     "privacy": "Datenschutz",
     "terms": "AGB"
@@ -440,23 +440,23 @@
   },
   "passwordProtection": {
     "title": "Willkommen",
-    "subtitle": "Bitte geben Sie das Passwort ein, um fortzufahren.",
+    "subtitle": "Bitte gib das Passwort ein, um fortzufahren.",
     "placeholder": "Passwort eingeben",
     "button": "Eintreten",
-    "error": "Falsches Passwort. Bitte versuchen Sie es erneut.",
+    "error": "Falsches Passwort. Bitte versuche es erneut.",
     "footer": "Exklusiver Kundenbereich"
   },
   "seo": {
     "index": {
-      "title": "kochmitthermo21 | Ihre Thermomix Beraterin",
-      "titleFull": "kochmitthermo21 | Ihre Thermomix Beraterin - Kochen mit Leidenschaft",
-      "description": "Entdecken Sie die Welt des einfachen und kreativen Kochens mit dem Thermomix. Persönliche Beratung und Vorfuehrungen in Ihrer Region.",
-      "descriptionFull": "Entdecken Sie die Welt des einfachen, gesunden und kreativen Kochens mit dem Thermomix. Persönliche Beratung, Vorfuehrungen und Rezeptideen von Ihrer zertifizierten Thermomix Beraterin.",
-      "keywords": "Thermomix, Beratung, Kochen, Rezepte, Vorfuehrung, Kuechenmaschine, gesund kochen"
+      "title": "kochmitthermo21 | Dein Thermomix Berater",
+      "titleFull": "kochmitthermo21 | Dein Thermomix Berater - Kochen mit Leidenschaft",
+      "description": "Entdecke die Welt des einfachen und kreativen Kochens mit dem Thermomix. Persönliche Beratung und Vorführungen in deiner Region.",
+      "descriptionFull": "Entdecke die Welt des einfachen, gesunden und kreativen Kochens mit dem Thermomix. Persönliche Beratung, Vorführungen und Rezeptideen von deinem zertifizierten Thermomix Berater.",
+      "keywords": "Thermomix, Beratung, Kochen, Rezepte, Vorführung, Küchenmaschine, gesund kochen"
     },
     "tm7": {
-      "title": "Thermomix TM7 - Technik, Funktionen & Moeglichkeiten | Bernhard Prager",
-      "description": "Der smarte All-in-One-Kuechenhelfer fuer moderne Kuechen. Erfahren Sie alles ueber den Thermomix TM7 - Funktionen, Technik und Vorteile."
+      "title": "Thermomix TM7 - Technik, Funktionen & Möglichkeiten | Bernhard Prager",
+      "description": "Der smarte All-in-One-Küchenhelfer für moderne Küchen. Erfahre alles über den Thermomix TM7 - Funktionen, Technik und Vorteile."
     },
     "showkochen": {
       "title": "Showkochen | kochmitthermo21",
@@ -464,40 +464,40 @@
     },
     "gallery": {
       "title": "Galerie | kochmitthermo21",
-      "description": "Impressionen aus meinen Showkochen-Events und Thermomix Beratungen - lassen Sie sich inspirieren!"
+      "description": "Impressionen aus meinen Showkochen-Events und Thermomix Beratungen - lass dich inspirieren!"
     },
     "beratung": {
       "title": "Beratung | kochmitthermo21",
-      "description": "Persoenliche Thermomix Beratung - Ich begleite Sie Schritt fuer Schritt auf Ihrem Weg zum Thermomix."
+      "description": "Persönliche Thermomix Beratung - Ich begleite dich Schritt für Schritt auf deinem Weg zum Thermomix."
     }
   },
   "instagram": {
     "tagline": "Inspiration",
-    "title": "Folgen Sie mir auf",
+    "title": "Folge mir auf",
     "titleHighlight": "Instagram",
-    "subtitle": "Entdecken Sie leckere Rezepte, Tipps und Einblicke in meinen Kochalltag mit dem Thermomix®.",
+    "subtitle": "Entdecke leckere Rezepte, Tipps und Einblicke in meinen Kochalltag mit dem Thermomix®.",
     "followMe": "Folge mir auf Instagram",
     "viewGallery": "Zur Galerie"
   },
   "reviews": {
     "tagline": "Kundenbewertungen",
-    "title": "Das sagen meine",
-    "titleHighlight": "Kunden",
+    "title": "Bewerte mich auf",
+    "titleHighlight": "Google",
     "subtitle": "Echte Erfahrungen von zufriedenen Thermomix® Nutzern"
   },
   "contact": {
     "tagline": "Kontakt",
-    "title": "Lassen Sie uns",
+    "title": "Lass uns",
     "titleHighlight": "ins Gespräch kommen",
-    "subtitle": "Haben Sie Fragen zum Thermomix® oder möchten Sie eine persönliche Vorführung erleben? Ich freue mich auf Ihre Nachricht!",
+    "subtitle": "Hast du Fragen zum Thermomix® oder möchtest du eine persönliche Vorführung erleben? Ich freue mich auf deine Nachricht!",
     "phone": "Telefon",
     "email": "E-Mail",
     "address": "Adresse",
     "form": {
-      "step1Title": "Für welches unserer Produkte oder Dienstleistungen möchten Sie Informationen anfordern? *",
+      "step1Title": "Für welches unserer Produkte oder Dienstleistungen möchtest du Informationen anfordern? *",
       "step2Title": "Wunschtermin und mögliches Zeitfenster für ein Telefonat",
-      "step3Title": "Ihre Kontaktdaten",
-      "step4Title": "Ihre Nachricht",
+      "step3Title": "Deine Kontaktdaten",
+      "step4Title": "Deine Nachricht",
       "services": {
         "showkochen": "Showkochen in Wien/NÖ/BGLD",
         "beratung": "Beratungstermin",
@@ -515,25 +515,25 @@
         "flexible": "Flexibel"
       },
       "name": "Name",
-      "namePlaceholder": "Ihr Name",
+      "namePlaceholder": "Dein Name",
       "phonePlaceholder": "+43 ...",
-      "emailPlaceholder": "ihre.email@beispiel.at",
+      "emailPlaceholder": "deine.email@beispiel.at",
       "message": "Nachricht (optional)",
-      "messagePlaceholder": "Wie kann ich Ihnen helfen?",
+      "messagePlaceholder": "Wie kann ich dir helfen?",
       "consent": "Durch Klicken des Abschicken-Buttons stimme ich zu, dass die im Formular eingegebenen personenbezogenen Daten zur Bearbeitung der Anfrage und der personalisierten Beratung verarbeitet werden. Meine Einwilligungen kann ich jederzeit mit Wirkung für die Zukunft postalisch oder per E-Mail widerrufen.",
       "privacyLink": "Datenschutzerklärung",
       "privacyText": "Es gilt unsere",
       "back": "Zurück",
       "next": "Weiter",
       "submit": "Abschicken",
-      "successMessage": "Vielen Dank für Ihre Anfrage! Wir melden uns in Kürze bei Ihnen.",
+      "successMessage": "Vielen Dank für deine Anfrage! Ich melde mich in Kürze bei dir.",
       "errors": {
-        "serviceRequired": "Bitte wählen Sie eine Option aus.",
+        "serviceRequired": "Bitte wähle eine Option aus.",
         "nameRequired": "Name ist erforderlich.",
         "phoneRequired": "Telefonnummer ist erforderlich.",
         "emailRequired": "E-Mail ist erforderlich.",
-        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
-        "consentRequired": "Bitte stimmen Sie der Datenschutzerklärung zu."
+        "emailInvalid": "Bitte gib eine gültige E-Mail-Adresse ein.",
+        "consentRequired": "Bitte stimme der Datenschutzerklärung zu."
       }
     }
   },
@@ -545,7 +545,7 @@
   },
   "cookies": {
     "title": "Diese Website verwendet Cookies",
-    "text": "Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Technisch notwendige Cookies gewährleisten die Funktionalität der Website.",
+    "text": "Wir verwenden Cookies, um dir die bestmögliche Erfahrung auf unserer Website zu bieten. Technisch notwendige Cookies gewährleisten die Funktionalität der Website.",
     "accept": "Akzeptieren",
     "decline": "Nur notwendige",
     "learnMore": "Mehr erfahren"
