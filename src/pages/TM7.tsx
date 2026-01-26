@@ -50,10 +50,19 @@ import accessoryGarkorb from '@/assets/accessory-garkorb.jpg';
 import display1 from '@/assets/display-1.webp';
 import display2 from '@/assets/display-2.webp';
 const DeviceSlider = () => {
-  const {
-    t
-  } = useTranslation();
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(4);
+
+  useEffect(() => {
+    const checkWidth = () => {
+      setItemsPerView(window.innerWidth < 768 ? 2 : 4);
+    };
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
+  }, []);
+
   const devices = [{
     img: deviceEierkocher,
     labelKey: 'eierkocher'
@@ -79,28 +88,44 @@ const DeviceSlider = () => {
     img: deviceKuechenmaschine,
     labelKey: 'kuechenmaschine'
   }];
+
   const next = () => {
     setCurrentIndex(prev => (prev + 1) % devices.length);
   };
   const prev = () => {
     setCurrentIndex(prev => (prev - 1 + devices.length) % devices.length);
   };
-  return <div className="relative">
+
+  // Calculate transform based on items per view
+  const gapSize = itemsPerView === 2 ? 12 : 16; // gap-3 = 12px, gap-4 = 16px
+  const itemWidth = 100 / itemsPerView;
+  const gapPercentage = (gapSize / (typeof window !== 'undefined' ? window.innerWidth : 1000)) * 100;
+
+  return (
+    <div className="relative">
       <div className="flex items-center gap-4">
         <button onClick={prev} className="p-2 rounded-full bg-card shadow-md hover:bg-secondary transition-colors z-10 flex-shrink-0">
           <ChevronLeft className="w-6 h-6 text-primary" />
         </button>
         
         <div className="flex-1 overflow-hidden">
-          <div className="flex transition-transform duration-500 ease-out gap-3 md:gap-4" style={{
-          transform: `translateX(-${currentIndex * (100 / 2 + 1.5)}%)` 
-        }}>
-            {[...devices, ...devices].map((device, index) => <div key={`${device.labelKey}-${index}`} className="text-center flex-shrink-0 w-[calc(50%-6px)] md:w-[calc(25%-12px)]">
+          <div 
+            className="flex transition-transform duration-500 ease-out gap-3 md:gap-4" 
+            style={{
+              transform: `translateX(-${currentIndex * (itemWidth + gapPercentage)}%)`
+            }}
+          >
+            {[...devices, ...devices].map((device, index) => (
+              <div 
+                key={`${device.labelKey}-${index}`} 
+                className="text-center flex-shrink-0 w-[calc(50%-6px)] md:w-[calc(25%-12px)]"
+              >
                 <div className="bg-card rounded-2xl p-3 md:p-4 shadow-soft mb-2 aspect-square flex items-center justify-center overflow-hidden">
                   <img src={device.img} alt={t(`tm7.devices.labels.${device.labelKey}`)} className="w-full h-full object-cover rounded-xl" />
                 </div>
                 <p className="text-sm text-muted-foreground font-medium">{t(`tm7.devices.labels.${device.labelKey}`)}</p>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -108,7 +133,8 @@ const DeviceSlider = () => {
           <ChevronRight className="w-6 h-6 text-primary" />
         </button>
       </div>
-    </div>;
+    </div>
+  );
 };
 const CookidooSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
