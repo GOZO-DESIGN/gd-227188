@@ -52,6 +52,9 @@ import display2 from '@/assets/display-2.webp';
 
 // Device video
 import geraeteVideo from '@/assets/geraete-tm7.mp4';
+
+// Nutrition image
+import ernaehrungTm7 from '@/assets/ernaehrung-tm7.webp';
 const DeviceSlider = () => {
   const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -270,6 +273,10 @@ const TM7 = () => {
   const {
     ref: cookidooRef,
     isVisible: cookidooVisible
+  } = useScrollAnimation();
+  const {
+    ref: nutritionRef,
+    isVisible: nutritionVisible
   } = useScrollAnimation();
   const {
     ref: displayRef,
@@ -567,6 +574,57 @@ const TM7 = () => {
                 </div>
                 <div>
                   <CookidooSlideshow />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ERNÄHRUNG */}
+          <section className="section-padding" ref={nutritionRef}>
+            <div className={`container-narrow transition-all duration-700 ${nutritionVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
+                    {t('tm7.nutrition.tagline')}
+                  </span>
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
+                    {t('tm7.nutrition.title')}
+                  </h2>
+                  <p className="text-muted-foreground mb-4">
+                    {t('tm7.nutrition.intro')}
+                  </p>
+                  <p className="text-muted-foreground mb-4">
+                    {t('tm7.nutrition.text1')}
+                  </p>
+                  <p className="text-muted-foreground mb-4">
+                    {t('tm7.nutrition.text2')}
+                  </p>
+                  <p className="text-muted-foreground mb-6">
+                    {t('tm7.nutrition.text3')}
+                  </p>
+                  <p className="text-primary font-semibold text-lg mb-6">
+                    {t('tm7.nutrition.highlight')}
+                  </p>
+                  <p className="font-medium text-foreground mb-3">{t('tm7.nutrition.supportTitle')}</p>
+                  <ul className="space-y-2 mb-6">
+                    {(t('tm7.nutrition.features', { returnObjects: true }) as string[]).map((item, index) => (
+                      <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                        <span className="text-primary font-bold">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-muted-foreground italic">
+                    {t('tm7.nutrition.outro')}
+                  </p>
+                </div>
+                <div className="relative">
+                  <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-3xl blur-3xl"></div>
+                  <img 
+                    src={ernaehrungTm7} 
+                    alt="Thermomix TM7 Ernährung - Vegan, Vegetarisch, Glutenfrei, Low Carb" 
+                    className="relative w-full rounded-2xl shadow-xl"
+                  />
                 </div>
               </div>
             </div>

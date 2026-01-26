@@ -365,6 +365,24 @@
       ],
       "outro": "Viele Nutzerinnen und Nutzer schätzen besonders, dass sie nicht mehr überlegen müssen, wie ein Gericht funktioniert. Der Thermomix® führt sie sicher durch den gesamten Kochprozess."
     },
+    "nutrition": {
+      "tagline": "Ernährung",
+      "title": "Kochen, wie es zu dir passt – mit dem TM7",
+      "intro": "Egal, wie du dich ernährst – der TM7 passt sich deinem Alltag und deinen Essgewohnheiten an.",
+      "text1": "Ob vegan, vegetarisch, glutenfrei, Low Carb, proteinreich oder ketogen: Du findest immer passende Rezepte, die zu dir und deinem Lebensstil passen.",
+      "text2": "Du möchtest dich gesünder ernähren, neue Gerichte ausprobieren oder deine Rezeptvielfalt erweitern?",
+      "text3": "Mit dem TM7 entdeckst du jeden Tag neue Ideen: einfach, schnell und genau auf deine Bedürfnisse abgestimmt.",
+      "highlight": "Deine Ernährung. Deine Regeln. Deine Rezepte.",
+      "supportTitle": "Der TM7 unterstützt dich dabei:",
+      "features": [
+        "Vegan & vegetarisch – kreative, pflanzliche Küche ohne Verzicht",
+        "Glutenfrei – sicher genießen mit geprüften Rezepten",
+        "Low Carb & High Protein – ideal für Fitness- und Gesundheitsziele",
+        "Keto & Spezialformen – perfekt für individuelle Ernährungspläne",
+        "… und viele weitere Ernährungsstile"
+      ],
+      "outro": "Dank intelligenter Rezeptführung und Filterfunktionen findest du genau das, was zu dir passt – ohne langes Suchen."
+    },
     "display": {
       "tagline": "Bedienung",
       "title": "Display & Bedienung",
