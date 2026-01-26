@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { ChevronRight, Users, Briefcase, Sparkles, RefreshCw, MessageSquare, ArrowRight, ExternalLink } from 'lucide-react';
+import { ChevronRight, Users, Briefcase, Sparkles, RefreshCw, ArrowRight, ExternalLink } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactCTA from '@/components/ContactCTA';
 import { Button } from '@/components/ui/button';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
@@ -67,8 +68,8 @@ const Showkochen = () => {
   const ablaufAnimation = useScrollAnimation();
   const menuAnimation = useScrollAnimation();
 
-  const scrollToMenu = () => {
-    document.getElementById('showkochmenu')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToContact = () => {
+    document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const menuItems = [
@@ -141,13 +142,11 @@ const Showkochen = () => {
                   </div>
 
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button asChild size="lg" className="group">
-                      <Link to="/beratung">
-                        {t('showkochen.requestButton')}
-                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                      </Link>
+                    <Button size="lg" className="group" onClick={scrollToContact}>
+                      {t('showkochen.requestButton')}
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                     </Button>
-                    <Button variant="outline" size="lg" onClick={scrollToMenu}>
+                    <Button variant="outline" size="lg" onClick={() => document.getElementById('showkochmenu')?.scrollIntoView({ behavior: 'smooth' })}>
                       {t('showkochen.menuButton')}
                     </Button>
                   </div>
@@ -328,37 +327,8 @@ const Showkochen = () => {
             </div>
           </section>
 
-          {/* CTA SECTION */}
-          <section className="section-padding">
-            <div className="container-narrow">
-              <div className="bg-gradient-to-br from-primary/10 via-background to-accent/10 rounded-3xl p-8 md:p-12 text-center">
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-                  {t('showkochen.cta.title')}
-                </h2>
-                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  {t('showkochen.cta.subtitle')}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button asChild size="lg" className="group">
-                    <Link to="/beratung">
-                      {t('showkochen.requestButton')}
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <a
-                      href="https://wa.me/436641234567"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MessageSquare className="mr-2 h-4 w-4" />
-                      {t('showkochen.cta.whatsapp')}
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
+          {/* CONTACT CTA */}
+          <ContactCTA />
 
         </main>
         <Footer />

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactCTA from '@/components/ContactCTA';
 
 const Galerie = () => {
   const { t } = useTranslation();
@@ -43,6 +44,9 @@ const Galerie = () => {
               </div>
             </div>
           </div>
+
+          {/* CONTACT CTA */}
+          <ContactCTA />
         </main>
         <Footer />
       </div>
