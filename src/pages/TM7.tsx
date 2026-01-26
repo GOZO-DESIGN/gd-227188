@@ -370,24 +370,32 @@ const TM7 = () => {
           {/* EIN GERÄT – VIELE GERÄTE ERSETZT */}
           <section className="section-padding bg-secondary/30" ref={devicesRef}>
             <div className={`container-narrow transition-all duration-700 ${devicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              {/* Header */}
-              <div className="text-center mb-12">
-                <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                  {t('tm7.devices.tagline')}
-                </span>
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                  {t('tm7.devices.title')}
-                </h2>
-                <p className="text-muted-foreground max-w-3xl mx-auto">
-                  {t('tm7.devices.subtitle')}
-                </p>
-              </div>
-
-              {/* Video + List Grid */}
+              {/* Video + Content Grid */}
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                {/* List - Left */}
+                {/* Video - Left */}
+                <div className="rounded-2xl overflow-hidden shadow-lg max-w-md mx-auto lg:mx-0">
+                  <video 
+                    src={geraeteVideo} 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline
+                    className="w-full"
+                  />
+                </div>
+
+                {/* Content - Right */}
                 <div>
-                  <p className="font-medium text-foreground mb-4 text-lg">
+                  <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
+                    {t('tm7.devices.tagline')}
+                  </span>
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
+                    {t('tm7.devices.title')}
+                  </h2>
+                  <p className="text-muted-foreground mb-6">
+                    {t('tm7.devices.subtitle')}
+                  </p>
+                  <p className="font-medium text-foreground mb-4">
                     {t('tm7.devices.highlight')}
                   </p>
                   <ul className="grid grid-cols-2 gap-3 mb-6">
@@ -427,18 +435,6 @@ const TM7 = () => {
                   <p className="text-muted-foreground italic">
                     {t('tm7.devices.outro')}
                   </p>
-                </div>
-
-                {/* Video - Right */}
-                <div className="rounded-2xl overflow-hidden shadow-lg max-w-md mx-auto lg:mx-0">
-                  <video 
-                    src={geraeteVideo} 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline
-                    className="w-full"
-                  />
                 </div>
               </div>
             </div>
