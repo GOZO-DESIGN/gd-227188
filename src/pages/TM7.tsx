@@ -203,11 +203,11 @@ const ModiSlider = () => {
               className="flex-shrink-0 flex items-center justify-center p-1"
               style={{ width: `calc(${itemWidthPercent}% - ${gapPx * (itemsPerView - 1) / itemsPerView}px)` }}
             >
-              <div className="bg-white rounded-xl shadow-lg border border-border/50 p-2 hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-xl shadow-lg border border-border/50 p-4 hover:shadow-xl hover:scale-105 transition-all duration-300">
                 <img 
                   src={img} 
                   alt={`Thermomix Modus ${index + 1}`} 
-                  className="w-full h-auto max-w-[80px] mx-auto"
+                  className="w-full h-auto max-w-[120px] mx-auto"
                 />
               </div>
             </div>
