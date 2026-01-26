@@ -16,6 +16,8 @@ import cookidoo2 from '@/assets/cookidoo-2.jpg';
 import cookidoo3 from '@/assets/cookidoo-3.jpg';
 import aboutPortrait from '@/assets/about-portrait.webp';
 import thermomixVideo from '@/assets/thermomix-video.mp4';
+import tm7Product from '@/assets/tm7-product.webp';
+import bernhardPortrait from '@/assets/bernhard-portrait.jpg';
 
 // Modi Images
 import modiAnbraten from '@/assets/modi-anbraten.png';
@@ -214,7 +216,7 @@ const BenefitsSection = () => {
             <div className="order-1 lg:order-2 relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-full blur-3xl"></div>
               <div className="relative">
-                <img alt="Thermomix TM7" className="relative w-full max-w-md mx-auto drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500" src="/lovable-uploads/1f6a4d8e-9b60-4740-933f-341d90e7f7e5.webp" />
+                <img alt="Thermomix TM7" className="relative w-full max-w-md mx-auto drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500" src={tm7Product} />
               </div>
             </div>
           </div>
@@ -461,7 +463,7 @@ const BenefitsSection = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-2xl"></div>
-              <img alt="Bernhard Prager - Thermomix Berater" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto hover:scale-[1.02] transition-transform duration-500" src="/lovable-uploads/ff24af1f-b933-43bd-a62b-1ddf39ba9a46.jpg" />
+              <img alt="Bernhard Prager - Thermomix Berater" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto hover:scale-[1.02] transition-transform duration-500" src={bernhardPortrait} />
             </div>
           </div>
         </div>

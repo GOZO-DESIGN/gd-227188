@@ -19,6 +19,7 @@ import deviceRuehrgeraet from '@/assets/device-ruehrgeraet.jpg';
 import deviceWaage from '@/assets/device-waage.jpg';
 import deviceFleischwolf from '@/assets/device-fleischwolf.jpg';
 import deviceKuechenmaschine from '@/assets/device-kuechenmaschine.jpg';
+import tm7Intro from '@/assets/tm7-intro.webp';
 
 // Modi images
 import modiAnbraten from '@/assets/modi-anbraten.png';
@@ -360,7 +361,7 @@ const TM7 = () => {
                 </div>
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-full blur-3xl"></div>
-                  <img alt="Thermomix TM7" className="relative w-full max-w-md mx-auto drop-shadow-2xl" src="/lovable-uploads/7bc23ccd-7a82-45ae-a34f-ea8c30899c61.webp" />
+                  <img alt="Thermomix TM7" className="relative w-full max-w-md mx-auto drop-shadow-2xl" src={tm7Intro} />
                 </div>
               </div>
             </div>
