@@ -182,7 +182,7 @@ const BenefitsSection = () => {
                 </ul>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative max-w-md lg:max-w-lg mx-auto">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-2xl"></div>
               <video src={thermomixVideo} autoPlay loop muted playsInline className="relative rounded-3xl shadow-xl w-full" />
             </div>
