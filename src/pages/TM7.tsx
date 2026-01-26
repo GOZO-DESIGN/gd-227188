@@ -764,27 +764,17 @@ const TM7 = () => {
                 {/* Spatel */}
                 <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
                   <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                    <img src={accessorySpatel} alt="Thermomix Spatel" className="h-24 object-contain" />
+                    <img src={accessorySpatel} alt={t('tm7.accessories.compactSpatel.title')} className="h-24 object-contain" />
                   </div>
                   <div className="p-5 sm:w-2/3">
-                    <h4 className="font-serif text-lg text-foreground mb-2">Der Thermomix® Spatel</h4>
+                    <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactSpatel.title')}</h4>
                     <ul className="space-y-1">
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Passgenau für den TM7
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Hitzebeständig & stabil
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Flexibel zum Auskratzen
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Spülmaschinengeeignet
-                      </li>
+                      {(t('tm7.accessories.compactSpatel.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
+                          <span className="text-primary font-bold">✓</span>
+                          {item}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -792,19 +782,17 @@ const TM7 = () => {
                 {/* Schmetterlingsaufsatz */}
                 <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
                   <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                    <img src={accessorySchmetterling} alt="Schmetterlingsaufsatz" className="h-24 object-contain" />
+                    <img src={accessorySchmetterling} alt={t('tm7.accessories.compactSchmetterling.title')} className="h-24 object-contain" />
                   </div>
                   <div className="p-5 sm:w-2/3">
-                    <h4 className="font-serif text-lg text-foreground mb-2">Der Schmetterlingsaufsatz</h4>
+                    <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactSchmetterling.title')}</h4>
                     <ul className="space-y-1">
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Ideal für Schlagobers, Eischnee und luftige Cremes
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Schonend und gleichmäßig
-                      </li>
+                      {(t('tm7.accessories.compactSchmetterling.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
+                          <span className="text-primary font-bold">✓</span>
+                          {item}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -812,23 +800,17 @@ const TM7 = () => {
                 {/* Varoma */}
                 <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
                   <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                    <img src={accessoryVaroma} alt="Varoma Dampfgaraufsatz" className="h-24 object-contain" />
+                    <img src={accessoryVaroma} alt={t('tm7.accessories.compactVaroma.title')} className="h-24 object-contain" />
                   </div>
                   <div className="p-5 sm:w-2/3">
-                    <h4 className="font-serif text-lg text-foreground mb-2">Der Varoma® Dampfgaraufsatz</h4>
+                    <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactVaroma.title')}</h4>
                     <ul className="space-y-1">
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Schonendes Dampfgaren auf mehreren Ebenen
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Ideal für Gemüse, Fisch und ganze Menüs
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Gesund garen ohne Geschmacksverlust
-                      </li>
+                      {(t('tm7.accessories.compactVaroma.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
+                          <span className="text-primary font-bold">✓</span>
+                          {item}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -836,19 +818,17 @@ const TM7 = () => {
                 {/* Garkörbchen */}
                 <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
                   <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                    <img src={accessoryGarkorb} alt="Garkörbchen" className="h-24 object-contain" />
+                    <img src={accessoryGarkorb} alt={t('tm7.accessories.garkorb.title')} className="h-24 object-contain" />
                   </div>
                   <div className="p-5 sm:w-2/3">
-                    <h4 className="font-serif text-lg text-foreground mb-2">Das Garkörbchen</h4>
+                    <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.garkorb.title')}</h4>
                     <ul className="space-y-1">
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Perfekt zum Abseihen und Dampfgaren kleiner Zutaten
-                      </li>
-                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                        <span className="text-primary font-bold">✓</span>
-                        Für Reis, Erdäpfel, Nudeln und mehr
-                      </li>
+                      {(t('tm7.accessories.garkorb.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
+                          <span className="text-primary font-bold">✓</span>
+                          {item}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>

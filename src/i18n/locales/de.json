@@ -501,6 +501,37 @@
           "Ideal für gesunde, fettarme Küche"
         ],
         "price": "€ 89,00"
+      },
+      "garkorb": {
+        "title": "Das Garkörbchen",
+        "checkmarks": [
+          "Perfekt zum Abseihen und Dampfgaren kleiner Zutaten",
+          "Für Reis, Erdäpfel, Nudeln und mehr"
+        ]
+      },
+      "compactSpatel": {
+        "title": "Der Thermomix® Spatel",
+        "checkmarks": [
+          "Passgenau für den TM7",
+          "Hitzebeständig & stabil",
+          "Flexibel zum Auskratzen",
+          "Spülmaschinengeeignet"
+        ]
+      },
+      "compactSchmetterling": {
+        "title": "Der Schmetterlingsaufsatz",
+        "checkmarks": [
+          "Ideal für Schlagobers, Eischnee und luftige Cremes",
+          "Schonend und gleichmäßig"
+        ]
+      },
+      "compactVaroma": {
+        "title": "Der Varoma® Dampfgaraufsatz",
+        "checkmarks": [
+          "Schonendes Dampfgaren auf mehreren Ebenen",
+          "Ideal für Gemüse, Fisch und ganze Menüs",
+          "Gesund garen ohne Geschmacksverlust"
+        ]
       }
     },
     "comparison": {
