@@ -424,6 +424,60 @@
         "system": "System & Software",
         "display": "Display & Operation",
         "dimensions": "Dimensions & Weight"
+      },
+      "items": {
+        "motor": {
+          "motorType": { "label": "Motor type", "value": "Maintenance-free Vorwerk synchronous motor" },
+          "drivePower": { "label": "Drive power", "value": "500 W" },
+          "speedRange": { "label": "Speed range", "value": "approx. 40 – 10,700 rpm" },
+          "doughMode": { "label": "Dough mode", "value": "Interval operation specially for kneading" },
+          "motorProtection": { "label": "Motor protection", "value": "Electronic overload protection" },
+          "noiseLevel": { "label": "Noise level", "value": "Approx. 30 dB(A) level 1 / approx. 50 dB(A) medium levels" }
+        },
+        "heating": {
+          "heatingPower": { "label": "Heating power", "value": "1,000 W" },
+          "tempControl": { "label": "Temperature control", "value": "Electronically controlled" },
+          "safety": { "label": "Safety", "value": "Automatic shut-off on overheating" }
+        },
+        "scale": {
+          "range": { "label": "Measuring range", "value": "1 g – 3,000 g" },
+          "negativeWeighing": { "label": "Negative weighing", "value": "Up to -3,000 g possible" },
+          "tare": { "label": "Tare function", "value": "Yes" },
+          "weighDuringOp": { "label": "Weighing during operation", "value": "Yes" }
+        },
+        "bowl": {
+          "material": { "label": "Material", "value": "Stainless steel" },
+          "insulation": { "label": "Insulation", "value": "Externally insulated, touchable even when hot" },
+          "sensors": { "label": "Sensors", "value": "Integrated temperature measurement" },
+          "maxCapacity": { "label": "Maximum capacity", "value": "2.2 liters" }
+        },
+        "blade": {
+          "blades": { "label": "Blades", "value": "4 pieces" },
+          "material": { "label": "Material", "value": "Stainless steel" },
+          "maintenance": { "label": "Maintenance", "value": "Maintenance-free ground" }
+        },
+        "power": {
+          "voltage": { "label": "Mains voltage", "value": "220 – 240 V / 50-60 Hz" },
+          "maxPower": { "label": "Max. power consumption", "value": "up to 2,000 W" },
+          "cable": { "label": "Power cable", "value": "approx. 1m, retractable" }
+        },
+        "system": {
+          "processor": { "label": "Processor", "value": "Multi-core processor" },
+          "updates": { "label": "Updates", "value": "Automatic via WiFi" },
+          "expandability": { "label": "Expandability", "value": "New functions via software update" }
+        },
+        "display": {
+          "size": { "label": "Display size", "value": "10 inches" },
+          "type": { "label": "Display type", "value": "Multi-touch, high resolution" },
+          "operation": { "label": "Operation", "value": "Also possible with wet / oily fingers" },
+          "recipeAccess": { "label": "Recipe access", "value": "Directly via integrated Cookidoo®" }
+        },
+        "dimensions": {
+          "height": { "label": "Height", "value": "approx. 33.6 cm" },
+          "width": { "label": "Width", "value": "approx. 25.3 cm" },
+          "depth": { "label": "Depth", "value": "approx. 40.5 cm" },
+          "weight": { "label": "Weight", "value": "approx. 6.5 kg (without Varoma®)" }
+        }
       }
     },
     "cta": {

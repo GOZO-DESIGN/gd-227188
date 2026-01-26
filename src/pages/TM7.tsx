@@ -309,133 +309,31 @@ const TM7 = () => {
   }];
   const specs = [{
     categoryKey: 'motor',
-    items: [{
-      label: 'Motortyp',
-      value: 'Wartungsfreier Vorwerk-Synchronmotor'
-    }, {
-      label: 'Antriebsleistung',
-      value: '500 W'
-    }, {
-      label: 'Drehzahlbereich',
-      value: 'ca. 40 – 10.700 U/min'
-    }, {
-      label: 'Teigmodus',
-      value: 'Intervallbetrieb speziell fürs Kneten'
-    }, {
-      label: 'Motorschutz',
-      value: 'Elektronischer Überlastungsschutz'
-    }, {
-      label: 'Lautstärke',
-      value: 'Ca. 30 dB(A) Stufe 1 / ca. 50 dB(A) mittlere Stufen'
-    }]
+    itemKeys: ['motorType', 'drivePower', 'speedRange', 'doughMode', 'motorProtection', 'noiseLevel']
   }, {
     categoryKey: 'heating',
-    items: [{
-      label: 'Heizleistung',
-      value: '1.000 W'
-    }, {
-      label: 'Temperaturregelung',
-      value: 'Elektronisch gesteuert'
-    }, {
-      label: 'Sicherheit',
-      value: 'Automatische Abschaltung bei Überhitzung'
-    }]
+    itemKeys: ['heatingPower', 'tempControl', 'safety']
   }, {
     categoryKey: 'scale',
-    items: [{
-      label: 'Messbereich',
-      value: '1 g – 3.000 g'
-    }, {
-      label: 'Negativwiegen',
-      value: 'Bis -3.000 g möglich'
-    }, {
-      label: 'Tara-Funktion',
-      value: 'Ja'
-    }, {
-      label: 'Wiegen während Betrieb',
-      value: 'Ja'
-    }]
+    itemKeys: ['range', 'negativeWeighing', 'tare', 'weighDuringOp']
   }, {
     categoryKey: 'bowl',
-    items: [{
-      label: 'Material',
-      value: 'Rostfreier Edelstahl'
-    }, {
-      label: 'Isolierung',
-      value: 'Außen isoliert, auch bei Hitze berührbar'
-    }, {
-      label: 'Sensoren',
-      value: 'Integrierte Temperaturmessung'
-    }, {
-      label: 'Maximale Füllmenge',
-      value: '2,2 Liter'
-    }]
+    itemKeys: ['material', 'insulation', 'sensors', 'maxCapacity']
   }, {
     categoryKey: 'blade',
-    items: [{
-      label: 'Klingen',
-      value: '4 Stück'
-    }, {
-      label: 'Material',
-      value: 'Rostfreier Edelstahl'
-    }, {
-      label: 'Wartung',
-      value: 'Wartungsfrei geschliffen'
-    }]
+    itemKeys: ['blades', 'material', 'maintenance']
   }, {
     categoryKey: 'power',
-    items: [{
-      label: 'Netzspannung',
-      value: '220 – 240 V / 50-60 Hz'
-    }, {
-      label: 'Max. Leistungsaufnahme',
-      value: 'bis zu 2.000 W'
-    }, {
-      label: 'Netzkabel',
-      value: 'ca. 1m, ausziehbar'
-    }]
+    itemKeys: ['voltage', 'maxPower', 'cable']
   }, {
     categoryKey: 'system',
-    items: [{
-      label: 'Prozessor',
-      value: 'Mehrkern-Prozessor'
-    }, {
-      label: 'Updates',
-      value: 'Automatisch über WLAN'
-    }, {
-      label: 'Erweiterbarkeit',
-      value: 'Neue Funktionen per Software-Update'
-    }]
+    itemKeys: ['processor', 'updates', 'expandability']
   }, {
     categoryKey: 'display',
-    items: [{
-      label: 'Displaygröße',
-      value: '10 Zoll'
-    }, {
-      label: 'Displaytyp',
-      value: 'Multi-Touch, hochauflösend'
-    }, {
-      label: 'Bedienung',
-      value: 'Auch mit nassen / öligen Fingern möglich'
-    }, {
-      label: 'Rezeptzugriff',
-      value: 'Direkt über integriertes Cookidoo®'
-    }]
+    itemKeys: ['size', 'type', 'operation', 'recipeAccess']
   }, {
     categoryKey: 'dimensions',
-    items: [{
-      label: 'Höhe',
-      value: 'ca. 33,6 cm'
-    }, {
-      label: 'Breite',
-      value: 'ca. 25,3 cm'
-    }, {
-      label: 'Tiefe',
-      value: 'ca. 40,5 cm'
-    }, {
-      label: 'Gewicht',
-      value: 'ca. 6,5 kg (ohne Varoma®)'
-    }]
+    itemKeys: ['height', 'width', 'depth', 'weight']
   }];
   const cookidooFeatures = t('tm7.cookidoo.features', {
     returnObjects: true
@@ -745,9 +643,9 @@ const TM7 = () => {
                       {t(`tm7.specs.categories.${category.categoryKey}`)}
                     </h3>
                     <ul className="space-y-2">
-                      {category.items.map((item, index) => <li key={index} className="text-sm">
-                          <span className="text-muted-foreground">{item.label}:</span>
-                          <span className="text-foreground ml-1">{item.value}</span>
+                      {category.itemKeys.map((itemKey, index) => <li key={index} className="text-sm">
+                          <span className="text-muted-foreground">{t(`tm7.specs.items.${category.categoryKey}.${itemKey}.label`)}:</span>
+                          <span className="text-foreground ml-1">{t(`tm7.specs.items.${category.categoryKey}.${itemKey}.value`)}</span>
                         </li>)}
                     </ul>
                   </div>)}
