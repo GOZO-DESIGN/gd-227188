@@ -45,9 +45,10 @@ import cookidoo3 from '@/assets/cookidoo-3.jpg';
 import accessorySensor from '@/assets/accessory-sensor.png';
 import accessoryPeeler from '@/assets/accessory-peeler.png';
 import accessoryGemuesestyler from '@/assets/accessory-gemuesestyler.jpg';
-import accessorySpatel from '@/assets/accessory-spatel.jpg';
-import accessorySchmetterling from '@/assets/accessory-schmetterling.jpg';
-import accessoryVaroma from '@/assets/accessory-varoma.jpg';
+import accessorySpatel from '@/assets/accessory-spatel-new.jpg';
+import accessorySchmetterling from '@/assets/accessory-schmetterling-new.jpg';
+import accessoryVaroma from '@/assets/accessory-varoma-new.jpg';
+import accessoryGarkorb from '@/assets/accessory-garkorb-new.jpg';
 
 // Display images
 import display1 from '@/assets/display-1.webp';
@@ -761,75 +762,95 @@ const TM7 = () => {
               {/* Weitere Zubehörteile - Kompakte Liste */}
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 {/* Spatel */}
-                <div className="bg-card rounded-xl p-6 shadow-card">
-                  <h4 className="font-serif text-xl text-foreground mb-3">Der Thermomix® Spatel</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Passgenau für den TM7
-                    </li>
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Hitzebeständig & stabil
-                    </li>
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Flexibel zum Auskratzen
-                    </li>
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Spülmaschinengeeignet
-                    </li>
-                  </ul>
+                <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
+                  <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
+                    <img src={accessorySpatel} alt="Thermomix Spatel" className="h-24 object-contain" />
+                  </div>
+                  <div className="p-5 sm:w-2/3">
+                    <h4 className="font-serif text-lg text-foreground mb-2">Der Thermomix® Spatel</h4>
+                    <ul className="space-y-1">
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Passgenau für den TM7
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Hitzebeständig & stabil
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Flexibel zum Auskratzen
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Spülmaschinengeeignet
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
                 {/* Schmetterlingsaufsatz */}
-                <div className="bg-card rounded-xl p-6 shadow-card">
-                  <h4 className="font-serif text-xl text-foreground mb-3">Der Schmetterlingsaufsatz</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Ideal für Schlagobers, Eischnee und luftige Cremes
-                    </li>
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Schonend und gleichmäßig
-                    </li>
-                  </ul>
+                <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
+                  <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
+                    <img src={accessorySchmetterling} alt="Schmetterlingsaufsatz" className="h-24 object-contain" />
+                  </div>
+                  <div className="p-5 sm:w-2/3">
+                    <h4 className="font-serif text-lg text-foreground mb-2">Der Schmetterlingsaufsatz</h4>
+                    <ul className="space-y-1">
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Ideal für Schlagobers, Eischnee und luftige Cremes
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Schonend und gleichmäßig
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
                 {/* Varoma */}
-                <div className="bg-card rounded-xl p-6 shadow-card">
-                  <h4 className="font-serif text-xl text-foreground mb-3">Der Varoma® Dampfgaraufsatz</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Schonendes Dampfgaren auf mehreren Ebenen
-                    </li>
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Ideal für Gemüse, Fisch und ganze Menüs
-                    </li>
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Gesund garen ohne Geschmacksverlust
-                    </li>
-                  </ul>
+                <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
+                  <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
+                    <img src={accessoryVaroma} alt="Varoma Dampfgaraufsatz" className="h-24 object-contain" />
+                  </div>
+                  <div className="p-5 sm:w-2/3">
+                    <h4 className="font-serif text-lg text-foreground mb-2">Der Varoma® Dampfgaraufsatz</h4>
+                    <ul className="space-y-1">
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Schonendes Dampfgaren auf mehreren Ebenen
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Ideal für Gemüse, Fisch und ganze Menüs
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Gesund garen ohne Geschmacksverlust
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
                 {/* Garkörbchen */}
-                <div className="bg-card rounded-xl p-6 shadow-card">
-                  <h4 className="font-serif text-xl text-foreground mb-3">Das Garkörbchen</h4>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Perfekt zum Abseihen und Dampfgaren kleiner Zutaten
-                    </li>
-                    <li className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <span className="text-primary font-bold">✓</span>
-                      Für Reis, Erdäpfel, Nudeln und mehr
-                    </li>
-                  </ul>
+                <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
+                  <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
+                    <img src={accessoryGarkorb} alt="Garkörbchen" className="h-24 object-contain" />
+                  </div>
+                  <div className="p-5 sm:w-2/3">
+                    <h4 className="font-serif text-lg text-foreground mb-2">Das Garkörbchen</h4>
+                    <ul className="space-y-1">
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Perfekt zum Abseihen und Dampfgaren kleiner Zutaten
+                      </li>
+                      <li className="flex items-start gap-2 text-muted-foreground text-sm">
+                        <span className="text-primary font-bold">✓</span>
+                        Für Reis, Erdäpfel, Nudeln und mehr
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
