@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactCTA from '@/components/ContactCTA';
 import { Button } from '@/components/ui/button';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
@@ -160,7 +161,6 @@ const TM7 = () => {
   const { ref: accessoriesRef, isVisible: accessoriesVisible } = useScrollAnimation();
   const { ref: comparisonRef, isVisible: comparisonVisible } = useScrollAnimation();
   const { ref: specsRef, isVisible: specsVisible } = useScrollAnimation();
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
 
   const accessories = [
     {
@@ -438,7 +438,6 @@ const TM7 = () => {
                   <p className="text-muted-foreground mb-6">
                     {t('tm7.display.subtitle')}
                   </p>
-                  <p className="font-medium text-foreground mb-3">{t('tm7.display.featuresTitle')}</p>
                   <ul className="space-y-2 mb-6">
                     {displayFeatures.map((item, index) => (
                       <li key={index} className="flex items-start gap-2 text-muted-foreground">
@@ -447,16 +446,13 @@ const TM7 = () => {
                       </li>
                     ))}
                   </ul>
-                  <p className="text-muted-foreground italic">
-                    {t('tm7.display.outro')}
-                  </p>
                 </div>
               </div>
             </div>
           </section>
 
           {/* ZUBEHÖR */}
-          <section className="section-padding bg-white" ref={accessoriesRef}>
+          <section className="section-padding bg-secondary/30" ref={accessoriesRef}>
             <div className={`container-narrow transition-all duration-700 ${accessoriesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="text-center mb-12">
                 <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
@@ -465,136 +461,101 @@ const TM7 = () => {
                 <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
                   {t('tm7.accessories.title')}
                 </h2>
+                <p className="text-muted-foreground max-w-3xl mx-auto">
+                  {t('tm7.accessories.subtitle')}
+                </p>
               </div>
 
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {accessories.map((accessory) => {
-                  const features = t(`tm7.accessories.${accessory.titleKey}.features`, { returnObjects: true }) as string[];
-                  return (
-                    <div
-                      key={accessory.titleKey}
-                      className="group bg-white rounded-2xl shadow-soft hover:shadow-lg transition-all duration-300 overflow-hidden border border-border/30"
-                    >
-                      <div className="aspect-[4/3] overflow-hidden bg-white">
-                        <img 
-                          src={accessory.img} 
-                          alt={t(`tm7.accessories.${accessory.titleKey}.title`)}
-                          className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                      <div className="p-6">
-                        <h3 className="font-serif text-lg text-foreground mb-4 group-hover:text-primary transition-colors">
-                          {t(`tm7.accessories.${accessory.titleKey}.title`)}
-                        </h3>
-                        <ul className="space-y-2">
-                          {features.map((feature, index) => (
-                            <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                              <span className="text-primary font-bold">✓</span>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {accessories.map((accessory) => (
+                  <div 
+                    key={accessory.titleKey}
+                    className="bg-card rounded-2xl shadow-soft overflow-hidden group hover:shadow-lg transition-all duration-300"
+                  >
+                    <div className="aspect-square overflow-hidden">
+                      <img
+                        src={accessory.img}
+                        alt={t(`tm7.accessories.items.${accessory.titleKey}`)}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
-
-          {/* UNTERSCHIED ZU KLASSISCHEN KÜCHENMASCHINEN */}
-          <section className="section-padding" ref={comparisonRef}>
-            <div className={`container-narrow transition-all duration-700 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                  <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                    {t('tm7.comparison.tagline')}
-                  </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                    {t('tm7.comparison.title')}
-                  </h2>
-                  <p className="text-muted-foreground mb-6">
-                    {t('tm7.comparison.subtitle')}
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    {comparisonFeatures.map((item, index) => (
-                      <li key={index} className="flex items-center gap-2 text-muted-foreground">
-                        <span className="text-primary font-bold">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-foreground font-medium">
-                    {t('tm7.comparison.outro')}
-                  </p>
-                </div>
-                <div className="bg-card p-8 rounded-2xl shadow-soft">
-                  <img
-                    src={deviceKuechenmaschine}
-                    alt={t('tm7.comparison.imageCaption')}
-                    className="w-full rounded-xl mb-4"
-                  />
-                  <p className="text-center text-muted-foreground text-sm">
-                    {t('tm7.comparison.imageCaption')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* TECHNISCHE MERKMALE */}
-          <section className="section-padding bg-secondary/30" ref={specsRef}>
-            <div className={`container-narrow transition-all duration-700 ${specsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="text-center mb-12">
-                <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                  {t('tm7.specs.tagline')}
-                </span>
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                  {t('tm7.specs.title')}
-                </h2>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {specs.map((specGroup) => (
-                  <div key={specGroup.categoryKey} className="bg-card p-6 rounded-2xl shadow-soft">
-                    <h3 className="font-serif text-lg text-primary mb-4 border-b border-border pb-2">
-                      {t(`tm7.specs.categories.${specGroup.categoryKey}`)}
-                    </h3>
-                    <dl className="space-y-2">
-                      {specGroup.items.map((item) => (
-                        <div key={item.label} className="flex justify-between gap-2">
-                          <dt className="text-sm text-muted-foreground">{item.label}</dt>
-                          <dd className="text-sm text-foreground font-medium text-right">{item.value}</dd>
-                        </div>
-                      ))}
-                    </dl>
+                    <div className="p-4 text-center">
+                      <h3 className="font-medium text-foreground">{t(`tm7.accessories.items.${accessory.titleKey}`)}</h3>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </section>
 
-          {/* CTA */}
-          <section className="section-padding" ref={ctaRef}>
-            <div className={`container-narrow transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 lg:p-12 text-center">
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-                  {t('tm7.cta.title')}
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                  {t('tm7.cta.subtitle')}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button asChild size="lg" className="text-base">
-                    <Link to="/beratung">{t('tm7.cta.buttonPrimary')}</Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline" className="text-base">
-                    <Link to="/showkochen">{t('tm7.cta.buttonSecondary')}</Link>
-                  </Button>
+          {/* TM7 vs KÜCHENMASCHINEN */}
+          <section className="section-padding" ref={comparisonRef}>
+            <div className={`container-narrow transition-all duration-700 ${comparisonVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                  <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
+                    {t('tm7.comparison.tagline')}
+                  </span>
+                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
+                    {t('tm7.comparison.title')}
+                  </h2>
+                  <p className="text-muted-foreground">
+                    {t('tm7.comparison.subtitle')}
+                  </p>
                 </div>
+
+                <div className="bg-card rounded-2xl shadow-card p-8 mb-8">
+                  <ul className="space-y-4">
+                    {comparisonFeatures.map((feature, index) => (
+                      <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                        <span className="text-primary font-bold text-lg">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <p className="text-center text-foreground font-medium">
+                  {t('tm7.comparison.outro')}
+                </p>
               </div>
             </div>
           </section>
+
+          {/* TECHNISCHE DATEN */}
+          <section className="section-padding bg-secondary/30" ref={specsRef}>
+            <div className={`container-narrow transition-all duration-700 ${specsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div className="text-center mb-12">
+                <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
+                  {t('tm7.specs.tagline')}
+                </span>
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground">
+                  {t('tm7.specs.title')}
+                </h2>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {specs.map((category) => (
+                  <div key={category.categoryKey} className="bg-card rounded-2xl shadow-soft p-6">
+                    <h3 className="font-serif text-lg text-foreground mb-4 pb-2 border-b border-border">
+                      {t(`tm7.specs.categories.${category.categoryKey}`)}
+                    </h3>
+                    <ul className="space-y-2">
+                      {category.items.map((item, index) => (
+                        <li key={index} className="text-sm">
+                          <span className="text-muted-foreground">{item.label}:</span>
+                          <span className="text-foreground ml-1">{item.value}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CONTACT CTA */}
+          <ContactCTA />
 
         </main>
         <Footer />

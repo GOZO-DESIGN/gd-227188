@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import ContactCTA from '@/components/ContactCTA';
 import { Button } from '@/components/ui/button';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
@@ -75,7 +76,6 @@ const Beratung = () => {
   const heroAnimation = useScrollAnimation();
   const stepsAnimation = useScrollAnimation();
   const afterPurchaseAnimation = useScrollAnimation();
-  const ctaAnimation = useScrollAnimation();
   const timelineRef = useRef<HTMLDivElement>(null);
 
   const scrollToContact = () => {
@@ -387,46 +387,8 @@ const Beratung = () => {
             </div>
           </section>
 
-          {/* CTA / CONTACT SECTION */}
-          <section id="kontakt" className="section-padding" ref={ctaAnimation.ref}>
-            <div className={`container-narrow transition-all duration-700 ${ctaAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="bg-gradient-to-br from-primary/10 via-background to-accent/10 rounded-3xl p-8 md:p-12 text-center">
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-                  {t('beratung.cta.title')}
-                </h2>
-                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-                  {t('beratung.cta.subtitle')}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button asChild size="lg" className="group">
-                    <a href="mailto:kontakt@kochmitthermo21.at">
-                      {t('beratung.cta.contact')}
-                      <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <a
-                      href="https://wa.me/436641234567"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MessageSquare className="mr-2 h-4 w-4" />
-                      {t('common.whatsapp')}
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <a
-                      href="https://instagram.com/kochmitthermo21"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t('common.instagram')}
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </section>
+          {/* CONTACT CTA */}
+          <ContactCTA />
 
         </main>
         <Footer />
