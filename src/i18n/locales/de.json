@@ -399,22 +399,69 @@
     },
     "accessories": {
       "tagline": "Zubehör",
-      "title": "Das TM-Paket enthält vielseitige Helfer",
-      "spatel": {
-        "title": "Der Thermomix® Spatel",
-        "features": ["Passgenau für den TM7", "Hitzebeständig & stabil", "Flexibel zum Auskratzen", "Spülmaschinengeeignet"]
+      "title": "Mehr Möglichkeiten mit dem passenden Zubehör für deinen TM7",
+      "subtitle": "Mit dem richtigen Zubehör wird dein TM7 noch vielseitiger.",
+      "intro": "Ob präzises Garen, schnelleres Vorbereiten oder cleveres Dämpfen – diese kompatiblen Erweiterungen holen noch mehr aus deinem Kocherlebnis heraus.",
+      "sensor": {
+        "title": "Der Thermomix® Sensor (TM7 / TM6)",
+        "tagline": "PUNKTGENAU GAREN – GANZ ENTSPANNT",
+        "intro": "Nie wieder zu trocken, nie wieder zu roh:",
+        "description": "Der Sensor misst die Kerntemperatur deiner Speisen und sorgt dafür, dass Fleisch, Fisch oder Brot genau den perfekten Garpunkt erreichen.",
+        "benefitsTitle": "Deine Vorteile:",
+        "benefits": [
+          "Perfekt gegarte Gerichte ohne Rätselraten",
+          "Ideal für Braten, Brot & Sous-vide",
+          "Mehr Sicherheit & gleichbleibende Qualität"
+        ],
+        "outro": "Du legst fest, wie du dein Gericht haben willst – der TM7 kümmert sich um den Rest.",
+        "price": "€ 149,00"
       },
-      "schmetterling": {
-        "title": "Der Schmetterlingsaufsatz",
-        "features": ["Ideal für Schlagobers, Eischnee und luftige Cremes", "Schonend und gleichmäßig"]
+      "peeler": {
+        "title": "Messerabdeckung mit Peeler",
+        "tagline": "SCHÄLEN & SCHONEND GAREN",
+        "description": "Die Messerabdeckung mit Peeler ist ein echtes Multitalent für deinen TM7.",
+        "intro": "Sie schützt das Mixmesser und ermöglicht dir dadurch zwei große Vorteile:",
+        "feature1Title": "👉 schälen im Mixtopf",
+        "feature2Title": "👉 schonendes Garen ohne Zerkleinern.",
+        "peelTitle": "Schälen leicht gemacht:",
+        "peelText": "Kartoffeln, Karotten oder Rote Bete werden im Mixtopf gleichmäßig geschält, ganz ohne Handarbeit.",
+        "cookTitle": "Schonend garen mit abgedecktem Messer:",
+        "cookText": "Durch die Abdeckung bleibt das Mixmesser geschützt, sodass empfindliche Zutaten wie Würstchen, Klöße, Gnocchi oder Gemüse nicht zerkleinert, sondern nur gegart werden.",
+        "idealTitle": "Ideal für dich, wenn du:",
+        "idealList": [
+          "Zeit sparen willst",
+          "häufig mit ganzen Zutaten arbeitest",
+          "mehr Möglichkeiten im Mixtopf nutzen möchtest"
+        ],
+        "benefitsTitle": "Deine Vorteile auf einen Blick:",
+        "benefits": [
+          "2-in-1: Schälen & Garen",
+          "Kein Kontakt der Zutaten mit dem Mixmesser",
+          "Mehr Flexibilität bei Eintöpfen, Beilagen & Meal Prep"
+        ],
+        "price": "€ 39,90"
       },
-      "varoma": {
-        "title": "Der Varoma® Dampfgaraufsatz",
-        "features": ["Schonendes Dampfgaren auf mehreren Ebenen", "Ideal für Gemüse, Fisch und ganze Menüs", "Gesund garen ohne Geschmacksverlust"]
-      },
-      "garkorb": {
-        "title": "Das Garkörbchen",
-        "features": ["Perfekt zum Abseihen und Dampfgaren kleiner Zutaten", "Für Reis, Erdäpfel, Nudeln und mehr"]
+      "gemuesestyler": {
+        "title": "Der TM7 Gemüsestyler",
+        "description": "Mit dem Gemüsestyler wird dein TM7 zur echten Vorbereitungshilfe in der Küche.",
+        "intro": "Ob Scheiben, Streifen oder Raspel – dein Gemüse ist in Sekunden gleichmäßig geschnitten und bereit für die Weiterverarbeitung.",
+        "text": "Perfekt für alle, die frisch kochen möchten, aber keine Zeit (oder Lust) auf langes Schnippeln haben.",
+        "idealTitle": "Ideal für:",
+        "idealList": [
+          "Salate & Bowls",
+          "Aufläufe & Gratins",
+          "Pfannengerichte & Ofengemüse",
+          "Rohkost & Meal Prep"
+        ],
+        "benefitsTitle": "Deine Vorteile auf einen Blick:",
+        "benefits": [
+          "Gleichmäßige Ergebnisse wie vom Profi",
+          "Deutlich weniger Vorbereitungszeit",
+          "Mehr Freude an frischen Zutaten",
+          "Direktes Weiterverarbeiten im TM7"
+        ],
+        "outro": "So zauberst du im Handumdrehen frische, abwechslungsreiche Gerichte und sparst dir den Platz voller Schneidebretter.",
+        "price": "€ 169,00"
       }
     },
     "comparison": {
