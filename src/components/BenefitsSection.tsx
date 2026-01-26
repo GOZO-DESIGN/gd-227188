@@ -28,6 +28,9 @@ import modiPeelen from '@/assets/modi-peelen.png';
 import modiPuerieren from '@/assets/modi-puerieren.png';
 import modiReiskochen from '@/assets/modi-reiskochen.png';
 import modiSchneiden from '@/assets/modi-schneiden.png';
+import modiSlowcooking from '@/assets/modi-slowcooking.png';
+import modiSousvide from '@/assets/modi-sousvide.png';
+import modiTeigkneten from '@/assets/modi-teigkneten.png';
 const CookidooSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [cookidoo1, cookidoo2, cookidoo3];
@@ -330,10 +333,11 @@ const BenefitsSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-8">
             {[
               modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, modiFermentieren,
-              modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden
+              modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden,
+              modiSlowcooking, modiSousvide, modiTeigkneten
             ].map((img, index) => <div key={index} className="bg-card rounded-2xl shadow-soft hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden">
                 <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto" />
               </div>)}
