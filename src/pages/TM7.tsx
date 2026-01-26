@@ -167,7 +167,8 @@ const ModiSlider = () => {
     return () => window.removeEventListener('resize', checkWidth);
   }, []);
 
-  // Each item is its own slide, max index is total items minus visible items
+  // Group slides into pages for dot navigation (fewer dots)
+  const totalPages = Math.ceil(modiItems.length / itemsPerView);
   const maxIndex = Math.max(0, modiItems.length - itemsPerView);
 
   useEffect(() => {
@@ -178,27 +179,35 @@ const ModiSlider = () => {
   }, [maxIndex]);
 
   const itemWidthPercent = 100 / itemsPerView;
-  const gapPx = 8; // gap-2 = 8px
+  const gapPx = 4; // smaller gap
+
+  // Calculate which "page" we're on for dot highlighting
+  const currentPage = Math.min(Math.floor(currentIndex / itemsPerView * totalPages / (maxIndex + 1) * totalPages), totalPages - 1);
+
+  const goToPage = (pageIndex: number) => {
+    const newIndex = Math.floor((pageIndex / (totalPages - 1)) * maxIndex);
+    setCurrentIndex(Math.min(newIndex, maxIndex));
+  };
 
   return (
-    <div className="relative py-2">
-      {/* Slider Container - padding for shadow visibility */}
-      <div className="overflow-hidden px-1">
+    <div className="relative">
+      {/* Slider Container - extra padding for shadow visibility */}
+      <div className="overflow-hidden px-3 py-3 -mx-3">
         <div 
-          className="flex transition-transform duration-500 ease-out gap-2"
+          className="flex transition-transform duration-500 ease-out gap-1"
           style={{ transform: `translateX(calc(-${currentIndex * itemWidthPercent}% - ${currentIndex * gapPx / itemsPerView}px))` }}
         >
           {modiItems.map((img, index) => (
             <div 
               key={index} 
-              className="flex-shrink-0 flex items-center justify-center py-2"
+              className="flex-shrink-0 flex items-center justify-center p-1"
               style={{ width: `calc(${itemWidthPercent}% - ${gapPx * (itemsPerView - 1) / itemsPerView}px)` }}
             >
-              <div className="bg-white rounded-xl shadow-lg border border-border/50 p-3 hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-xl shadow-lg border border-border/50 p-2 hover:shadow-xl hover:scale-105 transition-all duration-300">
                 <img 
                   src={img} 
                   alt={`Thermomix Modus ${index + 1}`} 
-                  className="w-full h-auto max-w-[90px] mx-auto"
+                  className="w-full h-auto max-w-[80px] mx-auto"
                 />
               </div>
             </div>
@@ -206,18 +215,18 @@ const ModiSlider = () => {
         </div>
       </div>
 
-      {/* Dot Navigation */}
-      <div className="flex justify-center gap-1.5 mt-4">
-        {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+      {/* Dot Navigation - only 3 dots */}
+      <div className="flex justify-center gap-2 mt-2">
+        {Array.from({ length: totalPages }).map((_, index) => (
           <button 
             key={index} 
-            onClick={() => setCurrentIndex(index)} 
+            onClick={() => goToPage(index)} 
             className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex 
+              index === currentPage 
                 ? 'bg-primary w-6' 
                 : 'bg-muted-foreground/30 w-2 hover:bg-muted-foreground/50'
             }`}
-            aria-label={`Slide ${index + 1}`}
+            aria-label={`Seite ${index + 1}`}
           />
         ))}
       </div>
