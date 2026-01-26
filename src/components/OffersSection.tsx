@@ -67,7 +67,7 @@ const OffersSection = () => {
                 <img
                   src={offer.image}
                   alt={offer.alt}
-                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                  className="w-full max-h-48 md:max-h-56 object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                 />
               </div>
               

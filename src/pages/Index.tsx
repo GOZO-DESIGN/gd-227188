@@ -64,8 +64,8 @@ const Index = () => {
         <main>
           <HeroSection />
           <BenefitsSection />
-          <OffersSection />
           <AboutSection aboutImage={aboutImage} />
+          <OffersSection />
           <GoogleReviewsSection />
           <InstagramSection />
           <ContactSection />
