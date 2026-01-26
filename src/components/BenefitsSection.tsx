@@ -34,13 +34,7 @@ import modiTeigkneten from '@/assets/modi-teigkneten.png';
 const ModiSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(4);
-  
-  const modiItems = [
-    modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, 
-    modiFermentieren, modiOffeneskochen, modiPeelen, modiPuerieren, 
-    modiReiskochen, modiSchneiden, modiSlowcooking, modiSousvide, modiTeigkneten
-  ];
-
+  const modiItems = [modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, modiFermentieren, modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden, modiSlowcooking, modiSousvide, modiTeigkneten];
   useEffect(() => {
     const checkWidth = () => {
       if (window.innerWidth < 640) {
@@ -61,70 +55,45 @@ const ModiSlider = () => {
   // Group slides into pages for dot navigation (fewer dots)
   const totalPages = Math.ceil(modiItems.length / itemsPerView);
   const maxIndex = Math.max(0, modiItems.length - itemsPerView);
-
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
+      setCurrentIndex(prev => prev >= maxIndex ? 0 : prev + 1);
     }, 3000);
     return () => clearInterval(timer);
   }, [maxIndex]);
-
   const itemWidthPercent = 100 / itemsPerView;
   const gapPx = 4; // smaller gap
 
   // Calculate which "page" we're on for dot highlighting
   const currentPage = Math.min(Math.floor(currentIndex / itemsPerView * totalPages / (maxIndex + 1) * totalPages), totalPages - 1);
-
   const goToPage = (pageIndex: number) => {
-    const newIndex = Math.floor((pageIndex / (totalPages - 1)) * maxIndex);
+    const newIndex = Math.floor(pageIndex / (totalPages - 1) * maxIndex);
     setCurrentIndex(Math.min(newIndex, maxIndex));
   };
-
-  return (
-    <div className="relative">
+  return <div className="relative">
       {/* Slider Container - extra padding for shadow visibility */}
       <div className="overflow-hidden px-3 py-3 -mx-3">
-        <div 
-          className="flex transition-transform duration-500 ease-out gap-1"
-          style={{ transform: `translateX(calc(-${currentIndex * itemWidthPercent}% - ${currentIndex * gapPx / itemsPerView}px))` }}
-        >
-          {modiItems.map((img, index) => (
-            <div 
-              key={index} 
-              className="flex-shrink-0 flex items-center justify-center p-1"
-              style={{ width: `calc(${itemWidthPercent}% - ${gapPx * (itemsPerView - 1) / itemsPerView}px)` }}
-            >
+        <div className="flex transition-transform duration-500 ease-out gap-1" style={{
+        transform: `translateX(calc(-${currentIndex * itemWidthPercent}% - ${currentIndex * gapPx / itemsPerView}px))`
+      }}>
+          {modiItems.map((img, index) => <div key={index} className="flex-shrink-0 flex items-center justify-center p-1" style={{
+          width: `calc(${itemWidthPercent}% - ${gapPx * (itemsPerView - 1) / itemsPerView}px)`
+        }}>
               <div className="bg-white rounded-xl shadow-lg border border-border/50 p-4 hover:shadow-xl hover:scale-105 transition-all duration-300">
-                <img 
-                  src={img} 
-                  alt={`Thermomix Modus ${index + 1}`} 
-                  className="w-full h-auto max-w-[120px] mx-auto"
-                />
+                <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto max-w-[120px] mx-auto" />
               </div>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
 
       {/* Dot Navigation - only 3 dots */}
       <div className="flex justify-center gap-2 mt-2">
-        {Array.from({ length: totalPages }).map((_, index) => (
-          <button 
-            key={index} 
-            onClick={() => goToPage(index)} 
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === currentPage 
-                ? 'bg-primary w-6' 
-                : 'bg-muted-foreground/30 w-2 hover:bg-muted-foreground/50'
-            }`}
-            aria-label={`Seite ${index + 1}`}
-          />
-        ))}
+        {Array.from({
+        length: totalPages
+      }).map((_, index) => <button key={index} onClick={() => goToPage(index)} className={`h-2 rounded-full transition-all duration-300 ${index === currentPage ? 'bg-primary w-6' : 'bg-muted-foreground/30 w-2 hover:bg-muted-foreground/50'}`} aria-label={`Seite ${index + 1}`} />)}
       </div>
-    </div>
-  );
+    </div>;
 };
-
 const CookidooSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [cookidoo1, cookidoo2, cookidoo3];
@@ -492,7 +461,7 @@ const BenefitsSection = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-2xl"></div>
-              <img src={aboutPortrait} alt="Bernhard Prager - Thermomix Berater" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto hover:scale-[1.02] transition-transform duration-500" />
+              <img alt="Bernhard Prager - Thermomix Berater" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto hover:scale-[1.02] transition-transform duration-500" src="/lovable-uploads/ff24af1f-b933-43bd-a62b-1ddf39ba9a46.jpg" />
             </div>
           </div>
         </div>
