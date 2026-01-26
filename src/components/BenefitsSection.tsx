@@ -18,12 +18,16 @@ import aboutPortrait from '@/assets/about-portrait.jpg';
 import thermomixVideo from '@/assets/thermomix-video.mp4';
 
 // Modi Images
-import modi1 from '@/assets/modi-1.png';
-import modi2 from '@/assets/modi-2.png';
-import modi3 from '@/assets/modi-3.png';
-import modi4 from '@/assets/modi-4.png';
-import modi5 from '@/assets/modi-5.png';
-import modi6 from '@/assets/modi-6.png';
+import modiAnbraten from '@/assets/modi-anbraten.png';
+import modiAndicken from '@/assets/modi-andicken.png';
+import modiDampfgaren from '@/assets/modi-dampfgaren.png';
+import modiEierkochen from '@/assets/modi-eierkochen.png';
+import modiFermentieren from '@/assets/modi-fermentieren.png';
+import modiOffeneskochen from '@/assets/modi-offeneskochen.png';
+import modiPeelen from '@/assets/modi-peelen.png';
+import modiPuerieren from '@/assets/modi-puerieren.png';
+import modiReiskochen from '@/assets/modi-reiskochen.png';
+import modiSchneiden from '@/assets/modi-schneiden.png';
 const CookidooSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [cookidoo1, cookidoo2, cookidoo3];
@@ -326,8 +330,11 @@ const BenefitsSection = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 mb-8">
-            {[modi1, modi2, modi3, modi4, modi5, modi6].map((img, index) => <div key={index} className="bg-card rounded-2xl shadow-soft hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+            {[
+              modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, modiFermentieren,
+              modiOffeneskochen, modiPeelen, modiPuerieren, modiReiskochen, modiSchneiden
+            ].map((img, index) => <div key={index} className="bg-card rounded-2xl shadow-soft hover:shadow-lg hover:scale-105 transition-all duration-300 overflow-hidden">
                 <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto" />
               </div>)}
           </div>
