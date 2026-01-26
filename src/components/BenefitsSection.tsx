@@ -14,7 +14,7 @@ import gesund2 from '@/assets/gesund-2.jpg';
 import cookidoo1 from '@/assets/cookidoo-1.jpg';
 import cookidoo2 from '@/assets/cookidoo-2.jpg';
 import cookidoo3 from '@/assets/cookidoo-3.jpg';
-import aboutPortrait from '@/assets/about-portrait.jpg';
+import aboutPortrait from '@/assets/about-portrait.webp';
 import thermomixVideo from '@/assets/thermomix-video.mp4';
 
 // Modi Images

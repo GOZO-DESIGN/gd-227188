@@ -13,7 +13,7 @@ import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 // Import images
-import aboutImage from '@/assets/about-portrait.jpg';
+import aboutImage from '@/assets/about-portrait.webp';
 
 const CACHE_KEY = 'thermomix_access_granted';
 
