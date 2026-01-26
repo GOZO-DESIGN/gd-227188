@@ -370,10 +370,67 @@ const TM7 = () => {
           {/* EIN GERÄT – VIELE GERÄTE ERSETZT */}
           <section className="section-padding bg-secondary/30" ref={devicesRef}>
             <div className={`container-narrow transition-all duration-700 ${devicesVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              {/* Video + Text Grid */}
-              <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr] gap-8 lg:gap-12 items-center mb-12">
-                {/* Video - Left */}
-                <div className="rounded-2xl overflow-hidden shadow-lg max-w-[280px] md:max-w-none mx-auto">
+              {/* Header */}
+              <div className="text-center mb-12">
+                <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
+                  {t('tm7.devices.tagline')}
+                </span>
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
+                  {t('tm7.devices.title')}
+                </h2>
+                <p className="text-muted-foreground max-w-3xl mx-auto">
+                  {t('tm7.devices.subtitle')}
+                </p>
+              </div>
+
+              {/* Video + List Grid */}
+              <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                {/* List - Left */}
+                <div>
+                  <p className="font-medium text-foreground mb-4 text-lg">
+                    {t('tm7.devices.highlight')}
+                  </p>
+                  <ul className="grid grid-cols-2 gap-3 mb-6">
+                    <li className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-primary font-bold">✓</span>
+                      Eierkocher
+                    </li>
+                    <li className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-primary font-bold">✓</span>
+                      Wasserkocher
+                    </li>
+                    <li className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-primary font-bold">✓</span>
+                      Mixer
+                    </li>
+                    <li className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-primary font-bold">✓</span>
+                      Kochtopf
+                    </li>
+                    <li className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-primary font-bold">✓</span>
+                      Rührgerät
+                    </li>
+                    <li className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-primary font-bold">✓</span>
+                      Küchenwaage
+                    </li>
+                    <li className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-primary font-bold">✓</span>
+                      Fleischwolf
+                    </li>
+                    <li className="flex items-center gap-2 text-muted-foreground">
+                      <span className="text-primary font-bold">✓</span>
+                      Küchenmaschine
+                    </li>
+                  </ul>
+                  <p className="text-muted-foreground italic">
+                    {t('tm7.devices.outro')}
+                  </p>
+                </div>
+
+                {/* Video - Right */}
+                <div className="rounded-2xl overflow-hidden shadow-lg max-w-md mx-auto lg:mx-0">
                   <video 
                     src={geraeteVideo} 
                     autoPlay 
@@ -383,29 +440,7 @@ const TM7 = () => {
                     className="w-full"
                   />
                 </div>
-
-                {/* Text - Right */}
-                <div className="text-center md:text-left">
-                  <span className="inline-block text-accent font-medium tracking-wide uppercase text-sm mb-4">
-                    {t('tm7.devices.tagline')}
-                  </span>
-                  <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-6">
-                    {t('tm7.devices.title')}
-                  </h2>
-                  <p className="text-muted-foreground mb-4">
-                    {t('tm7.devices.subtitle')}
-                  </p>
-                  <p className="text-primary font-medium">
-                    {t('tm7.devices.highlight')}
-                  </p>
-                </div>
               </div>
-
-              <DeviceSlider />
-
-              <p className="text-center text-muted-foreground mt-8 italic">
-                {t('tm7.devices.outro')}
-              </p>
             </div>
           </section>
 
