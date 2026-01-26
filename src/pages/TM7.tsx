@@ -142,6 +142,8 @@ const DeviceSlider = () => {
 
 const ModiSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(4);
+  
   const modiItems = [
     modiAnbraten, modiAndicken, modiDampfgaren, modiEierkochen, 
     modiFermentieren, modiOffeneskochen, modiPeelen, modiPuerieren, 
@@ -149,30 +151,52 @@ const ModiSlider = () => {
   ];
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % modiItems.length);
-    }, 3000);
-    return () => clearInterval(timer);
+    const checkWidth = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerView(2);
+      } else if (window.innerWidth < 768) {
+        setItemsPerView(3);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(4);
+      } else {
+        setItemsPerView(5);
+      }
+    };
+    checkWidth();
+    window.addEventListener('resize', checkWidth);
+    return () => window.removeEventListener('resize', checkWidth);
   }, []);
+
+  const totalPages = Math.ceil(modiItems.length / itemsPerView);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex(prev => (prev + 1) % totalPages);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [totalPages]);
+
+  const itemWidthPercent = 100 / itemsPerView;
 
   return (
     <div className="relative">
       {/* Slider Container */}
       <div className="overflow-hidden">
         <div 
-          className="flex transition-transform duration-500 ease-out"
+          className="flex transition-transform duration-500 ease-out gap-3"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {modiItems.map((img, index) => (
             <div 
               key={index} 
-              className="flex-shrink-0 w-full flex items-center justify-center p-4"
+              className="flex-shrink-0 flex items-center justify-center"
+              style={{ width: `calc(${itemWidthPercent}% - 9px)` }}
             >
-              <div className="bg-white rounded-2xl shadow-lg border border-border/50 p-6 max-w-[200px]">
+              <div className="bg-white rounded-xl shadow-md border border-border/50 p-3 hover:shadow-lg hover:scale-105 transition-all duration-300">
                 <img 
                   src={img} 
                   alt={`Thermomix Modus ${index + 1}`} 
-                  className="w-full h-auto"
+                  className="w-full h-auto max-w-[100px] mx-auto"
                 />
               </div>
             </div>
@@ -182,7 +206,7 @@ const ModiSlider = () => {
 
       {/* Dot Navigation */}
       <div className="flex justify-center gap-2 mt-6">
-        {modiItems.map((_, index) => (
+        {Array.from({ length: totalPages }).map((_, index) => (
           <button 
             key={index} 
             onClick={() => setCurrentIndex(index)} 
@@ -191,7 +215,7 @@ const ModiSlider = () => {
                 ? 'bg-primary w-8' 
                 : 'bg-muted-foreground/30 w-2 hover:bg-muted-foreground/50'
             }`}
-            aria-label={`Modus ${index + 1}`}
+            aria-label={`Seite ${index + 1}`}
           />
         ))}
       </div>
