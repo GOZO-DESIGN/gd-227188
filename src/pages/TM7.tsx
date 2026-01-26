@@ -49,6 +49,9 @@ import accessoryGarkorb from '@/assets/accessory-garkorb.jpg';
 // Display images
 import display1 from '@/assets/display-1.webp';
 import display2 from '@/assets/display-2.webp';
+
+// Device video
+import geraeteVideo from '@/assets/geraete-tm7.mp4';
 const DeviceSlider = () => {
   const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -394,6 +397,18 @@ const TM7 = () => {
                 <p className="text-primary font-medium">
                   {t('tm7.devices.highlight')}
                 </p>
+              </div>
+
+              {/* Video */}
+              <div className="mb-10 rounded-2xl overflow-hidden shadow-lg max-w-2xl mx-auto">
+                <video 
+                  src={geraeteVideo} 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                  className="w-full"
+                />
               </div>
 
               <DeviceSlider />
