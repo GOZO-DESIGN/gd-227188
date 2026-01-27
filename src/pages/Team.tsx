@@ -42,7 +42,7 @@ const Team = () => {
               <img 
                 src={logoKoenig} 
                 alt="Team König Logo" 
-                className="h-24 md:h-32 mx-auto mb-8"
+                className="h-32 md:h-44 mx-auto mb-8"
               />
               <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
                 {t('team.hero.title')} – <span className="text-primary">{t('team.hero.teamName')}</span>
