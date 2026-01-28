@@ -76,7 +76,7 @@ const OffersSection = () => {
               </div>
               
               <div className="p-4 md:p-6 mt-auto">
-                <p className="text-lg font-semibold text-foreground mb-3 text-center">
+                <p className="text-xl md:text-2xl font-bold text-foreground mb-4 text-center">
                   {t(offer.priceKey)}
                 </p>
                 <Link
