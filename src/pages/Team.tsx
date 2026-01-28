@@ -34,7 +34,7 @@ const Team = () => {
 
       <Header />
 
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background overflow-x-hidden">
         {/* Hero Section */}
         <section className="pt-32 md:pt-40 pb-16 md:pb-24 bg-gradient-to-b from-primary/5 to-background">
           <div className="container-narrow">

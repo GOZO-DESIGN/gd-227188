@@ -348,7 +348,7 @@ const TM7 = () => {
         <meta name="description" content={t('seo.tm7.description')} />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background overflow-x-hidden">
         <Header />
         <main className="pt-32 md:pt-40">
           

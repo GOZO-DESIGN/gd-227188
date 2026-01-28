@@ -59,7 +59,7 @@ const Index = () => {
         <link rel="canonical" href="https://kochmitthermo21.de" />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background overflow-x-hidden">
         <Header />
         <main>
           <HeroSection />
