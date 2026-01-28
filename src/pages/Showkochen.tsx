@@ -162,7 +162,7 @@ const Showkochen = () => {
           {/* WAS IST EIN SHOWKOCHEN */}
           <section className="section-padding bg-secondary/30" ref={wasIstAnimation.ref}>
             <div className={`container-narrow transition-all duration-700 ${wasIstAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="grid lg:grid-cols-2 gap-6 items-center">
                 <div className="order-2 lg:order-1 max-w-xs mx-auto lg:mx-0">
                   <video
                     src={showkochenVideo}
