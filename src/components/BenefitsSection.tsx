@@ -81,7 +81,7 @@ const ModiSlider = () => {
           {modiItems.map((img, index) => <div key={index} className="flex-shrink-0 flex items-center justify-center p-1" style={{
           width: `calc(${itemWidthPercent}% - ${gapPx * (itemsPerView - 1) / itemsPerView}px)`
         }}>
-              <div className="bg-white rounded-xl border border-border/50 p-4 hover:scale-105 transition-all duration-300">
+              <div className="bg-white rounded-xl border border-border/50 p-4">
                 <img src={img} alt={`Thermomix Modus ${index + 1}`} className="w-full h-auto max-w-[120px] mx-auto" />
               </div>
             </div>)}
@@ -216,7 +216,7 @@ const BenefitsSection = () => {
             <div className="order-1 lg:order-2 relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-full blur-3xl"></div>
               <div className="relative">
-                <img alt="Thermomix TM7" className="relative w-full max-w-md mx-auto drop-shadow-2xl hover:scale-[1.02] transition-transform duration-500" src={tm7Product} />
+                <img alt="Thermomix TM7" className="relative w-full max-w-md mx-auto drop-shadow-2xl" src={tm7Product} />
               </div>
             </div>
           </div>
@@ -268,8 +268,8 @@ const BenefitsSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="grid grid-cols-2 gap-4">
-                <img src={familie1} alt="Kind am Thermomix" className="rounded-2xl shadow-xl w-full h-64 object-cover hover:scale-105 transition-transform duration-500" />
-                <img src={familie2} alt="Familie zusammen" className="rounded-2xl shadow-xl w-full h-64 object-cover mt-8 hover:scale-105 transition-transform duration-500" />
+                <img src={familie1} alt="Kind am Thermomix" className="rounded-2xl shadow-xl w-full h-64 object-cover" />
+                <img src={familie2} alt="Familie zusammen" className="rounded-2xl shadow-xl w-full h-64 object-cover mt-8" />
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -338,8 +338,8 @@ const BenefitsSection = () => {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              <img src={gesund1} alt="Gesundes Kochen mit Thermomix" className="rounded-2xl shadow-xl w-full h-72 object-cover hover:scale-105 transition-transform duration-500" />
-              <img src={gesund2} alt="Frische Zutaten" className="rounded-2xl shadow-xl w-full h-72 object-cover mt-8 hover:scale-105 transition-transform duration-500" />
+              <img src={gesund1} alt="Gesundes Kochen mit Thermomix" className="rounded-2xl shadow-xl w-full h-72 object-cover" />
+              <img src={gesund2} alt="Frische Zutaten" className="rounded-2xl shadow-xl w-full h-72 object-cover mt-8" />
             </div>
           </div>
         </div>
@@ -463,7 +463,7 @@ const BenefitsSection = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 rounded-3xl blur-2xl"></div>
-              <img alt="Bernhard Prager - Thermomix Berater" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto hover:scale-[1.02] transition-transform duration-500" src={bernhardPortrait} />
+              <img alt="Bernhard Prager - Thermomix Berater" className="relative rounded-3xl shadow-xl w-full max-w-md mx-auto" src={bernhardPortrait} />
             </div>
           </div>
         </div>
