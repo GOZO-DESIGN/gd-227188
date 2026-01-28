@@ -86,9 +86,9 @@ const ContactSection = () => {
   const inputClass = "w-full px-4 py-3 rounded-lg border border-border bg-background transition-all duration-300 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20";
 
   return (
-    <section className="section-padding gradient-warm" id="kontakt">
-      <div className="container-narrow" ref={ref}>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+    <section className="section-padding gradient-warm overflow-hidden" id="kontakt">
+      <div className="container-narrow px-4 sm:px-6" ref={ref}>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-20">
           {/* Contact Info */}
           <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'}`}>
             <span className="inline-block text-primary font-medium tracking-wide uppercase text-sm mb-4">
@@ -150,24 +150,24 @@ const ContactSection = () => {
           </div>
 
           {/* Dynamic Contact Form */}
-          <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
+          <div className={`min-w-0 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'}`}>
             <form 
-              className="bg-card p-8 lg:p-10 rounded-2xl shadow-card"
+              className="bg-card p-4 sm:p-6 lg:p-10 rounded-2xl shadow-card overflow-hidden"
               onSubmit={handleSubmit}
             >
               {/* Progress Indicator */}
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
                 {[1, 2, 3, 4].map((s) => (
-                  <div key={s} className="flex items-center">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-300 ${
+                  <div key={s} className="flex items-center flex-1 last:flex-none">
+                    <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs sm:text-sm font-medium transition-all duration-300 flex-shrink-0 ${
                       step >= s 
                         ? 'bg-primary text-primary-foreground' 
                         : 'bg-muted text-muted-foreground'
                     }`}>
-                      {step > s ? <Check className="w-4 h-4" /> : s}
+                      {step > s ? <Check className="w-3 h-3 sm:w-4 sm:h-4" /> : s}
                     </div>
                     {s < 4 && (
-                      <div className={`w-12 sm:w-16 h-1 mx-1 rounded transition-all duration-300 ${
+                      <div className={`flex-1 h-1 mx-1 sm:mx-2 rounded transition-all duration-300 ${
                         step > s ? 'bg-primary' : 'bg-muted'
                       }`} />
                     )}
@@ -349,16 +349,16 @@ const ContactSection = () => {
               )}
 
               {/* Navigation Buttons */}
-              <div className="flex gap-3 mt-8">
+              <div className="flex flex-col sm:flex-row gap-3 mt-6 sm:mt-8">
                 {step > 1 && (
                   <button
                     type="button"
                     onClick={prevStep}
-                    className="flex-1 flex items-center justify-center gap-2 bg-muted text-foreground py-4 px-6 rounded-lg font-medium
+                    className="flex-1 flex items-center justify-center gap-2 bg-muted text-foreground py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-sm sm:text-base
                       transition-all duration-300 hover:bg-muted/80"
                   >
-                    <ChevronLeft className="w-4 h-4" />
-                    {t('contact.form.back')}
+                    <ChevronLeft className="w-4 h-4 flex-shrink-0" />
+                    <span className="truncate">{t('contact.form.back')}</span>
                   </button>
                 )}
                 
@@ -366,20 +366,20 @@ const ContactSection = () => {
                   <button
                     type="button"
                     onClick={nextStep}
-                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-4 px-6 rounded-lg font-medium
+                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-sm sm:text-base
                       transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group"
                   >
-                    {t('contact.form.next')}
-                    <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    <span className="truncate">{t('contact.form.next')}</span>
+                    <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 ) : (
                   <button
                     type="submit"
-                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-4 px-6 rounded-lg font-medium
+                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-sm sm:text-base
                       transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group"
                   >
-                    {t('contact.form.submit')}
-                    <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    <span className="truncate">{t('contact.form.submit')}</span>
+                    <Send className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 )}
               </div>
