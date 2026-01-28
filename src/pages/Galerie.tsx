@@ -26,7 +26,7 @@ const Galerie = () => {
         <meta name="description" content={t('seo.gallery.description')} />
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-background overflow-x-hidden">
         <Header />
         <main className="pt-32 md:pt-40">
           <div className="section-padding">
