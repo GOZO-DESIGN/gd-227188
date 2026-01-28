@@ -353,16 +353,16 @@ const ContactCTA = ({ className = '' }: ContactCTAProps) => {
               )}
 
               {/* Navigation Buttons */}
-              <div className="flex gap-3 mt-8">
+              <div className="flex flex-col sm:flex-row gap-3 mt-6 sm:mt-8">
                 {step > 1 && (
                   <button
                     type="button"
                     onClick={prevStep}
-                    className="flex-1 flex items-center justify-center gap-2 bg-muted text-foreground py-4 px-6 rounded-lg font-medium
+                    className="flex-1 flex items-center justify-center gap-2 bg-muted text-foreground py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-sm sm:text-base
                       transition-all duration-300 hover:bg-muted/80"
                   >
-                    <ChevronLeft className="w-4 h-4" />
-                    {t('contact.form.back')}
+                    <ChevronLeft className="w-4 h-4 flex-shrink-0" />
+                    <span className="truncate">{t('contact.form.back')}</span>
                   </button>
                 )}
                 
@@ -370,20 +370,20 @@ const ContactCTA = ({ className = '' }: ContactCTAProps) => {
                   <button
                     type="button"
                     onClick={nextStep}
-                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-4 px-6 rounded-lg font-medium
+                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-sm sm:text-base
                       transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group"
                   >
-                    {t('contact.form.next')}
-                    <ChevronRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    <span className="truncate">{t('contact.form.next')}</span>
+                    <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 ) : (
                   <button
                     type="submit"
-                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-4 px-6 rounded-lg font-medium
+                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-sm sm:text-base
                       transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group"
                   >
-                    {t('contact.form.submit')}
-                    <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    <span className="truncate">{t('contact.form.submit')}</span>
+                    <Send className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 )}
               </div>
