@@ -1,13 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Package, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactCTA from '@/components/ContactCTA';
 import { Button } from '@/components/ui/button';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 // Images
 import tm7Hero from '@/assets/tm7-hero.jpg';
@@ -759,79 +766,100 @@ const TM7 = () => {
                 </div>
               </div>
 
-              {/* Weitere Zubehörteile - Kompakte Liste */}
-              <div className="grid md:grid-cols-2 gap-6 mt-8">
-                {/* Spatel */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
-                  <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                    <img src={accessorySpatel} alt={t('tm7.accessories.compactSpatel.title')} className="h-24 object-contain" />
-                  </div>
-                  <div className="p-5 sm:w-2/3">
-                    <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactSpatel.title')}</h4>
-                    <ul className="space-y-1">
-                      {(t('tm7.accessories.compactSpatel.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
-                          <span className="text-primary font-bold">✓</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+              {/* Mehr Zubehör Button mit Modal */}
+              <div className="mt-8 text-center">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button 
+                      variant="outline" 
+                      size="lg"
+                      className="gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    >
+                      <Package className="w-5 h-5" />
+                      {t('tm7.accessories.moreButton')}
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle className="font-serif text-2xl text-center">
+                        {t('tm7.accessories.modalTitle')}
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div className="grid md:grid-cols-2 gap-6 mt-6">
+                      {/* Spatel */}
+                      <div className="bg-muted/30 rounded-xl overflow-hidden flex flex-col sm:flex-row">
+                        <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
+                          <img src={accessorySpatel} alt={t('tm7.accessories.compactSpatel.title')} className="h-24 object-contain" />
+                        </div>
+                        <div className="p-5 sm:w-2/3">
+                          <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactSpatel.title')}</h4>
+                          <ul className="space-y-1">
+                            {(t('tm7.accessories.compactSpatel.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                <span className="text-primary font-bold">✓</span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
 
-                {/* Schmetterlingsaufsatz */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
-                  <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                    <img src={accessorySchmetterling} alt={t('tm7.accessories.compactSchmetterling.title')} className="h-24 object-contain" />
-                  </div>
-                  <div className="p-5 sm:w-2/3">
-                    <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactSchmetterling.title')}</h4>
-                    <ul className="space-y-1">
-                      {(t('tm7.accessories.compactSchmetterling.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
-                          <span className="text-primary font-bold">✓</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                      {/* Schmetterlingsaufsatz */}
+                      <div className="bg-muted/30 rounded-xl overflow-hidden flex flex-col sm:flex-row">
+                        <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
+                          <img src={accessorySchmetterling} alt={t('tm7.accessories.compactSchmetterling.title')} className="h-24 object-contain" />
+                        </div>
+                        <div className="p-5 sm:w-2/3">
+                          <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactSchmetterling.title')}</h4>
+                          <ul className="space-y-1">
+                            {(t('tm7.accessories.compactSchmetterling.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                <span className="text-primary font-bold">✓</span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
 
-                {/* Varoma */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
-                  <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                    <img src={accessoryVaroma} alt={t('tm7.accessories.compactVaroma.title')} className="h-24 object-contain" />
-                  </div>
-                  <div className="p-5 sm:w-2/3">
-                    <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactVaroma.title')}</h4>
-                    <ul className="space-y-1">
-                      {(t('tm7.accessories.compactVaroma.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
-                          <span className="text-primary font-bold">✓</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                      {/* Varoma */}
+                      <div className="bg-muted/30 rounded-xl overflow-hidden flex flex-col sm:flex-row">
+                        <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
+                          <img src={accessoryVaroma} alt={t('tm7.accessories.compactVaroma.title')} className="h-24 object-contain" />
+                        </div>
+                        <div className="p-5 sm:w-2/3">
+                          <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactVaroma.title')}</h4>
+                          <ul className="space-y-1">
+                            {(t('tm7.accessories.compactVaroma.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                <span className="text-primary font-bold">✓</span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
 
-                {/* Garkörbchen */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-card flex flex-col sm:flex-row">
-                  <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                    <img src={accessoryGarkorb} alt={t('tm7.accessories.garkorb.title')} className="h-24 object-contain" />
-                  </div>
-                  <div className="p-5 sm:w-2/3">
-                    <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.garkorb.title')}</h4>
-                    <ul className="space-y-1">
-                      {(t('tm7.accessories.garkorb.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
-                          <span className="text-primary font-bold">✓</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                      {/* Garkörbchen */}
+                      <div className="bg-muted/30 rounded-xl overflow-hidden flex flex-col sm:flex-row">
+                        <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
+                          <img src={accessoryGarkorb} alt={t('tm7.accessories.garkorb.title')} className="h-24 object-contain" />
+                        </div>
+                        <div className="p-5 sm:w-2/3">
+                          <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.garkorb.title')}</h4>
+                          <ul className="space-y-1">
+                            {(t('tm7.accessories.garkorb.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                <span className="text-primary font-bold">✓</span>
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </section>
