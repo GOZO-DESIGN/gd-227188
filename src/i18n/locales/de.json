@@ -537,7 +537,9 @@
           "Ideal für Gemüse, Fisch und ganze Menüs",
           "Gesund garen ohne Geschmacksverlust"
         ]
-      }
+      },
+      "moreButton": "Mehr Zubehör entdecken",
+      "modalTitle": "Weiteres Standardzubehör"
     },
     "comparison": {
       "tagline": "Der Unterschied",
