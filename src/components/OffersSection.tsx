@@ -5,12 +5,13 @@ import { useTranslation } from 'react-i18next';
 // Import promo images
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
-import promoShowkochen from '@/assets/promo-showkochen.jpeg';
+import promoCasserole from '@/assets/promo-casserole.jpg';
 
 interface Offer {
   id: string;
   image: string;
   alt: string;
+  priceKey: string;
 }
 
 const offers: Offer[] = [
@@ -18,16 +19,19 @@ const offers: Offer[] = [
     id: 'tm7-1549',
     image: promo1549,
     alt: 'Der neue Thermomix® TM7 um nur € 1.549,-',
+    priceKey: 'offers.prices.tm7-1549',
   },
   {
     id: 'tm7-1698',
     image: promo1698,
     alt: 'Der neue Thermomix® TM7 inkl. Garantieverlängerung auf 5 Jahre um nur € 1.698,-',
+    priceKey: 'offers.prices.tm7-1698',
   },
   {
-    id: 'showkochen',
-    image: promoShowkochen,
-    alt: 'Mehr Punkte im Vorwerk Bonus Club für dein Show Kochen',
+    id: 'casserole',
+    image: promoCasserole,
+    alt: 'Casserole und Thermomix® Sensor',
+    priceKey: 'offers.prices.casserole',
   },
 ];
 
@@ -72,6 +76,9 @@ const OffersSection = () => {
               </div>
               
               <div className="p-4 md:p-6 mt-auto">
+                <p className="text-lg font-semibold text-foreground mb-3 text-center">
+                  {t(offer.priceKey)}
+                </p>
                 <Link
                   to="/beratung"
                   className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium
