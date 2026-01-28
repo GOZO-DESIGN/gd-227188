@@ -15,6 +15,7 @@ import showkochen2 from '@/assets/showkochen-2.jpg';
 import showkochen3 from '@/assets/showkochen-3.jpg';
 import showkochen4 from '@/assets/showkochen-4.jpg';
 import showkochen5 from '@/assets/showkochen-5.jpg';
+import showkochenVideo from '@/assets/showkochen-video.mp4';
 import menuFocaccia from '@/assets/menu-focaccia.jpg';
 import menuRisotto from '@/assets/menu-risotto.jpg';
 import menuErdbeer from '@/assets/menu-erdbeer.jpg';
@@ -162,10 +163,13 @@ const Showkochen = () => {
           <section className="section-padding bg-secondary/30" ref={wasIstAnimation.ref}>
             <div className={`container-narrow transition-all duration-700 ${wasIstAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="grid lg:grid-cols-2 gap-12 items-center">
-                <div className="order-2 lg:order-1">
-                  <img
-                    src={showkochen2}
-                    alt="Thermomix im Einsatz"
+                <div className="order-2 lg:order-1 max-w-md mx-auto lg:mx-0">
+                  <video
+                    src={showkochenVideo}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
                     className="w-full rounded-2xl shadow-elegant"
                   />
                 </div>
