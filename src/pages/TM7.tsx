@@ -741,11 +741,11 @@ const TM7 = () => {
                               {t('tm7.accessories.sensor.price')}
                             </p>
                           </div>
-                          <div className="bg-white flex items-center justify-center p-6">
+                          <div className="flex items-center justify-center p-4">
                             <img 
                               src={accessorySensor} 
                               alt={t('tm7.accessories.sensor.title')} 
-                              className="max-h-48 object-contain"
+                              className="max-h-72 object-contain rounded-xl"
                             />
                           </div>
                         </div>
