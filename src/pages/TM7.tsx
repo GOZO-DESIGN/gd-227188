@@ -50,7 +50,7 @@ import cookidoo3 from '@/assets/cookidoo-3.jpg';
 
 // Accessory images
 import accessorySensor from '@/assets/accessory-sensor-new.jpg';
-import accessoryPeeler from '@/assets/accessory-peeler.png';
+import accessoryPeeler from '@/assets/accessory-peeler-new.jpg';
 import accessoryGemuesestyler from '@/assets/accessory-gemuesestyler.jpg';
 import accessorySpatel from '@/assets/accessory-spatel-new.jpg';
 import accessorySchmetterling from '@/assets/accessory-schmetterling-new.jpg';
@@ -754,11 +754,11 @@ const TM7 = () => {
                       {/* Peeler */}
                       <div className="bg-muted/30 rounded-2xl overflow-hidden">
                         <div className="grid lg:grid-cols-2 gap-6">
-                          <div className="bg-white flex items-center justify-center p-6 order-2 lg:order-1">
+                          <div className="flex items-center justify-center p-4 order-2 lg:order-1">
                             <img 
                               src={accessoryPeeler} 
                               alt={t('tm7.accessories.peeler.title')} 
-                              className="max-h-48 object-contain"
+                              className="max-h-72 object-contain rounded-xl"
                             />
                           </div>
                           <div className="p-6 flex flex-col justify-center order-1 lg:order-2">
