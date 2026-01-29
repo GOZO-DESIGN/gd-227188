@@ -384,7 +384,7 @@ const TM7 = () => {
               {/* Video + Content Grid */}
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Video - Left */}
-                <div className="rounded-2xl overflow-hidden shadow-lg max-w-md mx-auto lg:mx-0">
+                <div className="rounded-2xl overflow-hidden shadow-elegant max-w-xs mx-auto lg:mx-0">
                   <video 
                     src={geraeteVideo} 
                     autoPlay 
