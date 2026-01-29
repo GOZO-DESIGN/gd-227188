@@ -51,23 +51,6 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
               <p>{t('about.text4')}</p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
-              {[
-                { value: '50+', label: t('about.stats.customers') },
-                { value: '1+', label: t('about.stats.experience') },
-                { value: '100%', label: t('about.stats.dedication') },
-              ].map((stat, index) => (
-                <div 
-                  key={stat.label}
-                  className={`text-center p-4 bg-card rounded-xl transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ transitionDelay: isVisible ? `${400 + index * 100}ms` : '0ms' }}
-                >
-                  <p className="font-serif text-2xl lg:text-3xl text-primary mb-1">{stat.value}</p>
-                  <p className="text-xs text-muted-foreground">{stat.label}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
