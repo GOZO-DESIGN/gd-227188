@@ -612,156 +612,77 @@ const TM7 = () => {
                 </p>
               </div>
 
-              {/* Sensor */}
-              <div className="bg-card rounded-2xl shadow-card overflow-hidden mb-8">
-                <div className="grid lg:grid-cols-2 gap-8">
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
-                      {t('tm7.accessories.sensor.tagline')}
-                    </span>
-                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
-                      {t('tm7.accessories.sensor.title')}
-                    </h3>
-                    <p className="text-muted-foreground italic mb-2">
-                      {t('tm7.accessories.sensor.intro')}
-                    </p>
-                    <p className="text-muted-foreground mb-6">
-                      {t('tm7.accessories.sensor.description')}
-                    </p>
-                    <h4 className="font-semibold text-foreground mb-3">
-                      {t('tm7.accessories.sensor.benefitsTitle')}
-                    </h4>
-                    <ul className="space-y-2 mb-6">
-                      {(t('tm7.accessories.sensor.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
-                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
+              {/* Kompakte Zubehör-Karten */}
+              <div className="grid md:grid-cols-2 gap-6">
+                {/* Spatel */}
+                <div className="bg-card rounded-xl shadow-card overflow-hidden flex flex-col sm:flex-row">
+                  <div className="bg-white p-6 flex items-center justify-center sm:w-1/3">
+                    <img src={accessorySpatel} alt={t('tm7.accessories.compactSpatel.title')} className="h-28 object-contain" />
+                  </div>
+                  <div className="p-6 sm:w-2/3">
+                    <h4 className="font-serif text-xl text-foreground mb-3">{t('tm7.accessories.compactSpatel.title')}</h4>
+                    <ul className="space-y-2">
+                      {(t('tm7.accessories.compactSpatel.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-muted-foreground">
                           <span className="text-primary font-bold">✓</span>
-                          <span>{benefit}</span>
+                          {item}
                         </li>
                       ))}
                     </ul>
-                    <p className="text-foreground font-medium mb-4">
-                      {t('tm7.accessories.sensor.outro')}
-                    </p>
-                    <p className="text-2xl font-bold text-primary">
-                      {t('tm7.accessories.sensor.price')}
-                    </p>
-                  </div>
-                  <div className="bg-white flex items-center justify-center p-8">
-                    <img 
-                      src={accessorySensor} 
-                      alt={t('tm7.accessories.sensor.title')} 
-                      className="max-h-80 object-contain"
-                    />
                   </div>
                 </div>
-              </div>
 
-              {/* Peeler */}
-              <div className="bg-card rounded-2xl shadow-card overflow-hidden mb-8">
-                <div className="grid lg:grid-cols-2 gap-8">
-                  <div className="bg-white flex items-center justify-center p-8 order-2 lg:order-1">
-                    <img 
-                      src={accessoryPeeler} 
-                      alt={t('tm7.accessories.peeler.title')} 
-                      className="max-h-80 object-contain"
-                    />
+                {/* Schmetterlingsaufsatz */}
+                <div className="bg-card rounded-xl shadow-card overflow-hidden flex flex-col sm:flex-row">
+                  <div className="bg-white p-6 flex items-center justify-center sm:w-1/3">
+                    <img src={accessorySchmetterling} alt={t('tm7.accessories.compactSchmetterling.title')} className="h-28 object-contain" />
                   </div>
-                  <div className="p-8 lg:p-12 flex flex-col justify-center order-1 lg:order-2">
-                    <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
-                      {t('tm7.accessories.peeler.tagline')}
-                    </span>
-                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
-                      {t('tm7.accessories.peeler.title')}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      {t('tm7.accessories.peeler.description')}
-                    </p>
-                    <p className="text-muted-foreground mb-4">
-                      {t('tm7.accessories.peeler.intro')}
-                    </p>
-                    <div className="mb-4 space-y-1">
-                      <p className="text-foreground font-medium">{t('tm7.accessories.peeler.feature1Title')}</p>
-                      <p className="text-foreground font-medium">{t('tm7.accessories.peeler.feature2Title')}</p>
-                    </div>
-                    <div className="grid md:grid-cols-2 gap-6 mb-6">
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-2">{t('tm7.accessories.peeler.peelTitle')}</h4>
-                        <p className="text-muted-foreground text-sm">{t('tm7.accessories.peeler.peelText')}</p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-2">{t('tm7.accessories.peeler.cookTitle')}</h4>
-                        <p className="text-muted-foreground text-sm">{t('tm7.accessories.peeler.cookText')}</p>
-                      </div>
-                    </div>
-                    <h4 className="font-semibold text-foreground mb-3">
-                      {t('tm7.accessories.peeler.benefitsTitle')}
-                    </h4>
-                    <ul className="space-y-2 mb-6">
-                      {(t('tm7.accessories.peeler.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
-                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
+                  <div className="p-6 sm:w-2/3">
+                    <h4 className="font-serif text-xl text-foreground mb-3">{t('tm7.accessories.compactSchmetterling.title')}</h4>
+                    <ul className="space-y-2">
+                      {(t('tm7.accessories.compactSchmetterling.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-muted-foreground">
                           <span className="text-primary font-bold">✓</span>
-                          <span>{benefit}</span>
+                          {item}
                         </li>
                       ))}
                     </ul>
-                    <p className="text-2xl font-bold text-primary">
-                      {t('tm7.accessories.peeler.price')}
-                    </p>
                   </div>
                 </div>
-              </div>
 
-              {/* Gemüsestyler */}
-              <div className="bg-card rounded-2xl shadow-card overflow-hidden">
-                <div className="grid lg:grid-cols-2 gap-8">
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <h3 className="font-serif text-2xl lg:text-3xl text-foreground mb-4">
-                      {t('tm7.accessories.gemuesestyler.title')}
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      {t('tm7.accessories.gemuesestyler.description')}
-                    </p>
-                    <p className="text-muted-foreground mb-4">
-                      {t('tm7.accessories.gemuesestyler.intro')}
-                    </p>
-                    <p className="text-muted-foreground mb-6">
-                      {t('tm7.accessories.gemuesestyler.text')}
-                    </p>
-                    <h4 className="font-semibold text-foreground mb-3">
-                      {t('tm7.accessories.gemuesestyler.idealTitle')}
-                    </h4>
-                    <ul className="space-y-2 mb-6">
-                      {(t('tm7.accessories.gemuesestyler.idealList', { returnObjects: true }) as string[]).map((item, index) => (
-                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                          <span className="text-primary font-bold">•</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <h4 className="font-semibold text-foreground mb-3">
-                      {t('tm7.accessories.gemuesestyler.benefitsTitle')}
-                    </h4>
-                    <ul className="space-y-2 mb-6">
-                      {(t('tm7.accessories.gemuesestyler.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
-                        <li key={index} className="flex items-start gap-2 text-muted-foreground">
-                          <span className="text-primary font-bold">✓</span>
-                          <span>{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="text-muted-foreground italic mb-4">
-                      {t('tm7.accessories.gemuesestyler.outro')}
-                    </p>
-                    <p className="text-2xl font-bold text-primary">
-                      {t('tm7.accessories.gemuesestyler.price')}
-                    </p>
+                {/* Varoma */}
+                <div className="bg-card rounded-xl shadow-card overflow-hidden flex flex-col sm:flex-row">
+                  <div className="bg-white p-6 flex items-center justify-center sm:w-1/3">
+                    <img src={accessoryVaroma} alt={t('tm7.accessories.compactVaroma.title')} className="h-28 object-contain" />
                   </div>
-                  <div className="bg-white flex items-center justify-center p-8">
-                    <img 
-                      src={accessoryGemuesestyler} 
-                      alt={t('tm7.accessories.gemuesestyler.title')} 
-                      className="max-h-96 object-contain"
-                    />
+                  <div className="p-6 sm:w-2/3">
+                    <h4 className="font-serif text-xl text-foreground mb-3">{t('tm7.accessories.compactVaroma.title')}</h4>
+                    <ul className="space-y-2">
+                      {(t('tm7.accessories.compactVaroma.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary font-bold">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Garkörbchen */}
+                <div className="bg-card rounded-xl shadow-card overflow-hidden flex flex-col sm:flex-row">
+                  <div className="bg-white p-6 flex items-center justify-center sm:w-1/3">
+                    <img src={accessoryGarkorb} alt={t('tm7.accessories.garkorb.title')} className="h-28 object-contain" />
+                  </div>
+                  <div className="p-6 sm:w-2/3">
+                    <h4 className="font-serif text-xl text-foreground mb-3">{t('tm7.accessories.garkorb.title')}</h4>
+                    <ul className="space-y-2">
+                      {(t('tm7.accessories.garkorb.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-muted-foreground">
+                          <span className="text-primary font-bold">✓</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -785,76 +706,142 @@ const TM7 = () => {
                         {t('tm7.accessories.modalTitle')}
                       </DialogTitle>
                     </DialogHeader>
-                    <div className="grid md:grid-cols-2 gap-6 mt-6">
-                      {/* Spatel */}
-                      <div className="bg-muted/30 rounded-xl overflow-hidden flex flex-col sm:flex-row">
-                        <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                          <img src={accessorySpatel} alt={t('tm7.accessories.compactSpatel.title')} className="h-24 object-contain" />
-                        </div>
-                        <div className="p-5 sm:w-2/3">
-                          <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactSpatel.title')}</h4>
-                          <ul className="space-y-1">
-                            {(t('tm7.accessories.compactSpatel.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
-                                <span className="text-primary font-bold">✓</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Schmetterlingsaufsatz */}
-                      <div className="bg-muted/30 rounded-xl overflow-hidden flex flex-col sm:flex-row">
-                        <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                          <img src={accessorySchmetterling} alt={t('tm7.accessories.compactSchmetterling.title')} className="h-24 object-contain" />
-                        </div>
-                        <div className="p-5 sm:w-2/3">
-                          <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactSchmetterling.title')}</h4>
-                          <ul className="space-y-1">
-                            {(t('tm7.accessories.compactSchmetterling.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
-                                <span className="text-primary font-bold">✓</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-
-                      {/* Varoma */}
-                      <div className="bg-muted/30 rounded-xl overflow-hidden flex flex-col sm:flex-row">
-                        <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                          <img src={accessoryVaroma} alt={t('tm7.accessories.compactVaroma.title')} className="h-24 object-contain" />
-                        </div>
-                        <div className="p-5 sm:w-2/3">
-                          <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.compactVaroma.title')}</h4>
-                          <ul className="space-y-1">
-                            {(t('tm7.accessories.compactVaroma.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
-                                <span className="text-primary font-bold">✓</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
+                    <div className="space-y-6 mt-6">
+                      {/* Sensor */}
+                      <div className="bg-muted/30 rounded-2xl overflow-hidden">
+                        <div className="grid lg:grid-cols-2 gap-6">
+                          <div className="p-6 flex flex-col justify-center">
+                            <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
+                              {t('tm7.accessories.sensor.tagline')}
+                            </span>
+                            <h3 className="font-serif text-xl lg:text-2xl text-foreground mb-3">
+                              {t('tm7.accessories.sensor.title')}
+                            </h3>
+                            <p className="text-muted-foreground italic mb-2 text-sm">
+                              {t('tm7.accessories.sensor.intro')}
+                            </p>
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              {t('tm7.accessories.sensor.description')}
+                            </p>
+                            <h4 className="font-semibold text-foreground mb-2 text-sm">
+                              {t('tm7.accessories.sensor.benefitsTitle')}
+                            </h4>
+                            <ul className="space-y-1 mb-4">
+                              {(t('tm7.accessories.sensor.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                                <li key={index} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                  <span className="text-primary font-bold">✓</span>
+                                  <span>{benefit}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            <p className="text-foreground font-medium mb-3 text-sm">
+                              {t('tm7.accessories.sensor.outro')}
+                            </p>
+                            <p className="text-xl font-bold text-primary">
+                              {t('tm7.accessories.sensor.price')}
+                            </p>
+                          </div>
+                          <div className="bg-white flex items-center justify-center p-6">
+                            <img 
+                              src={accessorySensor} 
+                              alt={t('tm7.accessories.sensor.title')} 
+                              className="max-h-48 object-contain"
+                            />
+                          </div>
                         </div>
                       </div>
 
-                      {/* Garkörbchen */}
-                      <div className="bg-muted/30 rounded-xl overflow-hidden flex flex-col sm:flex-row">
-                        <div className="bg-white p-4 flex items-center justify-center sm:w-1/3">
-                          <img src={accessoryGarkorb} alt={t('tm7.accessories.garkorb.title')} className="h-24 object-contain" />
+                      {/* Peeler */}
+                      <div className="bg-muted/30 rounded-2xl overflow-hidden">
+                        <div className="grid lg:grid-cols-2 gap-6">
+                          <div className="bg-white flex items-center justify-center p-6 order-2 lg:order-1">
+                            <img 
+                              src={accessoryPeeler} 
+                              alt={t('tm7.accessories.peeler.title')} 
+                              className="max-h-48 object-contain"
+                            />
+                          </div>
+                          <div className="p-6 flex flex-col justify-center order-1 lg:order-2">
+                            <span className="text-accent font-semibold text-sm uppercase tracking-wide mb-2">
+                              {t('tm7.accessories.peeler.tagline')}
+                            </span>
+                            <h3 className="font-serif text-xl lg:text-2xl text-foreground mb-3">
+                              {t('tm7.accessories.peeler.title')}
+                            </h3>
+                            <p className="text-muted-foreground mb-3 text-sm">
+                              {t('tm7.accessories.peeler.description')}
+                            </p>
+                            <div className="grid grid-cols-2 gap-4 mb-4">
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1 text-sm">{t('tm7.accessories.peeler.peelTitle')}</h4>
+                                <p className="text-muted-foreground text-xs">{t('tm7.accessories.peeler.peelText')}</p>
+                              </div>
+                              <div>
+                                <h4 className="font-semibold text-foreground mb-1 text-sm">{t('tm7.accessories.peeler.cookTitle')}</h4>
+                                <p className="text-muted-foreground text-xs">{t('tm7.accessories.peeler.cookText')}</p>
+                              </div>
+                            </div>
+                            <ul className="space-y-1 mb-4">
+                              {(t('tm7.accessories.peeler.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                                <li key={index} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                  <span className="text-primary font-bold">✓</span>
+                                  <span>{benefit}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            <p className="text-xl font-bold text-primary">
+                              {t('tm7.accessories.peeler.price')}
+                            </p>
+                          </div>
                         </div>
-                        <div className="p-5 sm:w-2/3">
-                          <h4 className="font-serif text-lg text-foreground mb-2">{t('tm7.accessories.garkorb.title')}</h4>
-                          <ul className="space-y-1">
-                            {(t('tm7.accessories.garkorb.checkmarks', { returnObjects: true }) as string[]).map((item, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-muted-foreground text-sm">
-                                <span className="text-primary font-bold">✓</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
+                      </div>
+
+                      {/* Gemüsestyler */}
+                      <div className="bg-muted/30 rounded-2xl overflow-hidden">
+                        <div className="grid lg:grid-cols-2 gap-6">
+                          <div className="p-6 flex flex-col justify-center">
+                            <h3 className="font-serif text-xl lg:text-2xl text-foreground mb-3">
+                              {t('tm7.accessories.gemuesestyler.title')}
+                            </h3>
+                            <p className="text-muted-foreground mb-3 text-sm">
+                              {t('tm7.accessories.gemuesestyler.description')}
+                            </p>
+                            <p className="text-muted-foreground mb-4 text-sm">
+                              {t('tm7.accessories.gemuesestyler.text')}
+                            </p>
+                            <h4 className="font-semibold text-foreground mb-2 text-sm">
+                              {t('tm7.accessories.gemuesestyler.idealTitle')}
+                            </h4>
+                            <ul className="space-y-1 mb-4">
+                              {(t('tm7.accessories.gemuesestyler.idealList', { returnObjects: true }) as string[]).map((item, index) => (
+                                <li key={index} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                  <span className="text-primary font-bold">•</span>
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            <ul className="space-y-1 mb-4">
+                              {(t('tm7.accessories.gemuesestyler.benefits', { returnObjects: true }) as string[]).map((benefit, index) => (
+                                <li key={index} className="flex items-start gap-2 text-muted-foreground text-sm">
+                                  <span className="text-primary font-bold">✓</span>
+                                  <span>{benefit}</span>
+                                </li>
+                              ))}
+                            </ul>
+                            <p className="text-muted-foreground italic mb-3 text-sm">
+                              {t('tm7.accessories.gemuesestyler.outro')}
+                            </p>
+                            <p className="text-xl font-bold text-primary">
+                              {t('tm7.accessories.gemuesestyler.price')}
+                            </p>
+                          </div>
+                          <div className="bg-white flex items-center justify-center p-6">
+                            <img 
+                              src={accessoryGemuesestyler} 
+                              alt={t('tm7.accessories.gemuesestyler.title')} 
+                              className="max-h-56 object-contain"
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
