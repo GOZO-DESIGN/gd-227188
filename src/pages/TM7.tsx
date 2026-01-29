@@ -49,7 +49,7 @@ import cookidoo2 from '@/assets/cookidoo-2.jpg';
 import cookidoo3 from '@/assets/cookidoo-3.jpg';
 
 // Accessory images
-import accessorySensor from '@/assets/accessory-sensor.png';
+import accessorySensor from '@/assets/accessory-sensor-new.jpg';
 import accessoryPeeler from '@/assets/accessory-peeler.png';
 import accessoryGemuesestyler from '@/assets/accessory-gemuesestyler.jpg';
 import accessorySpatel from '@/assets/accessory-spatel-new.jpg';
