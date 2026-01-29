@@ -223,6 +223,28 @@ const BenefitsSection = () => {
         </div>
       </div>
 
+      {/* CTA - moved here after intro */}
+      <div className="section-padding" ref={ctaRef}>
+        <div className={`container-narrow transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 lg:p-12 text-center">
+            <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
+              {t('benefits.cta.title')}
+            </h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+              {t('benefits.cta.subtitle')}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" variant="outline" className="text-base">
+                <Link to="/tm7">{t('benefits.cta.buttonSecondary')}</Link>
+              </Button>
+              <Button asChild size="lg" className="text-base">
+                <Link to="/beratung">{t('benefits.cta.buttonPrimary')}</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* MEHR ZEIT IM ALLTAG */}
       <div className="section-padding bg-secondary/30" ref={timeRef}>
         <div className={`container-narrow transition-all duration-700 ${timeVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -377,27 +399,6 @@ const BenefitsSection = () => {
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="section-padding" ref={ctaRef}>
-        <div className={`container-narrow transition-all duration-700 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-3xl p-8 lg:p-12 text-center">
-            <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-foreground mb-4">
-              {t('benefits.cta.title')}
-            </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              {t('benefits.cta.subtitle')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="outline" className="text-base">
-                <Link to="/tm7">{t('benefits.cta.buttonSecondary')}</Link>
-              </Button>
-              <Button asChild size="lg" className="text-base">
-                <Link to="/beratung">{t('benefits.cta.buttonPrimary')}</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>;
 };
 export default BenefitsSection;
