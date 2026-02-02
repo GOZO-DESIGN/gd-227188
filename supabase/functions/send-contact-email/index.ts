@@ -84,8 +84,8 @@ const handler = async (req: Request): Promise<Response> => {
     const formattedTime = preferredTime ? timeLabels[preferredTime] || preferredTime : 'Nicht angegeben';
     const formattedService = serviceLabels[service] || service;
     
-    const logoUrl = "https://mybeigwjyoacyrdblbgm.supabase.co/storage/v1/object/public/email-assets/logo.svg?v=1";
-    const primaryColor = "#00ac46";
+    const logoUrl = "https://mybeigwjyoacyrdblbgm.supabase.co/storage/v1/object/public/email-assets/logo.png";
+    const primaryColor = "#14AD48";
 
     const emailHtml = `
       <!DOCTYPE html>
