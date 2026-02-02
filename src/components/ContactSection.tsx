@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Phone, Mail, MapPin, Send, ChevronRight, ChevronLeft, Calendar, Check } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, ChevronRight, ChevronLeft, Calendar, Check, Loader2 } from 'lucide-react';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 const ContactSection = () => {
   const { t } = useTranslation();
@@ -18,6 +20,7 @@ const ContactSection = () => {
     consent: false,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const serviceOptions = [
     { id: 'showkochen', label: t('contact.form.services.showkochen') },
@@ -65,10 +68,27 @@ const ContactSection = () => {
     setStep(step - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validateStep(4)) {
-      alert(t('contact.form.successMessage'));
+    if (!validateStep(4)) return;
+
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          service: formData.service,
+          preferredDate: formData.preferredDate,
+          preferredTime: formData.preferredTime,
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+        },
+      });
+
+      if (error) throw error;
+
+      toast.success(t('contact.form.successMessage'));
       setStep(1);
       setFormData({
         service: '',
@@ -80,6 +100,11 @@ const ContactSection = () => {
         message: '',
         consent: false,
       });
+    } catch (err) {
+      console.error('Error sending contact form:', err);
+      toast.error(t('contact.form.errorMessage'));
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -204,7 +229,7 @@ const ContactSection = () => {
                       </label>
                     ))}
                   </div>
-                  {errors.service && <p className="text-red-500 text-sm">{errors.service}</p>}
+                   {errors.service && <p className="text-destructive text-sm">{errors.service}</p>}
                 </div>
               )}
 
@@ -268,7 +293,7 @@ const ContactSection = () => {
                       className={inputClass}
                       maxLength={100}
                     />
-                    {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                     {errors.name && <p className="text-destructive text-sm mt-1">{errors.name}</p>}
                   </div>
 
                   <div>
@@ -283,7 +308,7 @@ const ContactSection = () => {
                       className={inputClass}
                       maxLength={20}
                     />
-                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                     {errors.phone && <p className="text-destructive text-sm mt-1">{errors.phone}</p>}
                   </div>
 
                   <div>
@@ -298,7 +323,7 @@ const ContactSection = () => {
                       className={inputClass}
                       maxLength={255}
                     />
-                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                     {errors.email && <p className="text-destructive text-sm mt-1">{errors.email}</p>}
                   </div>
                 </div>
               )}
@@ -336,7 +361,7 @@ const ContactSection = () => {
                         {t('contact.form.consent')}
                       </span>
                     </label>
-                    {errors.consent && <p className="text-red-500 text-sm">{errors.consent}</p>}
+                     {errors.consent && <p className="text-destructive text-sm">{errors.consent}</p>}
                     
                     <p className="text-sm text-muted-foreground">
                       {t('contact.form.privacyText')}{' '}
@@ -373,13 +398,18 @@ const ContactSection = () => {
                     <ChevronRight className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 ) : (
-                  <button
-                    type="submit"
+                   <button
+                     type="submit"
+                     disabled={isSubmitting}
                     className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-sm sm:text-base
-                      transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group"
+                      transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                   >
-                    <span className="truncate">{t('contact.form.submit')}</span>
-                    <Send className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                     <span className="truncate">{t('contact.form.submit')}</span>
+                     {isSubmitting ? (
+                       <Loader2 className="w-4 h-4 flex-shrink-0 animate-spin" />
+                     ) : (
+                       <Send className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                     )}
                   </button>
                 )}
               </div>
