@@ -152,7 +152,7 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Sending contact email to steven@buenger-web.de");
 
     const emailResponse = await resend.emails.send({
-      from: "Mix mit Prager <noreply@mixmitprager.at>",
+      from: "Mix mit Prager <office@mixmitprager.at>",
       to: ["steven@buenger-web.de"],
       reply_to: email,
       subject: `Neue Anfrage: ${formattedService} von ${name}`,
@@ -203,7 +203,7 @@ const handler = async (req: Request): Promise<Response> => {
     `;
 
     await resend.emails.send({
-      from: "Mix mit Prager <noreply@mixmitprager.at>",
+      from: "Mix mit Prager <office@mixmitprager.at>",
       to: [email],
       subject: "Ihre Anfrage bei Mix mit Prager",
       html: confirmationHtml,
