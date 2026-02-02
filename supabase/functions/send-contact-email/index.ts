@@ -83,6 +83,9 @@ const handler = async (req: Request): Promise<Response> => {
     
     const formattedTime = preferredTime ? timeLabels[preferredTime] || preferredTime : 'Nicht angegeben';
     const formattedService = serviceLabels[service] || service;
+    
+    const logoUrl = "https://mybeigwjyoacyrdblbgm.supabase.co/storage/v1/object/public/email-assets/logo.svg?v=1";
+    const primaryColor = "#00ac46";
 
     const emailHtml = `
       <!DOCTYPE html>
@@ -90,19 +93,22 @@ const handler = async (req: Request): Promise<Response> => {
       <head>
         <meta charset="utf-8">
         <style>
-          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; }
-          .header { background: linear-gradient(135deg, #4A7C59 0%, #8B7355 100%); color: white; padding: 30px; text-align: center; }
-          .content { padding: 30px; background: #f9f9f9; }
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; background: #f5f5f5; }
+          .header { background: ${primaryColor}; color: white; padding: 30px; text-align: center; }
+          .logo { max-width: 200px; height: auto; margin-bottom: 15px; }
+          .content { padding: 30px; background: #ffffff; }
           .field { margin-bottom: 20px; }
-          .label { font-weight: bold; color: #4A7C59; display: block; margin-bottom: 5px; }
-          .value { background: white; padding: 12px; border-radius: 6px; border-left: 3px solid #4A7C59; }
-          .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
+          .label { font-weight: bold; color: ${primaryColor}; display: block; margin-bottom: 5px; font-size: 14px; }
+          .value { background: #f9f9f9; padding: 12px; border-radius: 6px; border-left: 3px solid ${primaryColor}; }
+          .value a { color: ${primaryColor}; text-decoration: none; }
+          .value a:hover { text-decoration: underline; }
+          .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; background: #f5f5f5; }
         </style>
       </head>
       <body>
         <div class="header">
-          <h1 style="margin: 0;">Neue Kontaktanfrage</h1>
-          <p style="margin: 10px 0 0 0; opacity: 0.9;">Mix mit Prager - Thermomix Beratung</p>
+          <img src="${logoUrl}" alt="Mix mit Prager Logo" class="logo" />
+          <h1 style="margin: 0; font-size: 24px;">Neue Kontaktanfrage</h1>
         </div>
         <div class="content">
           <div class="field">
@@ -137,7 +143,7 @@ const handler = async (req: Request): Promise<Response> => {
           ` : ''}
         </div>
         <div class="footer">
-          <p>Diese Nachricht wurde über das Kontaktformular auf mixmitprager.at gesendet.</p>
+          <p>Diese Nachricht wurde über das Kontaktformular auf <a href="https://mixmitprager.at" style="color: ${primaryColor};">mixmitprager.at</a> gesendet.</p>
         </div>
       </body>
       </html>
@@ -162,26 +168,35 @@ const handler = async (req: Request): Promise<Response> => {
       <head>
         <meta charset="utf-8">
         <style>
-          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; }
-          .header { background: linear-gradient(135deg, #4A7C59 0%, #8B7355 100%); color: white; padding: 30px; text-align: center; }
-          .content { padding: 30px; background: #f9f9f9; }
-          .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
+          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; background: #f5f5f5; }
+          .header { background: ${primaryColor}; color: white; padding: 30px; text-align: center; }
+          .logo { max-width: 200px; height: auto; margin-bottom: 15px; }
+          .content { padding: 30px; background: #ffffff; }
+          .content p { margin: 0 0 15px 0; }
+          .content strong { color: ${primaryColor}; }
+          .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; background: #f5f5f5; }
+          .footer a { color: ${primaryColor}; text-decoration: none; }
+          .footer a:hover { text-decoration: underline; }
         </style>
       </head>
       <body>
         <div class="header">
-          <h1 style="margin: 0;">Vielen Dank für Ihre Anfrage!</h1>
+          <img src="${logoUrl}" alt="Mix mit Prager Logo" class="logo" />
+          <h1 style="margin: 0; font-size: 24px;">Vielen Dank für deine Anfrage!</h1>
         </div>
         <div class="content">
-          <p>Liebe/r ${name},</p>
-          <p>vielen Dank für Ihre Anfrage zum Thema <strong>${formattedService}</strong>.</p>
-          <p>Ich habe Ihre Nachricht erhalten und werde mich so schnell wie möglich bei Ihnen melden.</p>
-          <p>Mit freundlichen Grüßen,<br>Bernhard Prager<br>Ihr Thermomix Berater</p>
+          <p>Hallo ${name},</p>
+          <p>vielen Dank für deine Anfrage zum Thema <strong>${formattedService}</strong>.</p>
+          <p>Ich habe deine Nachricht erhalten und werde mich so schnell wie möglich bei dir melden.</p>
+          <p style="margin-top: 25px;">Mit freundlichen Grüßen,<br><strong>Bernhard Prager</strong><br>Dein Thermomix® Berater</p>
         </div>
         <div class="footer">
-          <p>Mix mit Prager - Thermomix Beratung<br>
-          <a href="tel:+436763979250">+43 676 397 9250</a> | <a href="mailto:office@mixmitprager.at">office@mixmitprager.at</a><br>
-          <a href="https://mixmitprager.at">www.mixmitprager.at</a></p>
+          <p><strong>Mix mit Prager</strong> - Thermomix® Beratung</p>
+          <p>
+            <a href="tel:+436763979250">+43 676 397 9250</a> | 
+            <a href="mailto:office@mixmitprager.at">office@mixmitprager.at</a>
+          </p>
+          <p><a href="https://mixmitprager.at">www.mixmitprager.at</a></p>
         </div>
       </body>
       </html>
