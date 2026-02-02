@@ -44,6 +44,39 @@ const Index = () => {
     );
   }
 
+  // JSON-LD Schema for Local Business
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mix mit Prager - Thermomix Beratung",
+    "description": "Zertifizierter Thermomix Berater in Wien, Niederösterreich und Burgenland. Showkochen, persönliche Beratung und TM7 Vorführungen.",
+    "url": "https://mixmitprager.at",
+    "telephone": "+43 123 456 789",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Wien",
+      "addressRegion": "Wien",
+      "addressCountry": "AT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "48.2082",
+      "longitude": "16.3738"
+    },
+    "areaServed": [
+      { "@type": "State", "name": "Wien" },
+      { "@type": "State", "name": "Niederösterreich" },
+      { "@type": "State", "name": "Burgenland" }
+    ],
+    "priceRange": "€€",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -56,7 +89,11 @@ const Index = () => {
         <meta property="og:title" content={t('seo.index.title')} />
         <meta property="og:description" content={t('seo.index.description')} />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://kochmitthermo21.de" />
+        <meta property="og:url" content="https://mixmitprager.at/" />
+        <link rel="canonical" href="https://mixmitprager.at/" />
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessSchema)}
+        </script>
       </Helmet>
 
       <div className="min-h-screen bg-background overflow-x-hidden">
