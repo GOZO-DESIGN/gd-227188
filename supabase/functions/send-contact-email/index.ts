@@ -149,11 +149,11 @@ const handler = async (req: Request): Promise<Response> => {
       </html>
     `;
 
-    console.log("Sending contact email to steven@buenger-web.de");
+    console.log("Sending contact email to office@mixmitprager.at");
 
     const emailResponse = await resend.emails.send({
       from: "Mix mit Prager <office@mixmitprager.at>",
-      to: ["steven@buenger-web.de"],
+      to: ["office@mixmitprager.at"],
       reply_to: email,
       subject: `Neue Anfrage: ${formattedService} von ${name}`,
       html: emailHtml,
