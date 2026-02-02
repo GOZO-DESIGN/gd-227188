@@ -404,9 +404,9 @@
     },
     "accessories": {
       "tagline": "Zubehör",
-      "title": "Mehr Möglichkeiten mit dem passenden Zubehör für deinen TM7",
-      "subtitle": "Mit dem richtigen Zubehör wird dein TM7 noch vielseitiger.",
-      "intro": "Ob präzises Garen, schnelleres Vorbereiten oder cleveres Dämpfen – diese kompatiblen Erweiterungen holen noch mehr aus deinem Kocherlebnis heraus.",
+      "title": "Standardzubehör – bereits im Paket enthalten",
+      "subtitle": "Diese praktischen Helfer sind im Lieferumfang deines TM7 bereits dabei.",
+      "intro": "Damit bist du von Anfang an bestens ausgestattet für deine ersten Kochabenteuer.",
       "sensor": {
         "title": "Der Thermomix® Sensor (TM7 / TM6)",
         "tagline": "PUNKTGENAU GAREN – GANZ ENTSPANNT",
@@ -539,7 +539,8 @@
         ]
       },
       "moreButton": "Mehr Zubehör entdecken",
-      "modalTitle": "Weiteres Standardzubehör"
+      "modalTitle": "Mehr Möglichkeiten mit dem passenden Zubehör für deinen TM7",
+      "modalSubtitle": "Mit dem richtigen Zubehör wird dein TM7 noch vielseitiger. Ob präzises Garen, schnelleres Vorbereiten oder cleveres Dämpfen – diese kompatiblen Erweiterungen holen noch mehr aus deinem Kocherlebnis heraus."
     },
     "comparison": {
       "tagline": "Der Unterschied",
