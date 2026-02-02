@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Phone, Mail, MapPin, Send, ChevronRight, ChevronLeft, Calendar, Check } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, ChevronRight, ChevronLeft, Calendar, Check, Loader2 } from 'lucide-react';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
+import { supabase } from '@/integrations/supabase/client';
+import { toast } from 'sonner';
 
 interface ContactCTAProps {
   className?: string;
@@ -22,6 +24,7 @@ const ContactCTA = ({ className = '' }: ContactCTAProps) => {
     consent: false,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const serviceOptions = [
     { id: 'showkochen', label: t('contact.form.services.showkochen') },
@@ -69,10 +72,27 @@ const ContactCTA = ({ className = '' }: ContactCTAProps) => {
     setStep(step - 1);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validateStep(4)) {
-      alert(t('contact.form.successMessage'));
+    if (!validateStep(4)) return;
+
+    setIsSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          service: formData.service,
+          preferredDate: formData.preferredDate,
+          preferredTime: formData.preferredTime,
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+        },
+      });
+
+      if (error) throw error;
+
+      toast.success(t('contact.form.successMessage'));
       setStep(1);
       setFormData({
         service: '',
@@ -84,6 +104,11 @@ const ContactCTA = ({ className = '' }: ContactCTAProps) => {
         message: '',
         consent: false,
       });
+    } catch (error) {
+      console.error('Error sending contact form:', error);
+      toast.error(t('contact.form.errorMessage'));
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -379,11 +404,21 @@ const ContactCTA = ({ className = '' }: ContactCTAProps) => {
                 ) : (
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-medium text-sm sm:text-base
-                      transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group"
+                      transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                   >
-                    <span className="truncate">{t('contact.form.submit')}</span>
-                    <Send className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 flex-shrink-0 animate-spin" />
+                        <span className="truncate">Wird gesendet...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="truncate">{t('contact.form.submit')}</span>
+                        <Send className="w-4 h-4 flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
+                      </>
+                    )}
                   </button>
                 )}
               </div>

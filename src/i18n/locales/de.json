@@ -725,6 +725,7 @@
       "next": "Weiter",
       "submit": "Abschicken",
       "successMessage": "Vielen Dank für deine Anfrage! Ich melde mich in Kürze bei dir.",
+      "errorMessage": "Es ist ein Fehler aufgetreten. Bitte versuche es später erneut oder kontaktiere mich direkt.",
       "errors": {
         "serviceRequired": "Bitte wähle eine Option aus.",
         "nameRequired": "Name ist erforderlich.",
