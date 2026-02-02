@@ -701,10 +701,13 @@ const TM7 = () => {
                     </Button>
                   </DialogTrigger>
                   <DialogContent className="max-w-4xl max-h-[85vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="font-serif text-2xl text-center">
+                    <DialogHeader className="text-center">
+                      <DialogTitle className="font-serif text-2xl">
                         {t('tm7.accessories.modalTitle')}
                       </DialogTitle>
+                      <p className="text-muted-foreground mt-2">
+                        {t('tm7.accessories.modalSubtitle')}
+                      </p>
                     </DialogHeader>
                     <div className="space-y-6 mt-6">
                       {/* Sensor */}
