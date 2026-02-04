@@ -18,12 +18,20 @@ const BlogCard = ({ post, index }: { post: typeof blogPosts[0]; index: number })
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {post.featuredImage && (
-        <Link to={`/blog/${post.slug}`} className="block overflow-hidden bg-muted/30">
-          <div className="aspect-[4/3] flex items-center justify-center">
+        <Link to={`/blog/${post.slug}`} className="block overflow-hidden">
+          <div className="aspect-[4/3] relative">
+            {/* Blurred background image */}
+            <img
+              src={post.featuredImage}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover blur-xl scale-110 opacity-60"
+            />
+            {/* Main image */}
             <img
               src={post.featuredImage}
               alt={post.title}
-              className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+              className="relative w-full h-full object-contain hover:scale-105 transition-transform duration-500"
             />
           </div>
         </Link>
