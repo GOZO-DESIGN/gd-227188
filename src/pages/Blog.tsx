@@ -110,9 +110,11 @@ const Blog = () => {
           {/* Blog Posts Grid */}
           <section className="container-narrow">
             <div className="grid md:grid-cols-2 gap-8">
-              {blogPosts.map((post, index) => (
-                <BlogCard key={post.id} post={post} index={index} />
-              ))}
+              {[...blogPosts]
+                .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+                .map((post, index) => (
+                  <BlogCard key={post.id} post={post} index={index} />
+                ))}
             </div>
           </section>
         </main>
