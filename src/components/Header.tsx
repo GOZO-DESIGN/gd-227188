@@ -103,7 +103,7 @@ const Header = () => {
           <Link to="/" className="hover:opacity-80 transition-all duration-300">
             <img 
               src={logo} 
-              alt="kochmitthermo21 Logo" 
+              alt="Bernhard Prager - Thermomix Berater Logo" 
               className={`w-auto transition-all duration-300 ${isScrolled ? 'h-14 md:h-16' : 'h-20 md:h-28'}`} 
             />
           </Link>

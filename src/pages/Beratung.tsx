@@ -179,7 +179,7 @@ const Beratung = () => {
   return (
     <>
       <Helmet>
-        <title>Beratung - Mein Rundum-Sorglos-Paket | kochmitthermo21</title>
+        <title>Beratung - Mein Rundum-Sorglos-Paket | Bernhard Prager</title>
         <meta name="description" content={t('beratung.together')} />
       </Helmet>
 
