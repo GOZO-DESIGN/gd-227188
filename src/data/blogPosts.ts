@@ -1,6 +1,7 @@
 // Blog posts data
 import blogBaby1 from '@/assets/blog-baby-1.jpg';
 import blogBaby2 from '@/assets/blog-baby-2.jpg';
+import blogBabyBottles from '@/assets/blog-baby-bottles.jpg';
 import blogDampfgaren from '@/assets/blog-dampfgaren-icon.jpg';
 import blogDisplay from '@/assets/blog-display.jpg';
 
@@ -126,7 +127,7 @@ Und das reicht gerade völlig.
     subtitle: 'Fläschchen sterilisieren',
     date: '2025-02-04',
     excerpt: 'Wenn ein paar Abläufe einfach funktionieren, wird der Alltag spürbar ruhiger. Gerade mit drei Kindern ist das kein Luxus, sondern notwendig.',
-    featuredImage: blogDisplay,
+    featuredImage: blogBabyBottles,
     content: `Im ersten Beitrag habe ich geschrieben, dass mit Baby nichts perfekt läuft.
 
 Das stimmt noch immer.
