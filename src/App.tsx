@@ -11,6 +11,8 @@ import Showkochen from "./pages/Showkochen";
 import Beratung from "./pages/Beratung";
 import Galerie from "./pages/Galerie";
 import Team from "./pages/Team";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
@@ -35,6 +37,8 @@ const App = () => (
           <Route path="/beratung" element={<Beratung />} />
           <Route path="/galerie" element={<Galerie />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/agb" element={<AGB />} />
