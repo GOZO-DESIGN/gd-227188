@@ -92,6 +92,7 @@ const Header = () => {
     { label: t('nav.beratung'), href: '/beratung' },
     { label: t('nav.galerie'), href: '/galerie' },
     { label: t('nav.team'), href: '/team' },
+    { label: t('nav.blog'), href: '/blog' },
   ];
 
   return (
