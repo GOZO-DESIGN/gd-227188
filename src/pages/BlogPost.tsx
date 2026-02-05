@@ -232,22 +232,27 @@ const BlogPost = () => {
               {renderContent(post.content)}
             </div>
 
-            {/* Like Button */}
-            <div className="mt-10 flex justify-center">
-              <BlogLikeButton slug={post.slug} />
-            </div>
-
             {/* Images Gallery */}
             {post.images && post.images.length > 0 && (
-              <div className="mt-12 space-y-8">
-                <h3 className="text-xl font-semibold text-foreground">Bilder</h3>
-                <div className="grid gap-6">
+              <div className="mt-8 mb-10">
+                <div className="grid grid-cols-3 gap-3">
                   {post.images.map((image, index) => (
                     <figure key={index} className="rounded-xl overflow-hidden">
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-auto"
+                        className="w-full h-32 md:h-40 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Like Button */}
+            <div className="mt-10 flex justify-center">
+              <BlogLikeButton slug={post.slug} />
+            </div>
                       />
                       {image.caption && (
                         <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">
