@@ -148,6 +148,44 @@ const BlogPost = () => {
           </p>
         );
       }
+      // Steps flow (lines with → arrows)
+      else if (trimmedLine.includes('→') && trimmedLine.split('→').length >= 3) {
+        flushList();
+        flushOrderedList();
+        const steps = trimmedLine.split('→').map(s => s.trim());
+        elements.push(
+          <div key={index} className="my-8">
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3">
+              {steps.map((step, i) => (
+                <div key={i} className="flex items-center gap-2 md:gap-3">
+                  <div className="bg-primary/10 border border-primary/20 rounded-xl px-3 py-2 md:px-4 md:py-3">
+                    <span className="text-foreground font-medium text-sm md:text-base">{step}</span>
+                  </div>
+                  {i < steps.length - 1 && (
+                    <span className="text-primary font-bold text-lg md:text-xl">→</span>
+                  )}
+                </div>
+              ))}
+            </div>
+            {/* Images Gallery inline after steps */}
+            {post.images && post.images.length > 0 && (
+              <div className="mt-6">
+                <div className="grid grid-cols-3 gap-3">
+                  {post.images.map((image, imgIndex) => (
+                    <figure key={imgIndex} className="rounded-xl overflow-hidden bg-muted/30">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        className="w-full h-24 md:h-32 object-contain hover:scale-105 transition-transform duration-300"
+                      />
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      }
       // Regular paragraphs (with inline parsing for links and bold)
       else if (trimmedLine) {
         flushList();
