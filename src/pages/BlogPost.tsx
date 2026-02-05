@@ -172,11 +172,11 @@ const BlogPost = () => {
               <div className="mt-6">
                 <div className="grid grid-cols-3 gap-3">
                   {post.images.map((image, imgIndex) => (
-                    <figure key={imgIndex} className="rounded-xl overflow-hidden bg-muted/30">
+                    <figure key={imgIndex} className="rounded-xl overflow-hidden">
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-24 md:h-32 object-contain hover:scale-105 transition-transform duration-300"
+                        className="w-full h-40 md:h-56 object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </figure>
                   ))}
