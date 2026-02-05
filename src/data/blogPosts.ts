@@ -5,6 +5,9 @@ import blogBabyBottles from '@/assets/blog-baby-bottles.jpg';
 import blogDampfgaren from '@/assets/blog-dampfgaren-icon.jpg';
 import blogDisplay from '@/assets/blog-display.jpg';
 import blogOnepotPasta from '@/assets/blog-onepot-pasta.jpg';
+import blogOnepotSpaghetti from '@/assets/blog-onepot-spaghetti.jpg';
+import blogOnepotThermomix from '@/assets/blog-onepot-thermomix.jpg';
+import blogOnepotSauce from '@/assets/blog-onepot-sauce.jpg';
 
 export interface BlogPost {
   id: string;
@@ -260,7 +263,24 @@ Wenn die Großen aus dem Kindergarten kommen, steht das Essen schon da.
 Warm — Fertig — Ohne Stress
 </highlight>
 
-[Hier geht's zur One-Pot-Kollektion von Cookidoo](https://cookidoo.at/search/de-AT?query=one%20pot&countries=at&context=recipes)`
+[Hier geht's zur One-Pot-Kollektion von Cookidoo](https://cookidoo.at/search/de-AT?query=one%20pot&countries=at&context=recipes)`,
+    images: [
+      {
+        src: blogOnepotThermomix,
+        alt: 'Thermomix TM7 mit Spaghetti im Mixtopf',
+        caption: 'Nudeln rein – der Rest erledigt sich von selbst'
+      },
+      {
+        src: blogOnepotSauce,
+        alt: 'Frische Tomatensauce im Thermomix',
+        caption: 'Die Sauce köchelt gleichmäßig vor sich hin'
+      },
+      {
+        src: blogOnepotSpaghetti,
+        alt: 'Fertige Spaghetti im Mixtopf',
+        caption: 'Alles in einem Topf – fertig!'
+      }
+    ]
   }
 ];
 
