@@ -198,6 +198,11 @@ const BlogPost = () => {
               {renderContent(post.content)}
             </div>
 
+            {/* Like Button */}
+            <div className="mt-10 flex justify-center">
+              <BlogLikeButton slug={post.slug} />
+            </div>
+
             {/* Images Gallery */}
             {post.images && post.images.length > 0 && (
               <div className="mt-12 space-y-8">
