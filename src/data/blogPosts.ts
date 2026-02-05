@@ -237,9 +237,7 @@ Gerade diese Gerichte geben mir genau das zurück: **Zeit und Gelassenheit**.
 
 ## So einfach geht's
 
-<steps>
 Zutaten kurz vorbereiten → Alles in den Mixtopf geben → Starten → Mich um die Kleine kümmern
-</steps>
 
 **Der Thermomix erledigt hier den Rest. Rührt, kocht, passt auf – und ich muss nicht ständig danebenstehen.**
 
