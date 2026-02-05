@@ -21,6 +21,53 @@ const BlogPost = () => {
   const prevPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
   const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
 
+  // Parse inline markdown (links, bold)
+  const parseInlineMarkdown = (text: string): (string | JSX.Element)[] => {
+    const elements: (string | JSX.Element)[] = [];
+    // Match markdown links [text](url) and bold **text**
+    const regex = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
+    let lastIndex = 0;
+    let match;
+
+    while ((match = regex.exec(text)) !== null) {
+      // Add text before match
+      if (match.index > lastIndex) {
+        elements.push(text.slice(lastIndex, match.index));
+      }
+
+      if (match[1] && match[2]) {
+        // Link: [text](url)
+        elements.push(
+          <a
+            key={`link-${match.index}`}
+            href={match[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline font-medium"
+          >
+            {match[1]}
+          </a>
+        );
+      } else if (match[3]) {
+        // Bold: **text**
+        elements.push(
+          <strong key={`bold-${match.index}`} className="text-foreground font-semibold">
+            {match[3]}
+          </strong>
+        );
+      }
+
+      lastIndex = regex.lastIndex;
+    }
+
+    // Add remaining text
+    if (lastIndex < text.length) {
+      elements.push(text.slice(lastIndex));
+    }
+
+    return elements.length > 0 ? elements : [text];
+  };
+
   // Convert markdown-like content to JSX
   const renderContent = (content: string) => {
     const lines = content.split('\n');
@@ -35,7 +82,7 @@ const BlogPost = () => {
         elements.push(
           <ul key={`ul-${elements.length}`} className="list-disc list-inside space-y-2 mb-6 text-muted-foreground">
             {listItems.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>{parseInlineMarkdown(item)}</li>
             ))}
           </ul>
         );
@@ -49,7 +96,7 @@ const BlogPost = () => {
         elements.push(
           <ol key={`ol-${elements.length}`} className="list-decimal list-inside space-y-2 mb-6 text-muted-foreground">
             {orderedListItems.map((item, i) => (
-              <li key={i}>{item}</li>
+              <li key={i}>{parseInlineMarkdown(item)}</li>
             ))}
           </ol>
         );
@@ -92,7 +139,7 @@ const BlogPost = () => {
         orderedListItems.push(trimmedLine.replace(/^\d+\.\s/, ''));
       }
       // Italic text (entire line)
-      else if (trimmedLine.startsWith('*') && trimmedLine.endsWith('*')) {
+      else if (trimmedLine.startsWith('*') && trimmedLine.endsWith('*') && !trimmedLine.includes('**')) {
         flushList();
         flushOrderedList();
         elements.push(
@@ -101,26 +148,13 @@ const BlogPost = () => {
           </p>
         );
       }
-      // Bold text handling
-      else if (trimmedLine.includes('**')) {
-        flushList();
-        flushOrderedList();
-        const parts = trimmedLine.split(/\*\*(.*?)\*\*/g);
-        elements.push(
-          <p key={index} className="text-muted-foreground mb-4 leading-relaxed">
-            {parts.map((part, i) => 
-              i % 2 === 1 ? <strong key={i} className="text-foreground font-semibold">{part}</strong> : part
-            )}
-          </p>
-        );
-      }
-      // Regular paragraphs
+      // Regular paragraphs (with inline parsing for links and bold)
       else if (trimmedLine) {
         flushList();
         flushOrderedList();
         elements.push(
           <p key={index} className="text-muted-foreground mb-4 leading-relaxed">
-            {trimmedLine}
+            {parseInlineMarkdown(trimmedLine)}
           </p>
         );
       }
