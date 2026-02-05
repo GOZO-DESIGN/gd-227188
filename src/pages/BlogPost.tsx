@@ -270,22 +270,6 @@ const BlogPost = () => {
               {renderContent(post.content)}
             </div>
 
-            {/* Images Gallery */}
-            {post.images && post.images.length > 0 && (
-              <div className="mt-8 mb-10">
-                <div className="grid grid-cols-3 gap-3">
-                  {post.images.map((image, index) => (
-                    <figure key={index} className="rounded-xl overflow-hidden">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="w-full h-32 md:h-40 object-contain hover:scale-105 transition-transform duration-300"
-                      />
-                    </figure>
-                  ))}
-                </div>
-              </div>
-            )}
 
             {/* Like Button */}
             <div className="mt-10 flex justify-center">
