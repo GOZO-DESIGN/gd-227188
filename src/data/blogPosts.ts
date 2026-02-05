@@ -5,6 +5,9 @@ import blogBabyBottles from '@/assets/blog-baby-bottles.jpg';
 import blogDampfgaren from '@/assets/blog-dampfgaren-icon.jpg';
 import blogDisplay from '@/assets/blog-display.jpg';
 import blogOnepotPasta from '@/assets/blog-onepot-pasta.jpg';
+import blogOnepotSpaghetti from '@/assets/blog-onepot-spaghetti.jpg';
+import blogOnepotThermomix from '@/assets/blog-onepot-thermomix.jpg';
+import blogOnepotSauce from '@/assets/blog-onepot-sauce.jpg';
 
 export interface BlogPost {
   id: string;
