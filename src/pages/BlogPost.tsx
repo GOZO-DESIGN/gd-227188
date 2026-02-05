@@ -221,7 +221,7 @@ const BlogPost = () => {
         <Header />
 
         <main className="pt-32 pb-20">
-          <article className="container-narrow max-w-3xl mx-auto">
+          <article className="container-narrow max-w-3xl mx-auto px-4 md:px-6">
             {/* Back Link */}
             <Link
               to="/blog"
