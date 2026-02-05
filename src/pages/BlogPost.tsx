@@ -241,7 +241,7 @@ const BlogPost = () => {
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-32 md:h-40 object-cover hover:scale-105 transition-transform duration-300"
+                        className="w-full h-32 md:h-40 object-contain hover:scale-105 transition-transform duration-300"
                       />
                     </figure>
                   ))}
