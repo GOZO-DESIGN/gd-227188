@@ -203,6 +203,64 @@ Gerade mit Baby (und noch zwei größeren Kindern) ist es angenehm, wenn dieser 
         caption: 'Mehr Zeit für das, was zählt'
       }
     ]
+  },
+  {
+    id: '3',
+    slug: 'one-pot-gerichte-wenn-ruhe-einkehrt',
+    title: 'One-Pot-Gerichte! Wenn Ruhe einkehrt und trotzdem etwas Gutes am Tisch steht',
+    date: '2025-02-05',
+    excerpt: 'Nur ich und die Kleine daheim… Und genau diese Momente sind es, in denen Kochen plötzlich wieder einfach sein muss. Kein großes Vorbereiten, kein Ständiges Danebenstehen.',
+    featuredImage: blogOnepotPasta,
+    content: `Die beiden Großen waren heute im Kindergarten. Unsere Wohnung war, für einen kurzen Moment, ungewohnt ruhig.
+
+Nur ich und die Kleine daheim… Und genau diese Momente sind es, in denen Kochen plötzlich wieder einfach sein muss. Jedoch heute anders:
+
+Kein großes Vorbereiten, kein Ständiges Danebenstehen, kein Topfwechsel-Abwasch-Marathon. Ein Auge bei meiner Tochter, eines beim Essen – und am besten beides entspannt.
+
+Und hier bringen die One-Pot-Gerichte im Thermomix einen einmaligen Vorteil.
+
+## Was ich an One-Pot-Gerichten wirklich liebe!
+
+- Alles kommt in einen Topf
+- Kein Hin und Her, keine fünf Töpfe am Herd, kein Stress
+
+Gerade wenn man mit einem Baby zu Hause ist, merkt man schnell:
+
+- Zeit ist knapp
+- Hände sind oft nicht frei
+- und Ruhe ist ein Luxus ;-)
+
+Gerade diese Gerichte geben mir genau das zurück: **Zeit und Gelassenheit**.
+
+## So einfach geht's
+
+<steps>
+Zutaten kurz vorbereiten → Alles in den Mixtopf geben → Starten → Mich um die Kleine kümmern
+</steps>
+
+**Der Thermomix erledigt hier den Rest. Rührt, kocht, passt auf – und ich muss nicht ständig danebenstehen.**
+
+## Was mir besonders wichtig hier zu sagen ist:
+
+### One-Pot heißt nicht langweilig!
+
+Im Gegenteil.
+
+Ob Pasta, Reisgerichte oder sanfte Familiengerichte, alles wird…
+
+- Gleichmäßig gegart
+- Voller Geschmack
+- und wunderbar cremig
+
+## Und das Beste:
+
+Wenn die Großen aus dem Kindergarten kommen, steht das Essen schon da.
+
+<highlight>
+Warm — Fertig — Ohne Stress
+</highlight>
+
+[Hier geht's zur One-Pot-Kollektion von Cookidoo](https://cookidoo.at/search/de-AT?query=one%20pot&countries=at&context=recipes)`
   }
 ];
 
