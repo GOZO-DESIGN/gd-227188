@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { ArrowLeft, Calendar, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import BlogLikeButton from '@/components/BlogLikeButton';
 import { getPostBySlug, formatDate, blogPosts } from '@/data/blogPosts';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
@@ -195,6 +196,11 @@ const BlogPost = () => {
               }`}
             >
               {renderContent(post.content)}
+            </div>
+
+            {/* Like Button */}
+            <div className="mt-10 flex justify-center">
+              <BlogLikeButton slug={post.slug} />
             </div>
 
             {/* Images Gallery */}

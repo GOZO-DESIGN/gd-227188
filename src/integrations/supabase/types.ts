@@ -14,13 +14,36 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blog_likes: {
+        Row: {
+          blog_slug: string
+          created_at: string
+          id: string
+          like_count: number
+          updated_at: string
+        }
+        Insert: {
+          blog_slug: string
+          created_at?: string
+          id?: string
+          like_count?: number
+          updated_at?: string
+        }
+        Update: {
+          blog_slug?: string
+          created_at?: string
+          id?: string
+          like_count?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_blog_like: { Args: { slug_param: string }; Returns: number }
     }
     Enums: {
       [_ in never]: never
