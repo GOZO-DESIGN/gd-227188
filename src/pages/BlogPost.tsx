@@ -253,17 +253,6 @@ const BlogPost = () => {
             <div className="mt-10 flex justify-center">
               <BlogLikeButton slug={post.slug} />
             </div>
-                      />
-                      {image.caption && (
-                        <figcaption className="text-center text-sm text-muted-foreground mt-3 italic">
-                          {image.caption}
-                        </figcaption>
-                      )}
-                    </figure>
-                  ))}
-                </div>
-              </div>
-            )}
 
             {/* Navigation */}
             <nav className="mt-16 pt-8 border-t border-border">
