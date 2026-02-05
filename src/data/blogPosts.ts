@@ -257,9 +257,7 @@ Ob Pasta, Reisgerichte oder sanfte Familiengerichte, alles wird…
 
 Wenn die Großen aus dem Kindergarten kommen, steht das Essen schon da.
 
-<highlight>
-Warm — Fertig — Ohne Stress
-</highlight>
+**Warm — Fertig — Ohne Stress**
 
 [Hier geht's zur One-Pot-Kollektion von Cookidoo](https://cookidoo.at/search/de-AT?query=one%20pot&countries=at&context=recipes)`,
     images: [
