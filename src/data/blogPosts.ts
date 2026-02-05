@@ -4,6 +4,7 @@ import blogBaby2 from '@/assets/blog-baby-2.jpg';
 import blogBabyBottles from '@/assets/blog-baby-bottles.jpg';
 import blogDampfgaren from '@/assets/blog-dampfgaren-icon.jpg';
 import blogDisplay from '@/assets/blog-display.jpg';
+import blogOnepotPasta from '@/assets/blog-onepot-pasta.jpg';
 
 export interface BlogPost {
   id: string;
