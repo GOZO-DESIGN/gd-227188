@@ -8,6 +8,9 @@ import blogOnepotPasta from '@/assets/blog-onepot-pasta.jpg';
 import blogOnepotSpaghetti from '@/assets/blog-onepot-spaghetti.jpg';
 import blogOnepotThermomix from '@/assets/blog-onepot-thermomix.jpg';
 import blogOnepotSauce from '@/assets/blog-onepot-sauce.jpg';
+import blogCirque1 from '@/assets/blog-cirque-1.jpg';
+import blogCirque2 from '@/assets/blog-cirque-2.jpg';
+import blogCirque3 from '@/assets/blog-cirque-3.jpg';
 
 export interface BlogPost {
   id: string;
@@ -275,6 +278,46 @@ Wenn die Großen aus dem Kindergarten kommen, steht das Essen schon da.
         src: blogOnepotSpaghetti,
         alt: 'Fertige Spaghetti im Mixtopf',
         caption: 'Alles in einem Topf – fertig!'
+      }
+    ]
+  },
+  {
+    id: '4',
+    slug: 'cirque-de-thermomix-wolfgangsee',
+    title: 'Cirque de Thermomix am Wolfgangsee – ein besonderer Abend',
+    date: '2026-02-09',
+    excerpt: 'Der Thermomix-Jahresauftakt am Wolfgangsee stand heuer unter dem Motto Cirque de Thermomix. Ein stimmungsvoller Abend voller Begegnungen, Ehrungen und Gemeinschaft.',
+    featuredImage: blogCirque1,
+    content: `Der Thermomix-Jahresauftakt am Wolfgangsee stand heuer unter dem Motto Cirque de Thermomix. Schon beim Ankommen war klar, dass dieser Abend etwas Besonderes wird: nicht laut oder übertrieben, sondern stimmungsvoll und wertschätzend.
+
+Für mich war es vor allem schön, viele Menschen aus ganz Österreich zu treffen. Bekannte Gesichter, neue Begegnungen, ehrliche Gespräche. Man nimmt sich Zeit füreinander, tauscht Erfahrungen aus und merkt wieder, wie viel Gemeinschaft hinter all dem steckt.
+
+## Ein echtes Highlight
+
+Ein echtes Highlight des Abends war die Auszeichnung unserer Teamleitung **Birgit König** als beste Teamleitung. Ich weiß, wie viel Arbeit, Geduld und Engagement hinter diesem Weg liegen. Das live mitzuerleben, war ein stolzer Moment, nicht nur für sie, sondern für das ganze Team.
+
+## Danke
+
+Dieser Abend war für mich auch ein Anlass, Danke zu sagen. Danke an meine Kundinnen und Kunden, die mir ihr Vertrauen schenken und mich auf diesem Weg begleiten. Ohne euch wäre vieles davon nicht möglich gewesen.
+
+Zwischen Gala-Dinner, Programm und Gesprächen blieb vor allem eines hängen: das gute Gefühl, Teil von etwas zu sein, das von Menschen lebt. Ich bin mit vielen Eindrücken, neuen Kontakten und viel Motivation nach Hause gefahren.
+
+**Ein Abend am Wolfgangsee, der noch lange nachwirkt.**`,
+    images: [
+      {
+        src: blogCirque1,
+        alt: 'Birgit König erhält Auszeichnung als beste Teamleitung',
+        caption: 'Birgit König – Auszeichnung als beste Teamleitung'
+      },
+      {
+        src: blogCirque2,
+        alt: 'Teamfoto beim Jahresauftakt 2026',
+        caption: 'Unser Team beim Jahresauftakt 2026'
+      },
+      {
+        src: blogCirque3,
+        alt: 'Gruppenfoto Cirque de Thermomix',
+        caption: 'Cirque de Thermomix – ein unvergesslicher Abend'
       }
     ]
   }
