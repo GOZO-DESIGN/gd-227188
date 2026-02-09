@@ -268,6 +268,28 @@ const BlogPost = () => {
               }`}
             >
               {renderContent(post.content)}
+              
+              {/* Images Gallery at the end (if not already shown inline) */}
+              {post.images && post.images.length > 0 && !post.content.includes('→') && (
+                <div className="mt-10">
+                  <div className={`grid gap-4 ${post.images.length === 1 ? 'grid-cols-1' : post.images.length === 2 ? 'grid-cols-2' : 'grid-cols-1 md:grid-cols-3'}`}>
+                    {post.images.map((image, imgIndex) => (
+                      <figure key={imgIndex} className="rounded-xl overflow-hidden">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300"
+                        />
+                        {image.caption && (
+                          <figcaption className="text-sm text-muted-foreground text-center mt-2 px-2">
+                            {image.caption}
+                          </figcaption>
+                        )}
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
 
