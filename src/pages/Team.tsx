@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import ContactCTA from '@/components/ContactCTA';
 import teamfoto from '@/assets/teamfoto.jpg';
 import logoKoenig from '@/assets/logo-koenig.png';
+import promoWegTm7 from '@/assets/promo-weg-tm7.jpg';
 
 const Team = () => {
   const { t } = useTranslation();
@@ -163,6 +164,15 @@ const Team = () => {
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 {t('team.promo.subtitle')}
               </p>
+            </div>
+
+            {/* Infographic Image */}
+            <div className="rounded-2xl overflow-hidden shadow-lg mb-12">
+              <img 
+                src={promoWegTm7} 
+                alt="Dein Weg zum TM7 – Verkaufsstufen Übersicht" 
+                className="w-full h-auto"
+              />
             </div>
 
             {/* Steps */}
