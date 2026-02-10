@@ -150,6 +150,87 @@ const Team = () => {
           </div>
         </section>
 
+        {/* Dein Weg zum TM7 Promo */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container-narrow">
+            <div className="text-center mb-12">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                🔥 {t('team.promo.tagline')}
+              </span>
+              <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-4">
+                {t('team.promo.title')}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {t('team.promo.subtitle')}
+              </p>
+            </div>
+
+            {/* Steps */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {(['step1', 'step2', 'step3', 'step4'] as const).map((step, index) => {
+                const isLast = index === 3;
+                return (
+                  <div
+                    key={step}
+                    className={`relative p-6 rounded-xl border text-center transition-all duration-300 hover:shadow-lg ${
+                      isLast
+                        ? 'bg-primary/10 border-primary/30 ring-2 ring-primary/20'
+                        : 'bg-card border-border hover:border-primary/30'
+                    }`}
+                  >
+                    <div className={`w-12 h-12 rounded-full mx-auto mb-4 flex items-center justify-center ${
+                      isLast ? 'bg-primary text-primary-foreground' : 'bg-primary/10'
+                    }`}>
+                      {isLast ? (
+                        <Gift className="w-6 h-6" />
+                      ) : (
+                        <span className="text-primary font-bold text-lg">{index + 1}</span>
+                      )}
+                    </div>
+                    <p className="font-semibold text-foreground mb-1">
+                      {t(`team.promo.${step}.sale`)}
+                    </p>
+                    <p className={`text-2xl font-bold mb-1 ${isLast ? 'text-primary' : 'text-foreground'}`}>
+                      {t(`team.promo.${step}.price`)}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {t(`team.promo.${step}.label`)}
+                    </p>
+                    {step === 'step2' && (
+                      <p className="text-xs text-primary mt-2 font-medium">
+                        + {t('team.promo.step2.bonus')}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Extras */}
+            <div className="max-w-2xl mx-auto space-y-3 mb-10">
+              {(t('team.promo.extras', { returnObjects: true }) as string[]).map((extra, i) => (
+                <div key={i} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-4 h-4 text-primary" />
+                  </div>
+                  <span className="text-foreground font-medium">{extra}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <Link
+                to="/#kontakt"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-medium
+                  transition-all duration-300 hover:bg-primary/90 hover:shadow-elevated hover:-translate-y-1 group"
+              >
+                {t('team.promo.cta')}
+                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CONTACT CTA */}
         <ContactCTA />
       </main>
