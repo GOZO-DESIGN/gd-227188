@@ -166,6 +166,15 @@ const Team = () => {
               </p>
             </div>
 
+            {/* Infographic Image */}
+            <div className="rounded-2xl overflow-hidden shadow-lg mb-12">
+              <img 
+                src={promoWegTm7} 
+                alt="Dein Weg zum TM7 – Verkaufsstufen Übersicht" 
+                className="w-full h-auto"
+              />
+            </div>
+
             {/* Steps */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
               {(['step1', 'step2', 'step3', 'step4'] as const).map((step, index) => {
