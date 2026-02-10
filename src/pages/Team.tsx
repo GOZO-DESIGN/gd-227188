@@ -167,12 +167,14 @@ const Team = () => {
             </div>
 
             {/* Infographic Image */}
-            <div className="rounded-2xl overflow-hidden shadow-lg mb-12">
-              <img 
-                src={promoWegTm7} 
-                alt="Dein Weg zum TM7 – Verkaufsstufen Übersicht" 
-                className="w-full h-auto"
-              />
+            <div className="flex justify-center mb-12">
+              <div className="max-w-md rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src={promoWegTm7} 
+                  alt="Dein Weg zum TM7 – Verkaufsstufen Übersicht" 
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
 
             {/* Steps */}
