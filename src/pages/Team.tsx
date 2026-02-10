@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { Users, Heart, Sparkles, Clock, BookOpen } from 'lucide-react';
+import { Users, Heart, Sparkles, Clock, BookOpen, ArrowRight, Check, Gift } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ContactCTA from '@/components/ContactCTA';
