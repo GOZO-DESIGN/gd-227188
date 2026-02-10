@@ -886,6 +886,38 @@
       "openness": "Offenheit, Neues zu lernen",
       "opportunities": "Egal ob du dir ein Nebeneinkommen aufbauen möchtest oder dir langfristig mehr vorstellen kannst – wir sprechen ganz in Ruhe darüber, was für dich möglich ist."
     },
+    "promo": {
+      "tagline": "Aktuelle Aktion",
+      "title": "Dein Weg zum TM7",
+      "subtitle": "Du bestimmst den Preis – bereits nach deinem ersten Verkauf erhältst du deinen Thermomix® günstiger. Nach 4 Verkäufen ist er komplett verdient!",
+      "step1": {
+        "sale": "1. Verkauf",
+        "price": "€ 1.349,–",
+        "label": "Restzahlung"
+      },
+      "step2": {
+        "sale": "2. Verkauf",
+        "price": "€ 1.049,–",
+        "label": "Restzahlung",
+        "bonus": "„Mixtopf nur für dich" zum Vorzugspreis von € 129,50"
+      },
+      "step3": {
+        "sale": "3. Verkauf",
+        "price": "€ 599,–",
+        "label": "Restzahlung"
+      },
+      "step4": {
+        "sale": "4. Verkauf",
+        "price": "kostenlos",
+        "label": "Dein TM7 ist verdient!"
+      },
+      "extras": [
+        "Kostenlose Schulungen für Motivation und Wissen",
+        "Deinen Weg gehen wir gemeinsam – mit maximaler Unterstützung",
+        "Unverbindliches Gespräch – sichere dir deinen Termin"
+      ],
+      "cta": "Jetzt unverbindlich informieren"
+    },
     "cta": {
       "title": "Interesse? Dann melde dich gerne bei mir",
       "subtitle": "Wenn du neugierig geworden bist und mehr erfahren möchtest, schreib mir einfach ganz unverbindlich! Ich erzähle dir gerne, wie der Einstieg bei uns aussieht und wie Team König arbeitet.",
