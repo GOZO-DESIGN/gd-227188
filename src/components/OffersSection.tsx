@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Gift } from 'lucide-react';
+import { ArrowRight, Check, Gift, Percent } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -86,6 +86,41 @@ const OffersSection = () => {
                   </p>
                   <p className="text-muted-foreground mb-4">
                     Mit Garantieverlängerung um nur € 1.827,- · Gültig 17.2. – 29.3.2026
+                  </p>
+                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
+                    Jetzt Beratung buchen
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* 0% Finanzierung Banner */}
+        <div className="mb-12">
+          <Link to="/beratung" className="block group">
+            <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-green-500/30">
+              <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
+                <div className="flex gap-4 items-center">
+                  <div className="w-20 h-20 rounded-full bg-orange-500 flex items-center justify-center text-white text-center text-xs font-bold leading-tight p-2">
+                    0% Zinsen<br/>0€ Gebühren
+                  </div>
+                  <div className="w-20 h-20 rounded-full bg-blue-600 flex items-center justify-center text-white text-center text-xs font-bold leading-tight p-2">
+                    10 Monate<br/>Laufzeit –<br/>0 EUR<br/>Anzahlung
+                  </div>
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-600 text-white text-sm font-bold mb-3">
+                    <Percent className="w-4 h-4" />
+                    Zinsen zum Grinsen!
+                  </div>
+                  <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
+                    0% Finanzierung*
+                  </h3>
+                  <p className="text-muted-foreground mb-4">
+                    10 Monate Laufzeit · 0 EUR Anzahlung · 0% Zinsen · 0€ Gebühren<br/>
+                    <span className="text-sm">Gültig 10.03. – 22.03.2026</span>
                   </p>
                   <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
                     Jetzt Beratung buchen
