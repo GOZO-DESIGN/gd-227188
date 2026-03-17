@@ -1,4 +1,5 @@
-import { ChefHat, Award } from 'lucide-react';
+import { Award, MapPin, Users, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useScrollAnimation from '@/hooks/useScrollAnimation';
 
@@ -11,7 +12,7 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="section-padding gradient-warm">
+    <section className="section-padding gradient-warm" id="ueber-mich">
       <div className="container-narrow" ref={ref}>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
@@ -19,7 +20,7 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
             <div className="relative aspect-square rounded-2xl overflow-hidden shadow-elevated">
               <img
                 src={aboutImage}
-                alt="Ihr Thermomix Berater"
+                alt="Bernhard Prager – Zertifizierter Thermomix Berater in Wien"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -51,6 +52,32 @@ const AboutSection = ({ aboutImage }: AboutSectionProps) => {
               <p>{t('about.text4')}</p>
             </div>
 
+            {/* Trust Signals */}
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="text-center p-3 bg-secondary/50 rounded-xl">
+                <Users className="w-5 h-5 text-primary mx-auto mb-1" />
+                <p className="text-sm font-medium text-foreground">Persönlich</p>
+                <p className="text-xs text-muted-foreground">vor Ort in Wien</p>
+              </div>
+              <div className="text-center p-3 bg-secondary/50 rounded-xl">
+                <MapPin className="w-5 h-5 text-primary mx-auto mb-1" />
+                <p className="text-sm font-medium text-foreground">Regional</p>
+                <p className="text-xs text-muted-foreground">Wien, NÖ & Bgld</p>
+              </div>
+              <div className="text-center p-3 bg-secondary/50 rounded-xl">
+                <Star className="w-5 h-5 text-primary mx-auto mb-1" />
+                <p className="text-sm font-medium text-foreground">5 Sterne</p>
+                <p className="text-xs text-muted-foreground">Google Reviews</p>
+              </div>
+            </div>
+
+            <Link
+              to="/beratung"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium
+                transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5"
+            >
+              Jetzt persönlich beraten lassen
+            </Link>
           </div>
         </div>
       </div>

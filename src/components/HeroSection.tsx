@@ -42,7 +42,7 @@ const HeroSection = () => {
           >
             <img
               src={heroImage}
-              alt="Thermomix Berater in moderner Küche"
+              alt="Bernhard Prager – Thermomix® Berater in Wien kocht mit dem TM7"
               className="w-full h-full object-cover object-center"
             />
           </div>

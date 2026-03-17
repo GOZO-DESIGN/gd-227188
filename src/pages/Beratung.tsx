@@ -179,8 +179,11 @@ const Beratung = () => {
   return (
     <>
       <Helmet>
-        <title>Beratung - Mein Rundum-Sorglos-Paket | Bernhard Prager</title>
-        <meta name="description" content={t('beratung.together')} />
+        <title>{t('seo.beratung.title')}</title>
+        <meta name="description" content={t('seo.beratung.description')} />
+        <link rel="canonical" href="https://mixmitprager.at/beratung" />
+        <meta property="og:title" content={t('seo.beratung.title')} />
+        <meta property="og:description" content={t('seo.beratung.description')} />
       </Helmet>
 
       <div className="min-h-screen bg-background overflow-x-hidden">

@@ -74,12 +74,13 @@ const Blog = () => {
   return (
     <>
       <Helmet>
-        <title>Blog – Thermomix im Alltag | Mix mit Prager</title>
+        <title>Thermomix® Blog – Tipps & Erfahrungen | Bernhard Prager</title>
         <meta
           name="description"
-          content="Erfahrungen und Tipps rund um den Thermomix im Familienalltag. Praktische Anleitungen für Eltern."
+          content="Echte Erfahrungen und praktische Tipps rund um den Thermomix® im Familienalltag. Rezeptideen, Anleitungen und ehrliche Einblicke."
         />
-        <meta property="og:title" content="Blog – Thermomix im Alltag" />
+        <meta property="og:title" content="Thermomix® Blog – Tipps & Erfahrungen" />
+        <meta property="og:description" content="Echte Erfahrungen und praktische Tipps rund um den Thermomix® im Familienalltag." />
         <meta property="og:type" content="blog" />
         <link rel="canonical" href="https://mixmitprager.at/blog" />
       </Helmet>
