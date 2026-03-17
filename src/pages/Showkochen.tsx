@@ -110,6 +110,9 @@ const Showkochen = () => {
       <Helmet>
         <title>{t('seo.showkochen.title')}</title>
         <meta name="description" content={t('seo.showkochen.description')} />
+        <link rel="canonical" href="https://mixmitprager.at/showkochen" />
+        <meta property="og:title" content={t('seo.showkochen.title')} />
+        <meta property="og:description" content={t('seo.showkochen.description')} />
       </Helmet>
 
       <div className="min-h-screen bg-background overflow-x-hidden">

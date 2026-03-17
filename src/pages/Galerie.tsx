@@ -24,6 +24,9 @@ const Galerie = () => {
       <Helmet>
         <title>{t('seo.gallery.title')}</title>
         <meta name="description" content={t('seo.gallery.description')} />
+        <link rel="canonical" href="https://mixmitprager.at/galerie" />
+        <meta property="og:title" content={t('seo.gallery.title')} />
+        <meta property="og:description" content={t('seo.gallery.description')} />
       </Helmet>
 
       <div className="min-h-screen bg-background overflow-x-hidden">

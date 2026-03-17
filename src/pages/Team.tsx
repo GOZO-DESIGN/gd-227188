@@ -30,8 +30,11 @@ const Team = () => {
   return (
     <>
       <Helmet>
-        <title>{t('team.meta.title')}</title>
-        <meta name="description" content={t('team.meta.description')} />
+        <title>{t('seo.team.title')}</title>
+        <meta name="description" content={t('seo.team.description')} />
+        <link rel="canonical" href="https://mixmitprager.at/team" />
+        <meta property="og:title" content={t('seo.team.title')} />
+        <meta property="og:description" content={t('seo.team.description')} />
       </Helmet>
 
       <Header />

@@ -346,6 +346,9 @@ const TM7 = () => {
       <Helmet>
         <title>{t('seo.tm7.title')}</title>
         <meta name="description" content={t('seo.tm7.description')} />
+        <link rel="canonical" href="https://mixmitprager.at/tm7" />
+        <meta property="og:title" content={t('seo.tm7.title')} />
+        <meta property="og:description" content={t('seo.tm7.description')} />
       </Helmet>
 
       <div className="min-h-screen bg-background overflow-x-hidden">
