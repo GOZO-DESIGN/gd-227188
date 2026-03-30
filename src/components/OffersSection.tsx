@@ -92,49 +92,6 @@ const OffersSection = () => {
           ))}
         </div>
 
-        {/* Berater Promo Teaser */}
-        <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-8 md:p-12 shadow-soft mb-16 border border-primary/20">
-          <div className="flex flex-col md:flex-row gap-8 items-center">
-            <div className="flex-1">
-              <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-semibold mb-4">
-                🔥 {t('team.promo.tagline')}
-              </span>
-              <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
-                {t('team.promo.title')}
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                {t('team.promo.subtitle')}
-              </p>
-              <Link
-                to="/team"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-medium
-                  transition-all duration-300 hover:bg-primary/90 hover:shadow-elevated hover:-translate-y-1 group"
-              >
-                {t('common.learnMore')}
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
-            <div className="hidden md:flex flex-col gap-2 text-sm">
-              <div className="flex items-center gap-3 bg-white/80 rounded-lg px-4 py-3">
-                <span className="font-bold text-primary">1.</span>
-                <span className="text-foreground">{t('team.promo.step1.sale')} → <strong>{t('team.promo.step1.price')}</strong></span>
-              </div>
-              <div className="flex items-center gap-3 bg-white/80 rounded-lg px-4 py-3">
-                <span className="font-bold text-primary">2.</span>
-                <span className="text-foreground">{t('team.promo.step2.sale')} → <strong>{t('team.promo.step2.price')}</strong></span>
-              </div>
-              <div className="flex items-center gap-3 bg-white/80 rounded-lg px-4 py-3">
-                <span className="font-bold text-primary">3.</span>
-                <span className="text-foreground">{t('team.promo.step3.sale')} → <strong>{t('team.promo.step3.price')}</strong></span>
-              </div>
-              <div className="flex items-center gap-3 bg-primary/20 rounded-lg px-4 py-3">
-                <span className="font-bold text-primary">4.</span>
-                <span className="text-foreground font-semibold">{t('team.promo.step4.sale')} → {t('team.promo.step4.price')} 🎉</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Financing Section */}
         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-soft">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
