@@ -64,7 +64,7 @@ const OffersSection = () => {
         {/* Easter Promo Banner */}
         <div className="mb-12 relative">
           <Link to="/beratung" className="block group">
-            <div className="bg-gradient-to-r from-sky-100/60 to-sky-50/40 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary/30">
+            <div className="bg-gradient-to-r from-secondary/30 to-accent/20 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary/30">
               <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
                 <div className="w-full md:w-1/3 flex justify-center">
                   <img
