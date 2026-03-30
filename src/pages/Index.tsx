@@ -104,7 +104,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Bernhard Prager – Thermomix® Berater",
-    "description": "Zertifizierter Thermomix® Berater in Wien, Niederösterreich und Burgenland. Persönliche Beratung, kostenloses Showkochen und TM7 Vorführungen.",
+    "description": "Zertifizierter Thermomix® Berater in Wien, Niederösterreich und Burgenland. Thermomix testen beim kostenlosen Showkochen, persönliche Beratung und TM7 Vorführungen.",
     "url": "https://mixmitprager.at",
     "telephone": "+436763979250",
     "email": "office@mixmitprager.at",
