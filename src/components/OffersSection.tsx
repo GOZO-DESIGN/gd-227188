@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Gift } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
-import promoBirthday from '@/assets/promo-birthday-tm7.jpg';
 
 interface Offer {
   id: string;
