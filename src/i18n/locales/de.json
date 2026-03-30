@@ -710,7 +710,7 @@
     },
     "team": {
       "title": "Thermomix® Berater werden | Team König in Wien",
-      "description": "Werde Thermomix® Berater bei Team König. Flexible Arbeitszeiten, starkes Team und ein eigener TM7 schon nach 4 Verkäufen. Jetzt informieren!"
+      "description": "Werde Thermomix® Berater bei Team König. Flexible Arbeitszeiten, starkes Team und ein eigener TM7 schon nach 6 Verkäufen. Jetzt informieren!"
     }
   },
   "instagram": {
@@ -932,7 +932,7 @@
     "promo": {
       "tagline": "Aktuelle Aktion",
       "title": "Dein Weg zum TM7",
-      "subtitle": "Du bestimmst den Preis – bereits nach deinem ersten Verkauf erhältst du deinen Thermomix® günstiger. Nach 4 Verkäufen ist er komplett verdient!",
+      "subtitle": "Du bestimmst den Preis – bereits nach deinem ersten Verkauf erhältst du deinen Thermomix® günstiger. Nach 6 Verkäufen ist er komplett verdient! Bei Start erhältst du einen Leih-Thermomix.",
       "step1": {
         "sale": "1. Verkauf",
         "price": "€ 1.349,–",
@@ -940,22 +940,33 @@
       },
       "step2": {
         "sale": "2. Verkauf",
-        "price": "€ 1.049,–",
-        "label": "Restzahlung",
-        "bonus": "Mixtopf nur für dich zum Vorzugspreis von € 129,50"
+        "price": "€ 1.149,–",
+        "label": "Restzahlung"
       },
       "step3": {
         "sale": "3. Verkauf",
-        "price": "€ 599,–",
+        "price": "€ 949,–",
         "label": "Restzahlung"
       },
       "step4": {
         "sale": "4. Verkauf",
-        "price": "kostenlos",
-        "label": "Dein TM7 ist verdient!"
+        "price": "€ 699,–",
+        "label": "Restzahlung"
+      },
+      "step5": {
+        "sale": "5. Verkauf",
+        "price": "€ 399,–",
+        "label": "Restzahlung"
+      },
+      "step6": {
+        "sale": "6. Verkauf",
+        "price": "€ 0,–",
+        "label": "Dein TM7 ist verdient! 🎉"
       },
       "extras": [
+        "Bei Start erhältst du einen Leih-Thermomix",
         "Kostenlose Schulungen für Motivation und Wissen",
+        "Dein 1. Showkochen mit Unterstützung",
         "Deinen Weg gehen wir gemeinsam – mit maximaler Unterstützung",
         "Unverbindliches Gespräch – sichere dir deinen Termin"
       ],

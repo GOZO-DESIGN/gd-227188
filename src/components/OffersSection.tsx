@@ -172,6 +172,36 @@ const OffersSection = () => {
           ))}
         </div>
 
+        {/* Berater Teaser */}
+        <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-2xl p-8 md:p-10 shadow-soft mb-16 border border-primary/20">
+          <div className="flex flex-col md:flex-row gap-6 items-center">
+            <div className="flex-1 text-center md:text-left">
+              <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-semibold mb-3">
+                🔥 {t('team.promo.tagline')}
+              </span>
+              <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3">
+                {t('team.promo.title')}
+              </h3>
+              <p className="text-muted-foreground mb-2">
+                Du bestimmst den Preis – nach 6 Verkäufen gehört der TM7 dir. Bei Start erhältst du einen Leih-Thermomix.
+              </p>
+              <div className="flex flex-wrap gap-2 my-4 justify-center md:justify-start">
+                <span className="px-3 py-1 rounded-full bg-card border border-border text-sm text-foreground">1. Verkauf → € 1.349,–</span>
+                <span className="px-3 py-1 rounded-full bg-card border border-border text-sm text-foreground">4. Verkauf → € 699,–</span>
+                <span className="px-3 py-1 rounded-full bg-primary/20 border border-primary/30 text-sm text-foreground font-semibold">6. Verkauf → € 0,– 🎉</span>
+              </div>
+              <Link
+                to="/team"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium
+                  transition-all duration-300 hover:bg-primary/90 hover:shadow-elevated hover:-translate-y-1 group"
+              >
+                {t('common.learnMore')}
+                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Financing Section */}
         <div className="bg-white rounded-2xl p-8 md:p-12 shadow-soft">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
