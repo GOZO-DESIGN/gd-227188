@@ -651,6 +651,10 @@
     "subtitle": "Hier findest du Antworten auf die wichtigsten Fragen rund um den Thermomix® und meine Beratung.",
     "items": [
       {
+        "question": "Kann ich den Thermomix® vorher testen?",
+        "answer": "Ja, beim kostenlosen Showkochen kannst du den Thermomix® TM7 unverbindlich testen und live erleben. Ich komme zu dir nach Hause und koche gemeinsam mit dir und deinen Gästen – so siehst du direkt, was der Thermomix® alles kann."
+      },
+      {
         "question": "Was kostet der Thermomix® TM7?",
         "answer": "Der Thermomix® TM7 ist ab € 1.549,- erhältlich. Mit Garantieverlängerung auf 5 Jahre liegt der Preis bei € 1.698,-. Aktuell gibt es auch Aktionsangebote – kontaktiere mich gerne für die neuesten Konditionen."
       },
@@ -680,25 +684,25 @@
     "index": {
       "title": "Thermomix® Berater Wien | Bernhard Prager",
       "titleFull": "Thermomix® Berater Wien, NÖ & Burgenland | Bernhard Prager",
-      "description": "Dein zertifizierter Thermomix® Berater in Wien, Niederösterreich und Burgenland. Persönliche Beratung, kostenloses Showkochen und TM7 Vorführungen.",
-      "descriptionFull": "Persönliche Thermomix® Beratung in Wien, NÖ & Burgenland. Kostenloses Showkochen, TM7 Vorführung, Finanzierung und After-Sales-Service von Bernhard Prager.",
-      "keywords": "Thermomix Berater Wien, Thermomix kaufen Wien, Thermomix TM7, Showkochen Wien, Thermomix Beratung Niederösterreich, Thermomix Burgenland, Küchenmaschine kaufen"
+      "description": "Dein zertifizierter Thermomix® Berater in Wien, Niederösterreich und Burgenland. Persönliche Beratung, Thermomix testen beim kostenlosen Showkochen und TM7 Vorführungen.",
+      "descriptionFull": "Thermomix® testen und persönlich beraten lassen in Wien, NÖ & Burgenland. Kostenloses Showkochen, TM7 Vorführung, Finanzierung und After-Sales-Service von Bernhard Prager.",
+      "keywords": "Thermomix testen, Thermomix testen Wien, Thermomix Berater Wien, Thermomix kaufen Wien, Thermomix TM7, Showkochen Wien, Thermomix Beratung Niederösterreich, Thermomix Burgenland, Thermomix ausprobieren, Küchenmaschine testen"
     },
     "tm7": {
       "title": "Thermomix® TM7 – Funktionen, Technik & Preise | Wien",
-      "description": "Alles über den Thermomix® TM7: 20+ Funktionen, 100.000+ Rezepte, 10-Zoll-Display. Jetzt persönlich beraten lassen in Wien, NÖ & Burgenland."
+      "description": "Alles über den Thermomix® TM7: 20+ Funktionen, 100.000+ Rezepte, 10-Zoll-Display. Jetzt persönlich testen und beraten lassen in Wien, NÖ & Burgenland."
     },
     "showkochen": {
-      "title": "Kostenloses Showkochen in Wien & NÖ | Thermomix® live",
-      "description": "Erlebe den Thermomix® TM7 live bei einem kostenlosen Showkochen bei dir zu Hause in Wien, Niederösterreich oder Burgenland. Unverbindlich anfragen!"
+      "title": "Thermomix® testen beim kostenlosen Showkochen | Wien & NÖ",
+      "description": "Thermomix® TM7 kostenlos testen und live erleben bei einem Showkochen bei dir zu Hause in Wien, Niederösterreich oder Burgenland. Unverbindlich anfragen!"
     },
     "gallery": {
       "title": "Galerie – Thermomix® Showkochen & Events | Wien",
       "description": "Einblicke in Showkochen-Events, Thermomix® Beratungen und kulinarische Kreationen von Bernhard Prager in Wien und Umgebung."
     },
     "beratung": {
-      "title": "Persönliche Thermomix® Beratung Wien | Schritt für Schritt",
-      "description": "Individuelle Thermomix® Beratung in Wien, NÖ & Burgenland. Vom Kennenlernen über das Showkochen bis zur Einschulung – persönlich und ehrlich."
+      "title": "Thermomix® testen & persönliche Beratung | Wien & NÖ",
+      "description": "Thermomix® TM7 kostenlos testen bei einer persönlichen Beratung in Wien, NÖ & Burgenland. Vom Kennenlernen über das Showkochen bis zur Einschulung – ehrlich und unverbindlich."
     },
     "blog": {
       "title": "Thermomix® Blog – Tipps & Erfahrungen | Bernhard Prager",
