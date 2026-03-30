@@ -1,11 +1,24 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  
+
+  # 301 Redirects: alte URLs auf neue Seiten
+  RewriteRule ^home/ueber-mich/?$ / [R=301,L]
+  RewriteRule ^home/der-tm7/?$ /tm7 [R=301,L]
+  RewriteRule ^home/galerie/?$ /galerie [R=301,L]
+  RewriteRule ^home/videoimpressionen/?$ /galerie [R=301,L]
+  RewriteRule ^home/kontakt/?$ /#kontakt [R=301,L]
+  RewriteRule ^home/?$ / [R=301,L]
+  RewriteRule ^kontakt/kontakt/?$ /#kontakt [R=301,L]
+  RewriteRule ^kontakt/showkochen-vereinbaren/?$ /showkochen [R=301,L]
+  RewriteRule ^kontakt/?$ /#kontakt [R=301,L]
+  RewriteRule ^home/mein-rundum-sorglos-paket/?$ /tm7 [R=301,L]
+  RewriteRule ^home/was-ist-der-thermomix/?$ /tm7 [R=301,L]
+
   # Handle existing files and directories
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  
+
   # Redirect all requests to index.html for SPA routing
   RewriteRule ^ index.html [QSA,L]
 </IfModule>
