@@ -60,43 +60,6 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {/* Birthday Promo Banner */}
-        <div className="mb-12 relative">
-          <Link to="/beratung" className="block group">
-            <div className="bg-gradient-to-r from-secondary/30 to-accent/30 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary/30">
-              <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
-                <div className="w-full md:w-1/3 flex justify-center">
-                  <img
-                    src={promoBirthday}
-                    alt="Happy Birthday TM7 – Thermomix mit 2. Mixtopf um nur € 1.678,-"
-                    className="w-48 md:w-64 h-auto rounded-xl shadow-soft"
-                  />
-                </div>
-                <div className="flex-1 text-center md:text-left">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
-                    <Gift className="w-4 h-4" />
-                    🎂 Happy Birthday TM7!
-                  </div>
-                  <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-                    Thermomix TM7 mit 2. Mixtopf
-                  </h3>
-                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                    um nur € 1.678,-
-                  </p>
-                  <p className="text-muted-foreground mb-4">
-                    Mit Garantieverlängerung um nur € 1.827,- · Gültig 17.2. – 29.3.2026
-                  </p>
-                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
-                    Jetzt Beratung buchen
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-
         {/* Offers Grid */}
         <div className={`grid grid-cols-1 ${gridCols} gap-6 md:gap-8 mb-16`}>
           {offers.map((offer) => (
