@@ -2,6 +2,10 @@
   RewriteEngine On
   RewriteBase /
 
+  # WWW to non-WWW redirect (301)
+  RewriteCond %{HTTP_HOST} ^www\.mixmitprager\.at$ [NC]
+  RewriteRule ^(.*)$ https://mixmitprager.at/$1 [R=301,L]
+
   # 301 Redirects: alte URLs auf neue Seiten
   RewriteRule ^home/ueber-mich/?$ / [R=301,L]
   RewriteRule ^home/der-tm7/?$ /tm7 [R=301,L]
