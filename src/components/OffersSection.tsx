@@ -99,46 +99,6 @@ const OffersSection = () => {
             </div>
           </Link>
         </div>
-        {/* Spring Days Zubehör Banner */}
-        <div className="mb-12 relative">
-          <Link to="/beratung" className="block group">
-            <div className="bg-gradient-to-r from-accent/20 to-secondary/20 rounded-2xl overflow-hidden shadow-soft hover:shadow-elevated transition-all duration-300 border border-accent/30">
-              <div className="p-6 md:p-8">
-                <div className="flex flex-col md:flex-row items-center gap-6">
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent text-accent-foreground text-sm font-bold mb-3">
-                      🌷 Thermomix® Spring Days
-                    </div>
-                    <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2">
-                      Zubehör zum Sonderpreis
-                    </h3>
-                    <p className="text-muted-foreground mb-4">
-                      Bis zu <strong className="text-foreground text-lg">–70 %</strong> auf ausgewähltes Zubehör für TM5, TM6 & TM7 – nur vom 30.3. bis 12.4.2026.
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-5 justify-center md:justify-start">
-                      <span className="px-3 py-1 rounded-full bg-card border border-border text-sm text-foreground">Casserole ab € 99,-</span>
-                      <span className="px-3 py-1 rounded-full bg-card border border-border text-sm text-foreground">Sensor € 109,-</span>
-                      <span className="px-3 py-1 rounded-full bg-card border border-border text-sm text-foreground">Mixtopf TM6 € 179,-</span>
-                      <span className="px-3 py-1 rounded-full bg-card border border-border text-sm text-foreground">Silikonformen ab € 6,-</span>
-                    </div>
-                    <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
-                      Jetzt anfragen
-                      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
-                  </div>
-                  <div className="hidden md:flex items-center justify-center">
-                    <div className="w-36 h-36 rounded-full bg-accent/20 flex items-center justify-center">
-                      <div className="text-center">
-                        <span className="text-3xl font-bold text-foreground block">–70%</span>
-                        <span className="text-sm text-muted-foreground">bis zu</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
 
         {/* Offers Grid */}
         <div className={`grid grid-cols-1 ${gridCols} gap-6 md:gap-8 mb-16`}>
