@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 // Import promo images
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
-
+import promoCasserole from '@/assets/promo-casserole.jpg';
 import promoEaster from '@/assets/promo-easter-tm7.jpg';
 
 interface Offer {
