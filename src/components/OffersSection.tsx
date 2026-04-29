@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
-import promoEaster from '@/assets/promo-easter-tm7.jpg';
+import promoBirthday from '@/assets/promo-birthday-tm7.jpg';
 
 interface Offer {
   id: string;
@@ -61,33 +61,33 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {/* Easter Promo Banner */}
+        {/* Birthday Promo Banner */}
         <div className="mb-12 relative">
           <Link to="/beratung" className="block group">
             <div className="bg-gradient-to-r from-secondary/30 to-accent/20 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary/30">
               <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
                 <div className="w-full md:w-1/3 flex justify-center">
                   <img
-                    src={promoEaster}
-                    alt="Thermomix® TM7 mit Gemüsestyler – Osteraktion 2026"
+                    src={promoBirthday}
+                    alt="Thermomix® TM7 Geburtstagsaktion – inkl. gratis Garantieverlängerung auf 5 Jahre"
                     className="w-48 md:w-56 h-auto rounded-xl shadow-soft"
                   />
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
                     <Gift className="w-4 h-4" />
-                    🐣 Osteraktion – Nur bis 26.4.2026
+                    🎉 Geburtstagsaktion – 27.04. bis 03.05.2026
                   </div>
                   <h3 className="font-serif text-xl md:text-2xl text-foreground mb-3">
-                    Thermomix® TM7 + Gemüsestyler
+                    Thermomix® TM7 inkl. gratis Garantieverlängerung
                   </h3>
                   <div className="space-y-1 mb-4">
                     <p className="text-foreground">
-                      <span className="text-2xl md:text-3xl font-bold text-primary">€ 1.629,-</span>
-                      <span className="text-muted-foreground line-through ml-2">statt € 1.718,-</span>
+                      <span className="text-2xl md:text-3xl font-bold text-primary">€ 1.549,-</span>
+                      <span className="text-muted-foreground line-through ml-2">statt € 1.698,-</span>
                     </p>
                     <p className="text-muted-foreground text-sm">
-                      Mit Garantieverlängerung um nur <strong className="text-foreground">€ 1.778,-</strong> <span className="line-through">statt € 1.867,-</span>
+                      Wir feiern Geburtstag: <strong className="text-foreground">5 Jahre Garantie gratis</strong> dazu.
                     </p>
                   </div>
                   <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
