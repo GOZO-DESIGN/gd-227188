@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import CookieBanner from "./components/CookieBanner";
+import PromoPopup from "./components/PromoPopup";
 import Index from "./pages/Index";
 import TM7 from "./pages/TM7";
 import Showkochen from "./pages/Showkochen";
@@ -30,6 +31,7 @@ const App = () => (
       <BrowserRouter basename={basename}>
         <ScrollToTop />
         <CookieBanner />
+        <PromoPopup />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/tm7" element={<TM7 />} />
