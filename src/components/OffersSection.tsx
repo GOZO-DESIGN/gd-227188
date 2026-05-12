@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Gift, Users, Sparkles } from 'lucide-react';
+import { ArrowRight, Check, Gift, Users, Sparkles, Repeat, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -60,10 +60,10 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {/* Welcome Service + 150€ Voucher Promo Banner */}
+        {/* Tausch dich glücklich – Flash Promo (nur 11.05.2026) */}
         <div className="mb-12 relative">
           <Link to="/beratung" className="block group">
-            <div className="relative bg-gradient-to-br from-primary/10 via-secondary/30 to-accent/20 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary/30">
+            <div className="relative bg-gradient-to-br from-primary/10 via-secondary/30 to-accent/20 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary/40">
               <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
                 <div className="w-full md:w-2/5 flex justify-center">
                   <video
@@ -77,23 +77,26 @@ const OffersSection = () => {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
-                    <Sparkles className="w-4 h-4" />
-                    Neue Thermomix® Aktion
+                    <Calendar className="w-4 h-4" />
+                    Nur am 11.05.2026 – Flash-Aktion
                   </div>
-                  <h3 className="font-serif text-xl md:text-2xl text-foreground mb-3">
-                    € 150,– Vorwerk-Gutschein + exklusiver Willkommen-Service
+                  <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2">
+                    Tausch dich glücklich!
                   </h3>
+                  <p className="text-muted-foreground mb-4">
+                    Gib deinen alten Thermomix® zurück und sichere dir den neuen TM7.
+                  </p>
                   <ul className="space-y-2 mb-4 text-left max-w-md mx-auto md:mx-0">
                     <li className="flex items-start gap-2">
-                      <Gift className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <Repeat className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-foreground">
-                        <strong>€ 150,– Gutschein</strong> für Zubehör & Vorwerk-Produkte
+                        <strong>TM5 → TM7</strong> mit nur <strong>3&nbsp;AE (netto)</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Users className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <Repeat className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-foreground">
-                        Einladung zum <strong>Willkommen-Service</strong> – mit deinen Gästen
+                        <strong>TM6 → TM7</strong> mit nur <strong>2&nbsp;AE (netto)</strong>
                       </span>
                     </li>
                   </ul>
@@ -101,6 +104,9 @@ const OffersSection = () => {
                     Jetzt Termin sichern
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
+                  <p className="text-xs text-muted-foreground mt-3 italic">
+                    Gültig nur am 11.05.2026. Nicht kombinierbar mit anderen Aktionen. Nur über Direktvertrieb. Angaben ohne Gewähr.
+                  </p>
                 </div>
               </div>
             </div>
