@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Gift, Users, ArrowRight, Sparkles } from 'lucide-react';
+import { X, Repeat, ArrowRight, Calendar } from 'lucide-react';
 
-const STORAGE_KEY = 'promoPopup_welcome150_seen';
+const STORAGE_KEY = 'promoPopup_tausch_dich_gluecklich_seen';
 
 const PromoPopup = () => {
   const [open, setOpen] = useState(false);
@@ -43,14 +43,14 @@ const PromoPopup = () => {
 
         <div className="bg-gradient-to-br from-primary/15 via-secondary/30 to-accent/20 p-6 pt-8 pb-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
-            <Sparkles className="w-4 h-4" />
-            Neue Thermomix® Aktion
+            <Calendar className="w-4 h-4" />
+            Nur am 11.05.2026
           </div>
           <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            Sichere dir deinen <span className="text-primary">€ 150,– Gutschein</span>
+            <span className="text-primary">Tausch dich glücklich!</span>
           </h2>
           <p className="text-muted-foreground text-sm">
-            Beim Kauf eines Thermomix® erhältst du jetzt exklusive Vorteile.
+            Gib deinen alten Thermomix® zurück und sichere dir den neuen TM7.
           </p>
         </div>
 
@@ -58,23 +58,23 @@ const PromoPopup = () => {
           <ul className="space-y-3 mb-6">
             <li className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Gift className="w-5 h-5 text-primary" />
+                <Repeat className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">€ 150,– Vorwerk-Gutschein</p>
+                <p className="font-semibold text-foreground">TM5 → TM7</p>
                 <p className="text-sm text-muted-foreground">
-                  Einlösbar für Zubehör oder weitere Vorwerk-Produkte.
+                  mit nur <strong>3&nbsp;AE (netto)</strong>
                 </p>
               </div>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Users className="w-5 h-5 text-primary" />
+                <Repeat className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">Exklusiver Willkommen-Service</p>
+                <p className="font-semibold text-foreground">TM6 → TM7</p>
                 <p className="text-sm text-muted-foreground">
-                  Persönliche Einführung – gemeinsam mit deinen Gästen.
+                  mit nur <strong>2&nbsp;AE (netto)</strong>
                 </p>
               </div>
             </li>
@@ -94,6 +94,9 @@ const PromoPopup = () => {
           >
             Vielleicht später
           </button>
+          <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
+            Gültig nur am 11.05.2026. Nicht kombinierbar mit anderen Aktionen. Nur über Direktvertrieb.
+          </p>
         </div>
       </div>
     </div>
