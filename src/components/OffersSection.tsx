@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Gift, Users, Sparkles, Repeat, Calendar } from 'lucide-react';
+import { ArrowRight, Check, Gift, Sparkles, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
+import promoTraumBundle from '@/assets/promo-traum-bundle.jpg';
 
 interface Offer {
   id: string;
@@ -60,43 +61,40 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {/* Tausch dich glücklich – Flash Promo (nur 11.05.2026) */}
+        {/* Mix dir dein Traum Bundle – gültig bis 24.05.2026 */}
         <div className="mb-12 relative">
           <Link to="/beratung" className="block group">
             <div className="relative bg-gradient-to-br from-primary/10 via-secondary/30 to-accent/20 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary/40">
               <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
                 <div className="w-full md:w-2/5 flex justify-center">
-                  <video
-                    src="/videos/prager_6_web.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                  <img
+                    src={promoTraumBundle}
+                    alt="Mix dir dein Traum Bundle – Thermomix TM7 inkl. 150,- Online Shop Gutschein"
                     className="w-full max-w-xs rounded-2xl shadow-soft"
                   />
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
                     <Calendar className="w-4 h-4" />
-                    Nur am 11.05.2026 – Flash-Aktion
+                    Aktion gültig bis 24.05.2026
                   </div>
                   <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2">
-                    Tausch dich glücklich!
+                    Mix dir dein Traum Bundle
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Gib deinen alten Thermomix® zurück und sichere dir den neuen TM7.
+                    Thermomix® TM7 um <strong>€&nbsp;1.549,&#8209;</strong> plus <strong>€&nbsp;150,&#8209; Online Shop Gutschein</strong> für Zubehör deiner Wahl geschenkt.*
                   </p>
                   <ul className="space-y-2 mb-4 text-left max-w-md mx-auto md:mx-0">
                     <li className="flex items-start gap-2">
-                      <Repeat className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-foreground">
-                        <strong>TM5 → TM7</strong> mit nur <strong>3&nbsp;AE (netto)</strong>
+                        Thermomix® TM7 um nur <strong>€&nbsp;1.549,&#8209;</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Repeat className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <Gift className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-foreground">
-                        <strong>TM6 → TM7</strong> mit nur <strong>2&nbsp;AE (netto)</strong>
+                        <strong>€&nbsp;150,&#8209; Gutschein</strong> für den Online Shop – (D)ein Gutschein, viele Möglichkeiten
                       </span>
                     </li>
                   </ul>
@@ -105,7 +103,7 @@ const OffersSection = () => {
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                   <p className="text-xs text-muted-foreground mt-3 italic">
-                    Gültig nur am 11.05.2026. Nicht kombinierbar mit anderen Aktionen. Nur über Direktvertrieb. Angaben ohne Gewähr.
+                    *Bei Buchung eines Welcome Services binnen 3 Monaten. Aktion gültig bis 24.05.2026. Nicht kombinierbar mit anderen Aktionen. Nur über Direktvertrieb. Angaben ohne Gewähr.
                   </p>
                 </div>
               </div>
