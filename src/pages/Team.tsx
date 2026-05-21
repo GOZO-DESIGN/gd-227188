@@ -181,9 +181,9 @@ const Team = () => {
             </div>
 
             {/* Steps */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {(['step1', 'step2', 'step3', 'step4', 'step5', 'step6'] as const).map((step, index) => {
-                const isLast = index === 5;
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {(['step1', 'step2', 'step3', 'step4'] as const).map((step, index) => {
+                const isLast = index === 3;
                 return (
                   <div
                     key={step}

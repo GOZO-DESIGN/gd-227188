@@ -932,35 +932,25 @@
     "promo": {
       "tagline": "Aktuelle Aktion",
       "title": "Dein Weg zum TM7",
-      "subtitle": "Du bestimmst den Preis – bereits nach deinem ersten Verkauf erhältst du deinen Thermomix® günstiger. Nach 6 Verkäufen ist er komplett verdient! Bei Start erhältst du einen Leih-Thermomix.",
+      "subtitle": "Du bestimmst den Preis – bereits nach deinem ersten Verkauf erhältst du deinen Thermomix® günstiger. Nach 4 Verkäufen ist er GRATIS! Bei Start erhältst du einen Leih-Thermomix.",
       "step1": {
         "sale": "1. Verkauf",
-        "price": "€ 1.349,–",
-        "label": "Restzahlung"
+        "price": "200 € günstiger",
+        "label": "Dein Vorteil"
       },
       "step2": {
         "sale": "2. Verkauf",
-        "price": "€ 1.149,–",
-        "label": "Restzahlung"
+        "price": "500 € günstiger",
+        "label": "Dein Vorteil"
       },
       "step3": {
         "sale": "3. Verkauf",
-        "price": "€ 949,–",
-        "label": "Restzahlung"
+        "price": "900 € günstiger",
+        "label": "Dein Vorteil"
       },
       "step4": {
         "sale": "4. Verkauf",
-        "price": "€ 699,–",
-        "label": "Restzahlung"
-      },
-      "step5": {
-        "sale": "5. Verkauf",
-        "price": "€ 399,–",
-        "label": "Restzahlung"
-      },
-      "step6": {
-        "sale": "6. Verkauf",
-        "price": "€ 0,–",
+        "price": "GRATIS",
         "label": "Dein TM7 ist verdient! 🎉"
       },
       "extras": [
