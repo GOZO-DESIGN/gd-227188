@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Gift, Sparkles, ArrowRight, Calendar } from 'lucide-react';
+import { X, Gift, Sparkles, ArrowRight, Calendar, Users, Euro } from 'lucide-react';
 
 const STORAGE_KEY = 'promoPopup_traum_bundle_seen';
 
