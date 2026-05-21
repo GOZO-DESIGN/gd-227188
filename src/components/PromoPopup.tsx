@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Gift, Sparkles, ArrowRight, Calendar, Users, Euro } from 'lucide-react';
 
-const STORAGE_KEY = 'promoPopup_traum_bundle_seen';
+const STORAGE_KEY = 'promoPopup_traum_bundle_tm4u_seen';
 
 const PromoPopup = () => {
   const [open, setOpen] = useState(false);
