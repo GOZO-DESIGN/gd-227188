@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Sparkles, ArrowRight, Calendar, Users, Euro, Percent, ChefHat, Gift } from 'lucide-react';
 
-const STORAGE_KEY = 'promoPopup_2mixtopf_showkochen_v1_seen';
+const STORAGE_KEY = 'promoPopup_2mixtopf_showkochen_tm4u_v2_seen';
 
 const PromoPopup = () => {
   const [open, setOpen] = useState(false);
