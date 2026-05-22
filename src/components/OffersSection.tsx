@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Gift, Sparkles, Calendar } from 'lucide-react';
+import { ArrowRight, Check, Sparkles, Calendar, Percent, Gift, ChefHat, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -6,7 +6,8 @@ import { useTranslation } from 'react-i18next';
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
-import promoTraumBundle from '@/assets/promo-traum-bundle.jpg';
+import promoTM7Mixtopf from '@/assets/promo-tm7-2mixtopf.jpg';
+import promoShowkochen from '@/assets/promo-showkochen-gastfreundschaft.jpg';
 
 interface Offer {
   id: string;
@@ -61,55 +62,118 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {/* Mix dir dein Traum Bundle – gültig bis 24.05.2026 */}
-        <div className="mb-12 relative">
+        {/* Aktion 1: TM7 mit 2. Mixtopf – gültig bis 31.05.2026 */}
+        <div className="mb-8 relative">
           <Link to="/beratung" className="block group">
             <div className="relative bg-gradient-to-br from-primary/10 via-secondary/30 to-accent/20 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary/40">
               <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
                 <div className="w-full md:w-2/5 flex justify-center">
                   <img
-                    src={promoTraumBundle}
-                    alt="Mix dir dein Traum Bundle – Thermomix TM7 inkl. 150,- Online Shop Gutschein"
+                    src={promoTM7Mixtopf}
+                    alt="Thermomix TM7 mit 2. Mixtopf um nur € 1.678,-"
                     className="w-full max-w-xs rounded-2xl shadow-soft"
                   />
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
                     <Calendar className="w-4 h-4" />
-                    Aktion gültig bis 24.05.2026
+                    Aktion gültig bis 31.05.2026
                   </div>
                   <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2">
-                    Mix dir dein Traum Bundle
+                    Thermomix® TM7 mit 2. Mixtopf
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Thermomix® TM7 um <strong>€&nbsp;1.549,&#8209;</strong> plus <strong>€&nbsp;150,&#8209; Online Shop Gutschein</strong> für Zubehör deiner Wahl geschenkt.*
+                    Jetzt das TM-Bundle inkl. zweitem Mixtopf um nur <strong>€&nbsp;1.678,&#8209;</strong> sichern – mit <strong>2 Jahren Garantie</strong>.
                   </p>
                   <ul className="space-y-2 mb-4 text-left max-w-md mx-auto md:mx-0">
                     <li className="flex items-start gap-2">
                       <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-foreground">
-                        Thermomix® TM7 um nur <strong>€&nbsp;1.549,&#8209;</strong>
+                        TM7 inkl. 2. Mixtopf um nur <strong>€&nbsp;1.678,&#8209;</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Gift className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                       <span className="text-foreground">
-                        <strong>€&nbsp;150,&#8209; Gutschein</strong> für den Online Shop – (D)ein Gutschein, viele Möglichkeiten
+                        Mit Garantieverlängerung um nur <strong>€&nbsp;1.827,&#8209;</strong>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Percent className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground">
+                        <strong>0 % Finanzierung</strong> – 10 Monate ohne Zinsen & Gebühren
                       </span>
                     </li>
                   </ul>
                   <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
-                    Jetzt Termin sichern
+                    Melde dich für mehr Infos!
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                   <p className="text-xs text-muted-foreground mt-3 italic">
-                    *Bei Buchung eines Welcome Services binnen 3 Monaten. Aktion gültig bis 24.05.2026. Nicht kombinierbar mit anderen Aktionen. Nur über Direktvertrieb. Angaben ohne Gewähr.
+                    Aktion und 0 %-Finanzierung gültig bis 31.05.2026, ausschließlich für das TM-Bundle mit 2. Mixtopf. Nicht kombinierbar mit anderen Aktionen. Angaben ohne Gewähr.
                   </p>
                 </div>
               </div>
             </div>
           </Link>
         </div>
+
+        {/* Aktion 2: Showkochen & Genießen – 25.05. – 28.06.2026 */}
+        <div className="mb-12 relative">
+          <Link to="/showkochen" className="block group">
+            <div className="relative bg-gradient-to-br from-secondary/40 via-primary/5 to-accent/20 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary/40">
+              <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-8">
+                <div className="w-full md:w-2/5 flex justify-center">
+                  <img
+                    src={promoShowkochen}
+                    alt="Gastfreundschaft lohnt sich jetzt richtig! Showkochen & Genießen 25.05. – 28.06.2026"
+                    className="w-full max-w-xs rounded-2xl shadow-soft"
+                  />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
+                    <Calendar className="w-4 h-4" />
+                    25.05. – 28.06.2026
+                  </div>
+                  <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2">
+                    Gastfreundschaft lohnt sich jetzt richtig!
+                  </h3>
+                  <p className="text-muted-foreground mb-4">
+                    <strong>Showkochen & Genießen</strong> – erlebe, wie einfach beeindruckende Gerichte mit dem Thermomix® gelingen. Wähle deinen Helfer:
+                  </p>
+                  <ul className="space-y-2 mb-4 text-left max-w-md mx-auto md:mx-0">
+                    <li className="flex items-start gap-2">
+                      <Gift className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground">
+                        <strong>Peeler GRATIS</strong> – Messerabdeckung mit Peeler, ohne Zuzahlung
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <ChefHat className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground">
+                        <strong>Gemüsestyler</strong> inkl. Messerabdeckung um nur <strong>€&nbsp;99,&#8209;</strong>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Users className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground">
+                        Gemeinschaft erleben – Austausch, Spaß und neue Inspirationen
+                      </span>
+                    </li>
+                  </ul>
+                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
+                    Melde dich für mehr Infos!
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                  <p className="text-xs text-muted-foreground mt-3 italic">
+                    Aktion gültig vom 25.05. bis 28.06.2026. Nur während des Aktionszeitraums. Angaben ohne Gewähr.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
 
         {/* Offers Grid */}
         <div className={`grid grid-cols-1 ${gridCols} gap-6 md:gap-8 mb-16`}>
