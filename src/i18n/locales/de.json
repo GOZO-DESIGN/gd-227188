@@ -123,13 +123,14 @@
       "casserole": "Casserole und Thermomix® Sensor – € 199,00"
     },
     "financing": {
-      "title": "Finanzierung über die Denzel Bank möglich",
-      "text1": "Du möchtest deinen Thermomix® flexibel bezahlen?",
-      "text2": "Über die Denzel Bank AG ist eine Finanzierung möglich. Ich informiere dich gerne über die aktuellen Konditionen und unterstütze dich bei der Abwicklung.",
-      "benefits": ["Flexible Laufzeiten", "Transparente Raten", "Abwicklung direkt über mich"],
+      "title": "0 % Finanzierung & flexible Zahlung",
+      "text1": "Aktuell: 0 % Finanzierung – 10 Monate ohne Zinsen und Gebühren, exklusiv für das TM-Bundle mit 2. Mixtopf. Gültig bis 31.05.2026.",
+      "text2": "Du möchtest deinen Thermomix® darüber hinaus flexibel bezahlen? Über die Denzel Bank AG ist eine klassische Finanzierung möglich. Ich informiere dich gerne über die aktuellen Konditionen und unterstütze dich bei der Abwicklung.",
+      "benefits": ["0 % Finanzierung für TM-Bundle mit 2. Mixtopf", "Flexible Laufzeiten über Denzel Bank", "Abwicklung direkt über mich"],
       "button": "Finanzierung & Aktionen anfragen",
-      "badge": "%"
+      "badge": "0%"
     }
+
   },
   "about": {
     "tagline": "Über mich",

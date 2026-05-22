@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Gift, Sparkles, ArrowRight, Calendar, Users, Euro } from 'lucide-react';
+import { X, Sparkles, ArrowRight, Calendar, Users, Euro, Percent, ChefHat, Gift } from 'lucide-react';
 
-const STORAGE_KEY = 'promoPopup_traum_bundle_tm4u_seen';
+const STORAGE_KEY = 'promoPopup_2mixtopf_showkochen_v1_seen';
 
 const PromoPopup = () => {
   const [open, setOpen] = useState(false);
@@ -41,17 +41,17 @@ const PromoPopup = () => {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Aktion 1: Traum Bundle */}
+        {/* Aktion 1: TM7 mit 2. Mixtopf + 0% Finanzierung */}
         <div className="bg-gradient-to-br from-primary/15 via-secondary/30 to-accent/20 p-6 pt-8 pb-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
             <Calendar className="w-4 h-4" />
-            Gültig bis 24.05.2026
+            Aktion gültig bis 31.05.2026
           </div>
           <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            <span className="text-primary">Mix dir dein Traum Bundle</span>
+            Thermomix® TM7 mit <span className="text-primary">2. Mixtopf</span>
           </h2>
           <p className="text-muted-foreground text-sm">
-            Thermomix® TM7 plus €&nbsp;150,&#8209; Online Shop Gutschein geschenkt.*
+            um nur <strong>€&nbsp;1.678,&#8209;</strong> – inkl. 2 Jahre Garantie.
           </p>
         </div>
 
@@ -62,20 +62,20 @@ const PromoPopup = () => {
                 <Sparkles className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">Thermomix® TM7</p>
+                <p className="font-semibold text-foreground">Thermomix® TM7 inkl. 2. Mixtopf</p>
                 <p className="text-sm text-muted-foreground">
-                  um nur <strong>€&nbsp;1.549,&#8209;</strong>
+                  um nur <strong>€&nbsp;1.678,&#8209;</strong> – oder mit Garantieverlängerung um <strong>€&nbsp;1.827,&#8209;</strong>
                 </p>
               </div>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Gift className="w-5 h-5 text-primary" />
+                <Percent className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">€&nbsp;150,&#8209; Online Shop Gutschein</p>
+                <p className="font-semibold text-foreground">0 % Finanzierung</p>
                 <p className="text-sm text-muted-foreground">
-                  für Zubehör deiner Wahl – (D)ein Gutschein, viele Möglichkeiten
+                  10 Monate ohne Zinsen und Gebühren – exklusiv für das TM-Bundle mit 2. Mixtopf.
                 </p>
               </div>
             </li>
@@ -86,11 +86,11 @@ const PromoPopup = () => {
             onClick={close}
             className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg group"
           >
-            Jetzt Termin sichern
+            Melde dich für mehr Infos!
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
-            *Bei Buchung eines Welcome Services binnen 3 Monaten. Aktion gültig bis 24.05.2026. Nicht kombinierbar mit anderen Aktionen. Nur über Direktvertrieb.
+            Aktion und 0 %-Finanzierung gültig bis 31.05.2026, ausschließlich für das TM-Bundle mit 2. Mixtopf. Nicht kombinierbar mit anderen Aktionen.
           </p>
         </div>
 
@@ -99,17 +99,17 @@ const PromoPopup = () => {
           <div className="border-t border-border" />
         </div>
 
-        {/* Aktion 2: TM4U */}
+        {/* Aktion 2: Showkochen & Genießen */}
         <div className="bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 pt-6 pb-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
             <Calendar className="w-4 h-4" />
-            Aktion bis 29.06.2026
+            25.05. – 28.06.2026
           </div>
           <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            Hol dir deinen Thermomix <span className="text-primary">günstiger oder gratis!</span>
+            Gastfreundschaft <span className="text-primary">lohnt sich jetzt richtig!</span>
           </h3>
           <p className="text-muted-foreground text-sm">
-            Werde Teil vom Team König – attraktive Vergütung statt Restzahlung.
+            Showkochen & Genießen – wähle zwischen zwei starken Helfern.
           </p>
         </div>
 
@@ -117,23 +117,23 @@ const PromoPopup = () => {
           <ul className="space-y-3 mb-6">
             <li className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Euro className="w-5 h-5 text-primary" />
+                <Gift className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">Attraktive Vergütung</p>
+                <p className="font-semibold text-foreground">Peeler – <span className="text-primary">GRATIS</span></p>
                 <p className="text-sm text-muted-foreground">
-                  Mit jedem Verkauf wird dein eigener Thermomix günstiger bzw. gratis.
+                  Messerabdeckung mit Peeler – ohne Zuzahlung für dich.
                 </p>
               </div>
             </li>
             <li className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Sparkles className="w-5 h-5 text-primary" />
+                <ChefHat className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">Kostenlose Schulungen</p>
+                <p className="font-semibold text-foreground">Gemüsestyler – um nur €&nbsp;99,&#8209;</p>
                 <p className="text-sm text-muted-foreground">
-                  Lerne alles, was du brauchst – persönlich und praxisnah.
+                  Inkl. Messerabdeckung – die attraktive Aktion für Genießer.
                 </p>
               </div>
             </li>
@@ -142,20 +142,20 @@ const PromoPopup = () => {
                 <Users className="w-5 h-5 text-primary" />
               </div>
               <div>
-                <p className="font-semibold text-foreground">Wertschätzung & Unterstützung</p>
+                <p className="font-semibold text-foreground">Live kochen & gemeinsam genießen</p>
                 <p className="text-sm text-muted-foreground">
-                  Du bist nicht allein – ich begleite dich auf deinem Weg.
+                  Gemeinschaft erleben, leckere Gerichte direkt probieren.
                 </p>
               </div>
             </li>
           </ul>
 
           <Link
-            to="/team"
+            to="/showkochen"
             onClick={close}
             className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg group"
           >
-            Melde dich für mehr Infos!
+            Showkochen anfragen
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <button
