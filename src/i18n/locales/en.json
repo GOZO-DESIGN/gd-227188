@@ -123,11 +123,12 @@
       "casserole": "Casserole and Thermomix® Sensor – € 199.00"
     },
     "financing": {
-      "title": "Financing through Denzel Bank available",
-      "text1": "Would you like to pay for your Thermomix® flexibly?",
-      "text2": "Financing is possible through Denzel Bank AG. I'll be happy to inform you about the current conditions and support you with the processing.",
-      "benefits": ["Flexible terms", "Transparent installments", "Processing directly through me"],
-      "button": "Request financing & promotions"
+      "title": "0% financing & flexible payment",
+      "text1": "Now available: 0% financing – 10 months without interest or fees, exclusively for the TM bundle with second mixing bowl. Valid until 31.05.2026.",
+      "text2": "Want to pay for your Thermomix® flexibly beyond that? Classic financing is also possible through Denzel Bank AG. I'll be happy to inform you about the current conditions and support you with the processing.",
+      "benefits": ["0% financing for TM bundle with 2nd mixing bowl", "Flexible terms via Denzel Bank", "Processing directly through me"],
+      "button": "Request financing & promotions",
+      "badge": "0%"
     }
   },
   "about": {
