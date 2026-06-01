@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Sparkles, ArrowRight, Calendar, Users, Euro, Percent, ChefHat, Gift } from 'lucide-react';
+import { X, Sparkles, ArrowRight, Calendar, Users, Euro, ChefHat, Gift } from 'lucide-react';
 
-const STORAGE_KEY = 'promoPopup_2mixtopf_showkochen_tm4u_v2_seen';
+const STORAGE_KEY = 'promoPopup_2mixtopf_showkochen_tm4u_v3_seen';
 
 const PromoPopup = () => {
   const [open, setOpen] = useState(false);
@@ -45,7 +45,7 @@ const PromoPopup = () => {
         <div className="bg-gradient-to-br from-primary/15 via-secondary/30 to-accent/20 p-6 pt-8 pb-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
             <Calendar className="w-4 h-4" />
-            Aktion gültig bis 31.05.2026
+            Aktion gültig bis 28.06.2026
           </div>
           <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground mb-2">
             Thermomix® TM7 mit <span className="text-primary">2. Mixtopf</span>
@@ -68,17 +68,6 @@ const PromoPopup = () => {
                 </p>
               </div>
             </li>
-            <li className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Percent className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-semibold text-foreground">0 % Finanzierung</p>
-                <p className="text-sm text-muted-foreground">
-                  10 Monate ohne Zinsen und Gebühren – exklusiv für das TM-Bundle mit 2. Mixtopf.
-                </p>
-              </div>
-            </li>
           </ul>
 
           <Link
@@ -90,7 +79,7 @@ const PromoPopup = () => {
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
-            Aktion und 0 %-Finanzierung gültig bis 31.05.2026, ausschließlich für das TM-Bundle mit 2. Mixtopf. Nicht kombinierbar mit anderen Aktionen.
+            Aktion gültig bis 28.06.2026, ausschließlich für das TM-Bundle mit 2. Mixtopf. Nicht kombinierbar mit anderen Aktionen.
           </p>
         </div>
 
