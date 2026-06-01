@@ -6,10 +6,8 @@ import { useTranslation } from 'react-i18next';
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
-import promoTM7MixtopfAsset from '@/assets/promo-tm7-2mixtopf.webp.asset.json';
+import promoTM7Mixtopf from '@/assets/promo-tm7-2mixtopf.webp';
 import promoShowkochen from '@/assets/promo-showkochen-gastfreundschaft.jpg';
-
-const promoTM7Mixtopf = promoTM7MixtopfAsset.url;
 
 interface Offer {
   id: string;
