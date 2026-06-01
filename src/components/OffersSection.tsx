@@ -1,4 +1,4 @@
-import { ArrowRight, Check, Sparkles, Calendar, Percent, Gift, ChefHat, Users } from 'lucide-react';
+import { ArrowRight, Sparkles, Calendar, Gift, ChefHat, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -6,8 +6,10 @@ import { useTranslation } from 'react-i18next';
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
-import promoTM7Mixtopf from '@/assets/promo-tm7-2mixtopf.jpg';
+import promoTM7MixtopfAsset from '@/assets/promo-tm7-2mixtopf.webp.asset.json';
 import promoShowkochen from '@/assets/promo-showkochen-gastfreundschaft.jpg';
+
+const promoTM7Mixtopf = promoTM7MixtopfAsset.url;
 
 interface Offer {
   id: string;
@@ -44,8 +46,6 @@ const OffersSection = () => {
     ? 'md:grid-cols-2' 
     : 'md:grid-cols-2 lg:grid-cols-3';
 
-  const financingBenefits = t('offers.financing.benefits', { returnObjects: true }) as string[];
-
   return (
     <section className="py-16 md:py-24 bg-muted/30">
       <div className="container-narrow">
@@ -77,7 +77,7 @@ const OffersSection = () => {
                 <div className="flex-1 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-3">
                     <Calendar className="w-4 h-4" />
-                    Aktion gültig bis 31.05.2026
+                    Aktion gültig bis 28.06.2026
                   </div>
                   <h3 className="font-serif text-xl md:text-2xl text-foreground mb-2">
                     Thermomix® TM7 mit 2. Mixtopf
@@ -98,19 +98,13 @@ const OffersSection = () => {
                         Mit Garantieverlängerung um nur <strong>€&nbsp;1.827,&#8209;</strong>
                       </span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <Percent className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">
-                        <strong>0 % Finanzierung</strong> – 10 Monate ohne Zinsen & Gebühren
-                      </span>
-                    </li>
                   </ul>
                   <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
                     Melde dich für mehr Infos!
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                   <p className="text-xs text-muted-foreground mt-3 italic">
-                    Aktion und 0 %-Finanzierung gültig bis 31.05.2026, ausschließlich für das TM-Bundle mit 2. Mixtopf. Nicht kombinierbar mit anderen Aktionen. Angaben ohne Gewähr.
+                    Aktion gültig bis 28.06.2026, ausschließlich für das TM-Bundle mit 2. Mixtopf. Nicht kombinierbar mit anderen Aktionen. Angaben ohne Gewähr.
                   </p>
                 </div>
               </div>
@@ -237,55 +231,6 @@ const OffersSection = () => {
           </div>
         </div>
 
-        {/* Financing Section */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-soft">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
-            {/* Left: Content */}
-            <div className="flex-1">
-              <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
-                {t('offers.financing.title')}
-              </h3>
-              
-              <p className="text-muted-foreground mb-2">
-                {t('offers.financing.text1')}
-              </p>
-              <p className="text-muted-foreground mb-6">
-                {t('offers.financing.text2')}
-              </p>
-
-              {/* Benefits */}
-              <div className="space-y-3 mb-8">
-                {financingBenefits.map((benefit) => (
-                  <div key={benefit} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-4 h-4 text-primary" />
-                    </div>
-                    <span className="text-foreground font-medium">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA Button */}
-              <Link
-                to="/beratung"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-medium
-                  transition-all duration-300 hover:bg-primary/90 hover:shadow-elevated hover:-translate-y-1 group"
-              >
-                {t('offers.financing.button')}
-                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-              </Link>
-            </div>
-
-            {/* Right: Visual Element */}
-            <div className="hidden lg:flex items-center justify-center">
-              <div className="w-48 h-48 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-serif text-5xl font-bold">{t('offers.financing.badge')}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
