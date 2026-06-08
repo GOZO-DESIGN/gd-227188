@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Calendar, Gift, ChefHat, Users } from 'lucide-react';
+import { ArrowRight, Sparkles, Calendar, Gift, ChefHat, Users, Repeat, Coins } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
