@@ -71,7 +71,7 @@ const OffersSection = () => {
               <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-10">
                 <div className="w-full md:w-2/5 flex justify-center">
                   <img
-                    src={promoSpielerwechselAsset.url}
+                    src={promoSpielerwechsel}
                     alt="Spielerwechsel – Tausche dein Altgerät ein und sichere dir bis zu € 450,- Gutschrift auf den neuen Thermomix® TM7"
                     loading="lazy"
                     className="w-full max-w-xs rounded-2xl shadow-soft"
