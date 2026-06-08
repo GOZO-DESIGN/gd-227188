@@ -41,6 +41,58 @@ const PromoPopup = () => {
           <X className="w-5 h-5" />
         </button>
 
+        {/* NEUE Aktion: Spielerwechsel – Eintausch-Aktion */}
+        <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 p-6 pt-8 pb-4 text-center border-b-2 border-primary">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
+            Neue Aktion
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
+            <Calendar className="w-4 h-4" />
+            08.06. – 21.06.2026
+          </div>
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
+            Zeit für einen <span className="text-primary">neuen Stürmer!</span>
+          </h2>
+          <p className="text-muted-foreground text-sm">
+            Tausche dein Altgerät ein und hol dir den <strong>Thermomix® TM7</strong> im Basispaket – mit bis zu <strong className="text-primary">€&nbsp;450,&#8209; Gutschrift</strong>.
+          </p>
+        </div>
+
+        <div className="p-6 pt-4">
+          <ul className="space-y-2 mb-6">
+            <li className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-muted/40">
+              <span className="flex items-center gap-2 text-foreground"><Repeat className="w-4 h-4 text-primary" /> TM21 eintauschen</span>
+              <span className="font-bold text-primary">€&nbsp;200,&#8209;</span>
+            </li>
+            <li className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-muted/40">
+              <span className="flex items-center gap-2 text-foreground"><Repeat className="w-4 h-4 text-primary" /> TM31 eintauschen</span>
+              <span className="font-bold text-primary">€&nbsp;200,&#8209;</span>
+            </li>
+            <li className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-muted/40">
+              <span className="flex items-center gap-2 text-foreground"><Repeat className="w-4 h-4 text-primary" /> TM5 eintauschen</span>
+              <span className="font-bold text-primary">€&nbsp;350,&#8209;</span>
+            </li>
+            <li className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-primary/10 border border-primary/30">
+              <span className="flex items-center gap-2 text-foreground font-semibold"><Coins className="w-4 h-4 text-primary" /> TM6 eintauschen</span>
+              <span className="font-bold text-primary">€&nbsp;450,&#8209;</span>
+            </li>
+          </ul>
+
+          <Link
+            to="/beratung"
+            onClick={close}
+            className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg group"
+          >
+            Jetzt eintauschen & TM7 sichern
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+          <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
+            * Gutschrift auf den Kaufpreis nach Einsendung deines Altgeräts. Gültig 08.06.–21.06.2026 für TM7 im Basispaket.
+          </p>
+        </div>
+
+        <div className="px-6"><div className="border-t border-border" /></div>
+
         {/* Aktion 1: TM7 mit 2. Mixtopf + 0% Finanzierung */}
         <div className="bg-gradient-to-br from-primary/15 via-secondary/30 to-accent/20 p-6 pt-8 pb-4 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
