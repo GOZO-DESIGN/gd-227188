@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Sparkles, ArrowRight, Calendar, Users, Euro, ChefHat, Gift } from 'lucide-react';
+import { X, Sparkles, ArrowRight, Calendar, Users, Euro, ChefHat, Gift, Repeat, Coins } from 'lucide-react';
 
-const STORAGE_KEY = 'promoPopup_2mixtopf_showkochen_tm4u_v3_seen';
+const STORAGE_KEY = 'promoPopup_spielerwechsel_v1_seen';
 
 const PromoPopup = () => {
   const [open, setOpen] = useState(false);
