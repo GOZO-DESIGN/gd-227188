@@ -68,73 +68,74 @@ const OffersSection = () => {
               <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1.5 rounded-bl-2xl text-xs font-bold tracking-wide uppercase">
                 Neue Aktion
               </div>
-              <div className="p-6 md:p-10">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
-                  <Calendar className="w-4 h-4" />
-                  Promotionzeitraum: 08.06. – 21.06.2026
-                </div>
-                <span className="block text-primary font-semibold tracking-wide uppercase text-sm mb-2">
-                  Kunden Promotion – Spielerwechsel
-                </span>
-                <h3 className="font-serif text-2xl md:text-4xl text-foreground mb-3">
-                  Zeit für einen neuen Stürmer! 🔄
-                </h3>
-                <p className="text-lg text-foreground mb-2">
-                  <strong>Jetzt eintauschen und dir den Thermomix® TM7 ins Haus holen!</strong>
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  Tausche dein Altgerät ein und sichere dir bis zu <strong className="text-primary">€&nbsp;450,&#8209; Gutschrift</strong> auf den neuen Thermomix® TM7 im Basispaket.
-                </p>
-
-                <div className="mb-6 flex justify-center">
+              <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-10">
+                <div className="w-full md:w-2/5 flex justify-center">
                   <img
                     src={promoSpielerwechselAsset.url}
                     alt="Spielerwechsel – Tausche dein Altgerät ein und sichere dir bis zu € 450,- Gutschrift auf den neuen Thermomix® TM7"
                     loading="lazy"
-                    className="w-full max-w-md rounded-2xl shadow-soft"
+                    className="w-full max-w-xs rounded-2xl shadow-soft"
                   />
                 </div>
-
-                <div className="bg-white/70 rounded-xl p-5 md:p-6 mb-6 border border-primary/20">
-                  <p className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <Repeat className="w-5 h-5 text-primary" />
-                    So funktioniert's:
+                <div className="flex-1 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
+                    <Calendar className="w-4 h-4" />
+                    Promotionzeitraum: 08.06. – 21.06.2026
+                  </div>
+                  <span className="block text-primary font-semibold tracking-wide uppercase text-sm mb-2">
+                    Kunden Promotion – Spielerwechsel
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-4xl text-foreground mb-3">
+                    Zeit für einen neuen Stürmer! 🔄
+                  </h3>
+                  <p className="text-lg text-foreground mb-2">
+                    <strong>Jetzt eintauschen und dir den Thermomix® TM7 ins Haus holen!</strong>
                   </p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3">
-                      <Coins className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">
-                        Thermomix® <strong>TM21</strong> zurückgeben → <strong className="text-primary">€&nbsp;200,&#8209;</strong> Gutschrift
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Coins className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">
-                        Thermomix® <strong>TM31</strong> zurückgeben → <strong className="text-primary">€&nbsp;200,&#8209;</strong> Gutschrift
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Coins className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">
-                        Thermomix® <strong>TM5</strong> zurückgeben → <strong className="text-primary">€&nbsp;350,&#8209;</strong> Gutschrift
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Coins className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground">
-                        Thermomix® <strong>TM6</strong> zurückgeben → <strong className="text-primary">€&nbsp;450,&#8209;</strong> Gutschrift
-                      </span>
-                    </li>
-                  </ul>
-                </div>
+                  <p className="text-muted-foreground mb-6">
+                    Tausche dein Altgerät ein und sichere dir bis zu <strong className="text-primary">€&nbsp;450,&#8209; Gutschrift</strong> auf den neuen Thermomix® TM7 im Basispaket.
+                  </p>
 
-                <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
-                  Jetzt eintauschen & TM7 sichern
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-                <p className="text-xs text-muted-foreground mt-4 italic">
-                  * Du erhältst eine Gutschrift auf den Kaufpreis nach Einsendung deines Altgeräts. Aktion gültig vom 08.06. bis 21.06.2026. Gilt für den TM7 im Basispaket. Nicht kombinierbar mit anderen Aktionen. Angaben ohne Gewähr.
-                </p>
+                  <div className="bg-white/70 rounded-xl p-5 md:p-6 mb-6 border border-primary/20 text-left">
+                    <p className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <Repeat className="w-5 h-5 text-primary" />
+                      So funktioniert's:
+                    </p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <Coins className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">
+                          Thermomix® <strong>TM21</strong> zurückgeben → <strong className="text-primary">€&nbsp;200,&#8209;</strong> Gutschrift
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Coins className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">
+                          Thermomix® <strong>TM31</strong> zurückgeben → <strong className="text-primary">€&nbsp;200,&#8209;</strong> Gutschrift
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Coins className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">
+                          Thermomix® <strong>TM5</strong> zurückgeben → <strong className="text-primary">€&nbsp;350,&#8209;</strong> Gutschrift
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Coins className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">
+                          Thermomix® <strong>TM6</strong> zurückgeben → <strong className="text-primary">€&nbsp;450,&#8209;</strong> Gutschrift
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
+                    Jetzt eintauschen & TM7 sichern
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                  <p className="text-xs text-muted-foreground mt-4 italic">
+                    * Du erhältst eine Gutschrift auf den Kaufpreis nach Einsendung deines Altgeräts. Aktion gültig vom 08.06. bis 21.06.2026. Gilt für den TM7 im Basispaket. Nicht kombinierbar mit anderen Aktionen. Angaben ohne Gewähr.
+                  </p>
+                </div>
               </div>
             </div>
           </Link>
