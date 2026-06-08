@@ -8,7 +8,7 @@ import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
 import promoTM7Mixtopf from '@/assets/promo-tm7-2mixtopf.webp';
 import promoShowkochen from '@/assets/promo-showkochen-gastfreundschaft.jpg';
-import promoSpielerwechselAsset from '@/assets/promo-spielerwechsel.jpg.asset.json';
+import promoSpielerwechsel from '@/assets/promo-spielerwechsel.jpg';
 
 interface Offer {
   id: string;
