@@ -8,7 +8,7 @@ import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
 import promoTM7Mixtopf from '@/assets/promo-tm7-2mixtopf.webp';
 import promoShowkochen from '@/assets/promo-showkochen-gastfreundschaft.jpg';
-import promoSpielerwechselAsset from '@/assets/promo-spielerwechsel.jpg.asset.json';
+import promoSpielerwechsel from '@/assets/promo-spielerwechsel.jpg';
 
 interface Offer {
   id: string;
@@ -71,7 +71,7 @@ const OffersSection = () => {
               <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-10">
                 <div className="w-full md:w-2/5 flex justify-center">
                   <img
-                    src={promoSpielerwechselAsset.url}
+                    src={promoSpielerwechsel}
                     alt="Spielerwechsel – Tausche dein Altgerät ein und sichere dir bis zu € 450,- Gutschrift auf den neuen Thermomix® TM7"
                     loading="lazy"
                     className="w-full max-w-xs rounded-2xl shadow-soft"
