@@ -97,6 +97,7 @@ const PromoPopup = () => {
         </div>
 
         <div className="px-6"><div className="border-t border-border" /></div>
+        </>)}
 
         {/* Aktion 1: TM7 mit 2. Mixtopf + 0% Finanzierung */}
         <div className="bg-gradient-to-br from-primary/15 via-secondary/30 to-accent/20 p-6 pt-8 pb-4 text-center">
