@@ -40,7 +40,10 @@ const offers: Offer[] = [
 
 const OffersSection = () => {
   const { t } = useTranslation();
-  
+
+  // Spielerwechsel-Aktion läuft automatisch ab am Montag, 22.06.2026 um 00:00 Uhr (Europe/Vienna, CEST = UTC+2)
+  const spielerwechselActive = Date.now() < new Date('2026-06-22T00:00:00+02:00').getTime();
+
   const gridCols = offers.length === 2 
     ? 'md:grid-cols-2' 
     : 'md:grid-cols-2 lg:grid-cols-3';
