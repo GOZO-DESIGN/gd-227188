@@ -40,7 +40,10 @@ const offers: Offer[] = [
 
 const OffersSection = () => {
   const { t } = useTranslation();
-  
+
+  // Spielerwechsel-Aktion läuft automatisch ab am Montag, 22.06.2026 um 00:00 Uhr (Europe/Vienna, CEST = UTC+2)
+  const spielerwechselActive = Date.now() < new Date('2026-06-22T00:00:00+02:00').getTime();
+
   const gridCols = offers.length === 2 
     ? 'md:grid-cols-2' 
     : 'md:grid-cols-2 lg:grid-cols-3';
@@ -61,7 +64,8 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {/* NEW Aktion: Spielerwechsel – Eintausch-Aktion 08.06. – 21.06.2026 */}
+        {/* NEW Aktion: Spielerwechsel – Eintausch-Aktion 08.06. – 21.06.2026 (endet automatisch Mo. 22.06.2026 00:00) */}
+        {spielerwechselActive && (
         <div className="mb-8 relative">
           <Link to="/beratung" className="block group">
             <div className="relative bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary">
@@ -140,6 +144,7 @@ const OffersSection = () => {
             </div>
           </Link>
         </div>
+        )}
 
         {/* Aktion 1: TM7 mit 2. Mixtopf – gültig bis 31.05.2026 */}
         <div className="mb-8 relative">

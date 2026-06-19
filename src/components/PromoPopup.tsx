@@ -4,7 +4,11 @@ import { X, Sparkles, ArrowRight, Calendar, Users, Euro, ChefHat, Gift, Repeat, 
 
 const STORAGE_KEY = 'promoPopup_spielerwechsel_v1_seen';
 
+// Spielerwechsel-Aktion endet automatisch Mo. 22.06.2026 00:00 (Europe/Vienna, CEST = UTC+2)
+const SPIELERWECHSEL_END = new Date('2026-06-22T00:00:00+02:00').getTime();
+
 const PromoPopup = () => {
+  const spielerwechselActive = Date.now() < SPIELERWECHSEL_END;
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -41,7 +45,8 @@ const PromoPopup = () => {
           <X className="w-5 h-5" />
         </button>
 
-        {/* NEUE Aktion: Spielerwechsel – Eintausch-Aktion */}
+        {/* NEUE Aktion: Spielerwechsel – Eintausch-Aktion (endet automatisch Mo. 22.06.2026 00:00) */}
+        {spielerwechselActive && (<>
         <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 p-6 pt-8 pb-4 text-center border-b-2 border-primary">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
             Neue Aktion
@@ -92,6 +97,7 @@ const PromoPopup = () => {
         </div>
 
         <div className="px-6"><div className="border-t border-border" /></div>
+        </>)}
 
         {/* Aktion 1: TM7 mit 2. Mixtopf + 0% Finanzierung */}
         <div className="bg-gradient-to-br from-primary/15 via-secondary/30 to-accent/20 p-6 pt-8 pb-4 text-center">
