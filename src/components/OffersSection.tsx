@@ -64,7 +64,8 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {/* NEW Aktion: Spielerwechsel – Eintausch-Aktion 08.06. – 21.06.2026 */}
+        {/* NEW Aktion: Spielerwechsel – Eintausch-Aktion 08.06. – 21.06.2026 (endet automatisch Mo. 22.06.2026 00:00) */}
+        {spielerwechselActive && (
         <div className="mb-8 relative">
           <Link to="/beratung" className="block group">
             <div className="relative bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary">
