@@ -144,6 +144,7 @@ const OffersSection = () => {
             </div>
           </Link>
         </div>
+        )}
 
         {/* Aktion 1: TM7 mit 2. Mixtopf – gültig bis 31.05.2026 */}
         <div className="mb-8 relative">
