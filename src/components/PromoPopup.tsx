@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Sparkles, ArrowRight, Calendar, Users, Euro, ChefHat, Gift, Repeat, Coins } from 'lucide-react';
+import { X, Sparkles, ArrowRight, Calendar, Users, Euro, ChefHat, Gift, Repeat, Coins, Percent, PiggyBank } from 'lucide-react';
 
-const STORAGE_KEY = 'promoPopup_spielerwechsel_v1_seen';
+const STORAGE_KEY = 'promoPopup_zinsen_v1_seen';
 
-// Spielerwechsel-Aktion endet automatisch Mo. 22.06.2026 00:00 (Europe/Vienna, CEST = UTC+2)
+// Aktionen enden automatisch Mo. 29.06.2026 00:00 (Europe/Vienna, CEST = UTC+2)
 const SPIELERWECHSEL_END = new Date('2026-06-29T00:00:00+02:00').getTime();
+const ZINSEN_END = new Date('2026-06-29T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
   const spielerwechselActive = Date.now() < SPIELERWECHSEL_END;
+  const zinsenActive = Date.now() < ZINSEN_END;
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -45,7 +47,61 @@ const PromoPopup = () => {
           <X className="w-5 h-5" />
         </button>
 
-        {/* NEUE Aktion: Spielerwechsel – Eintausch-Aktion (endet automatisch Mo. 22.06.2026 00:00) */}
+        {/* NEUE Aktion: Zinsen zum Grinsen – 0% Finanzierung 22.06. – 28.06.2026 */}
+        {zinsenActive && (<>
+        <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 p-6 pt-8 pb-4 text-center border-b-2 border-primary">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
+            Neue Aktion
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
+            <Calendar className="w-4 h-4" />
+            22.06. – 28.06.2026
+          </div>
+          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
+            Zinsen zum <span className="text-primary">Grinsen!</span>
+          </h2>
+          <p className="text-muted-foreground text-sm">
+            Erstmalig <strong className="text-primary">0% Finanzierung</strong> mit 24 Monaten Laufzeit – ohne Zinsen, ohne Gebühren, ohne Anzahlung.
+          </p>
+        </div>
+
+        <div className="p-6 pt-4">
+          <ul className="space-y-2 mb-6">
+            <li className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-muted/40">
+              <span className="flex items-center gap-2 text-foreground"><Percent className="w-4 h-4 text-primary" /> Zinsen</span>
+              <span className="font-bold text-primary">0%</span>
+            </li>
+            <li className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-muted/40">
+              <span className="flex items-center gap-2 text-foreground"><PiggyBank className="w-4 h-4 text-primary" /> Anzahlung</span>
+              <span className="font-bold text-primary">0&nbsp;€</span>
+            </li>
+            <li className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-muted/40">
+              <span className="flex items-center gap-2 text-foreground"><Calendar className="w-4 h-4 text-primary" /> Laufzeit</span>
+              <span className="font-bold text-primary">24 Monate</span>
+            </li>
+            <li className="flex items-center justify-between gap-3 p-2.5 rounded-lg bg-primary/10 border border-primary/30">
+              <span className="flex items-center gap-2 text-foreground font-semibold"><Sparkles className="w-4 h-4 text-primary" /> Bundle „Modus: Traumsommer!"</span>
+              <span className="font-bold text-primary">ab €&nbsp;1.827,&#8209;</span>
+            </li>
+          </ul>
+
+          <Link
+            to="/beratung"
+            onClick={close}
+            className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg group"
+          >
+            Jetzt mit 0% finanzieren
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+          <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
+            * Gültig 22.06.–28.06.2026 ab Warenkorbwert €&nbsp;1.827,&#8209;. Vorbehaltlich Bonitätsprüfung.
+          </p>
+        </div>
+
+        <div className="px-6"><div className="border-t border-border" /></div>
+        </>)}
+
+        {/* NEUE Aktion: Spielerwechsel – Eintausch-Aktion (endet automatisch Mo. 29.06.2026 00:00) */}
         {spielerwechselActive && (<>
         <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 p-6 pt-8 pb-4 text-center border-b-2 border-primary">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
