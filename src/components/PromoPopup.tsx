@@ -103,6 +103,7 @@ const PromoPopup = () => {
 
         {/* NEUE Aktion: Spielerwechsel – Eintausch-Aktion (endet automatisch Mo. 29.06.2026 00:00) */}
         {spielerwechselActive && (<>
+        <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 p-6 pt-8 pb-4 text-center border-b-2 border-primary">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
             Neue Aktion
           </div>
