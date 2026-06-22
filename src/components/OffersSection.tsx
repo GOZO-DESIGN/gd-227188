@@ -67,6 +67,88 @@ const OffersSection = () => {
           </p>
         </div>
 
+        {/* NEW Aktion: Zinsen zum Grinsen – 0% Finanzierung 22.06. – 28.06.2026 */}
+        {zinsenActive && (
+        <div className="mb-8 relative">
+          <Link to="/beratung" className="block group">
+            <div className="relative bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary">
+              <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1.5 rounded-bl-2xl text-xs font-bold tracking-wide uppercase z-10">
+                Neue Aktion
+              </div>
+              <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-10">
+                <div className="w-full md:w-2/5 flex justify-center">
+                  <img
+                    src={promoZinsenZumGrinsen}
+                    alt="Zinsen zum Grinsen – 0% Finanzierung auf den Thermomix® TM7 mit 24 Monaten Laufzeit"
+                    loading="lazy"
+                    className="w-full max-w-xs rounded-2xl shadow-soft"
+                  />
+                </div>
+                <div className="flex-1 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
+                    <Calendar className="w-4 h-4" />
+                    Promotionzeitraum: 22.06. – 28.06.2026
+                  </div>
+                  <span className="block text-primary font-semibold tracking-wide uppercase text-sm mb-2">
+                    Kunden Promotion – Zinsen zum Grinsen
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-4xl text-foreground mb-3">
+                    0% Finanzierung – das gab's noch nie! 🎉
+                  </h3>
+                  <p className="text-lg text-foreground mb-2">
+                    <strong>Erstmalig: 0% Zinsen, 0&nbsp;€ Gebühren, 0&nbsp;€ Anzahlung.</strong>
+                  </p>
+                  <p className="text-muted-foreground mb-6">
+                    Ab einem Warenkorbwert von <strong className="text-primary">€&nbsp;1.827,&#8209;</strong> kannst du dir das Bundle <strong>„Modus: Traumsommer!"</strong> inkl. Garantieverlängerung in <strong>24 kleinen, flexiblen Schritten</strong> finanzieren – ohne versteckte Kosten.
+                  </p>
+
+                  <div className="bg-white/70 rounded-xl p-5 md:p-6 mb-6 border border-primary/20 text-left">
+                    <p className="font-semibold text-foreground mb-4 flex items-center gap-2">
+                      <Percent className="w-5 h-5 text-primary" />
+                      Deine Vorteile:
+                    </p>
+                    <ul className="space-y-3">
+                      <li className="flex items-start gap-3">
+                        <Percent className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">
+                          <strong className="text-primary">0% Zinsen</strong> & <strong className="text-primary">0&nbsp;€ Gebühren</strong>
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <PiggyBank className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">
+                          <strong>0&nbsp;€ Anzahlung</strong> – sofort loskochen
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Calendar className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">
+                          <strong>24 Monate Laufzeit</strong> in kleinen, flexiblen Raten
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <span className="text-foreground">
+                          Bundle <strong>„Modus: Traumsommer!"</strong> inkl. <strong>2. Mixtopf</strong> & <strong>Garantieverlängerung auf 5 Jahre</strong>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
+                    Jetzt mit 0% finanzieren
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                  <p className="text-xs text-muted-foreground mt-4 italic">
+                    * 0% Finanzierung gültig ab einem Warenkorbwert von €&nbsp;1.827,&#8209;. Aktion gültig vom 22.06. bis 28.06.2026. Vorbehaltlich Bonitätsprüfung. Nicht kombinierbar mit anderen Aktionen. Angaben ohne Gewähr.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+        )}
+
         {/* NEW Aktion: Spielerwechsel – Eintausch-Aktion 08.06. – 21.06.2026 (endet automatisch Mo. 22.06.2026 00:00) */}
         {spielerwechselActive && (
         <div className="mb-8 relative">
