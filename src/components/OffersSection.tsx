@@ -44,6 +44,8 @@ const OffersSection = () => {
 
   // Spielerwechsel-Aktion läuft automatisch ab am Montag, 29.06.2026 um 00:00 Uhr (Europe/Vienna, CEST = UTC+2)
   const spielerwechselActive = Date.now() < new Date('2026-06-29T00:00:00+02:00').getTime();
+  // Zinsen zum Grinsen – 0% Finanzierung – Aktion läuft automatisch ab am Montag, 29.06.2026 um 00:00 Uhr (Europe/Vienna)
+  const zinsenActive = Date.now() < new Date('2026-06-29T00:00:00+02:00').getTime();
 
   const gridCols = offers.length === 2 
     ? 'md:grid-cols-2' 
