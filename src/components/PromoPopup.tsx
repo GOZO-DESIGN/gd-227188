@@ -5,7 +5,7 @@ import { X, Sparkles, ArrowRight, Calendar, Users, Euro, ChefHat, Gift, Repeat, 
 const STORAGE_KEY = 'promoPopup_spielerwechsel_v1_seen';
 
 // Spielerwechsel-Aktion endet automatisch Mo. 22.06.2026 00:00 (Europe/Vienna, CEST = UTC+2)
-const SPIELERWECHSEL_END = new Date('2026-06-22T00:00:00+02:00').getTime();
+const SPIELERWECHSEL_END = new Date('2026-06-29T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
   const spielerwechselActive = Date.now() < SPIELERWECHSEL_END;
