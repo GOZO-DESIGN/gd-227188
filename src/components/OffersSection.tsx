@@ -42,8 +42,8 @@ const offers: Offer[] = [
 const OffersSection = () => {
   const { t } = useTranslation();
 
-  // Spielerwechsel-Aktion läuft automatisch ab am Montag, 29.06.2026 um 00:00 Uhr (Europe/Vienna, CEST = UTC+2)
-  const spielerwechselActive = Date.now() < new Date('2026-06-29T00:00:00+02:00').getTime();
+  // Spielerwechsel-Aktion läuft automatisch ab am Montag, 30.06.2026 um 00:00 Uhr (Europe/Vienna, CEST = UTC+2)
+  const spielerwechselActive = Date.now() < new Date('2026-06-30T00:00:00+02:00').getTime();
   // Zinsen zum Grinsen – 0% Finanzierung – Aktion läuft automatisch ab am Montag, 29.06.2026 um 00:00 Uhr (Europe/Vienna)
   const zinsenActive = Date.now() < new Date('2026-06-29T00:00:00+02:00').getTime();
 
@@ -149,7 +149,7 @@ const OffersSection = () => {
         </div>
         )}
 
-        {/* NEW Aktion: Spielerwechsel – Eintausch-Aktion 08.06. – 21.06.2026 (endet automatisch Mo. 22.06.2026 00:00) */}
+        {/* NEW Aktion: Spielerwechsel – Eintausch-Aktion 08.06. – 30.06.2026 (endet automatisch Mi. 01.07.2026 00:00) */}
         {spielerwechselActive && (
         <div className="mb-8 relative">
           <Link to="/beratung" className="block group">
@@ -169,7 +169,7 @@ const OffersSection = () => {
                 <div className="flex-1 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
                     <Calendar className="w-4 h-4" />
-                    Promotionzeitraum: 08.06. – 21.06.2026
+                    Promotionzeitraum: 08.06. – 30.06.2026
                   </div>
                   <span className="block text-primary font-semibold tracking-wide uppercase text-sm mb-2">
                     Kunden Promotion – Spielerwechsel
@@ -222,7 +222,7 @@ const OffersSection = () => {
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                   <p className="text-xs text-muted-foreground mt-4 italic">
-                    * Du erhältst eine Gutschrift auf den Kaufpreis nach Einsendung deines Altgeräts. Aktion gültig vom 08.06. bis 21.06.2026. Gilt für den TM7 im Basispaket. Nicht kombinierbar mit anderen Aktionen. Angaben ohne Gewähr.
+                    * Du erhältst eine Gutschrift auf den Kaufpreis nach Einsendung deines Altgeräts. Aktion gültig vom 08.06. bis 30.06.2026. Gilt für den TM7 im Basispaket. Nicht kombinierbar mit anderen Aktionen. Angaben ohne Gewähr.
                   </p>
                 </div>
               </div>
