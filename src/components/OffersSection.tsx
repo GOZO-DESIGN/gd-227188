@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Calendar, Gift, ChefHat, Users, Repeat, Coins } from 'lucide-react';
+import { ArrowRight, Sparkles, Calendar, Gift, ChefHat, Users, Repeat, Coins, Percent, PiggyBank } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -9,6 +9,7 @@ import promoCasserole from '@/assets/promo-casserole.jpg';
 import promoTM7Mixtopf from '@/assets/promo-tm7-2mixtopf.webp';
 import promoShowkochen from '@/assets/promo-showkochen-gastfreundschaft.jpg';
 import promoSpielerwechsel from '@/assets/promo-spielerwechsel.jpg';
+import promoZinsenZumGrinsen from '@/assets/promo-zinsen-zum-grinsen.jpg';
 
 interface Offer {
   id: string;
