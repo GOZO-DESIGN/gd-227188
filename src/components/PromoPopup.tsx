@@ -4,8 +4,8 @@ import { X, Sparkles, ArrowRight, Calendar, Users, Euro, ChefHat, Gift, Repeat, 
 
 const STORAGE_KEY = 'promoPopup_zinsen_v1_seen';
 
-// Aktionen enden automatisch Mo. 29.06.2026 00:00 (Europe/Vienna, CEST = UTC+2)
-const SPIELERWECHSEL_END = new Date('2026-06-29T00:00:00+02:00').getTime();
+// Aktionen enden automatisch (Europe/Vienna, CEST = UTC+2)
+const SPIELERWECHSEL_END = new Date('2026-06-30T00:00:00+02:00').getTime();
 const ZINSEN_END = new Date('2026-06-29T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
@@ -109,7 +109,7 @@ const PromoPopup = () => {
           </div>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
             <Calendar className="w-4 h-4" />
-            08.06. – 21.06.2026
+            08.06. – 30.06.2026
           </div>
           <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
             Zeit für einen <span className="text-primary">neuen Stürmer!</span>
@@ -148,7 +148,7 @@ const PromoPopup = () => {
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
-            * Gutschrift auf den Kaufpreis nach Einsendung deines Altgeräts. Gültig 08.06.–21.06.2026 für TM7 im Basispaket.
+            * Gutschrift auf den Kaufpreis nach Einsendung deines Altgeräts. Gültig 08.06.–30.06.2026 für TM7 im Basispaket.
           </p>
         </div>
 
