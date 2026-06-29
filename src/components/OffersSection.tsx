@@ -7,7 +7,7 @@ import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
 import promoTM7Mixtopf from '@/assets/promo-tm7-2mixtopf.webp';
-import varomaAsset from '@/assets/promo-varoma-foermchen.jpg.asset.json';
+import varomaImage from '@/assets/promo-varoma-foermchen.jpg';
 
 interface Offer {
   id: string;
@@ -74,7 +74,7 @@ const OffersSection = () => {
               <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-10">
                 <div className="w-full md:w-2/5 flex justify-center">
                   <img
-                    src={varomaAsset.url}
+                    src={varomaImage}
                     alt="Varoma Förmchen – Exklusives Gastgeberpräsent im Vorwerk Bonus Club"
                     loading="lazy"
                     className="w-full max-w-xs rounded-2xl shadow-soft"
