@@ -66,6 +66,67 @@ const OffersSection = () => {
           </p>
         </div>
 
+        {/* NEUE Aktion: Cocktails & Cakes – 29.06. – 26.07.2026 */}
+        {cocktailsActive && (
+        <div className="mb-8 relative">
+          <Link to="/beratung" className="block group">
+            <div className="relative bg-gradient-to-br from-orange-100 via-pink-50 to-orange-50 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary">
+              <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1.5 rounded-bl-2xl text-xs font-bold tracking-wide uppercase z-10">
+                Neue Kundenpromotion
+              </div>
+              <div className="flex flex-col md:flex-row items-stretch gap-0">
+                <div className="w-full md:w-1/2">
+                  <img
+                    src={cocktailsImage.url}
+                    alt="Cocktails & Cakes – So schmeckt der Sommer mit Thermomix®"
+                    loading="lazy"
+                    className="w-full h-full object-cover max-h-[480px]"
+                  />
+                </div>
+                <div className="flex-1 p-6 md:p-10 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
+                    <Calendar className="w-4 h-4" />
+                    Promotionzeitraum: 29.06. – 26.07.2026
+                  </div>
+                  <span className="block text-primary font-semibold tracking-wide uppercase text-sm mb-2">
+                    Cocktails & Cakes
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-4xl text-foreground mb-3">
+                    So schmeckt der Sommer mit Thermomix®
+                  </h3>
+                  <p className="text-foreground mb-6">
+                    Die <strong className="text-primary">Thermomix® TM7 Multi-Silikonform</strong> erhältst du <strong>geschenkt on top</strong> – ideal für Sommer-Cocktails, Eis, Pralinen, Mini-Kuchen & Co.
+                  </p>
+
+                  <div className="space-y-3 mb-6">
+                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20">
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Thermomix® TM7 + Multi-Silikonform</p>
+                      <p className="text-xl md:text-2xl font-bold text-foreground">
+                        nur € 1.549,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.583,-</span>
+                      </p>
+                    </div>
+                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20">
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Multi-Silikonform + Garantieverlängerung</p>
+                      <p className="text-xl md:text-2xl font-bold text-foreground">
+                        nur € 1.698,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.732,-</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
+                    Jetzt Beratung sichern
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                  <p className="text-xs text-muted-foreground mt-4 italic">
+                    * Aktion gültig vom 29.06. bis 26.07.2026. Die Multi-Silikonform erhältst du on top geschenkt. Angaben ohne Gewähr.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+        )}
+
         {/* NEUE Aktion: Varoma Förmchen – 29.06. – 26.07.2026 */}
         {varomaActive && (
         <div className="mb-8 relative">
