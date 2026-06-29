@@ -77,7 +77,7 @@ const OffersSection = () => {
               <div className="flex flex-col md:flex-row items-stretch gap-0">
                 <div className="w-full md:w-1/2">
                   <img
-                    src={cocktailsImage.url}
+                    src={cocktailsImage}
                     alt="Cocktails & Cakes – So schmeckt der Sommer mit Thermomix®"
                     loading="lazy"
                     className="w-full h-full object-cover"
