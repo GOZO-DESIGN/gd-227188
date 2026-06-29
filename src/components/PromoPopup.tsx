@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Sparkles, ArrowRight, Calendar, Users, Gift } from 'lucide-react';
 
-const STORAGE_KEY = 'promoPopup_varoma_v1_seen';
+const STORAGE_KEY = 'promoPopup_cocktails_v1_seen';
 
 // Aktionen enden automatisch (Europe/Vienna, CEST = UTC+2)
-const VAROMA_END = new Date('2026-07-27T00:00:00+02:00').getTime();
+const PROMO_END = new Date('2026-07-27T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
-  const varomaActive = Date.now() < VAROMA_END;
+  const cocktailsActive = Date.now() < PROMO_END;
+  const varomaActive = Date.now() < PROMO_END;
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -45,7 +46,57 @@ const PromoPopup = () => {
           <X className="w-5 h-5" />
         </button>
 
-        {/* NEUE Aktion: Varoma Förmchen – 29.06. – 26.07.2026 */}
+        {/* NEUE Aktion: Cocktails & Cakes – 29.06. – 26.07.2026 */}
+        {cocktailsActive && (<>
+        <div className="bg-gradient-to-br from-orange-100 via-pink-50 to-orange-50 p-6 pt-8 pb-5 text-center border-b-2 border-primary">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
+            Neue Kundenpromotion
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
+            <Calendar className="w-4 h-4" />
+            29.06. – 26.07.2026
+          </div>
+          <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground mb-2">
+            Cocktails & Cakes <span className="text-primary">mit Thermomix®</span>
+          </h2>
+          <p className="text-muted-foreground text-sm">
+            Die <strong className="text-foreground">Thermomix® TM7 Multi-Silikonform</strong> gibt's <strong className="text-primary">geschenkt on top</strong>!
+          </p>
+        </div>
+
+        <div className="p-6 pt-5">
+          <div className="space-y-3 mb-6">
+            <div className="bg-white border border-primary/20 rounded-xl p-4">
+              <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Multi-Silikonform</p>
+              <p className="text-xl font-bold text-foreground">
+                € 1.549,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 1.583,-</span>
+              </p>
+            </div>
+            <div className="bg-white border border-primary/20 rounded-xl p-4">
+              <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Multi-Silikonform + Garantieverlängerung</p>
+              <p className="text-xl font-bold text-foreground">
+                € 1.698,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 1.732,-</span>
+              </p>
+            </div>
+          </div>
+
+          <Link
+            to="/beratung"
+            onClick={close}
+            className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg group"
+          >
+            Jetzt Beratung sichern
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+          <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
+            * Aktion gültig vom 29.06. bis 26.07.2026. Die Multi-Silikonform erhältst du on top geschenkt. Angaben ohne Gewähr.
+          </p>
+        </div>
+
+        <div className="px-6"><div className="border-t border-border" /></div>
+        </>)}
+
+        {/* Aktion: Varoma Förmchen – 29.06. – 26.07.2026 */}
         {varomaActive && (<>
         <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 p-6 pt-8 pb-4 text-center border-b-2 border-primary">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
