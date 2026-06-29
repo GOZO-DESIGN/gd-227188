@@ -80,7 +80,7 @@ const OffersSection = () => {
                     src={cocktailsImage.url}
                     alt="Cocktails & Cakes – So schmeckt der Sommer mit Thermomix®"
                     loading="lazy"
-                    className="w-full h-full object-cover max-h-[480px]"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="flex-1 p-6 md:p-10 text-center md:text-left">
