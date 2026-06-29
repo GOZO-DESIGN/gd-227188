@@ -8,6 +8,7 @@ import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
 
 import varomaImage from '@/assets/promo-varoma-foermchen.jpg';
+import cocktailsImage from '@/assets/promo-cocktails-cakes.jpg.asset.json';
 
 interface Offer {
   id: string;
