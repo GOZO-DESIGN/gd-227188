@@ -7,7 +7,7 @@ import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
 import promoTM7Mixtopf from '@/assets/promo-tm7-2mixtopf.webp';
-import varomaAsset from '@/assets/promo-varoma-foermchen.jpg.asset.json';
+import varomaImage from '@/assets/promo-varoma-foermchen.jpg';
 
 interface Offer {
   id: string;
