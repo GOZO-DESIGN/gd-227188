@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, Sparkles, ArrowRight, Calendar, Users, Gift } from 'lucide-react';
 
-const STORAGE_KEY = 'promoPopup_varoma_v1_seen';
+const STORAGE_KEY = 'promoPopup_cocktails_v1_seen';
 
 // Aktionen enden automatisch (Europe/Vienna, CEST = UTC+2)
-const VAROMA_END = new Date('2026-07-27T00:00:00+02:00').getTime();
+const PROMO_END = new Date('2026-07-27T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
-  const varomaActive = Date.now() < VAROMA_END;
+  const cocktailsActive = Date.now() < PROMO_END;
+  const varomaActive = Date.now() < PROMO_END;
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
