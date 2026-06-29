@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mix mit Prager | Dein Thermomix® Berater in Wien, NÖ &amp; Burgenland</title>
+    <meta name="description" content="Entdecke die Welt des einfachen, gesunden und kreativen Kochens mit dem Thermomix® TM7. Persönliche Beratung, Showkochen und Vorführungen von deinem zertifizierten Thermomix® Berater Bernhard Prager in Wien, Niederösterreich und Burgenland.">
+    <meta name="keywords" content="Thermomix, TM7, Berater, Wien, Niederösterreich, Burgenland, Showkochen, Beratung, Kochen, Rezepte, Vorführung, Küchenmaschine, gesund kochen, Bernhard Prager">
+    <meta name="author" content="Mix mit Prager" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mixmitprager.at/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mixmitprager.at/" />
+    
+    
+    <meta property="og:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/o51KER1Flcb7QPp78KnVB7I2NI32/social-images/social-1770026865697-test.png">
+    <meta property="og:locale" content="de_AT" />
+    <meta property="og:site_name" content="Mix mit Prager" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    
+    <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/o51KER1Flcb7QPp78KnVB7I2NI32/social-images/social-1770026865697-test.png">
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="AT-9" />
+    <meta name="geo.placename" content="Wien" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/gpt-engineer-file-uploads/o51KER1Flcb7QPp78KnVB7I2NI32/uploads/1770026752631-Feb 2 Screenshot.png">
+    <meta property="og:title" content="Mix mit Prager | Dein Thermomix® Berater in Wien, NÖ &amp; Burgenland">
+  <meta name="twitter:title" content="Mix mit Prager | Dein Thermomix® Berater in Wien, NÖ &amp; Burgenland">
+  <meta property="og:description" content="Entdecke die Welt des einfachen, gesunden und kreativen Kochens mit dem Thermomix® TM7. Persönliche Beratung, Showkochen und Vorführungen von deinem zertifizierten Thermomix® Berater Bernhard Prager in Wien, Niederösterreich und Burgenland.">
+  <meta name="twitter:description" content="Entdecke die Welt des einfachen, gesunden und kreativen Kochens mit dem Thermomix® TM7. Persönliche Beratung, Showkochen und Vorführungen von deinem zertifizierten Thermomix® Berater Bernhard Prager in Wien, Niederösterreich und Burgenland.">
+</head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx?t=1782729767345"></script>
+  </body>
+</html>
