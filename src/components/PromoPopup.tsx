@@ -116,53 +116,6 @@ const PromoPopup = () => {
         <div className="px-6"><div className="border-t border-border" /></div>
         </>)}
 
-        {/* Aktion 1: TM7 mit 2. Mixtopf */}
-        <div className="bg-gradient-to-br from-primary/15 via-secondary/30 to-accent/20 p-6 pt-8 pb-4 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
-            <Calendar className="w-4 h-4" />
-            Aktion gültig bis 28.06.2026
-          </div>
-          <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            Thermomix® TM7 mit <span className="text-primary">2. Mixtopf</span>
-          </h2>
-          <p className="text-muted-foreground text-sm">
-            um nur <strong>€&nbsp;1.678,&#8209;</strong> – inkl. 2 Jahre Garantie.
-          </p>
-        </div>
-
-        <div className="p-6 pt-4">
-          <ul className="space-y-3 mb-6">
-            <li className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Sparkles className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-semibold text-foreground">Thermomix® TM7 inkl. 2. Mixtopf</p>
-                <p className="text-sm text-muted-foreground">
-                  um nur <strong>€&nbsp;1.678,&#8209;</strong> – oder mit Garantieverlängerung um <strong>€&nbsp;1.827,&#8209;</strong>
-                </p>
-              </div>
-            </li>
-          </ul>
-
-          <Link
-            to="/beratung"
-            onClick={close}
-            className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg group"
-          >
-            Melde dich für mehr Infos!
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-          <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
-            Aktion gültig bis 28.06.2026, ausschließlich für das TM-Bundle mit 2. Mixtopf. Nicht kombinierbar mit anderen Aktionen.
-          </p>
-          <button
-            onClick={close}
-            className="w-full mt-2 text-sm text-muted-foreground hover:text-foreground transition py-2"
-          >
-            Vielleicht später
-          </button>
-        </div>
 
       </div>
     </div>
