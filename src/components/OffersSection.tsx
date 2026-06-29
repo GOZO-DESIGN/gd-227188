@@ -98,14 +98,14 @@ const OffersSection = () => {
                     Die <strong className="text-primary">Thermomix® TM7 Multi-Silikonform</strong> erhältst du <strong>geschenkt on top</strong> – ideal für Sommer-Cocktails, Eis, Pralinen, Mini-Kuchen & Co.
                   </p>
 
-                  <div className="space-y-3 mb-6">
-                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20">
+                  <div className="flex flex-col gap-3 mb-6">
+                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20 flex-1 flex flex-col justify-center">
                       <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Thermomix® TM7 + Multi-Silikonform</p>
                       <p className="text-xl md:text-2xl font-bold text-foreground">
                         nur € 1.549,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.583,-</span>
                       </p>
                     </div>
-                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20">
+                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20 flex-1 flex flex-col justify-center">
                       <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Multi-Silikonform + Garantieverlängerung</p>
                       <p className="text-xl md:text-2xl font-bold text-foreground">
                         nur € 1.698,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.732,-</span>
