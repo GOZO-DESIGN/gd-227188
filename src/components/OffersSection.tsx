@@ -41,8 +41,10 @@ const offers: Offer[] = [
 const OffersSection = () => {
   const { t } = useTranslation();
 
-  // Varoma Förmchen Aktion läuft automatisch ab am Montag, 27.07.2026 um 00:00 Uhr (Europe/Vienna, CEST = UTC+2)
-  const varomaActive = Date.now() < new Date('2026-07-27T00:00:00+02:00').getTime();
+  // Aktionen enden automatisch (Europe/Vienna, CEST = UTC+2)
+  const promoEnd = new Date('2026-07-27T00:00:00+02:00').getTime();
+  const varomaActive = Date.now() < promoEnd;
+  const cocktailsActive = Date.now() < promoEnd;
 
   const gridCols = offers.length === 2 
     ? 'md:grid-cols-2' 
