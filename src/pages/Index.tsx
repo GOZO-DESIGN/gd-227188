@@ -110,16 +110,16 @@ const Index = () => {
     "email": "office@mixmitprager.at",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Viehtriftgasse 3",
-      "addressLocality": "Wien",
-      "postalCode": "1210",
-      "addressRegion": "Wien",
+      "streetAddress": "Im See 24",
+      "addressLocality": "Ulrichskirchen-Schleinbach",
+      "postalCode": "2122",
+      "addressRegion": "Niederösterreich",
       "addressCountry": "AT"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "48.2082",
-      "longitude": "16.3738"
+      "latitude": "48.4133",
+      "longitude": "16.4911"
     },
     "areaServed": [
       { "@type": "State", "name": "Wien" },

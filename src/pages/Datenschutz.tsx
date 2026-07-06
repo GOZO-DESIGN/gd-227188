@@ -72,8 +72,8 @@ const Datenschutz = () => {
               <p>{t('privacy.general.responsibleIntro')}</p>
               <p className="mt-2">
                 <strong>Bernhard Prager</strong><br />
-                Viehtriftgasse 3<br />
-                1210 Wien
+                Im See 24<br />
+                2122 Ulrichskirchen-Schleinbach
               </p>
               <p className="mt-2">
                 Telefon: +43 676 397 92 50<br />

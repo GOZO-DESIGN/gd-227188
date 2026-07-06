@@ -21,8 +21,8 @@ const Impressum = () => {
                 {t('imprint.infoTitle')}
               </h2>
               <p>Bernhard Prager</p>
-              <p>Viehtriftgasse 3</p>
-              <p>1210 Wien</p>
+              <p>Im See 24</p>
+              <p>2122 Ulrichskirchen-Schleinbach</p>
               <p className="mt-2">Bernhard Prager - Selbstständiger Thermomixberater</p>
             </section>
 
