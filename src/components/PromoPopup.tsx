@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Sparkles, ArrowRight, Calendar, Users, Gift } from 'lucide-react';
+import { X, ArrowRight, Calendar } from 'lucide-react';
+
 
 const STORAGE_KEY = 'promoPopup_cocktails_v1_seen';
 
@@ -9,7 +10,6 @@ const PROMO_END = new Date('2026-07-27T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
   const cocktailsActive = Date.now() < PROMO_END;
-  const varomaActive = Date.now() < PROMO_END;
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -93,79 +93,9 @@ const PromoPopup = () => {
           </p>
         </div>
 
-        <div className="px-6"><div className="border-t border-border" /></div>
         </>)}
 
-        {/* Aktion: Varoma Förmchen – 29.06. – 26.07.2026 */}
-        {varomaActive && (<>
-        <div className="bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 p-6 pt-8 pb-4 text-center border-b-2 border-primary">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
-            Neue Aktion
-          </div>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
-            <Calendar className="w-4 h-4" />
-            29.06. – 26.07.2026
-          </div>
-          <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            Varoma® Förmchen <span className="text-primary">als Präsent!</span>
-          </h2>
-          <p className="text-muted-foreground text-sm">
-            Die neuen Varoma® Förmchen exklusiv als Gastgeberpräsent im Vorwerk Bonus Club – wahlweise in Schwarz oder Weiß.
-          </p>
-        </div>
 
-        <div className="p-6 pt-4">
-          <ul className="space-y-3 mb-6">
-            <li className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Users className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-semibold text-foreground">Gastgeber plus 3 Gäste</p>
-                <p className="text-sm text-muted-foreground">
-                  Aus unterschiedlichen Haushalten, die den Thermomix® TM7 kennenlernen möchten.
-                </p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Sparkles className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-semibold text-foreground">Show Kochen erfolgreich</p>
-                <p className="text-sm text-muted-foreground">
-                  Im Vorwerk Bonus Club als erfolgreich kennzeichnen.
-                </p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Gift className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <p className="font-semibold text-foreground">Varoma® Förmchen Set</p>
-                <p className="text-sm text-muted-foreground">
-                  Max. 1 Set, wahlweise in Schwarz oder Weiß, als exklusives Präsent.
-                </p>
-              </div>
-            </li>
-          </ul>
-
-          <Link
-            to="/showkochen"
-            onClick={close}
-            className="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg group"
-          >
-            Jetzt Show Kochen buchen
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
-          <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
-            * Aktion gültig vom 29.06. bis 26.07.2026. Show Kochen muss im Vorwerk Bonus Club als erfolgreich gekennzeichnet sein. Angaben ohne Gewähr.
-          </p>
-        </div>
-
-        <div className="px-6"><div className="border-t border-border" /></div>
-        </>)}
 
 
       </div>

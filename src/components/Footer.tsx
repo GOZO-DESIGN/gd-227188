@@ -52,6 +52,14 @@ const Footer = () => {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href="https://www.vorwerk.com/at/de/c/home/produkt-vorfuehrung/thermomix.html/bernhard.prager-b.ed.#thermomix-zubehoer"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm opacity-70 hover:opacity-100 transition-opacity"
+              >
+                Thermomix® Zubehör bestellen
+              </a>
             </nav>
           </div>
 
