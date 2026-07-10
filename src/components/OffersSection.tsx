@@ -236,6 +236,28 @@ const OffersSection = () => {
           ))}
         </div>
 
+        {/* Zubehör direkt bei Vorwerk – Beraterlink */}
+        <div className="max-w-3xl mx-auto bg-white rounded-2xl border border-border shadow-soft p-6 md:p-8 text-center">
+          <span className="inline-block text-primary font-semibold tracking-wide uppercase text-xs mb-3">
+            Thermomix® Zubehör
+          </span>
+          <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-3">
+            Zubehör direkt bei Vorwerk bestellen
+          </h3>
+          <p className="text-muted-foreground mb-6">
+            Bestelle Original Thermomix® Zubehör bequem online über meinen persönlichen Beraterlink – ich betreue dich weiterhin persönlich.
+          </p>
+          <a
+            href="https://www.vorwerk.com/at/de/c/home/produkt-vorfuehrung/thermomix.html/bernhard.prager-b.ed.#thermomix-zubehoer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg group/btn"
+          >
+            Jetzt Zubehör entdecken
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+          </a>
+        </div>
+
       </div>
     </section>
   );
