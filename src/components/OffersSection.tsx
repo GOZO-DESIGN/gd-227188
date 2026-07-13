@@ -8,7 +8,7 @@ import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
 
 import cocktailsImage from '@/assets/promo-cocktails-cakes.jpg';
-import grillenImage from '@/assets/promo-grillen-chillen.jpg.asset.json';
+import grillenImage from '@/assets/promo-grillen-chillen.jpg';
 
 interface Offer {
   id: string;
