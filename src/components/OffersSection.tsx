@@ -128,74 +128,60 @@ const OffersSection = () => {
         </div>
         )}
 
-        {/* NEUE Aktion: Varoma Förmchen – 29.06. – 26.07.2026 */}
-        {varomaActive && (
+        {/* NEUE Aktion: Grillen & Chillen – 13.07. – 26.07.2026 */}
+        {grillenActive && (
         <div className="mb-8 relative">
-          <Link to="/showkochen" className="block group">
-            <div className="relative bg-gradient-to-br from-primary/20 via-primary/10 to-accent/30 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary">
+          <Link to="/beratung" className="block group">
+            <div className="relative bg-gradient-to-br from-primary/15 via-primary/5 to-orange-50 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary">
               <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1.5 rounded-bl-2xl text-xs font-bold tracking-wide uppercase z-10">
-                Neue Aktion
+                Premium-Bundle
               </div>
-              <div className="flex flex-col md:flex-row items-center gap-6 p-6 md:p-10">
-                <div className="w-full md:w-2/5 flex justify-center">
+              <div className="flex flex-col md:flex-row items-stretch gap-0">
+                <div className="w-full md:w-1/2">
                   <img
-                    src={varomaImage}
-                    alt="Varoma Förmchen – Exklusives Gastgeberpräsent im Vorwerk Bonus Club"
+                    src={grillenImage.url}
+                    alt="Grillen & Chillen – Thermomix® TM7 Premium-Bundle"
                     loading="lazy"
-                    className="w-full max-w-xs rounded-2xl shadow-soft"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="flex-1 text-center md:text-left">
+                <div className="flex-1 p-6 md:p-10 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
                     <Calendar className="w-4 h-4" />
-                    Promotionzeitraum: 29.06. – 26.07.2026
+                    Promotionzeitraum: 13.07. – 26.07.2026
                   </div>
-                  <span className="block text-primary font-semibold tracking-wide uppercase text-sm mb-2">
-                    Gastgeberpräsent – Varoma Förmchen
+                  <span className="inline-flex items-center gap-2 text-primary font-semibold tracking-wide uppercase text-sm mb-2">
+                    <Flame className="w-4 h-4" /> Grillen & Chillen
                   </span>
                   <h3 className="font-serif text-2xl md:text-4xl text-foreground mb-3">
-                    Die neuen Varoma® Förmchen als exklusives Präsent! 🎁
+                    Das Premium-Bundle für deinen Sommer
                   </h3>
-                  <p className="text-lg text-foreground mb-2">
-                    <strong>Good news! Erstmalig im Vorwerk Bonus Club.</strong>
-                  </p>
-                  <p className="text-muted-foreground mb-6">
-                    Für jedes erfolgreiche Show Kochen bekommst du bereits <strong className="text-primary">200 Punkte</strong> im Vorwerk Bonus Club. Im Promotionzeitraum erhältst du zusätzlich max. <strong className="text-primary">1 Varoma® Förmchen Set</strong>, wahlweise in Schwarz oder Weiß.
+                  <p className="text-foreground mb-4">
+                    Thermomix® TM7 + <strong>Gemüse Styler</strong> + <strong>Sensor</strong> + <strong>Multi-Silikonform</strong> + <strong>Garantieverlängerung</strong> auf 5 Jahre.
                   </p>
 
-                  <div className="bg-white/70 rounded-xl p-5 md:p-6 mb-6 border border-primary/20 text-left">
-                    <p className="font-semibold text-foreground mb-4 flex items-center gap-2">
-                      <Gift className="w-5 h-5 text-primary" />
-                      So funktioniert's:
+                  <div className="bg-white/80 rounded-xl p-4 border border-primary/20 mb-4">
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Premium-Bundle</p>
+                    <p className="text-2xl md:text-3xl font-bold text-foreground">
+                      nur € 1.999,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 2.050,-</span>
                     </p>
-                    <ul className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <Users className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground">
-                          Gastgeberin bzw. Gastgeber plus <strong>drei Gäste</strong> aus unterschiedlichen Haushalten
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Sparkles className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground">
-                          Show Kochen im Vorwerk Bonus Club als <strong>„erfolgreich"</strong> kennzeichnen
-                        </span>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <Gift className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-foreground">
-                          Max. <strong className="text-primary">1 Varoma® Förmchen Set</strong> (schwarz oder weiß) als Präsent sichern
-                        </span>
-                      </li>
-                    </ul>
+                  </div>
+
+                  <div className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
+                    <p className="text-sm font-semibold text-foreground">
+                      🎉 0% Finanzierung auf 20 Monate – nur € 99,95 / Monat
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Keine Zinsen, keine Gebühren.
+                    </p>
                   </div>
 
                   <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
-                    Jetzt Show Kochen buchen
+                    Jetzt Beratung sichern
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                   <p className="text-xs text-muted-foreground mt-4 italic">
-                    * Aktion gültig vom 29.06. bis 26.07.2026. Das Show Kochen muss im Vorwerk Bonus Club als erfolgreich gekennzeichnet sein. Erforderlich sind eine Gastgeberin/ein Gastgeber sowie drei Gäste aus unterschiedlichen Haushalten, die den Thermomix® TM7 gerne kennenlernen möchten. Angaben ohne Gewähr.
+                    * Aktion gültig vom 13.07. bis 26.07.2026. 0% Finanzierung ausschließlich für dieses Bundle über 20 Monate. Angaben ohne Gewähr.
                   </p>
                 </div>
               </div>
@@ -203,6 +189,7 @@ const OffersSection = () => {
           </Link>
         </div>
         )}
+
 
 
         {/* Offers Grid */}
