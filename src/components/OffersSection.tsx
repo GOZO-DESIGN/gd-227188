@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles, Calendar, Gift, Users } from 'lucide-react';
+import { ArrowRight, Calendar, Flame } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -7,8 +7,8 @@ import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
 
-import varomaImage from '@/assets/promo-varoma-foermchen.jpg';
 import cocktailsImage from '@/assets/promo-cocktails-cakes.jpg';
+import grillenImage from '@/assets/promo-grillen-chillen.jpg.asset.json';
 
 interface Offer {
   id: string;
