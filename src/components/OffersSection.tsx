@@ -8,7 +8,7 @@ import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
 
 import cocktailsImage from '@/assets/promo-cocktails-cakes.jpg';
-import grillenImage from '@/assets/promo-grillen-chillen.jpg.asset.json';
+import grillenImage from '@/assets/promo-grillen-chillen.jpg';
 
 interface Offer {
   id: string;
@@ -139,7 +139,7 @@ const OffersSection = () => {
               <div className="flex flex-col md:flex-row items-stretch gap-0">
                 <div className="w-full md:w-1/2">
                   <img
-                    src={grillenImage.url}
+                    src={grillenImage}
                     alt="Grillen & Chillen – Thermomix® TM7 Premium-Bundle"
                     loading="lazy"
                     className="w-full h-full object-cover"
