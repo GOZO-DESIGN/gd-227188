@@ -139,7 +139,7 @@ const OffersSection = () => {
               <div className="flex flex-col md:flex-row items-stretch gap-0">
                 <div className="w-full md:w-1/2">
                   <img
-                    src={grillenImage.url}
+                    src={grillenImage}
                     alt="Grillen & Chillen – Thermomix® TM7 Premium-Bundle"
                     loading="lazy"
                     className="w-full h-full object-cover"
