@@ -2,14 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, ArrowRight, Calendar } from 'lucide-react';
 
+const STORAGE_KEY = 'promoPopup_salad_v1_seen';
 
-const STORAGE_KEY = 'promoPopup_cocktails_v1_seen';
-
-// Aktionen enden automatisch (Europe/Vienna, CEST = UTC+2)
-const PROMO_END = new Date('2026-07-27T00:00:00+02:00').getTime();
+// Aktion endet automatisch (Europe/Vienna, CEST = UTC+2)
+const PROMO_END = new Date('2026-08-24T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
-  const cocktailsActive = Date.now() < PROMO_END;
+  const saladActive = Date.now() < PROMO_END;
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -24,7 +23,7 @@ const PromoPopup = () => {
     setOpen(false);
   };
 
-  if (!open) return null;
+  if (!open || !saladActive) return null;
 
   return (
     <div
@@ -46,36 +45,35 @@ const PromoPopup = () => {
           <X className="w-5 h-5" />
         </button>
 
-        {/* NEUE Aktion: Cocktails & Cakes – 29.06. – 26.07.2026 */}
-        {cocktailsActive && (<>
-        <div className="bg-gradient-to-br from-orange-100 via-pink-50 to-orange-50 p-6 pt-8 pb-5 text-center border-b-2 border-primary">
+        {/* Aktion: Salad & Sunshine – 27.07. – 23.08.2026 */}
+        <div className="bg-gradient-to-br from-yellow-50 via-primary/5 to-orange-50 p-6 pt-8 pb-5 text-center border-b-2 border-primary">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
             Neue Kundenpromotion
           </div>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
             <Calendar className="w-4 h-4" />
-            29.06. – 26.07.2026
+            27.07. – 23.08.2026
           </div>
           <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            Cocktails & Cakes <span className="text-primary">mit Thermomix®</span>
+            Salad & Sunshine <span className="text-primary">mit Thermomix®</span>
           </h2>
           <p className="text-muted-foreground text-sm">
-            Die <strong className="text-foreground">Thermomix® TM7 Multi-Silikonform</strong> gibt's <strong className="text-primary">geschenkt on top</strong>!
+            Den <strong className="text-foreground">Thermomix® TM7 Gemüse Styler</strong> gibt's jetzt für nur <strong className="text-primary">50 € Aufpreis</strong>!
           </p>
         </div>
 
         <div className="p-6 pt-5">
           <div className="space-y-3 mb-6">
             <div className="bg-white border border-primary/20 rounded-xl p-4">
-              <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Multi-Silikonform</p>
+              <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Gemüse Styler</p>
               <p className="text-xl font-bold text-foreground">
-                € 1.549,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 1.583,-</span>
+                € 1.599,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 1.718,-</span>
               </p>
             </div>
             <div className="bg-white border border-primary/20 rounded-xl p-4">
-              <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Multi-Silikonform + Garantieverlängerung</p>
+              <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Gemüse Styler + Garantieverlängerung</p>
               <p className="text-xl font-bold text-foreground">
-                € 1.698,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 1.732,-</span>
+                € 1.748,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 1.867,-</span>
               </p>
             </div>
           </div>
@@ -89,15 +87,9 @@ const PromoPopup = () => {
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
-            * Aktion gültig vom 29.06. bis 26.07.2026. Die Multi-Silikonform erhältst du on top geschenkt. Angaben ohne Gewähr.
+            * Aktion gültig vom 27.07. bis 23.08.2026. Angaben ohne Gewähr.
           </p>
         </div>
-
-        </>)}
-
-
-
-
       </div>
     </div>
   );
