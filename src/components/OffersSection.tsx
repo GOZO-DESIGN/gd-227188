@@ -9,6 +9,7 @@ import promoCasserole from '@/assets/promo-casserole.jpg';
 
 import cocktailsImage from '@/assets/promo-cocktails-cakes.jpg';
 import grillenImage from '@/assets/promo-grillen-chillen.jpg';
+import saladImage from '@/assets/promo-salad-sunshine.jpg';
 
 interface Offer {
   id: string;
