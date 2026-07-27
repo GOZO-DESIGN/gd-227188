@@ -9,6 +9,7 @@ import promoCasserole from '@/assets/promo-casserole.jpg';
 
 import cocktailsImage from '@/assets/promo-cocktails-cakes.jpg';
 import grillenImage from '@/assets/promo-grillen-chillen.jpg';
+import saladImage from '@/assets/promo-salad-sunshine.jpg';
 
 interface Offer {
   id: string;
@@ -43,8 +44,10 @@ const OffersSection = () => {
 
   // Aktionen enden automatisch (Europe/Vienna, CEST = UTC+2)
   const promoEnd = new Date('2026-07-27T00:00:00+02:00').getTime();
-  const grillenEnd = new Date('2026-07-27T00:00:00+02:00').getTime();
+  const grillenEnd = new Date('2026-08-24T00:00:00+02:00').getTime();
+  const saladEnd = new Date('2026-08-24T00:00:00+02:00').getTime();
   const grillenActive = Date.now() < grillenEnd;
+  const saladActive = Date.now() < saladEnd;
   const cocktailsActive = Date.now() < promoEnd;
 
   const gridCols = offers.length === 2 
@@ -128,7 +131,68 @@ const OffersSection = () => {
         </div>
         )}
 
-        {/* NEUE Aktion: Grillen & Chillen – 13.07. – 26.07.2026 */}
+        {/* NEUE Aktion: Salad & Sunshine – 27.07. – 23.08.2026 */}
+        {saladActive && (
+        <div className="mb-8 relative">
+          <Link to="/beratung" className="block group">
+            <div className="relative bg-gradient-to-br from-yellow-50 via-primary/5 to-orange-50 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary">
+              <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1.5 rounded-bl-2xl text-xs font-bold tracking-wide uppercase z-10">
+                Neue Kundenpromotion
+              </div>
+              <div className="flex flex-col md:flex-row items-stretch gap-0">
+                <div className="w-full md:w-1/2">
+                  <img
+                    src={saladImage}
+                    alt="Salad & Sunshine – Thermomix® TM7 mit Gemüse Styler"
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-1 p-6 md:p-10 text-center md:text-left">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
+                    <Calendar className="w-4 h-4" />
+                    Promotionzeitraum: 27.07. – 23.08.2026
+                  </div>
+                  <span className="block text-primary font-semibold tracking-wide uppercase text-sm mb-2">
+                    Salad & Sunshine
+                  </span>
+                  <h3 className="font-serif text-2xl md:text-4xl text-foreground mb-3">
+                    Frische Salate und kreative Sommerküche
+                  </h3>
+                  <p className="text-foreground mb-6">
+                    Den <strong className="text-primary">Thermomix® TM7 Gemüse Styler</strong> gibt es jetzt für sagenhafte <strong>50 € Aufpreis</strong> dazu – so attraktiv war dieses Angebot noch nie.
+                  </p>
+
+                  <div className="flex flex-col gap-3 mb-6">
+                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20 flex-1 flex flex-col justify-center">
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Thermomix® TM7 + Gemüse Styler</p>
+                      <p className="text-xl md:text-2xl font-bold text-foreground">
+                        nur € 1.599,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.718,-</span>
+                      </p>
+                    </div>
+                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20 flex-1 flex flex-col justify-center">
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Gemüse Styler + Garantieverlängerung</p>
+                      <p className="text-xl md:text-2xl font-bold text-foreground">
+                        nur € 1.748,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.867,-</span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
+                    Jetzt Beratung sichern
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </span>
+                  <p className="text-xs text-muted-foreground mt-4 italic">
+                    * Aktion gültig vom 27.07. bis 23.08.2026. Angaben ohne Gewähr.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+        )}
+
+        {/* Aktion verlängert: Grillen & Chillen – bis 23.08.2026 */}
         {grillenActive && (
         <div className="mb-8 relative">
           <Link to="/beratung" className="block group">
@@ -148,7 +212,7 @@ const OffersSection = () => {
                 <div className="flex-1 p-6 md:p-10 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
                     <Calendar className="w-4 h-4" />
-                    Promotionzeitraum: 13.07. – 26.07.2026
+                    Verlängert bis 23.08.2026
                   </div>
                   <span className="inline-flex items-center gap-2 text-primary font-semibold tracking-wide uppercase text-sm mb-2">
                     <Flame className="w-4 h-4" /> Grillen & Chillen
@@ -181,7 +245,7 @@ const OffersSection = () => {
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                   <p className="text-xs text-muted-foreground mt-4 italic">
-                    * Aktion gültig vom 13.07. bis 26.07.2026. 0% Finanzierung ausschließlich für dieses Bundle über 20 Monate. Angaben ohne Gewähr.
+                    * Aktion verlängert bis 23.08.2026. 0% Finanzierung ausschließlich für dieses Bundle über 20 Monate. Angaben ohne Gewähr.
                   </p>
                 </div>
               </div>
