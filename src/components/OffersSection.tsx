@@ -212,7 +212,7 @@ const OffersSection = () => {
                 <div className="flex-1 p-6 md:p-10 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
                     <Calendar className="w-4 h-4" />
-                    Promotionzeitraum: 13.07. – 26.07.2026
+                    Verlängert bis 23.08.2026
                   </div>
                   <span className="inline-flex items-center gap-2 text-primary font-semibold tracking-wide uppercase text-sm mb-2">
                     <Flame className="w-4 h-4" /> Grillen & Chillen
@@ -245,7 +245,7 @@ const OffersSection = () => {
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                   <p className="text-xs text-muted-foreground mt-4 italic">
-                    * Aktion gültig vom 13.07. bis 26.07.2026. 0% Finanzierung ausschließlich für dieses Bundle über 20 Monate. Angaben ohne Gewähr.
+                    * Aktion verlängert bis 23.08.2026. 0% Finanzierung ausschließlich für dieses Bundle über 20 Monate. Angaben ohne Gewähr.
                   </p>
                 </div>
               </div>
