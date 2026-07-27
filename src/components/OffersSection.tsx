@@ -44,8 +44,10 @@ const OffersSection = () => {
 
   // Aktionen enden automatisch (Europe/Vienna, CEST = UTC+2)
   const promoEnd = new Date('2026-07-27T00:00:00+02:00').getTime();
-  const grillenEnd = new Date('2026-07-27T00:00:00+02:00').getTime();
+  const grillenEnd = new Date('2026-08-24T00:00:00+02:00').getTime();
+  const saladEnd = new Date('2026-08-24T00:00:00+02:00').getTime();
   const grillenActive = Date.now() < grillenEnd;
+  const saladActive = Date.now() < saladEnd;
   const cocktailsActive = Date.now() < promoEnd;
 
   const gridCols = offers.length === 2 
