@@ -339,11 +339,18 @@ const Beratung = () => {
                         <div className={`${isEven ? 'lg:order-2 lg:pl-20' : 'lg:pr-20'}`}>
                           <div className="relative group">
                             <div className="absolute -inset-2 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <img
-                              src={step.image}
-                              alt={step.title}
-                              className="relative w-full rounded-2xl shadow-elegant group-hover:shadow-lg transition-shadow duration-300 aspect-[4/3] object-cover"
-                            />
+                            <div className="relative">
+                              <img
+                                src={step.image}
+                                alt={step.title}
+                                className="relative w-full rounded-2xl shadow-elegant group-hover:shadow-lg transition-shadow duration-300 aspect-[4/3] object-cover"
+                              />
+                              {step.isAiGenerated && (
+                                <span className="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
+                                  KI-generiert
+                                </span>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>
