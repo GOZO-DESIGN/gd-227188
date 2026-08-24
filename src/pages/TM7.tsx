@@ -550,11 +550,16 @@ const TM7 = () => {
                 </div>
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-3xl blur-3xl"></div>
-                  <img 
-                    src={ernaehrungTm7} 
-                    alt="Thermomix TM7 Ernährung - Vegan, Vegetarisch, Glutenfrei, Low Carb" 
-                    className="relative w-full rounded-2xl shadow-xl"
-                  />
+                  <div className="relative">
+                    <img 
+                      src={ernaehrungTm7} 
+                      alt="Thermomix TM7 Ernährung - Vegan, Vegetarisch, Glutenfrei, Low Carb" 
+                      className="relative w-full rounded-2xl shadow-xl"
+                    />
+                    <span className="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md backdrop-blur-sm">
+                      KI-generiert
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
