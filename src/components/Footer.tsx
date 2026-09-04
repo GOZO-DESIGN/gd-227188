@@ -28,6 +28,8 @@ const Footer = () => {
           <div>
             <p className="font-serif text-2xl mb-2">Bernhard Prager</p>
             <p className="text-sm opacity-70 mb-3">{t('footer.tagline')}</p>
+            <p className="text-xs opacity-50 mb-4">Wassermanngasse 8, A-1210 Wien</p>
+
             
             <div className="space-y-2">
               <a href="tel:+436763979250" className="flex items-center gap-2 text-sm opacity-70 hover:opacity-100 transition-opacity">

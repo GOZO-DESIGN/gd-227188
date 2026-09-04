@@ -72,8 +72,9 @@ const Datenschutz = () => {
               <p>{t('privacy.general.responsibleIntro')}</p>
               <p className="mt-2">
                 <strong>Bernhard Prager</strong><br />
-                Im See 24<br />
-                2122 Ulrichskirchen-Schleinbach
+                Wassermanngasse 8<br />
+                1210 Wien
+
               </p>
               <p className="mt-2">
                 Telefon: +43 676 397 92 50<br />
