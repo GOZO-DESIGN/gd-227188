@@ -28,7 +28,7 @@ const Footer = () => {
           <div>
             <p className="font-serif text-2xl mb-2">Bernhard Prager</p>
             <p className="text-sm opacity-70 mb-3">{t('footer.tagline')}</p>
-            <p className="text-xs opacity-50 mb-4">Im See 24, A-2122 Ulrichskirchen-Schleinbach</p>
+            
             <div className="space-y-2">
               <a href="tel:+436763979250" className="flex items-center gap-2 text-sm opacity-70 hover:opacity-100 transition-opacity">
                 <Phone className="w-4 h-4" /> +43 676 397 9250
