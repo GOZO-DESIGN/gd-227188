@@ -168,6 +168,8 @@ const ContactSection = () => {
                 <div>
                   <p className="text-sm text-muted-foreground">{t('contact.address')}</p>
                   <p className="font-medium text-foreground">Bernhard Prager</p>
+                  <p className="text-sm text-muted-foreground">Wassermanngasse 8, A-1210 Wien</p>
+
 
                 </div>
               </div>
