@@ -72,7 +72,7 @@ const Datenschutz = () => {
               <p>{t('privacy.general.responsibleIntro')}</p>
               <p className="mt-2">
                 <strong>Bernhard Prager</strong><br />
-                Wassermanngasse 8<br />
+                Wassermanngasse 8/28<br />
                 1210 Wien
 
               </p>

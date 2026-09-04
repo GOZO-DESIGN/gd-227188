@@ -110,7 +110,7 @@ const Index = () => {
     "email": "office@mixmitprager.at",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Wassermanngasse 8",
+      "streetAddress": "Wassermanngasse 8/28",
       "addressLocality": "Wien",
       "postalCode": "1210",
       "addressRegion": "Wien",

@@ -21,7 +21,7 @@ const Impressum = () => {
                 {t('imprint.infoTitle')}
               </h2>
               <p>Bernhard Prager</p>
-              <p>Wassermanngasse 8</p>
+              <p>Wassermanngasse 8/28</p>
               <p>1210 Wien</p>
 
               <p className="mt-2">Bernhard Prager - Selbstständiger Thermomixberater</p>
