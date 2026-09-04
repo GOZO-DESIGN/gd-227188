@@ -172,7 +172,7 @@ const ContactCTA = ({ className = '' }: ContactCTAProps) => {
                 <div>
                   <p className="text-sm text-muted-foreground">{t('contact.address')}</p>
                   <p className="font-medium text-foreground">Bernhard Prager</p>
-                  <p className="text-sm text-muted-foreground">Wassermanngasse 8, A-1210 Wien</p>
+                  <p className="text-sm text-muted-foreground">Wassermanngasse 8/28, A-1210 Wien</p>
 
 
                 </div>
