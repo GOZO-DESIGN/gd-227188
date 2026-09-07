@@ -87,11 +87,8 @@ const PromoPopup = () => {
             </div>
           </div>
 
-          <div className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-5">
-            <p className="text-sm font-semibold text-foreground text-center">
-              0% Finanzierung auf 10 Monate
-            </p>
-          </div>
+
+
 
           <Link
             to="/beratung"

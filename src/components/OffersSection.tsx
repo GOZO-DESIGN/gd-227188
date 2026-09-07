@@ -110,14 +110,8 @@ const OffersSection = () => {
                     </div>
                   </div>
 
-                  <div className="bg-primary/10 rounded-xl p-4 border border-primary/30 mb-6">
-                    <p className="text-sm font-semibold text-foreground">
-                      🎉 0% Finanzierung auf 10 Monate – schon ab € 164,90 / Monat
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      Keine Zinsen, keine Gebühren.
-                    </p>
-                  </div>
+
+
 
                   <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
                     Jetzt Beratung sichern
