@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, ArrowRight, Calendar } from 'lucide-react';
-import genussImage from '@/assets/promo-danke-genuss.jpg';
+import genussImage from '@/assets/promo-danke-genuss.png';
 
 const STORAGE_KEY = 'promoPopup_danke_genuss_v1_seen';
 
