@@ -67,7 +67,7 @@ const PromoPopup = () => {
           <div className="rounded-xl overflow-hidden mb-5">
             <img
               src={genussImage}
-              alt="Genuss in jeder Form – Thermomix® TM7 mit Sensor und Varoma® Förmchen"
+              alt="Wir sagen Danke! Genuss in jeder Form – Thermomix® TM7 mit Sensor, Varoma® Förmchen und Gemüse Styler"
               className="w-full h-auto object-cover"
             />
           </div>

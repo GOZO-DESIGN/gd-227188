@@ -75,7 +75,7 @@ const OffersSection = () => {
                 <div className="w-full md:w-1/2">
                   <img
                     src={genussImage}
-                    alt="Genuss in jeder Form – Thermomix® TM7 mit Sensor und Varoma® Förmchen"
+                    alt="Wir sagen Danke! Genuss in jeder Form – Thermomix® TM7 mit Sensor, Varoma® Förmchen und Gemüse Styler"
                     loading="lazy"
                     className="w-full h-full object-cover"
                   />
