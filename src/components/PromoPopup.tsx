@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, ArrowRight, Calendar } from 'lucide-react';
-import genussImage from '@/assets/promo-genuss-jeder-form.jpg';
+import genussImage from '@/assets/promo-danke-genuss.jpg';
 
-const STORAGE_KEY = 'promoPopup_genuss_v1_seen';
+const STORAGE_KEY = 'promoPopup_danke_genuss_v1_seen';
 
 // Aktion endet automatisch (Europe/Vienna, CEST = UTC+2)
-const PROMO_END = new Date('2026-09-28T00:00:00+02:00').getTime();
+const PROMO_END = new Date('2026-09-22T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
   const genussActive = Date.now() < PROMO_END;
