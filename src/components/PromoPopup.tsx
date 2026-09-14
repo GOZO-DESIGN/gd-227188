@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { X, ArrowRight, Calendar } from 'lucide-react';
-import genussImage from '@/assets/promo-genuss-jeder-form.jpg';
+import genussImage from '@/assets/promo-danke-genuss.jpg';
 
-const STORAGE_KEY = 'promoPopup_genuss_v1_seen';
+const STORAGE_KEY = 'promoPopup_danke_genuss_v1_seen';
 
 // Aktion endet automatisch (Europe/Vienna, CEST = UTC+2)
-const PROMO_END = new Date('2026-09-28T00:00:00+02:00').getTime();
+const PROMO_END = new Date('2026-09-22T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
   const genussActive = Date.now() < PROMO_END;
@@ -46,20 +46,20 @@ const PromoPopup = () => {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Aktion: Genuss in jeder Form – 24.08. – 27.09.2026 */}
+        {/* Aktion: Wir sagen Danke! Genuss in jeder Form – 14.09. – 21.09.2026 */}
         <div className="bg-gradient-to-br from-orange-50 via-primary/5 to-yellow-50 p-6 pt-8 pb-5 text-center border-b-2 border-primary">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold mb-3 uppercase tracking-wide">
-            Neue Kundenpromotion
+            Wir sagen Danke!
           </div>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
             <Calendar className="w-4 h-4" />
-            24.08. – 27.09.2026
+            Nur eine Woche: 14.09. – 21.09.2026
           </div>
           <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground mb-2">
             Genuss in jeder Form <span className="text-primary">mit Thermomix®</span>
           </h2>
           <p className="text-muted-foreground text-sm">
-            <strong className="text-foreground">TM7 + Sensor + Varoma® Förmchen</strong> ab nur <strong className="text-primary">€ 1.649,-</strong>!
+            <strong className="text-foreground">TM7 + Sensor + Varoma® Förmchen + Gemüse Styler gratis</strong> ab nur <strong className="text-primary">€ 1.649,-</strong>!
           </p>
         </div>
 
@@ -67,22 +67,22 @@ const PromoPopup = () => {
           <div className="rounded-xl overflow-hidden mb-5">
             <img
               src={genussImage}
-              alt="Genuss in jeder Form – Thermomix® TM7 mit Sensor und Varoma® Förmchen"
+              alt="Wir sagen Danke! Genuss in jeder Form – Thermomix® TM7 mit Sensor, Varoma® Förmchen und Gemüse Styler"
               className="w-full h-auto object-cover"
             />
           </div>
 
           <div className="space-y-3 mb-5">
             <div className="bg-white border border-primary/20 rounded-xl p-4">
-              <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Sensor + Varoma® Förmchen</p>
+              <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Sensor + Varoma® Förmchen + Gemüse Styler</p>
               <p className="text-xl font-bold text-foreground">
-                € 1.649,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 1.757,-</span>
+                € 1.649,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 1.926,-</span>
               </p>
             </div>
             <div className="bg-white border border-primary/20 rounded-xl p-4">
               <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Set inkl. Garantieverlängerung</p>
               <p className="text-xl font-bold text-foreground">
-                € 1.798,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 1.906,-</span>
+                € 1.798,- <span className="text-sm font-normal text-muted-foreground line-through ml-1">statt € 2.075,-</span>
               </p>
             </div>
           </div>
@@ -99,7 +99,7 @@ const PromoPopup = () => {
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
-            * Aktion gültig vom 24.08. bis 27.09.2026. Ein Set Varoma® Förmchen enthält 6 Förmchen inkl. 6 Deckel. Angaben ohne Gewähr.
+            * Aktion gültig vom 14.09. bis 21.09.2026. Ein Set Varoma® Förmchen enthält 6 Förmchen inkl. 6 Deckel. Angaben ohne Gewähr.
           </p>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
-import genussImage from '@/assets/promo-genuss-jeder-form.jpg';
+import genussImage from '@/assets/promo-danke-genuss.jpg';
 
 interface Offer {
   id: string;
@@ -40,7 +40,7 @@ const OffersSection = () => {
   const { t } = useTranslation();
 
   // Aktion endet automatisch (Europe/Vienna, CEST = UTC+2)
-  const genussEnd = new Date('2026-09-28T00:00:00+02:00').getTime();
+  const genussEnd = new Date('2026-09-22T00:00:00+02:00').getTime();
   const genussActive = Date.now() < genussEnd;
 
   const gridCols = offers.length === 2 
@@ -63,7 +63,7 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {/* NEUE Aktion: Genuss in jeder Form – 24.08. – 27.09.2026 */}
+        {/* NEUE Aktion: Wir sagen Danke! Genuss in jeder Form – 14.09. – 21.09.2026 */}
         {genussActive && (
         <div className="mb-8 relative">
           <Link to="/beratung" className="block group">
@@ -75,7 +75,7 @@ const OffersSection = () => {
                 <div className="w-full md:w-1/2">
                   <img
                     src={genussImage}
-                    alt="Genuss in jeder Form – Thermomix® TM7 mit Sensor und Varoma® Förmchen"
+                    alt="Wir sagen Danke! Genuss in jeder Form – Thermomix® TM7 mit Sensor, Varoma® Förmchen und Gemüse Styler"
                     loading="lazy"
                     className="w-full h-full object-cover"
                   />
@@ -83,29 +83,29 @@ const OffersSection = () => {
                 <div className="flex-1 p-6 md:p-10 text-center md:text-left">
                   <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
                     <Calendar className="w-4 h-4" />
-                    Promotionzeitraum: 24.08. – 27.09.2026
+                    Nur eine Woche: 14.09. – 21.09.2026
                   </div>
                   <span className="block text-primary font-semibold tracking-wide uppercase text-sm mb-2">
-                    Genuss in jeder Form
+                    Wir sagen Danke!
                   </span>
                   <h3 className="font-serif text-2xl md:text-4xl text-foreground mb-3">
-                    Auf den Punkt mit Thermomix®
+                    Genuss in jeder Form mit Thermomix®
                   </h3>
                   <p className="text-foreground mb-6">
-                    Das perfekte Set für Kochen, Backen und Dampfgaren: <strong className="text-primary">Thermomix® TM7</strong> + <strong>Thermomix® Sensor</strong> + <strong>Varoma® Förmchen in Schwarz</strong>.
+                    Zum Weltdankbarkeitstag gibt es das Bundle mit <strong>TM7 Gemüse Styler gratis on top</strong>: <strong className="text-primary">Thermomix® TM7</strong> + <strong>Thermomix® Sensor</strong> + <strong>Varoma® Förmchen in Schwarz oder Weiß</strong> + <strong>TM7 Gemüse Styler</strong>.
                   </p>
 
                   <div className="flex flex-col gap-3 mb-6">
                     <div className="bg-white/80 rounded-xl p-4 border border-primary/20 flex-1 flex flex-col justify-center">
-                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Sensor + Varoma® Förmchen</p>
+                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Sensor + Varoma® Förmchen + Gemüse Styler</p>
                       <p className="text-xl md:text-2xl font-bold text-foreground">
-                        nur € 1.649,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.757,-</span>
+                        nur € 1.649,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.926,-</span>
                       </p>
                     </div>
                     <div className="bg-white/80 rounded-xl p-4 border border-primary/20 flex-1 flex flex-col justify-center">
                       <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Set inkl. Garantieverlängerung auf 5 Jahre</p>
                       <p className="text-xl md:text-2xl font-bold text-foreground">
-                        nur € 1.798,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.906,-</span>
+                        nur € 1.798,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 2.075,-</span>
                       </p>
                     </div>
                   </div>
@@ -118,7 +118,7 @@ const OffersSection = () => {
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </span>
                   <p className="text-xs text-muted-foreground mt-4 italic">
-                    * Aktion gültig vom 24.08. bis 27.09.2026. Ein Set Varoma® Förmchen enthält 6 Förmchen inkl. 6 Deckel. Angaben ohne Gewähr.
+                    * Aktion gültig vom 14.09. bis 21.09.2026. Ein Set Varoma® Förmchen enthält 6 Förmchen inkl. 6 Deckel. Angaben ohne Gewähr.
                   </p>
                 </div>
               </div>
