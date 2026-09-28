@@ -1,0 +1,1 @@
+Campaign media uploaded by customers is referenced through asset pointer JSON imports; this keeps large files out of the source repository while preserving stable campaign URLs.

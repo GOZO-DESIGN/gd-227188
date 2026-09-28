@@ -100,7 +100,7 @@ const OffersSection = () => {
             </div>
             <div className="mt-10 border-t border-border pt-8 text-center">
               <h4 className="font-serif text-2xl text-foreground mb-4">Brotbacken mit dem Thermomix®</h4>
-              <video src={breadVideo.url} controls playsInline preload="metadata" poster={breadImage.url} className="w-full max-w-xs mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
+              <video src={breadVideo.url} controls autoPlay loop muted playsInline preload="metadata" className="w-full max-w-xs mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
             </div>
           </div>
         )}
