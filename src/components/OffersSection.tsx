@@ -9,6 +9,7 @@ import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
 import breadImage from '@/assets/promo-brotmonat-2026.jpeg.asset.json';
 import breadVideo from '@/assets/promo-brotmonat-2026.mp4.asset.json';
+import financingImage from '@/assets/promo-finanzierung-2026.jpeg.asset.json';
 
 // The CDN asset path is served by the published host; the local Vite preview does not proxy it.
 const mediaHost = 'https://gd-227188.lovable.app';
@@ -47,7 +48,8 @@ const OffersSection = () => {
   // Aktionszeitraum in Wiener Ortszeit (vor der Zeitumstellung am 25.10.).
   const breadActive = Date.now() >= new Date('2026-09-28T00:00:00+02:00').getTime()
     && Date.now() < new Date('2026-10-26T00:00:00+01:00').getTime();
-  const financingActive = Date.now() < new Date('2026-10-19T00:00:00+02:00').getTime();
+  const financingActive = Date.now() >= new Date('2026-09-28T00:00:00+02:00').getTime()
+    && Date.now() < new Date('2026-10-19T00:00:00+02:00').getTime();
 
   const gridCols = offers.length === 2 
     ? 'md:grid-cols-2' 
@@ -92,11 +94,6 @@ const OffersSection = () => {
                     <li key={item} className="flex items-start gap-2"><Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}</li>
                   ))}
                 </ul>
-                {financingActive && (
-                  <p className="text-sm text-muted-foreground mb-5 border-l-2 border-primary pl-4">
-                    Bis 18.10.2026: 0 % Finanzierung auf 10 Monate bei einem Warenkorbwert ab € 1.699,-. Ergänze dafür weitere Produkte zu deinem Wunschpaket.
-                  </p>
-                )}
                 <Button asChild size="lg"><Link to="/beratung">Jetzt Beratung sichern <ArrowRight className="w-4 h-4" /></Link></Button>
                 <p className="text-xs text-muted-foreground mt-4">* Aktion gültig vom 28.09. bis 25.10.2026, solange der Vorrat reicht.</p>
               </div>
@@ -104,6 +101,29 @@ const OffersSection = () => {
             <div className="mt-10 border-t border-border pt-8 text-center">
               <h4 className="font-serif text-2xl text-foreground mb-4">Brotbacken mit dem Thermomix®</h4>
               <video src={`${mediaHost}${breadVideo.url}`} controls autoPlay loop muted playsInline preload="metadata" className="w-full max-w-xs mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
+            </div>
+          </div>
+        )}
+
+        {financingActive && (
+          <div className="mb-12 border-b border-border pb-8 md:pb-12">
+            <div className="grid items-start gap-8 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-12">
+              <img
+                src={`${mediaHost}${financingImage.url}`}
+                alt="Frisch aus dem Ofen. Direkt ins Herz. 0 % Finanzierung auf 10 Monate ab € 1.699,- Warenkorbwert bis 18.10.2026"
+                loading="lazy"
+                className="w-full max-w-sm mx-auto object-contain"
+              />
+              <div>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3">
+                  <Calendar className="w-4 h-4" /> 28.09. – 18.10.2026
+                </span>
+                <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-3">Zinsen zum Grinsen</h3>
+                <p className="text-muted-foreground mb-5">0 % Finanzierung auf 10 Monate – ab einem Warenkorbwert von € 1.699,-.</p>
+                <p className="text-sm text-muted-foreground mb-6">Die Finanzierung gilt erst ab € 1.699,- Warenkorbwert. Das Brotback-Angebot für € 1.599,- allein erreicht diesen Mindestbetrag nicht.</p>
+                <Button asChild size="lg"><Link to="/beratung">Jetzt beraten lassen <ArrowRight className="w-4 h-4" /></Link></Button>
+                <p className="text-xs text-muted-foreground mt-4">* Finanzierung gültig bis 18.10.2026. Details und Konditionen auf Anfrage.</p>
+              </div>
             </div>
           </div>
         )}
