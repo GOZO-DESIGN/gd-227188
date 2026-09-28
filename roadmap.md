@@ -2,3 +2,5 @@
 - [x] Include the supplied campaign image, verified PDF details, and bread video.
 - [x] Verify the campaign displays and navigates correctly on desktop and mobile.
 - [x] Show the second financing artwork as a separate, time-limited offer and verify both offers.
+- [ ] Show both active offers in the popup, align campaign cards with the standard offers, and enlarge the video.
+- [ ] Verify the updated homepage and popup on desktop and mobile.

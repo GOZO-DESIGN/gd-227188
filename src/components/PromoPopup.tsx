@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { X, ArrowRight, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import breadImage from '@/assets/promo-brotmonat-2026.jpeg.asset.json';
+import financingImage from '@/assets/promo-finanzierung-2026.jpeg.asset.json';
 
 const mediaHost = 'https://gd-227188.lovable.app';
 
@@ -40,7 +41,7 @@ const PromoPopup = () => {
       aria-labelledby="promo-popup-title"
     >
       <div
-        className="relative bg-background rounded-2xl shadow-elevated max-w-lg w-full max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-300"
+        className="relative bg-background rounded-xl shadow-elevated max-w-3xl w-full max-h-[90vh] overflow-y-auto animate-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         <Button
@@ -53,35 +54,33 @@ const PromoPopup = () => {
           <X className="w-5 h-5" />
         </Button>
 
-        <div className="bg-secondary/30 p-6 pt-8 pb-5 text-center border-b-2 border-primary">
-          <div className="inline-flex items-center gap-2 text-primary text-sm font-bold mb-4">
-            <Calendar className="w-4 h-4" />
-            28.09. – 25.10.2026
-          </div>
-          <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground mb-2">
-            Frisch gebacken. Direkt ins Herz.
-          </h2>
-          <p className="text-muted-foreground text-sm">
-            <strong className="text-foreground">Thermomix® TM7 + Brotback-Set + Garantieverlängerung</strong> für <strong className="text-primary">€ 1.599,-</strong> statt € 1.836,-.
-          </p>
+        <div className="p-5 pr-14 md:p-6 text-center border-b border-border">
+          <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground">Aktuelle Angebote</h2>
         </div>
-
-        <div className="p-6 pt-5 text-center">
-          <div className="max-w-[240px] mx-auto overflow-hidden mb-4">
-            <img
-              src={`${mediaHost}${breadImage.url}`}
-              alt="Aktionsbild: Thermomix® TM7 mit Brotback-Set und Garantieverlängerung"
-              className="w-full h-auto object-contain"
-            />
-          </div>
-          <p className="text-sm text-muted-foreground mb-4">Limitiertes Angebot – nur solange der Vorrat reicht.</p>
+        <div className={`grid gap-4 p-4 md:p-6 ${Date.now() < FINANCING_END ? 'md:grid-cols-2' : 'max-w-md mx-auto'}`}>
+          <article className="bg-card rounded-lg overflow-hidden shadow-soft flex flex-col">
+            <img src={`${mediaHost}${breadImage.url}`} alt="Thermomix® TM7 mit Brotback-Set und Garantieverlängerung" className="w-full h-48 md:h-56 object-contain bg-background" />
+            <div className="p-4 flex flex-1 flex-col">
+              <span className="inline-flex items-center gap-2 text-primary text-xs font-semibold mb-2"><Calendar className="w-4 h-4" />28.09. – 25.10.2026</span>
+              <h3 className="font-serif text-2xl text-foreground mb-2">Frisch gebacken. Direkt ins Herz.</h3>
+              <p className="text-sm text-muted-foreground mb-3">TM7 mit Brotback-Set und Garantieverlängerung.</p>
+              <p className="text-xl font-bold text-foreground mb-1">€ 1.599,- <span className="text-sm font-normal text-muted-foreground line-through">statt € 1.836,-</span></p>
+              <p className="text-xs text-muted-foreground mb-4">Limitiert – solange der Vorrat reicht.</p>
+              <Button asChild className="w-full mt-auto"><Link to="/beratung" onClick={close}>Jetzt Beratung sichern <ArrowRight className="w-4 h-4" /></Link></Button>
+            </div>
+          </article>
           {Date.now() < FINANCING_END && (
-            <p className="text-sm text-muted-foreground mb-4">Zusätzlich: 0 % Finanzierung auf 10 Monate bis 18.10.2026, ab € 1.699,- Warenkorbwert. Das Paket allein liegt unter diesem Mindestbetrag.</p>
+            <article className="bg-card rounded-lg overflow-hidden shadow-soft flex flex-col">
+              <img src={`${mediaHost}${financingImage.url}`} alt="0 % Finanzierung auf 10 Monate" className="w-full h-48 md:h-56 object-contain bg-background" />
+              <div className="p-4 flex flex-1 flex-col">
+                <span className="inline-flex items-center gap-2 text-primary text-xs font-semibold mb-2"><Calendar className="w-4 h-4" />28.09. – 18.10.2026</span>
+                <h3 className="font-serif text-2xl text-foreground mb-2">Zinsen zum Grinsen</h3>
+                <p className="text-sm text-muted-foreground mb-3">0 % Finanzierung auf 10 Monate ab € 1.699,- Warenkorbwert.</p>
+                <p className="text-xs text-muted-foreground mb-4">Das Brotback-Paket allein erreicht den Mindestbetrag nicht.</p>
+                <Button asChild className="w-full mt-auto"><Link to="/beratung" onClick={close}>Jetzt beraten lassen <ArrowRight className="w-4 h-4" /></Link></Button>
+              </div>
+            </article>
           )}
-          <Button asChild className="w-full"><Link to="/beratung" onClick={close}>Jetzt Beratung sichern <ArrowRight className="w-4 h-4" /></Link></Button>
-          <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
-            * Aktion gültig vom 28.09. bis 25.10.2026, solange der Vorrat reicht.
-          </p>
         </div>
       </div>
     </div>
