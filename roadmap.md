@@ -1,0 +1,3 @@
+- [x] Replace the expired homepage and popup offer with the 28.09.–25.10.2026 bread bundle.
+- [x] Include the supplied campaign image, verified PDF details, and bread video.
+- [x] Verify the campaign displays and navigates correctly on desktop and mobile.

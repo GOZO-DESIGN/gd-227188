@@ -1,12 +1,17 @@
-import { ArrowRight, Calendar } from 'lucide-react';
+import { ArrowRight, Calendar, Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@/components/ui/button';
 
 // Import promo images
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
-import genussImage from '@/assets/promo-danke-genuss.png';
+import breadImage from '@/assets/promo-brotmonat-2026.jpeg.asset.json';
+import breadVideo from '@/assets/promo-brotmonat-2026.mp4.asset.json';
+
+// The CDN asset path is served by the published host; the local Vite preview does not proxy it.
+const mediaHost = 'https://gd-227188.lovable.app';
 
 interface Offer {
   id: string;
@@ -39,9 +44,10 @@ const offers: Offer[] = [
 const OffersSection = () => {
   const { t } = useTranslation();
 
-  // Aktion endet automatisch (Europe/Vienna, CEST = UTC+2)
-  const genussEnd = new Date('2026-09-22T00:00:00+02:00').getTime();
-  const genussActive = Date.now() < genussEnd;
+  // Aktionszeitraum in Wiener Ortszeit (vor der Zeitumstellung am 25.10.).
+  const breadActive = Date.now() >= new Date('2026-09-28T00:00:00+02:00').getTime()
+    && Date.now() < new Date('2026-10-26T00:00:00+01:00').getTime();
+  const financingActive = Date.now() < new Date('2026-10-19T00:00:00+02:00').getTime();
 
   const gridCols = offers.length === 2 
     ? 'md:grid-cols-2' 
@@ -63,68 +69,43 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {/* NEUE Aktion: Wir sagen Danke! Genuss in jeder Form – 14.09. – 21.09.2026 */}
-        {genussActive && (
-        <div className="mb-8 relative">
-          <Link to="/beratung" className="block group">
-            <div className="relative bg-gradient-to-br from-orange-50 via-primary/5 to-yellow-50 rounded-2xl overflow-hidden shadow-elevated hover:shadow-lg transition-all duration-300 border-2 border-primary">
-              <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1.5 rounded-bl-2xl text-xs font-bold tracking-wide uppercase z-10">
-                Neue Kundenpromotion
-              </div>
-              <div className="flex flex-col md:flex-row items-stretch gap-0">
-                <div className="w-full md:w-1/2">
-                  <img
-                    src={genussImage}
-                    alt="Wir sagen Danke! Genuss in jeder Form – Thermomix® TM7 mit Sensor, Varoma® Förmchen und Gemüse Styler"
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex-1 p-6 md:p-10 text-center md:text-left">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-bold mb-4">
-                    <Calendar className="w-4 h-4" />
-                    Nur eine Woche: 14.09. – 21.09.2026
-                  </div>
-                  <span className="block text-primary font-semibold tracking-wide uppercase text-sm mb-2">
-                    Wir sagen Danke!
-                  </span>
-                  <h3 className="font-serif text-2xl md:text-4xl text-foreground mb-3">
-                    Genuss in jeder Form mit Thermomix®
-                  </h3>
-                  <p className="text-foreground mb-6">
-                    Zum Weltdankbarkeitstag gibt es das Bundle mit <strong>TM7 Gemüse Styler gratis on top</strong>: <strong className="text-primary">Thermomix® TM7</strong> + <strong>Thermomix® Sensor</strong> + <strong>Varoma® Förmchen in Schwarz oder Weiß</strong> + <strong>TM7 Gemüse Styler</strong>.
+        {breadActive && (
+          <div className="mb-12 border-y border-border py-8 md:py-12">
+            <div className="grid items-start gap-8 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-12">
+              <img
+                src={`${mediaHost}${breadImage.url}`}
+                alt="Frisch aus dem Ofen. Direkt ins Herz. Thermomix® TM7 mit Brotback-Set und Garantieverlängerung für € 1.599 statt € 1.836, gültig bis 25.10.2026"
+                loading="lazy"
+                className="w-full max-w-sm mx-auto object-contain"
+              />
+              <div>
+                <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3">
+                  <Calendar className="w-4 h-4" /> 28.09. – 25.10.2026
+                </span>
+                <h3 className="font-serif text-3xl md:text-4xl text-foreground mb-3">Frisch gebacken. Direkt ins Herz.</h3>
+                <p className="text-muted-foreground mb-5">Brotmomente, die man nie vergisst: Thermomix® TM7, Thermomix® Brotback-Set und Garantieverlängerung im limitierten Paket.</p>
+                <p className="text-3xl font-bold text-foreground mb-1">€ 1.599,- <span className="text-base font-normal text-muted-foreground line-through">statt € 1.836,-</span></p>
+                <p className="text-sm text-muted-foreground mb-6">Nur solange der Vorrat reicht.</p>
+                <h4 className="font-semibold text-foreground mb-2">Das Brotback-Set enthält:</h4>
+                <ul className="grid gap-2 text-sm text-foreground sm:grid-cols-2 mb-6">
+                  {['Brot-Garkörbchen', 'Sauerteig Starter-Glas', '2-in-1-Teigkarte', 'Silikon-Brotschlinge & Teigmesser', 'Sauerteig-Spatel', 'Gusseiserner Brotbacktopf'].map(item => (
+                    <li key={item} className="flex items-start gap-2"><Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}</li>
+                  ))}
+                </ul>
+                {financingActive && (
+                  <p className="text-sm text-muted-foreground mb-5 border-l-2 border-primary pl-4">
+                    Bis 18.10.2026: 0 % Finanzierung auf 10 Monate bei einem Warenkorbwert ab € 1.699,-. Ergänze dafür weitere Produkte zu deinem Wunschpaket.
                   </p>
-
-                  <div className="flex flex-col gap-3 mb-6">
-                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20 flex-1 flex flex-col justify-center">
-                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">TM7 + Sensor + Varoma® Förmchen + Gemüse Styler</p>
-                      <p className="text-xl md:text-2xl font-bold text-foreground">
-                        nur € 1.649,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 1.926,-</span>
-                      </p>
-                    </div>
-                    <div className="bg-white/80 rounded-xl p-4 border border-primary/20 flex-1 flex flex-col justify-center">
-                      <p className="text-xs uppercase tracking-wide text-muted-foreground mb-1">Set inkl. Garantieverlängerung auf 5 Jahre</p>
-                      <p className="text-xl md:text-2xl font-bold text-foreground">
-                        nur € 1.798,- <span className="text-sm font-normal text-muted-foreground line-through ml-2">statt € 2.075,-</span>
-                      </p>
-                    </div>
-                  </div>
-
-
-
-
-                  <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:bg-primary/90 group-hover:shadow-lg">
-                    Jetzt Beratung sichern
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                  <p className="text-xs text-muted-foreground mt-4 italic">
-                    * Aktion gültig vom 14.09. bis 21.09.2026. Ein Set Varoma® Förmchen enthält 6 Förmchen inkl. 6 Deckel. Angaben ohne Gewähr.
-                  </p>
-                </div>
+                )}
+                <Button asChild size="lg"><Link to="/beratung">Jetzt Beratung sichern <ArrowRight className="w-4 h-4" /></Link></Button>
+                <p className="text-xs text-muted-foreground mt-4">* Aktion gültig vom 28.09. bis 25.10.2026, solange der Vorrat reicht.</p>
               </div>
             </div>
-          </Link>
-        </div>
+            <div className="mt-10 border-t border-border pt-8 text-center">
+              <h4 className="font-serif text-2xl text-foreground mb-4">Brotbacken mit dem Thermomix®</h4>
+              <video src={`${mediaHost}${breadVideo.url}`} controls autoPlay loop muted playsInline preload="metadata" className="w-full max-w-xs mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
+            </div>
+          </div>
         )}
 
         {/* Offers Grid */}
