@@ -75,7 +75,7 @@ const OffersSection = () => {
           <div className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {breadActive && (
-                <article className="bg-card rounded-xl overflow-hidden shadow-soft flex flex-col">
+                <article className="bg-background rounded-xl overflow-hidden shadow-soft flex flex-col">
                   <img src={`${mediaHost}${breadImage.url}`} alt="Thermomix® TM7 mit Brotback-Set und Garantieverlängerung" loading="lazy" className="w-full h-80 md:h-96 object-contain bg-background" />
                   <div className="p-5 md:p-6 flex flex-1 flex-col">
                     <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3"><Calendar className="w-4 h-4" /> 28.09. – 25.10.2026</span>
@@ -95,7 +95,7 @@ const OffersSection = () => {
                 </article>
               )}
               {financingActive && (
-                <article className="bg-card rounded-xl overflow-hidden shadow-soft flex flex-col">
+                <article className="bg-background rounded-xl overflow-hidden shadow-soft flex flex-col">
                   <img src={`${mediaHost}${financingImage.url}`} alt="0 % Finanzierung auf 10 Monate ab € 1.699,- Warenkorbwert" loading="lazy" className="w-full h-80 md:h-96 object-contain bg-background" />
                   <div className="p-5 md:p-6 flex flex-1 flex-col">
                     <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3"><Calendar className="w-4 h-4" /> 28.09. – 18.10.2026</span>
@@ -111,7 +111,7 @@ const OffersSection = () => {
             {breadActive && (
               <div className="mt-10 border-t border-border pt-8 text-center">
                 <h4 className="font-serif text-2xl text-foreground mb-4">Brotbacken mit dem Thermomix®</h4>
-                <video src={`${mediaHost}${breadVideo.url}`} controls autoPlay loop muted playsInline preload="metadata" className="w-full max-w-lg mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
+                <video src={`${mediaHost}${breadVideo.url}`} controls autoPlay loop muted playsInline preload="metadata" className="w-full max-w-3xl mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
               </div>
             )}
           </div>

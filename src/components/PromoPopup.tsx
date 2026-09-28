@@ -58,7 +58,7 @@ const PromoPopup = () => {
           <h2 id="promo-popup-title" className="font-serif text-2xl md:text-3xl text-foreground">Aktuelle Angebote</h2>
         </div>
         <div className={`grid gap-4 p-4 md:p-6 ${Date.now() < FINANCING_END ? 'md:grid-cols-2' : 'max-w-md mx-auto'}`}>
-          <article className="bg-card rounded-lg overflow-hidden shadow-soft flex flex-col">
+          <article className="bg-background rounded-lg overflow-hidden shadow-soft flex flex-col">
             <img src={`${mediaHost}${breadImage.url}`} alt="Thermomix® TM7 mit Brotback-Set und Garantieverlängerung" className="w-full h-48 md:h-56 object-contain bg-background" />
             <div className="p-4 flex flex-1 flex-col">
               <span className="inline-flex items-center gap-2 text-primary text-xs font-semibold mb-2"><Calendar className="w-4 h-4" />28.09. – 25.10.2026</span>
@@ -70,7 +70,7 @@ const PromoPopup = () => {
             </div>
           </article>
           {Date.now() < FINANCING_END && (
-            <article className="bg-card rounded-lg overflow-hidden shadow-soft flex flex-col">
+            <article className="bg-background rounded-lg overflow-hidden shadow-soft flex flex-col">
               <img src={`${mediaHost}${financingImage.url}`} alt="0 % Finanzierung auf 10 Monate" className="w-full h-48 md:h-56 object-contain bg-background" />
               <div className="p-4 flex flex-1 flex-col">
                 <span className="inline-flex items-center gap-2 text-primary text-xs font-semibold mb-2"><Calendar className="w-4 h-4" />28.09. – 18.10.2026</span>
