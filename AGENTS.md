@@ -1,1 +1,1 @@
-Campaign media uploaded by customers is referenced through asset pointer JSON imports; this keeps large files out of the source repository while preserving stable campaign URLs.
+Campaign media uploaded by customers is referenced through asset pointer JSON imports; this keeps large files out of the source repository while preserving stable campaign URLs. Prefix these asset paths with the published host because local Vite does not proxy the CDN route.

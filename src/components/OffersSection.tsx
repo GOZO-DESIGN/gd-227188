@@ -10,6 +10,9 @@ import promoCasserole from '@/assets/promo-casserole.jpg';
 import breadImage from '@/assets/promo-brotmonat-2026.jpeg.asset.json';
 import breadVideo from '@/assets/promo-brotmonat-2026.mp4.asset.json';
 
+// The CDN asset path is served by the published host; the local Vite preview does not proxy it.
+const mediaHost = 'https://gd-227188.lovable.app';
+
 interface Offer {
   id: string;
   image: string;
@@ -70,7 +73,7 @@ const OffersSection = () => {
           <div className="mb-12 border-y border-border py-8 md:py-12">
             <div className="grid items-start gap-8 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-12">
               <img
-                src={breadImage.url}
+                src={`${mediaHost}${breadImage.url}`}
                 alt="Frisch aus dem Ofen. Direkt ins Herz. Thermomix® TM7 mit Brotback-Set und Garantieverlängerung für € 1.599 statt € 1.836, gültig bis 25.10.2026"
                 loading="lazy"
                 className="w-full max-w-sm mx-auto object-contain"
@@ -100,7 +103,7 @@ const OffersSection = () => {
             </div>
             <div className="mt-10 border-t border-border pt-8 text-center">
               <h4 className="font-serif text-2xl text-foreground mb-4">Brotbacken mit dem Thermomix®</h4>
-              <video src={breadVideo.url} controls autoPlay loop muted playsInline preload="metadata" className="w-full max-w-xs mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
+              <video src={`${mediaHost}${breadVideo.url}`} controls autoPlay loop muted playsInline preload="metadata" className="w-full max-w-xs mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
             </div>
           </div>
         )}

@@ -4,6 +4,8 @@ import { X, ArrowRight, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import breadImage from '@/assets/promo-brotmonat-2026.jpeg.asset.json';
 
+const mediaHost = 'https://gd-227188.lovable.app';
+
 const STORAGE_KEY = 'promoPopup_brotmonat_2026_seen';
 
 // Die Zeitumstellung in Wien findet am letzten Aktionstag statt.
@@ -66,7 +68,7 @@ const PromoPopup = () => {
         <div className="p-6 pt-5 text-center">
           <div className="max-w-[240px] mx-auto overflow-hidden mb-4">
             <img
-              src={breadImage.url}
+              src={`${mediaHost}${breadImage.url}`}
               alt="Aktionsbild: Thermomix® TM7 mit Brotback-Set und Garantieverlängerung"
               className="w-full h-auto object-contain"
             />
