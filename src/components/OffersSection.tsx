@@ -118,7 +118,7 @@ const OffersSection = () => {
         )}
 
         {/* Offers Grid */}
-        <div className={`mt-12 grid grid-cols-1 ${gridCols} gap-6 md:gap-8 mb-16`}>
+        <div className={`mt-24 grid grid-cols-1 ${gridCols} gap-6 md:gap-8 mb-16`}>
           {offers.map((offer) => (
             <div
               key={offer.id}
