@@ -11,6 +11,7 @@ const STORAGE_KEY = 'promoPopup_brotmonat_2026_seen';
 // Die Zeitumstellung in Wien findet am letzten Aktionstag statt.
 const PROMO_START = new Date('2026-09-28T00:00:00+02:00').getTime();
 const PROMO_END = new Date('2026-10-26T00:00:00+01:00').getTime();
+const FINANCING_END = new Date('2026-10-19T00:00:00+02:00').getTime();
 
 const PromoPopup = () => {
   const breadActive = Date.now() >= PROMO_START && Date.now() < PROMO_END;
@@ -74,6 +75,9 @@ const PromoPopup = () => {
             />
           </div>
           <p className="text-sm text-muted-foreground mb-4">Limitiertes Angebot – nur solange der Vorrat reicht.</p>
+          {Date.now() < FINANCING_END && (
+            <p className="text-sm text-muted-foreground mb-4">Zusätzlich: 0 % Finanzierung auf 10 Monate bis 18.10.2026, ab € 1.699,- Warenkorbwert. Das Paket allein liegt unter diesem Mindestbetrag.</p>
+          )}
           <Button asChild className="w-full"><Link to="/beratung" onClick={close}>Jetzt Beratung sichern <ArrowRight className="w-4 h-4" /></Link></Button>
           <p className="text-[11px] text-muted-foreground mt-3 text-center italic leading-relaxed">
             * Aktion gültig vom 28.09. bis 25.10.2026, solange der Vorrat reicht.
