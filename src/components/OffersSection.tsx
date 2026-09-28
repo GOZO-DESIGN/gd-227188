@@ -109,9 +109,10 @@ const OffersSection = () => {
               )}
             </div>
             {breadActive && (
-              <div className="mt-10 border-t border-border pt-8 text-center">
+              <div className="mt-10 text-center">
                 <h4 className="font-serif text-2xl text-foreground mb-4">Brotbacken mit dem Thermomix®</h4>
                 <video src={`${mediaHost}${breadVideo.url}`} controls autoPlay loop muted playsInline preload="metadata" className="w-full max-w-3xl mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
+                <div className="mt-8 border-t border-border" />
               </div>
             )}
           </div>
