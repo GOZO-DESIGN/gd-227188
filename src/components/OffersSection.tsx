@@ -80,12 +80,12 @@ const OffersSection = () => {
                   <div className="p-5 md:p-6 flex flex-1 flex-col">
                     <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3"><Calendar className="w-4 h-4" /> 28.09. – 25.10.2026</span>
                     <h3 className="font-serif text-3xl text-foreground mb-3">Frisch gebacken. Direkt ins Herz.</h3>
-                    <p className="text-muted-foreground mb-4">Thermomix® TM7, Brotback-Set und Garantieverlängerung im limitierten Paket.</p>
+                    <p className="text-muted-foreground mb-4">Im Brotmonat Oktober dreht sich alles ums Selberbacken: Zum internationalen Brottag am 16.10. gibt es den Thermomix® TM7 mit Brotback-Set und Garantieverlängerung im limitierten Paket. Für ofenfrische Momente zuhause.</p>
                     <p className="text-2xl font-bold text-foreground mb-1">€ 1.599,- <span className="text-base font-normal text-muted-foreground line-through">statt € 1.836,-</span></p>
-                    <p className="text-sm text-muted-foreground mb-4">Nur solange der Vorrat reicht.</p>
+                    <p className="text-sm text-muted-foreground mb-4">Nur in limitierter Stückzahl – solange der Vorrat reicht.</p>
                     <h4 className="font-semibold text-foreground mb-2">Das Brotback-Set enthält:</h4>
                     <ul className="grid gap-2 text-sm text-foreground sm:grid-cols-2 mb-6">
-                      {['Brot-Garkörbchen', 'Sauerteig Starter-Glas', '2-in-1-Teigkarte', 'Silikon-Brotschlinge & Teigmesser', 'Sauerteig-Spatel', 'Gusseiserner Brotbacktopf'].map(item => (
+                      {['Brot-Garkörbchen', 'Sauerteig Starter-Glas', '2-in-1-Teigkarte', 'Silikon-Brotschlinge und Teigmesser', 'Sauerteig-Spatel', 'Thermomix® gusseiserner Brotbacktopf'].map(item => (
                         <li key={item} className="flex items-start gap-2"><Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}</li>
                       ))}
                     </ul>
@@ -101,7 +101,7 @@ const OffersSection = () => {
                     <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3"><Calendar className="w-4 h-4" /> 28.09. – 18.10.2026</span>
                     <h3 className="font-serif text-3xl text-foreground mb-3">Zinsen zum Grinsen</h3>
                     <p className="text-muted-foreground mb-4">0 % Finanzierung auf 10 Monate – ab einem Warenkorbwert von € 1.699,-.</p>
-                    <p className="text-sm text-muted-foreground mb-6">Das Brotback-Angebot für € 1.599,- allein erreicht den Mindestbetrag nicht.</p>
+                    <p className="text-sm text-muted-foreground mb-6">Auch mit dem limitierten Brotback-Paket kombinierbar: Ergänze weitere Produkte zu deinem Wunschpaket, um den Mindestwarenkorb von € 1.699,- zu erreichen. Das Paket für € 1.599,- allein reicht dafür nicht aus.</p>
                     <Button asChild size="lg" className="w-full mt-auto"><Link to="/beratung">Jetzt beraten lassen <ArrowRight className="w-4 h-4" /></Link></Button>
                     <p className="text-xs text-muted-foreground mt-4">* Finanzierung gültig bis 18.10.2026. Details und Konditionen auf Anfrage.</p>
                   </div>
