@@ -4,3 +4,4 @@
 - [x] Show the second financing artwork as a separate, time-limited offer and verify both offers.
 - [x] Show both active offers in the popup, align campaign cards with the standard offers, and enlarge the video.
 - [x] Verify the updated homepage and popup on desktop and mobile.
+- [ ] Add the customer-facing details from the supplied Brotmonat PDF to the homepage and popup, and check the result.
