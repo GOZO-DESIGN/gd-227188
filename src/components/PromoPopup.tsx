@@ -63,9 +63,9 @@ const PromoPopup = () => {
             <div className="p-4 flex flex-1 flex-col">
               <span className="inline-flex items-center gap-2 text-primary text-xs font-semibold mb-2"><Calendar className="w-4 h-4" />28.09. – 25.10.2026</span>
               <h3 className="font-serif text-2xl text-foreground mb-2">Frisch gebacken. Direkt ins Herz.</h3>
-              <p className="text-sm text-muted-foreground mb-3">TM7 mit Brotback-Set und Garantieverlängerung.</p>
+              <p className="text-sm text-muted-foreground mb-3">Zum Brotmonat Oktober: TM7 mit Brotback-Set und Garantieverlängerung. Das Set enthält Garkörbchen, Sauerteig Starter-Glas, 2-in-1-Teigkarte, Silikon-Brotschlinge und Teigmesser, Sauerteig-Spatel und einen gusseisernen Brotbacktopf.</p>
               <p className="text-xl font-bold text-foreground mb-1">€ 1.599,- <span className="text-sm font-normal text-muted-foreground line-through">statt € 1.836,-</span></p>
-              <p className="text-xs text-muted-foreground mb-4">Limitiert – solange der Vorrat reicht.</p>
+              <p className="text-xs text-muted-foreground mb-4">Nur in limitierter Stückzahl – solange der Vorrat reicht.</p>
               <Button asChild className="w-full mt-auto"><Link to="/beratung" onClick={close}>Jetzt Beratung sichern <ArrowRight className="w-4 h-4" /></Link></Button>
             </div>
           </article>
@@ -76,7 +76,7 @@ const PromoPopup = () => {
                 <span className="inline-flex items-center gap-2 text-primary text-xs font-semibold mb-2"><Calendar className="w-4 h-4" />28.09. – 18.10.2026</span>
                 <h3 className="font-serif text-2xl text-foreground mb-2">Zinsen zum Grinsen</h3>
                 <p className="text-sm text-muted-foreground mb-3">0 % Finanzierung auf 10 Monate ab € 1.699,- Warenkorbwert.</p>
-                <p className="text-xs text-muted-foreground mb-4">Das Brotback-Paket allein erreicht den Mindestbetrag nicht.</p>
+                <p className="text-xs text-muted-foreground mb-4">Mit dem Brotback-Paket kombinierbar, wenn du weitere Produkte ergänzt: Das Paket für € 1.599,- allein erreicht den Mindestbetrag nicht.</p>
                 <Button asChild className="w-full mt-auto"><Link to="/beratung" onClick={close}>Jetzt beraten lassen <ArrowRight className="w-4 h-4" /></Link></Button>
               </div>
             </article>
