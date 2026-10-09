@@ -10,6 +10,7 @@ import promoCasserole from '@/assets/promo-casserole.jpg';
 import breadImage from '@/assets/promo-brotmonat-2026.jpeg.asset.json';
 import breadVideo from '@/assets/promo-brotmonat-2026.mp4.asset.json';
 import financingImage from '@/assets/promo-finanzierung-2026.jpeg.asset.json';
+import gaensehautImage from '@/assets/promo-gaensehaut-2026.jpeg.asset.json';
 
 // The CDN asset path is served by the published host; the local Vite preview does not proxy it.
 const mediaHost = 'https://gd-227188.lovable.app';
@@ -48,6 +49,8 @@ const OffersSection = () => {
   // Aktionszeitraum in Wiener Ortszeit (vor der Zeitumstellung am 25.10.).
   const breadActive = Date.now() >= new Date('2026-09-28T00:00:00+02:00').getTime()
     && Date.now() < new Date('2026-10-26T00:00:00+01:00').getTime();
+  const gaensehautActive = Date.now() >= new Date('2026-10-09T00:00:00+02:00').getTime()
+    && Date.now() < new Date('2026-10-26T00:00:00+01:00').getTime();
   const financingActive = Date.now() >= new Date('2026-09-28T00:00:00+02:00').getTime()
     && Date.now() < new Date('2026-10-19T00:00:00+02:00').getTime();
 
@@ -71,9 +74,22 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {(breadActive || financingActive) && (
+        {(breadActive || financingActive || gaensehautActive) && (
           <div className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {gaensehautActive && (
+                <article className="bg-background rounded-xl overflow-hidden shadow-soft flex flex-col">
+                  <img src={`${mediaHost}${gaensehautImage.url}`} alt="Genuss mit Gänsehautmomenten: Thermomix® für nur € 1.599,- mit mindestens € 255,99 Preisvorteil" loading="lazy" className="w-full h-80 md:h-96 object-contain bg-background" />
+                  <div className="p-5 md:p-6 flex flex-1 flex-col">
+                    <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3"><Calendar className="w-4 h-4" /> 09.10. – 25.10.2026</span>
+                    <h3 className="font-serif text-3xl text-foreground mb-3">Genuss mit Gänsehautmomenten.</h3>
+                    <p className="text-muted-foreground mb-4">Mit geheimen Überraschungen – für noch mehr WOW in deiner Küche.</p>
+                    <p className="text-2xl font-bold text-foreground mb-1">€ 1.599,-</p>
+                    <p className="text-sm text-muted-foreground mb-6">mit mind. € 255,99 Preisvorteil – exklusiv im Zeitraum vom 09.10. bis 25.10.2026.</p>
+                    <Button asChild size="lg" className="w-full mt-auto"><Link to="/beratung">Jetzt Beratung sichern <ArrowRight className="w-4 h-4" /></Link></Button>
+                  </div>
+                </article>
+              )}
               {breadActive && (
                 <article className="bg-background rounded-xl overflow-hidden shadow-soft flex flex-col">
                   <img src={`${mediaHost}${breadImage.url}`} alt="Thermomix® TM7 mit Brotback-Set und Garantieverlängerung" loading="lazy" className="w-full h-80 md:h-96 object-contain bg-background" />
