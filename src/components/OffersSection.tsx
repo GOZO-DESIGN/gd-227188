@@ -1,4 +1,4 @@
-import { ArrowRight, Calendar, Check } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -7,13 +7,8 @@ import { Button } from '@/components/ui/button';
 import promo1549 from '@/assets/promo-1549.jpg';
 import promo1698 from '@/assets/promo-1698.jpg';
 import promoCasserole from '@/assets/promo-casserole.jpg';
-import breadImage from '@/assets/promo-brotmonat-2026.jpeg.asset.json';
-import breadVideo from '@/assets/promo-brotmonat-2026.mp4.asset.json';
-import financingImage from '@/assets/promo-finanzierung-2026.jpeg.asset.json';
-import gaensehautImage from '@/assets/promo-gaensehaut-2026.jpeg.asset.json';
-
-// The CDN asset path is served by the published host; the local Vite preview does not proxy it.
-const mediaHost = 'https://gd-227188.lovable.app';
+import ChristmasOffers from '@/components/ChristmasOffers';
+import { getChristmasPromotionState } from '@/lib/christmasPromotion';
 
 interface Offer {
   id: string;
@@ -46,13 +41,7 @@ const offers: Offer[] = [
 const OffersSection = () => {
   const { t } = useTranslation();
 
-  // Aktionszeitraum in Wiener Ortszeit (vor der Zeitumstellung am 25.10.).
-  const breadActive = Date.now() >= new Date('2026-09-28T00:00:00+02:00').getTime()
-    && Date.now() < new Date('2026-10-26T00:00:00+01:00').getTime();
-  const gaensehautActive = Date.now() >= new Date('2026-10-09T00:00:00+02:00').getTime()
-    && Date.now() < new Date('2026-10-26T00:00:00+01:00').getTime();
-  const financingActive = Date.now() >= new Date('2026-09-28T00:00:00+02:00').getTime()
-    && Date.now() < new Date('2026-10-19T00:00:00+02:00').getTime();
+  const { bundleActive } = getChristmasPromotionState();
 
   const gridCols = offers.length === 2 
     ? 'md:grid-cols-2' 
@@ -74,63 +63,15 @@ const OffersSection = () => {
           </p>
         </div>
 
-        {(breadActive || financingActive || gaensehautActive) && (
+        {bundleActive && (
           <div className="mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {gaensehautActive && (
-                <article className="bg-background rounded-xl overflow-hidden shadow-soft flex flex-col">
-                  <img src={`${mediaHost}${gaensehautImage.url}`} alt="Genuss mit Gänsehautmomenten: Thermomix® für nur € 1.599,- mit mindestens € 255,99 Preisvorteil" loading="lazy" className="w-full h-80 md:h-96 object-contain bg-background" />
-                  <div className="p-5 md:p-6 flex flex-1 flex-col">
-                    <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3"><Calendar className="w-4 h-4" /> 09.10. – 25.10.2026</span>
-                    <h3 className="font-serif text-3xl text-foreground mb-3">Genuss mit Gänsehautmomenten.</h3>
-                    <p className="text-muted-foreground mb-4">Mit geheimen Überraschungen – für noch mehr WOW in deiner Küche.</p>
-                    <p className="text-2xl font-bold text-foreground mb-1">€ 1.599,-</p>
-                    <p className="text-sm text-muted-foreground mb-6">mit mind. € 255,99 Preisvorteil – exklusiv im Zeitraum vom 09.10. bis 25.10.2026.</p>
-                    <Button asChild size="lg" className="w-full mt-auto"><Link to="/beratung">Jetzt Beratung sichern <ArrowRight className="w-4 h-4" /></Link></Button>
-                  </div>
-                </article>
-              )}
-              {breadActive && (
-                <article className="bg-background rounded-xl overflow-hidden shadow-soft flex flex-col">
-                  <img src={`${mediaHost}${breadImage.url}`} alt="Thermomix® TM7 mit Brotback-Set und Garantieverlängerung" loading="lazy" className="w-full h-80 md:h-96 object-contain bg-background" />
-                  <div className="p-5 md:p-6 flex flex-1 flex-col">
-                    <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3"><Calendar className="w-4 h-4" /> 28.09. – 25.10.2026</span>
-                    <h3 className="font-serif text-3xl text-foreground mb-3">Frisch gebacken. Direkt ins Herz.</h3>
-                    <p className="text-muted-foreground mb-4">Im Brotmonat Oktober dreht sich alles ums Selberbacken: Zum internationalen Brottag am 16.10. gibt es den Thermomix® TM7 mit Brotback-Set und Garantieverlängerung im limitierten Paket. Für ofenfrische Momente zuhause.</p>
-                    <p className="text-2xl font-bold text-foreground mb-1">€ 1.599,- <span className="text-base font-normal text-muted-foreground line-through">statt € 1.836,-</span></p>
-                    <p className="text-sm text-muted-foreground mb-4">Nur in limitierter Stückzahl – solange der Vorrat reicht.</p>
-                    <h4 className="font-semibold text-foreground mb-2">Das Brotback-Set enthält:</h4>
-                    <ul className="grid gap-2 text-sm text-foreground sm:grid-cols-2 mb-6">
-                      {['Brot-Garkörbchen', 'Sauerteig Starter-Glas', '2-in-1-Teigkarte', 'Silikon-Brotschlinge und Teigmesser', 'Sauerteig-Spatel', 'Thermomix® gusseiserner Brotbacktopf'].map(item => (
-                        <li key={item} className="flex items-start gap-2"><Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />{item}</li>
-                      ))}
-                    </ul>
-                    <Button asChild size="lg" className="w-full mt-auto"><Link to="/beratung">Jetzt Beratung sichern <ArrowRight className="w-4 h-4" /></Link></Button>
-                    <p className="text-xs text-muted-foreground mt-4">* Aktion gültig vom 28.09. bis 25.10.2026, solange der Vorrat reicht.</p>
-                  </div>
-                </article>
-              )}
-              {financingActive && (
-                <article className="bg-background rounded-xl overflow-hidden shadow-soft flex flex-col">
-                  <img src={`${mediaHost}${financingImage.url}`} alt="0 % Finanzierung auf 10 Monate ab € 1.699,- Warenkorbwert" loading="lazy" className="w-full h-80 md:h-96 object-contain bg-background" />
-                  <div className="p-5 md:p-6 flex flex-1 flex-col">
-                    <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-3"><Calendar className="w-4 h-4" /> 28.09. – 18.10.2026</span>
-                    <h3 className="font-serif text-3xl text-foreground mb-3">Zinsen zum Grinsen</h3>
-                    <p className="text-muted-foreground mb-4">0 % Finanzierung auf 10 Monate – ab einem Warenkorbwert von € 1.699,-.</p>
-                    <p className="text-sm text-muted-foreground mb-6">Auch mit dem limitierten Brotback-Paket kombinierbar: Ergänze weitere Produkte zu deinem Wunschpaket, um den Mindestwarenkorb von € 1.699,- zu erreichen. Das Paket für € 1.599,- allein reicht dafür nicht aus.</p>
-                    <Button asChild size="lg" className="w-full mt-auto"><Link to="/beratung">Jetzt beraten lassen <ArrowRight className="w-4 h-4" /></Link></Button>
-                    <p className="text-xs text-muted-foreground mt-4">* Finanzierung gültig bis 18.10.2026. Details und Konditionen auf Anfrage.</p>
-                  </div>
-                </article>
-              )}
+            <div className="text-center mb-8">
+              <span className="text-primary font-semibold uppercase text-sm">Weihnachten 2026</span>
+              <h2 className="font-serif text-4xl md:text-5xl text-foreground mt-3 mb-4">Dein Thermomix® Weihnachtsangebot</h2>
+              <p className="text-muted-foreground">TM7, Zubehör und 5 Jahre Garantie – für nur € 1.748,-.</p>
             </div>
-            {breadActive && (
-              <div className="mt-10 text-center">
-                <h4 className="font-serif text-2xl text-foreground mb-4">Brotbacken mit dem Thermomix®</h4>
-                <video src={`${mediaHost}${breadVideo.url}`} controls autoPlay loop muted playsInline preload="metadata" className="w-full max-w-3xl mx-auto rounded-2xl" aria-label="Video zum Brotbacken mit Thermomix®" />
-                <div className="mt-8 border-t border-border" />
-              </div>
-            )}
+            <ChristmasOffers />
+            <div className="mt-12 border-t border-border" />
           </div>
         )}
 
