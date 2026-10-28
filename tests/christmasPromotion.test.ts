@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'bun:test';
-import { christmasPromotion, getChristmasPromotionState } from './christmasPromotion';
+import { christmasPromotion, getChristmasPromotionState } from '../src/lib/christmasPromotion';
 
 describe('Christmas customer offer', () => {
   test('bundle costs €1748', () => expect(christmasPromotion.price).toBe(1748));
