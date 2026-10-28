@@ -1,1 +1,2 @@
 Campaign media uploaded by customers is referenced through asset pointer JSON imports; this keeps large files out of the source repository while preserving stable campaign URLs. Prefix these asset paths with the published host because local Vite does not proxy the CDN route.
+Keep active Christmas offer content in a shared presentation component and its commercial terms/deadlines in one tested module so the homepage and popup cannot diverge.
