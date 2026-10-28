@@ -22,7 +22,7 @@ export default function ChristmasOffers({ compact = false, onSelect }: { compact
           <ul className="space-y-2 mb-6">
             {christmasPromotion.contents.map(item => <li key={item} className="flex gap-2 items-start"><Check className="w-5 h-5 text-primary shrink-0 mt-0.5" /><span>{item}</span></li>)}
           </ul>
-          <p className={`font-bold text-primary mb-2 ${compact ? 'text-3xl' : 'text-4xl md:text-5xl'}`}>€ {christmasPromotion.price.toLocaleString('de-AT')},-</p>
+          <p className={`font-bold text-primary mb-2 ${compact ? 'text-3xl' : 'text-4xl md:text-5xl'}`}>€ {christmasPromotion.price.toLocaleString('de-DE')},-</p>
           {financingActive && <p className="text-sm text-muted-foreground mb-6">Mit 0 % Finanzierung kombinierbar – nur bis 16.11.2026.</p>}
           <Button asChild size="lg" className="w-full mt-auto"><Link to="/beratung" onClick={onSelect}>Weihnachtsangebot sichern <ArrowRight className="w-4 h-4" /></Link></Button>
         </div>
