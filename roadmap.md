@@ -5,3 +5,5 @@
 - [x] Show both active offers in the popup, align campaign cards with the standard offers, and enlarge the video.
 - [x] Verify the updated homepage and popup on desktop and mobile.
 - [x] Add the customer-facing details from the supplied Brotmonat PDF to the homepage and popup, and check the result.
+- [x] Replace expired campaigns with the prominent Christmas bundle and financing in homepage and popup.
+- [x] Verify prices, deadlines, artwork and consultation links.
